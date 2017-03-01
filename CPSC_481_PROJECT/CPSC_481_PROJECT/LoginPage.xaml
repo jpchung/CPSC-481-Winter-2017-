@@ -8,13 +8,13 @@
              d:DesignHeight="576" d:DesignWidth="1024">
     <Grid Background="White">
         <Label x:Name="WatchPointLogoLabel" Content="  PROJECT: WATCHPOINT" HorizontalAlignment="Left" Height="80" Margin="180,80,0,0" VerticalAlignment="Top" Width="620" FontSize="48" Background="Yellow" FontStyle="Italic"/>
-        <TextBlock x:Name="LoginText" HorizontalAlignment="Left" Height="55" Margin="205,190,0,0" TextWrapping="Wrap" Text="LOGIN:" VerticalAlignment="Top" Width="140" FontSize="36" RenderTransformOrigin="0.607,0.364"/>
+        <TextBlock x:Name="LoginText" HorizontalAlignment="Left" Height="55" Margin="205,190,0,0" TextWrapping="Wrap" Text="LOGIN" VerticalAlignment="Top" Width="140" FontSize="36" RenderTransformOrigin="0.607,0.364"/>
         <Button x:Name="GoToMainButton" Content="GO" HorizontalAlignment="Left" Height="65" Margin="670,350,0,0" VerticalAlignment="Top" Width="130" FontSize="32"/>
-        <TextBlock x:Name="UsernameText" HorizontalAlignment="Left" Height="35" Margin="230,245,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="115" FontSize="24"/>
-        <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="35" Margin="230,285,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="110" FontSize="24" BorderThickness="0"/>
+        <TextBlock x:Name="UsernameText" HorizontalAlignment="Left" Height="35" Margin="230,245,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="35" Margin="230,285,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="110" FontSize="24" BorderThickness="0"/>
         <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Height="35" Margin="350,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
         <TextBox x:Name="PasswordInput" HorizontalAlignment="Left" Height="35" Margin="350,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
-        <Button x:Name="LoginToSignupButton" Content="SIGN-UP" HorizontalAlignment="Left" Height="65" Margin="180,350,0,0" VerticalAlignment="Top" Width="205" FontSize="32"/>
+        <Button x:Name="LoginToSignupButton" Content="SIGN-UP" HorizontalAlignment="Left" Height="65" Margin="180,350,0,0" VerticalAlignment="Top" Width="220" FontSize="32" Click="LoginToSignupButton_Click"/>
 
     </Grid>
 </UserControl>

@@ -24,5 +24,10 @@ namespace CPSC_481_PROJECT
         {
             InitializeComponent();
         }
+
+        private void LoginToSignupButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

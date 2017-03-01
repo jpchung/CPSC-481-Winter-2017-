@@ -7,6 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="576" d:DesignWidth="1024">
     <Grid Background="White">
-            
+        <Label x:Name="WatchPointLogoLabel" Content="  PROJECT: WATCHPOINT" HorizontalAlignment="Left" Height="80" Margin="180,80,0,0" VerticalAlignment="Top" Width="620" FontSize="48" Background="Yellow" FontStyle="Italic"/>
+        <TextBlock x:Name="UsernameText" HorizontalAlignment="Left" Height="35" Margin="245,280,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="35" Margin="245,320,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="110" FontSize="24" BorderThickness="0"/>
+        <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Height="35" Margin="450,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+        <TextBox x:Name="PasswordInput" HorizontalAlignment="Left" Height="35" Margin="450,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+        <TextBlock x:Name="SignupText" HorizontalAlignment="Left" Height="45" Margin="205,180,0,0" TextWrapping="Wrap" Text="SIGN-UP" VerticalAlignment="Top" Width="165" FontSize="36"/>
+        <TextBlock x:Name="EmailText" HorizontalAlignment="Left" Height="35" Margin="245,240,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" Width="110" FontSize="24"/>
+        <TextBox x:Name="EmailInput" HorizontalAlignment="Left" Height="35" Margin="450,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" BorderBrush="Black"/>
+        <TextBlock x:Name="ConfirmPasswordText" HorizontalAlignment="Left" Height="30" Margin="245,360,0,0" TextWrapping="Wrap" Text="Confirm Password:" VerticalAlignment="Top" Width="200" FontSize="24"/>
+        <TextBox x:Name="ConfirmPasswordInput" HorizontalAlignment="Left" Height="30" Margin="450,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+        <TextBlock x:Name="BattetagText" HorizontalAlignment="Left" Height="35" Margin="245,395,0,0" TextWrapping="Wrap" Text="BattleTag:" VerticalAlignment="Top" Width="125" FontSize="24"/>
+        <TextBox x:Name="BattetagInput" HorizontalAlignment="Left" Height="35" Margin="450,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+        <Button x:Name="SignupToLoginButton" Content="LOGIN" HorizontalAlignment="Left" Height="65" Margin="180,460,0,0" VerticalAlignment="Top" Width="220" FontSize="32"/>
+        <Button x:Name="GoToMainButton" Content="GO" HorizontalAlignment="Left" Height="65" Margin="670,460,0,0" VerticalAlignment="Top" Width="130" FontSize="32"/>
+
     </Grid>
 </UserControl>
