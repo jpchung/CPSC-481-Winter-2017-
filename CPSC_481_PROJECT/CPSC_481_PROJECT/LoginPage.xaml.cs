@@ -25,9 +25,19 @@ namespace CPSC_481_PROJECT
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Switch from Login Page to Sign-up Page on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginToSignupButton_Click(object sender, RoutedEventArgs e)
         {
+            PageSwitcher.Switch(new SignupPage());
+        }
 
+        private void LoginToMainButton_Click(object sender, RoutedEventArgs e)
+        {
+            PageSwitcher.Switch(new MainPage());
         }
     }
 }

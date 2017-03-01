@@ -7,6 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="576" d:DesignWidth="1024">
     <Grid Background="White">
-            
+        <TabControl x:Name="MainPageTabControl" HorizontalAlignment="Left" Height="576" VerticalAlignment="Top" Width="1024">
+            <TabItem x:Name="ProfileTab" Header="PROFILE" Width="510" Height="76">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="SearchTab" Header="SEARCH" Width="510" Height="76">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </UserControl>
