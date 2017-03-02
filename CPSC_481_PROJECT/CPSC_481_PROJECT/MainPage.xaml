@@ -48,10 +48,10 @@
                         <TabItem Header="STATS" Margin="0,0,-133,0">
                             <Grid Background="#FFE5E5E5"/>
                         </TabItem>
-                        <TabItem Header="FRIENDS" Margin="133,0,-270,0">
+                        <TabItem Header="FRIENDS" Margin="0,0,-133,0" HorizontalAlignment="Right" Width="275">
                             <Grid Background="#FFE5E5E5"/>
                         </TabItem>
-                        <TabItem Header="TEAM" Margin="275,0,-285,0" HorizontalAlignment="Left" Width="230">
+                        <TabItem Header="TEAM" Margin="133,0,-143,0" HorizontalAlignment="Left" Width="240">
                             <Grid Background="#FFE5E5E5"/>
                         </TabItem>
                     </TabControl>
