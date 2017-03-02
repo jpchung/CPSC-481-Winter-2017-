@@ -6,15 +6,69 @@
              xmlns:local="clr-namespace:CPSC_481_PROJECT"
              mc:Ignorable="d" 
              d:DesignHeight="576" d:DesignWidth="1024">
+
+    <UserControl.Resources>
+
+    </UserControl.Resources>
+
+    <!--TabControl Style derived from the following source: http://www.wpf-tutorial.com/tabcontrol/styling-the-tabitems/ -->
     <Grid Background="White">
-        <TabControl x:Name="MainPageTabControl" HorizontalAlignment="Left" Height="576" VerticalAlignment="Top" Width="1024">
-            <TabItem x:Name="ProfileTab" Header="PROFILE" Width="510" Height="76">
-                <Grid Background="#FFE5E5E5"/>
+        <TabControl x:Name="MainPageTabControl" HorizontalAlignment="Left" Height="576" VerticalAlignment="Top" Width="1024" >
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Grid Name="TabItemPanel">
+                                    <ContentPresenter x:Name="TabItemContent"
+                                                      HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"
+                                                      ContentSource="Header"/>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="TabItemPanel" Property="Background" Value="Yellow"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="TabItemPanel" Property="Background" Value="White" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+
+            <TabItem Header="PROFILE" Width="510" Height="76" FontSize="36" >
+                <Grid>
+                    <Image x:Name="ProfileImage"  HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="20,39,0,0" Initialized="ProfileImage_Initialized">
+                    </Image>
+
+                    <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="496" Margin="242,-3,-5,-1" VerticalAlignment="Top" Width="781" BorderThickness="0">
+                        <TabItem Header="STATS" Margin="0,0,-133,0">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="FRIENDS" Margin="133,0,-270,0">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="TEAM" Margin="275,0,-285,0" HorizontalAlignment="Left" Width="230">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="200" Margin="20,39,0,0" VerticalAlignment="Top" Width="200"/>
+                </Grid>
+
+
+
             </TabItem>
-            <TabItem x:Name="SearchTab" Header="SEARCH" Width="510" Height="76">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="SEARCH" Width="510" Height="76" FontSize="36" >
+
             </TabItem>
+
+
         </TabControl>
 
     </Grid>
 </UserControl>
+
+    

@@ -12,9 +12,9 @@
         <TextBlock x:Name="UsernameText" HorizontalAlignment="Left" Height="35" Margin="230,245,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="115" FontSize="24"/>
         <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="35" Margin="230,285,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="110" FontSize="24" BorderThickness="0"/>
         <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Height="35" Margin="350,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
-        <TextBox x:Name="PasswordInput" HorizontalAlignment="Left" Height="35" Margin="350,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
         <Button x:Name="LoginToSignupButton" Content="SIGN-UP" HorizontalAlignment="Left" Height="65" Margin="180,350,0,0" VerticalAlignment="Top" Width="220" FontSize="32" Click="LoginToSignupButton_Click"/>
         <Button x:Name="LoginToMainButton" Content="GO" HorizontalAlignment="Left" Height="65" Margin="670,350,0,0" VerticalAlignment="Top" Width="130" FontSize="32" Click="LoginToMainButton_Click"/>
+        <PasswordBox x:Name="LoginPasswordBox" HorizontalAlignment="Left" Height="35" Margin="350,285,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
 
     </Grid>
 </UserControl>
