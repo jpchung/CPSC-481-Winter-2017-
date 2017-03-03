@@ -118,7 +118,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="JUSTICE.png" />
+    <Resource Include="Images\JUSTICE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PRO_GENJI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DIO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SupportIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DefenseIcon.png" />
+    <Resource Include="Images\OffenseIcon.png" />
+    <Resource Include="Images\TankIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

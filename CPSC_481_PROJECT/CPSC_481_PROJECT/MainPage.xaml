@@ -72,7 +72,7 @@
                     <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="639" Margin="317,-3,0,0" VerticalAlignment="Top" Width="957" BorderThickness="0">
                         <TabItem Header="STATS" Width="319">
                             <Grid Background="#FFE5E5E5">
-                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="560" VerticalAlignment="Top" Width="943" FontSize="24" Background="#FFE5E5E5" >
+                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="560" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightGray" >
 
                                     <ListView.View>
                                         <GridView>
@@ -87,7 +87,7 @@
                             </Grid>
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="319">
-                            <Grid Background="#FFE5E5E5">
+                            <Grid Background="LightGray">
                                 <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="507" Margin="10,53,0,0" VerticalAlignment="Top" Width="303"/>
                                 <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" Margin="23,0,0,0" TextWrapping="Wrap" Text="Friend List" VerticalAlignment="Top" FontSize="36" Width="270"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
@@ -103,7 +103,7 @@
                             </Grid>
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="315">
-                            <Grid Background="#FFE5E5E5">
+                            <Grid Background="LightGray">
 
                                 <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="385" Margin="10,25,0,0" VerticalAlignment="Top" Width="918" Background="#FFE5E5E5" BorderBrush="Black">
                                     <ListView.Resources>
@@ -117,7 +117,7 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="743,25,0,0" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.333,0.385" Height="50" FontSize="16"/>
+                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="743,25,0,0" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.333,0.385" Height="55" FontSize="16"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -154,18 +154,37 @@
                             </Setter>
                         </Style>
                     </Grid.Resources>
-                    <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Height="616" Margin="10,10,0,0" VerticalAlignment="Top" Width="1242" BorderThickness="0">
+                    <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Height="616" Margin="10,0,0,0" VerticalAlignment="Top" Width="1242" BorderThickness="0">
                         <TabItem Header="SOLO" Width="624">
-                            <Grid Background="#FFE5E5E5">
+                            <Grid x:Name="___No_Name_" Background="LightGray">
                                 <RadioButton x:Name="SoloSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,22,0,0" VerticalAlignment="Top" Width="240"/>
                                 <RadioButton x:Name="SoloSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,22,0,0" VerticalAlignment="Top" Width="240"/>
-                                <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="530,137,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="24"/>
-                                <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="785,137,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="24" RenderTransformOrigin="0.475,-0.125"/>
-                                <TextBlock x:Name="SearchFilterText" HorizontalAlignment="Left" Height="40" Margin="360,137,0,0" TextWrapping="Wrap" Text="Filter By:" VerticalAlignment="Top" Width="165" FontSize="24"/>
+                                <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="525,92,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="24"/>
+                                <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="780,92,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="24" RenderTransformOrigin="0.475,-0.125"/>
+                                <TextBlock x:Name="SearchFilterText" HorizontalAlignment="Left" Height="40" Margin="355,92,0,0" TextWrapping="Wrap" Text="Filter By:" VerticalAlignment="Top" Width="165" FontSize="24"/>
+                                <TextBox x:Name="SoloSearchInput" HorizontalAlignment="Left" Height="40" Margin="525,158,0,0" TextWrapping="Wrap" Text=" Search by Username..." VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.371,0.375" FontSize="22" FontStyle="Italic"/>
+                                <Button x:Name="SoloSearchButton" Content="Search" HorizontalAlignment="Left" Margin="785,157,0,0" VerticalAlignment="Top" Width="80" Height="41" FontSize="24"/>
+                                <TextBlock x:Name="SearchRoleTextBlock" HorizontalAlignment="Left" Margin="540,92,0,0" TextWrapping="Wrap" Text="Role..." VerticalAlignment="Top" Height="40" Width="100" FontSize="24" RenderTransformOrigin="0.85,0.625"/>
+                                <TextBlock x:Name="SearchHeroTextBlock" HorizontalAlignment="Left" Margin="800,92,0,0" TextWrapping="Wrap" Text="Hero..." VerticalAlignment="Top" Height="40" Width="85" FontSize="24" RenderTransformOrigin="0.647,0.5"/>
+                                <ListView x:Name="SoloSearchListView" HorizontalAlignment="Left" Height="315" Margin="145,222,0,0" VerticalAlignment="Top" Width="960" FontSize="24" Background="#FFE5E5E5">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Username" Width="480"/>
+                                            <GridViewColumn Header="Role" Width="240"/>
+                                            <GridViewColumn Header="Hero" Width="240"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                                <Image x:Name="DefenseIcon" Source="pack://application:,,,/Images/DefenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="255,157,0,0" VerticalAlignment="Top" Width="50"/>
+                                <Image x:Name="TankIcon" Source="pack://application:,,,/Images/TankIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="335,157,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
+                                <Image x:Name="OffenseIcon" Source="pack://application:,,,/Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="175,157,0,0" VerticalAlignment="Top" Width="50"/>
+                                <Image x:Name="SupportIcon" Source="pack://application:,,,/Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="415,158,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
+                                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="175,139,0,0" TextWrapping="Wrap" Text="Offense        Defense          Tank           Support" VerticalAlignment="Top" Height="19" FontSize="14"/>
+
                             </Grid>
                         </TabItem>
                         <TabItem Header="GROUP" Width="614">
-                            <Grid Background="#FFE5E5E5">
+                            <Grid Background="LightGray">
                                 <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,22,0,0" VerticalAlignment="Top" Width="240"/>
                                 <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,22,0,0" VerticalAlignment="Top" Width="240"/>
                             </Grid>
