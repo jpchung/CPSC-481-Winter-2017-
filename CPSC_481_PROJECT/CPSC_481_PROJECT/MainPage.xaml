@@ -104,6 +104,7 @@
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="315">
                             <Grid Background="#FFE5E5E5">
+
                                 <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="385" Margin="10,25,0,0" VerticalAlignment="Top" Width="918" Background="#FFE5E5E5" BorderBrush="Black">
                                     <ListView.Resources>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
@@ -116,6 +117,7 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
+                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="743,25,0,0" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.333,0.385" Height="50" FontSize="16"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -129,12 +131,39 @@
             </TabItem>
             <TabItem Header="SEARCH" Width="635" Height="76" FontSize="36">
                 <Grid>
+                    <Grid.Resources>
+                        <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <Grid Name="RadioToggleButtonGrid">
+                                            <Border BorderBrush="Black" BorderThickness="1">
+                                                <ContentPresenter x:Name="RadioToggleButton"/>
+                                            </Border>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="Yellow"/>
+                                            </Trigger>
+                                            <Trigger Property="IsChecked" Value="False">
+                                                <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="White" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Grid.Resources>
                     <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Height="616" Margin="10,10,0,0" VerticalAlignment="Top" Width="1242" BorderThickness="0">
                         <TabItem Header="SOLO" Width="624">
                             <Grid Background="#FFE5E5E5"/>
                         </TabItem>
                         <TabItem Header="GROUP" Width="614">
-                            <Grid Background="#FFE5E5E5"/>
+                            <Grid Background="#FFE5E5E5">
+                                <RadioButton x:Name="QuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,50,0,0" VerticalAlignment="Top" Width="240"/>
+                                <RadioButton x:Name="RankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,50,0,0" VerticalAlignment="Top" Width="240"/>
+                            </Grid>
+
                         </TabItem>
                     </TabControl>
 

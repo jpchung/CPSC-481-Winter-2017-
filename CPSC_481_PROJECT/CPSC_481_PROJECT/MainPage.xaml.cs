@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
 
 namespace CPSC_481_PROJECT
 {
@@ -38,6 +39,8 @@ namespace CPSC_481_PROJECT
             RoleComboBox.ItemsSource = RolesList;
             HeroComboBox.ItemsSource = HeroesList;
             GameModeComboBox.ItemsSource = GameModesList;
+
+            QuickplayToggle.IsChecked = true;
 
         }
 
