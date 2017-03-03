@@ -7,13 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
 
-    <UserControl.Resources>
 
-    </UserControl.Resources>
 
     <!--TabControl Style derived from the following source: http://www.wpf-tutorial.com/tabcontrol/styling-the-tabitems/ -->
     <Grid Background="White">
-        <TabControl x:Name="MainPageTabControl" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" >
+        <TabControl x:Name="MainPageTabControl" HorizontalAlignment="Left" Height="720" Width="1280" >
             <TabControl.Resources>
                 <Style TargetType="TabItem">
                     <Setter Property="Template">
@@ -37,25 +35,80 @@
                         </Setter.Value>
                     </Setter>
                 </Style>
+
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ComboBoxItem">
+                                <Grid>
+                                    <Border BorderBrush="Black" BorderThickness="1">
+                                        <ContentPresenter x:Name="ComboBoxItemContent" Content="{TemplateBinding Content}" />
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
             </TabControl.Resources>
 
             <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" >
                 <Grid>
+                    <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="Username" Margin="57,9,1017,587"/>
                     <Image x:Name="ProfileImage"  HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0" Initialized="ProfileImage_Initialized">
                     </Image>
+                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="57,259,1017,337" FontSize="18"/>
+                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,319,1017,277" FontSize="16" BorderBrush="Black" VerticalAlignment="Center" Height="40"/>
+
+                    <ComboBox x:Name="RoleComboBox" Margin="57,379,1017,217" BorderBrush="Black" FontSize="24">
+                    </ComboBox>
+
+                    <ComboBox x:Name="HeroComboBox" Height="35" Margin="57,444,1017,157" FontSize="24">
+                    </ComboBox>
+
+                    <ComboBox x:Name="GameModeComboBox" HorizontalAlignment="Left" Margin="57,499,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="24">
+                    </ComboBox>
+
 
                     <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="639" Margin="317,-3,0,0" VerticalAlignment="Top" Width="957" BorderThickness="0">
                         <TabItem Header="STATS" Width="319">
-                            <Grid Background="#FFE5E5E5"/>
+                            <Grid Background="#FFE5E5E5">
+                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="585" VerticalAlignment="Top" Width="943" FontSize="24" Background="#FFE5E5E5" >
+
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Overall" Width="318">
+
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="Heroes" Width="319"/>
+                                            <GridViewColumn Header="Last Played" Width="315"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="319">
                             <Grid Background="#FFE5E5E5"/>
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="315">
-                            <Grid Background="#FFE5E5E5"/>
+                            <Grid Background="#FFE5E5E5">
+                                <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="385" Margin="10,25,0,0" VerticalAlignment="Top" Width="918" Background="#FFE5E5E5" BorderBrush="Black">
+                                    <ListView.Resources>
+                                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                        </Style>
+                                    </ListView.Resources>
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Team Name" Width="933" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Grid>
                         </TabItem>
                     </TabControl>
+
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="200" Margin="57,54,0,0" VerticalAlignment="Top" Width="200"/>
+
                 </Grid>
 
 

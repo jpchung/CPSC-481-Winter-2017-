@@ -20,6 +20,9 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class LoginPage : UserControl
     {
+        /// <summary>
+        /// Initialize LoginPage UserControl elements
+        /// </summary>
         public LoginPage()
         {
             InitializeComponent();

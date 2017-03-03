@@ -20,6 +20,9 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class SignupPage : UserControl
     {
+        /// <summary>
+        /// Initialize SignupPage UserControl elements
+        /// </summary>
         public SignupPage()
         {
             InitializeComponent();
