@@ -114,7 +114,19 @@
 
 
             </TabItem>
-            <TabItem Header="SEARCH" Width="635" Height="76" FontSize="36" >
+            <TabItem Header="SEARCH" Width="635" Height="76" FontSize="36">
+                <Grid Background="#FFE5E5E5">
+                    <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Height="616" Margin="10,10,0,0" VerticalAlignment="Top" Width="1242" BorderThickness="0">
+                        <TabItem Header="SOLO" Width="624">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="GROUP" Width="614">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+
+                </Grid>
+
 
             </TabItem>
 
