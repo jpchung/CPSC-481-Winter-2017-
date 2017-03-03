@@ -156,12 +156,18 @@
                     </Grid.Resources>
                     <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Height="616" Margin="10,10,0,0" VerticalAlignment="Top" Width="1242" BorderThickness="0">
                         <TabItem Header="SOLO" Width="624">
-                            <Grid Background="#FFE5E5E5"/>
+                            <Grid Background="#FFE5E5E5">
+                                <RadioButton x:Name="SoloSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,22,0,0" VerticalAlignment="Top" Width="240"/>
+                                <RadioButton x:Name="SoloSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,22,0,0" VerticalAlignment="Top" Width="240"/>
+                                <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="530,137,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="24"/>
+                                <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="785,137,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="24" RenderTransformOrigin="0.475,-0.125"/>
+                                <TextBlock x:Name="SearchFilterText" HorizontalAlignment="Left" Height="40" Margin="360,137,0,0" TextWrapping="Wrap" Text="Filter By:" VerticalAlignment="Top" Width="165" FontSize="24"/>
+                            </Grid>
                         </TabItem>
                         <TabItem Header="GROUP" Width="614">
                             <Grid Background="#FFE5E5E5">
-                                <RadioButton x:Name="QuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,50,0,0" VerticalAlignment="Top" Width="240"/>
-                                <RadioButton x:Name="RankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,50,0,0" VerticalAlignment="Top" Width="240"/>
+                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,22,0,0" VerticalAlignment="Top" Width="240"/>
+                                <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,22,0,0" VerticalAlignment="Top" Width="240"/>
                             </Grid>
 
                         </TabItem>

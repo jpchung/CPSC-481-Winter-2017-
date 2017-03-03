@@ -40,7 +40,11 @@ namespace CPSC_481_PROJECT
             HeroComboBox.ItemsSource = HeroesList;
             GameModeComboBox.ItemsSource = GameModesList;
 
-            QuickplayToggle.IsChecked = true;
+            SoloSearchRoleComboBox.ItemsSource = RolesList;
+            SoloSearchHeroComboBox.ItemsSource = HeroesList;
+
+            SoloSearchQuickplayToggle.IsChecked = true;
+            GroupSearchQuickplayToggle.IsChecked = true;
 
         }
 
