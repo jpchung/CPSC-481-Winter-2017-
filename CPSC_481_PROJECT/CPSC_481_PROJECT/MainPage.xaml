@@ -198,7 +198,7 @@
                                 <Image x:Name="TankIcon" Source="pack://application:,,,/Images/TankIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="335,157,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
                                 <Image x:Name="OffenseIcon" Source="pack://application:,,,/Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="175,157,0,0" VerticalAlignment="Top" Width="50"/>
                                 <Image x:Name="SupportIcon" Source="pack://application:,,,/Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="415,158,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
-                                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="175,139,0,0" TextWrapping="Wrap" Text="Offense        Defense          Tank           Support" VerticalAlignment="Top" Height="19" FontSize="14"/>
+                                <TextBlock x:Name="RoleIconsTextBlock" HorizontalAlignment="Left" Margin="175,139,0,0" TextWrapping="Wrap" Text="Offense        Defense          Tank           Support" VerticalAlignment="Top" Height="19" FontSize="14"/>
 
                             </Grid>
                         </TabItem>
@@ -215,8 +215,9 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="40" Margin="305,107,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="22" FontStyle="Italic"/>
-                                <Button x:Name="button" Content="Search" HorizontalAlignment="Left" Margin="565,107,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22"/>
+                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="225,107,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="22" FontStyle="Italic"/>
+                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="485,107,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22"/>
+                                <TextBlock x:Name="GroupRequestsTextBlock" HorizontalAlignment="Left" Margin="625,111,0,0" TextWrapping="Wrap" Text="Requests:" VerticalAlignment="Top" FontSize="24" Height="40"/>
                             </Grid>
 
                         </TabItem>
