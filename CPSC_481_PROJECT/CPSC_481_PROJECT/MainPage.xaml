@@ -98,7 +98,21 @@
                                             <GridViewColumn Header="Last Played" Width="310"/>
                                         </GridView>
                                     </ListView.View>
+                                    <TextBlock x:Name="textBlock3_Copy2" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
                                 </ListView>
+                                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="522" Margin="0,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"><Run Text="Wins: 9000"/><LineBreak/><Run Text="Losses: 2"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy %: 90"/><LineBreak/><Run Text=""/><LineBreak/><Run Text="Knockbacks: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 5000"/><LineBreak/><Run Text="Assists: 500"/></TextBlock>
+                                <Image x:Name="friendImage1_Copy2" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="322,38,0,0" VerticalAlignment="Top" Width="162"/>
+                                <Image x:Name="friendImage1_Copy3" Source="Images/ARSON.png" HorizontalAlignment="Left" Height="166" Margin="322,209,0,0" VerticalAlignment="Top" Width="162"/>
+                                <Image x:Name="friendImage1_Copy4" Source="Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="166" Margin="322,380,0,0" VerticalAlignment="Top" Width="162"/>
+                                <Image x:Name="friendImage1_Copy5" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="644,38,0,0" VerticalAlignment="Top" Width="162"/>
+                                <Image x:Name="friendImage1_Copy6" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="644,209,0,0" VerticalAlignment="Top" Width="162"/>
+                                <Image x:Name="friendImage1_Copy7" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Margin="644,380,0,39" Width="162"/>
+                                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="166" Margin="489,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy" HorizontalAlignment="Left" Height="166" Margin="489,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="69"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy1" HorizontalAlignment="Left" Height="166" Margin="484,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="420"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy3" HorizontalAlignment="Left" Height="166" Margin="806,38,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy4" HorizontalAlignment="Left" Height="166" Margin="803,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy5" HorizontalAlignment="Left" Height="166" Margin="806,380,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
                             </Grid>
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="319">
@@ -263,6 +277,7 @@
 
 
             </TabItem>
+            <TextBlock x:Name="textBlock2" Height="100" TextWrapping="Wrap" Text="TextBlock" Width="100"/>
 
 
         </TabControl>
