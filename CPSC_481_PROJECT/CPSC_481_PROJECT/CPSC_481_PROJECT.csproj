@@ -134,6 +134,20 @@
     <Resource Include="Images\OffenseIcon.png" />
     <Resource Include="Images\TankIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ARSON.png" />
+    <Resource Include="Images\EDGELORD420.png" />
+    <Resource Include="Images\EXPAND_DONG.png" />
+    <Resource Include="Images\BAGUETTE_SNIPER.png" />
+    <Resource Include="Images\GUN_GRANNY.png" />
+    <Resource Include="Images\BOOPS_IN_SPANISH.png" />
+    <Resource Include="Images\MLG_KPOP_GREMLIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TRENDY_ASIAN_BRO.png" />
+    <Resource Include="Images\OINK.png" />
+    <Resource Include="Images\CHEERS_LUV.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
