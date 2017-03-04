@@ -66,7 +66,7 @@
                 </Style>
             </TabControl.Resources>
 
-            <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" >
+            <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" Margin="10,0,-10,0" >
                 <Grid>
                     <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="ItsRainingJustice" FontSize="26" Margin="57,14,1017,582"/>
                     <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0" Initialized="ProfileImage_Initialized">
@@ -180,7 +180,7 @@
                                         <Image x:Name="TeamMemberImage3" Source="pack://application:,,,/Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
                                     </Border>
                                 </ListView>
-                                
+
                                 <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="743,18,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="37" FontSize="16"/>
 
 
@@ -253,6 +253,14 @@
                                 <Image x:Name="OffenseIcon" Source="pack://application:,,,/Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="175,157,0,0" VerticalAlignment="Top" Width="50"/>
                                 <Image x:Name="SupportIcon" Source="pack://application:,,,/Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="415,158,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
                                 <TextBlock x:Name="RoleIconsTextBlock" HorizontalAlignment="Left" Margin="175,139,0,0" TextWrapping="Wrap" Text="Offense        Defense          Tank           Support" VerticalAlignment="Top" Height="19" FontSize="14"/>
+                                <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="335,283,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Height="92" Width="165"/>
+                                <Image x:Name="friendImage1" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="135" Margin="175,264,0,0" VerticalAlignment="Top" Width="143"/>
+                                <Image x:Name="friendImage1_Copy8" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="135" Margin="908,264,0,0" VerticalAlignment="Top" Width="143"/>
+                                <Image x:Name="friendImage1_Copy9" Source="Images/BAGUETTE_SNIPER.png" HorizontalAlignment="Left" Height="135" Margin="175,399,0,0" VerticalAlignment="Top" Width="143"/>
+                                <TextBlock x:Name="textBlock4_Copy" HorizontalAlignment="Left" Margin="335,421,0,0" TextWrapping="Wrap" Text="How2Aim" VerticalAlignment="Top" Height="92" Width="165"/>
+                                <Image x:Name="OffenseIcon_Copy" Source="Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="80" Margin="705,283,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.244,0.63"/>
+                                <Image x:Name="friendImage1_Copy10" Source="Images/GUN_GRANNY.png" HorizontalAlignment="Left" Height="135" Margin="908,399,0,0" VerticalAlignment="Top" Width="143"/>
+                                <Image x:Name="SupportIcon_Copy" Source="Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="80" Margin="705,433,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.75,0.083"/>
 
                             </Grid>
                         </TabItem>
