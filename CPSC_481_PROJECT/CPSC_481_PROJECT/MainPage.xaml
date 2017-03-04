@@ -68,7 +68,7 @@
 
             <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" >
                 <Grid>
-                    <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="Username" Margin="57,9,1017,587"/>
+                    <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="ItsRainingJustice" FontSize="26" Margin="57,14,1017,582"/>
                     <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0" Initialized="ProfileImage_Initialized">
                     </Image>
                     <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="57,259,1017,337" FontSize="18"/>
@@ -133,7 +133,7 @@
                         <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="315">
                             <Grid Background="LightGray">
 
-                                <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="550" Margin="10,25,0,0" VerticalAlignment="Top" Width="918" Background="#FFE5E5E5" BorderBrush="Black">
+                                <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="525" Margin="10,10,0,0" VerticalAlignment="Top" Width="918" Background="#FFE5E5E5" BorderBrush="Black">
                                     <ListView.Resources>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -156,16 +156,16 @@
                                         <Image x:Name="TeamMemberImage3" Source="pack://application:,,,/Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
                                     </Border>
                                 </ListView>
-                                
-                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="743,25,0,0" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.333,0.385" Height="55" FontSize="16"/>
+
+                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="733,18,0,0" VerticalAlignment="Top" Width="165" RenderTransformOrigin="1.333,0.385" Height="38" FontSize="16"/>
 
 
-                                <TextBlock x:Name="TeamMemberUsername1" HorizontalAlignment="Left" Margin="203,112,0,0" TextWrapping="Wrap" Text="xX_Gurl_Gamer_Xx" VerticalAlignment="Top" FontSize="32"/>
-                                <TextBlock x:Name="TeamMemberUsername2" HorizontalAlignment="Left" Margin="203,270,0,0" TextWrapping="Wrap" Text="Achin4SumBacon" VerticalAlignment="Top" FontSize="32"/>
-                                <TextBlock x:Name="TeamMemberUsername3" HorizontalAlignment="Left" Margin="203,427,0,0" TextWrapping="Wrap" Text="DANKEY_KANG" VerticalAlignment="Top" FontSize="32"/>
-                                <TextBlock x:Name="TeamMemberBattleTag1" HorizontalAlignment="Left" Margin="203,175,0,0" TextWrapping="Wrap" Text="Battletag: winkyfayce#6969" VerticalAlignment="Top" FontSize="26"/>
-                                <TextBlock x:Name="TeamMemberBattleTag2" HorizontalAlignment="Left" Margin="203,335,0,0" TextWrapping="Wrap" Text="Battletag: streetpig#1993" VerticalAlignment="Top" FontSize="26"/>
-                                <TextBlock x:Name="TeamMemberBattleTag3" HorizontalAlignment="Left" Margin="203,495,0,0" TextWrapping="Wrap" Text="Battletag: expanddong#0420" VerticalAlignment="Top" FontSize="26"/>
+                                <TextBlock x:Name="TeamMemberUsername1" HorizontalAlignment="Left" Margin="203,95,0,0" TextWrapping="Wrap" Text="xX_Gurl_Gamer_Xx" VerticalAlignment="Top" FontSize="32"/>
+                                <TextBlock x:Name="TeamMemberUsername2" HorizontalAlignment="Left" Margin="203,250,0,0" TextWrapping="Wrap" Text="Achin4SumBacon" VerticalAlignment="Top" FontSize="32"/>
+                                <TextBlock x:Name="TeamMemberUsername3" HorizontalAlignment="Left" Margin="203,410,0,0" TextWrapping="Wrap" Text="DANKEY_KANG" VerticalAlignment="Top" FontSize="32"/>
+                                <TextBlock x:Name="TeamMemberBattleTag1" HorizontalAlignment="Left" Margin="203,155,0,0" TextWrapping="Wrap" Text="Battletag: winkyfayce#6969" VerticalAlignment="Top" FontSize="26"/>
+                                <TextBlock x:Name="TeamMemberBattleTag2" HorizontalAlignment="Left" Margin="203,315,0,0" TextWrapping="Wrap" Text="Battletag: streetpig#1993" VerticalAlignment="Top" FontSize="26"/>
+                                <TextBlock x:Name="TeamMemberBattleTag3" HorizontalAlignment="Left" Margin="203,480,0,0" TextWrapping="Wrap" Text="Battletag: expanddong#0420" VerticalAlignment="Top" FontSize="26"/>
 
                             </Grid>
                         </TabItem>
