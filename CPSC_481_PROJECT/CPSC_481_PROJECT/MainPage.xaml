@@ -163,7 +163,7 @@
                                     </Border>
                                 </ListView>
                                 
-                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="743,25,0,0" VerticalAlignment="Top" Width="185" RenderTransformOrigin="1.333,0.385" Height="55" FontSize="16"/>
+                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="743,18,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="37" FontSize="16"/>
 
 
                                 <TextBlock x:Name="TeamMemberUsername1" HorizontalAlignment="Left" Margin="203,95,0,0" TextWrapping="Wrap" Text="xX_Gurl_Gamer_Xx" VerticalAlignment="Top" FontSize="32"/>
