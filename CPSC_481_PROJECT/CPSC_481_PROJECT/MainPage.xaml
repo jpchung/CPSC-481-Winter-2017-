@@ -103,7 +103,11 @@
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="319">
                             <Grid Background="LightGray">
-                                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="507" Margin="10,53,0,0" VerticalAlignment="Top" Width="303"/>
+                                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="507" Margin="10,53,0,0" VerticalAlignment="Top" Width="303">
+                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="293"/>
+                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="293"/>
+                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="293"/>
+                                </ListBox>
                                 <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" Margin="23,0,0,0" TextWrapping="Wrap" Text="Friend List" VerticalAlignment="Top" FontSize="36" Width="270"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
                                 <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="507" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="#FFE5E5E5">
