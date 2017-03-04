@@ -66,7 +66,7 @@
                 </Style>
             </TabControl.Resources>
 
-            <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" >
+            <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" Margin="10,0,-10,0" >
                 <Grid>
                     <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="ItsRainingJustice" FontSize="26" Margin="57,14,1017,582"/>
                     <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0" Initialized="ProfileImage_Initialized">
@@ -87,7 +87,11 @@
                     <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="639" Margin="317,-3,0,0" VerticalAlignment="Top" Width="957" BorderThickness="0">
                         <TabItem Header="STATS" Width="319">
                             <Grid Background="#FFE5E5E5">
-                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="560" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightGray" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="455*"/>
+                                    <ColumnDefinition Width="498*"/>
+                                </Grid.ColumnDefinitions>
+                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="560" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightGray" Grid.ColumnSpan="2" >
 
                                     <ListView.View>
                                         <GridView>
@@ -101,18 +105,18 @@
                                     <TextBlock x:Name="textBlock3_Copy2" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
                                 </ListView>
                                 <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="522" Margin="0,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"><Run Text="Wins: 9000"/><LineBreak/><Run Text="Losses: 2"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy %: 90"/><LineBreak/><Run Text=""/><LineBreak/><Run Text="Knockbacks: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 5000"/><LineBreak/><Run Text="Assists: 500"/></TextBlock>
-                                <Image x:Name="friendImage1_Copy2" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="322,38,0,0" VerticalAlignment="Top" Width="162"/>
-                                <Image x:Name="friendImage1_Copy3" Source="Images/ARSON.png" HorizontalAlignment="Left" Height="166" Margin="322,209,0,0" VerticalAlignment="Top" Width="162"/>
-                                <Image x:Name="friendImage1_Copy4" Source="Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="166" Margin="322,380,0,0" VerticalAlignment="Top" Width="162"/>
-                                <Image x:Name="friendImage1_Copy5" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="644,38,0,0" VerticalAlignment="Top" Width="162"/>
-                                <Image x:Name="friendImage1_Copy6" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="644,209,0,0" VerticalAlignment="Top" Width="162"/>
-                                <Image x:Name="friendImage1_Copy7" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Margin="644,380,0,39" Width="162"/>
-                                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="166" Margin="489,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy" HorizontalAlignment="Left" Height="166" Margin="489,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="69"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy1" HorizontalAlignment="Left" Height="166" Margin="484,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="420"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy3" HorizontalAlignment="Left" Height="166" Margin="806,38,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy4" HorizontalAlignment="Left" Height="166" Margin="803,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy5" HorizontalAlignment="Left" Height="166" Margin="806,380,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
+                                <Image x:Name="friendImage1_Copy2" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="322,38,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
+                                <Image x:Name="friendImage1_Copy3" Source="Images/ARSON.png" HorizontalAlignment="Left" Height="166" Margin="322,209,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
+                                <Image x:Name="friendImage1_Copy4" Source="Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="166" Margin="322,380,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
+                                <Image x:Name="friendImage1_Copy5" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="188.629,38,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1"/>
+                                <Image x:Name="friendImage1_Copy6" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="188.629,209,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1"/>
+                                <Image x:Name="friendImage1_Copy7" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Margin="188.629,380,0,39" Width="162" Grid.Column="1"/>
+                                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="166" Margin="33.629,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy" HorizontalAlignment="Left" Height="166" Margin="33.629,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="69"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy1" HorizontalAlignment="Left" Height="166" Margin="28.629,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="420"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy3" HorizontalAlignment="Left" Height="166" Margin="350.629,38,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy4" HorizontalAlignment="Left" Height="166" Margin="347.629,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy5" HorizontalAlignment="Left" Height="166" Margin="350.629,380,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
                             </Grid>
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="319">
@@ -249,6 +253,14 @@
                                 <Image x:Name="OffenseIcon" Source="pack://application:,,,/Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="175,157,0,0" VerticalAlignment="Top" Width="50"/>
                                 <Image x:Name="SupportIcon" Source="pack://application:,,,/Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="415,158,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
                                 <TextBlock x:Name="RoleIconsTextBlock" HorizontalAlignment="Left" Margin="175,139,0,0" TextWrapping="Wrap" Text="Offense        Defense          Tank           Support" VerticalAlignment="Top" Height="19" FontSize="14"/>
+                                <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="335,283,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Height="92" Width="165"/>
+                                <Image x:Name="SoloPlayer1" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="135" Margin="175,264,0,0" VerticalAlignment="Top" Width="143"/>
+                                <Image x:Name="SoloPlayer1HeroSelect" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="135" Margin="908,264,0,0" VerticalAlignment="Top" Width="143"/>
+                                <Image x:Name="SoloPlayer2" Source="Images/BAGUETTE_SNIPER.png" HorizontalAlignment="Left" Height="135" Margin="175,399,0,0" VerticalAlignment="Top" Width="143"/>
+                                <TextBlock x:Name="textBlock4_Copy" HorizontalAlignment="Left" Margin="335,421,0,0" TextWrapping="Wrap" Text="How2Aim" VerticalAlignment="Top" Height="92" Width="165"/>
+                                <Image x:Name="OffenseIcon_Copy" Source="Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="80" Margin="705,283,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.244,0.63"/>
+                                <Image x:Name="SoloPlayer2HeroSelect" Source="Images/GUN_GRANNY.png" HorizontalAlignment="Left" Height="135" Margin="908,399,0,0" VerticalAlignment="Top" Width="143"/>
+                                <Image x:Name="SupportIcon_Copy" Source="Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="80" Margin="705,433,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.75,0.083"/>
 
                             </Grid>
                         </TabItem>
