@@ -35,6 +35,21 @@
                         </Setter.Value>
                     </Setter>
                 </Style>
+                
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="GridViewColumnHeader">
+                                <Grid x:Name="GridViewColumnHeader" Background="White">
+                                    <Border BorderBrush="DimGray" BorderThickness="1">
+                                        <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" />
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
 
                 <Style TargetType="ComboBoxItem">
                     <Setter Property="Template">
@@ -80,7 +95,7 @@
 
                                             </GridViewColumn>
                                             <GridViewColumn Header="Heroes" Width="319"/>
-                                            <GridViewColumn Header="Last Played" Width="315"/>
+                                            <GridViewColumn Header="Last Played" Width="310"/>
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
@@ -187,6 +202,15 @@
                             <Grid Background="LightGray">
                                 <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,22,0,0" VerticalAlignment="Top" Width="240"/>
                                 <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,22,0,0" VerticalAlignment="Top" Width="240"/>
+                                <ListView x:Name="GroupSearchListView" HorizontalAlignment="Left" Height="350" Margin="145,187,0,0" VerticalAlignment="Top" Width="960" FontSize="24" Background="#FFE5E5E5">
+                                    
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Team Name" Width="320"/>
+                                            <GridViewColumn Header="Members" Width="640"/>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
                             </Grid>
 
                         </TabItem>
