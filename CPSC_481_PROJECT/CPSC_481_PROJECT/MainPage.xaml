@@ -165,7 +165,7 @@
                                     </ListView.Resources>
                                     <ListView.View>
                                         <GridView>
-                                            <GridViewColumn Header="Team Name" Width="933" />
+                                            <GridViewColumn Header="Team Name: NoHeals4MyFeels" Width="933" />
                                         </GridView>
 
                                     </ListView.View>
@@ -174,7 +174,7 @@
 
                                     </Border>
                                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="155">
-                                        <Image x:Name="TeamMemberImage2" Source="/Images/OINK.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
+                                        <Image x:Name="TeamMemberImage2" Source="/Images/JUSTICE.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
                                     </Border>
                                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="155">
                                         <Image x:Name="TeamMemberImage3" Source="pack://application:,,,/Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
@@ -185,10 +185,10 @@
 
 
                                 <TextBlock x:Name="TeamMemberUsername1" HorizontalAlignment="Left" Margin="203,95,0,0" TextWrapping="Wrap" Text="xX_Gurl_Gamer_Xx" VerticalAlignment="Top" FontSize="32"/>
-                                <TextBlock x:Name="TeamMemberUsername2" HorizontalAlignment="Left" Margin="203,250,0,0" TextWrapping="Wrap" Text="Achin4SumBacon" VerticalAlignment="Top" FontSize="32"/>
+                                <TextBlock x:Name="TeamMemberUsername2" HorizontalAlignment="Left" Margin="203,250,0,0" TextWrapping="Wrap" Text="ItsRainingJustice" VerticalAlignment="Top" FontSize="32"/>
                                 <TextBlock x:Name="TeamMemberUsername3" HorizontalAlignment="Left" Margin="203,410,0,0" TextWrapping="Wrap" Text="DANKEY_KANG" VerticalAlignment="Top" FontSize="32"/>
                                 <TextBlock x:Name="TeamMemberBattleTag1" HorizontalAlignment="Left" Margin="203,155,0,0" TextWrapping="Wrap" Text="Battletag: winkyfayce#6969" VerticalAlignment="Top" FontSize="26"/>
-                                <TextBlock x:Name="TeamMemberBattleTag2" HorizontalAlignment="Left" Margin="203,315,0,0" TextWrapping="Wrap" Text="Battletag: streetpig#1993" VerticalAlignment="Top" FontSize="26"/>
+                                <TextBlock x:Name="TeamMemberBattleTag2" HorizontalAlignment="Left" Margin="203,315,0,0" TextWrapping="Wrap" Text="Battletag: DroneStrikes#2016" VerticalAlignment="Top" FontSize="26"/>
                                 <TextBlock x:Name="TeamMemberBattleTag3" HorizontalAlignment="Left" Margin="203,480,0,0" TextWrapping="Wrap" Text="Battletag: expanddong#0420" VerticalAlignment="Top" FontSize="26"/>
 
                             </Grid>
@@ -268,7 +268,7 @@
                             <Grid Background="LightGray">
                                 <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,22,0,0" VerticalAlignment="Top" Width="240"/>
                                 <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,22,0,0" VerticalAlignment="Top" Width="240"/>
-                                <ListView x:Name="GroupSearchListView" HorizontalAlignment="Left" Height="350" Margin="145,187,0,0" VerticalAlignment="Top" Width="960" FontSize="24" Background="#FFE5E5E5">
+                                <ListView x:Name="GroupSearchListView" HorizontalAlignment="Left" Margin="145,202,0,25" Width="960" FontSize="24" Background="#FFE5E5E5">
 
                                     <ListView.View>
                                         <GridView>
@@ -277,9 +277,30 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="225,107,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="22" FontStyle="Italic"/>
-                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="485,107,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22"/>
-                                <TextBlock x:Name="GroupRequestsTextBlock" HorizontalAlignment="Left" Margin="625,111,0,0" TextWrapping="Wrap" Text="Requests:" VerticalAlignment="Top" FontSize="24" Height="40"/>
+                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="145,112,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="22" FontStyle="Italic"/>
+                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="405,112,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22"/>
+                                <TextBlock x:Name="GroupRequestsTextBlock" HorizontalAlignment="Left" Margin="525,116,0,0" TextWrapping="Wrap" Text="Requests:" VerticalAlignment="Top" FontSize="24" Height="40"/>
+                                <TextBlock x:Name="TeamSearchName" HorizontalAlignment="Left" Margin="180,272,0,0" TextWrapping="Wrap" Text="NoHeals4MyFeels" VerticalAlignment="Top" FontSize="32"/>
+                                <Image x:Name="TeamSearchImage" Source="/Images/MLG_KPOP_GREMLIN.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="505,257,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy" Source="Images/JUSTICE.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="605,257,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy2" Source="Images/EXPAND_DONG.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="700,257,0,0" VerticalAlignment="Top" Width="75" />
+                                <TextBlock x:Name="TeamSearchName_Copy" HorizontalAlignment="Left" Margin="165,367,0,0" TextWrapping="Wrap" Text="DefinitelyNotSmurfs" VerticalAlignment="Top" FontSize="32"/>
+                                <TextBlock x:Name="TeamSearchName_Copy1" HorizontalAlignment="Left" Margin="200,462,0,0" TextWrapping="Wrap" Text="GirlsGeneration" VerticalAlignment="Top" FontSize="32"/>
+                                <Image x:Name="TeamSearchImage_Copy1" Source="/Images/CHEERS_LUV.jpg" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="505,352,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy3" Source="Images/ARSON.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="605,352,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy4" Source="Images/GUN_GRANNY.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="700,352,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="2.6,1.867" />
+                                <Image x:Name="TeamSearchImage_Copy5" Source="Images/BOOPS_IN_SPANISH.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="805,352,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy6" Source="Images/MLG_KPOP_GREMLIN.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="505,442,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy7" Source="Images/MLG_KPOP_GREMLIN.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="605,442,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy8" Source="Images/MLG_KPOP_GREMLIN.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="700,442,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy9" Source="Images/MLG_KPOP_GREMLIN.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="805,442,0,0" VerticalAlignment="Top" Width="75" />
+                                <Image x:Name="TeamSearchImage_Copy10" Source="Images/CHEERS_LUV.jpg" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="910,442,0,0" VerticalAlignment="Top" Width="75" />
+                                <Button x:Name="TeamJoinButton_Copy" Content="JOIN" HorizontalAlignment="Left" Margin="1010,367,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="2.133,2.692" FontSize="24"/>
+                                <Button x:Name="TeamJoinButton_Copy1" Content="JOIN" HorizontalAlignment="Left" Margin="1010,462,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="2.133,2.692" FontSize="24"/>
+                                <TextBox x:Name="JoinRequesTextBox" HorizontalAlignment="Left" Height="40" Margin="635,112,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Width="220" FontSize="24"/>
+                                <Button x:Name="TeamJoinRequestAcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="855,112,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.467,0.019" Height="40" FontSize="16"/>
+                                <Button x:Name="TeamJoinRejectButton" Content="Reject" HorizontalAlignment="Left" Margin="930,112,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.067,0.481" Height="40" Click="TeamJoinRejectButton_Click" FontSize="16"/>
+                                <Button x:Name="CreateTeamButton" Content="Create" HorizontalAlignment="Left" Margin="1025,112,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24"/>
                             </Grid>
 
                         </TabItem>
