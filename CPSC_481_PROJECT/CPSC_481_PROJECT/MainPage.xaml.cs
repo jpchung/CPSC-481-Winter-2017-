@@ -58,5 +58,10 @@ namespace CPSC_481_PROJECT
             //ProfileImage.Source = new BitmapImage(new Uri("http://68.media.tumblr.com/78f1e0e0197fc6f0f4f839d0214a7b47/tumblr_o7ww2x2z2A1rsd6nxo4_250.png"));
             ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,,/Images/JUSTICE.png"));
         }
+
+        private void TeamJoinRejectButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
