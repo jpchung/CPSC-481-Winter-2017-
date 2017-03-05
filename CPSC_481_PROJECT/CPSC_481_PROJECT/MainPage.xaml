@@ -91,7 +91,7 @@
                                     <ColumnDefinition Width="455*"/>
                                     <ColumnDefinition Width="498*"/>
                                 </Grid.ColumnDefinitions>
-                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="560" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightGray" Grid.ColumnSpan="2" >
+                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="560" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" Grid.ColumnSpan="2" >
 
                                     <ListView.View>
                                         <GridView>
@@ -104,7 +104,7 @@
                                     </ListView.View>
                                     <TextBlock x:Name="textBlock3_Copy2" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
                                 </ListView>
-                                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="522" Margin="0,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"><Run Text="Wins: 9000"/><LineBreak/><Run Text="Losses: 2"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy %: 90"/><LineBreak/><Run Text=""/><LineBreak/><Run Text="Knockbacks: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 5000"/><LineBreak/><Run Text="Assists: 500"/></TextBlock>
+                                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="522" Margin="0,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"><Run Text="Wins: 9000"/><LineBreak/><Run Text="Losses: 2"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy %: 90"/><LineBreak/><Run Text=""/><LineBreak/><Run Text="Knockbacks: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 5000"/><LineBreak/><Run Text="Assists: 500"/><LineBreak/><Run Text="Deaths: 50"/></TextBlock>
                                 <Image x:Name="friendImage1_Copy2" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="322,38,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
                                 <Image x:Name="friendImage1_Copy3" Source="Images/ARSON.png" HorizontalAlignment="Left" Height="166" Margin="322,209,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
                                 <Image x:Name="friendImage1_Copy4" Source="Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="166" Margin="322,380,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
@@ -134,7 +134,7 @@
                                 </ListBox>
                                 <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" Margin="23,0,0,0" TextWrapping="Wrap" Text="Friend List" VerticalAlignment="Top" FontSize="36" Width="270"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
-                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="507" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="#FFE5E5E5">
+                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="507" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Overall" Width="208"/>
@@ -144,20 +144,31 @@
                                     </ListView.View>
                                 </ListView>
                                 <TextBlock x:Name="friendOneUsername" HorizontalAlignment="Left" Height="50" Margin="179,53,0,0" TextWrapping="Wrap" FontSize= "25" Text="GenjiGod" VerticalAlignment="Top" Width="134"/>
-                                <TextBlock x:Name="friendOneStatusMessage" HorizontalAlignment="Left" Height="50" Margin="179,158,0,0" TextWrapping="Wrap" FontSize= "20" Text="I need healing!" VerticalAlignment="Top" Width="134"/>
+                                <TextBlock x:Name="friendOneStatusMessage" HorizontalAlignment="Left" Height="45" Margin="179,114,0,0" TextWrapping="Wrap" FontSize= "20" Text="I need healing!" VerticalAlignment="Top" Width="134"/>
                                 <TextBlock x:Name="friendTwoUsername" HorizontalAlignment="Left" Height="50" Margin="179,213,0,0" TextWrapping="Wrap" FontSize= "25" Text="OwO" VerticalAlignment="Top" Width="134"/>
                                 <TextBlock x:Name="friendThreeUsername" HorizontalAlignment="Left" Height="50" Margin="179,385,0,0" TextWrapping="Wrap" FontSize= "25" Text="GitGud420" VerticalAlignment="Top" Width="134"/>
-                                <TextBlock x:Name="friendTwoStatusMessage" HorizontalAlignment="Left" Height="50" Margin="179,309,0,0" TextWrapping="Wrap" FontSize= "20" Text="Wots this?" VerticalAlignment="Top" Width="134"/>
-                                <TextBlock x:Name="friendThreeStatusMessage" HorizontalAlignment="Left" Height="50" Margin="179,482,0,0" TextWrapping="Wrap" FontSize= "20" Text="Die already" VerticalAlignment="Top" Width="134"/>
-                                <Image x:Name="friendImage1_Copy" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="166" Margin="551,97,0,0" VerticalAlignment="Top" Width="162"/>
-                                <Image x:Name="friendImage1_Copy1" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="166" Margin="757,97,0,0" VerticalAlignment="Top" Width="174" RenderTransformOrigin="0.54,0.453"/>
-                                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="435" Margin="333,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"><Run Text="Wins: 1"/><LineBreak/><Run Text="Losses: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy:"/><LineBreak/><Run Text="20%"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 0"/><LineBreak/><Run Text="Deaths: 99"/></TextBlock>
+                                <TextBlock x:Name="friendTwoStatusMessage" HorizontalAlignment="Left" Height="45" Margin="179,268,0,0" TextWrapping="Wrap" FontSize= "20" Text="Wots this?" VerticalAlignment="Top" Width="134"/>
+                                <TextBlock x:Name="friendThreeStatusMessage" HorizontalAlignment="Left" Height="35" Margin="179,435,0,0" TextWrapping="Wrap" FontSize= "20" Text="Die already" VerticalAlignment="Top" Width="134"/>
+                                <Image x:Name="friendImage1_Copy" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="530,90,0,0" VerticalAlignment="Top" Width="100"/>
+                                <Image x:Name="friendImage1_Copy1" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="101" Margin="738,90,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.54,0.453"/>
+                                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="435" Margin="333,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="30"><Run Text="Wins: 1"/><LineBreak/><Run Text="Losses: "/><Run Text="998"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy:"/><LineBreak/><Run Text="20%"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 0"/><LineBreak/><Run Text="Assists:"/><Run Text=" "/><Run Text="1"/><LineBreak/><Run Text="Deaths: 99"/><Run Text="8"/></TextBlock>
+                                <Button x:Name="RemoveFriendButton" Content="UnFriend" HorizontalAlignment="Left" Margin="193,164,0,0" VerticalAlignment="Top" Width="100" Height="34" FontSize="20"/>
+                                <Button x:Name="RemoveFriendButton_Copy" Content="UnFriend" HorizontalAlignment="Left" Margin="193,318,0,0" VerticalAlignment="Top" Width="100" Height="34" FontSize="20"/>
+                                <Button x:Name="RemoveFriendButton_Copy1" Content="UnFriend" HorizontalAlignment="Left" Margin="193,475,0,0" VerticalAlignment="Top" Width="100" Height="34" FontSize="20"/>
+                                <Image x:Name="friendImage1_Copy8" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,196,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1,0.37"/>
+                                <Image x:Name="friendImage1_Copy9" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,301,0,0" VerticalAlignment="Top" Width="100"/>
+                                <Image x:Name="friendImage1_Copy10" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,409,0,0" VerticalAlignment="Top" Width="100"/>
+                                <TextBlock x:Name="textBlock3_Copy6" HorizontalAlignment="Left" Height="100" Margin="635,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22"><Run Text="Games Played:"/><LineBreak/><Run Text="999"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy7" HorizontalAlignment="Left" Height="100" Margin="843,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy8" HorizontalAlignment="Left" Height="100" Margin="843,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy9" HorizontalAlignment="Left" Height="100" Margin="843,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
+                                <TextBlock x:Name="textBlock3_Copy10" HorizontalAlignment="Left" Height="100" Margin="843,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
                             </Grid>
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="315">
                             <Grid Background="LightGray">
 
-                                <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="525" Margin="10,10,0,0" VerticalAlignment="Top" Width="918" Background="#FFE5E5E5" BorderBrush="Black">
+                                <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="525" Margin="10,10,0,0" VerticalAlignment="Top" Width="918" Background="LightSlateGray" BorderBrush="Black">
                                     <ListView.Resources>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -239,7 +250,7 @@
                                 <Button x:Name="SoloSearchButton" Content="Search" HorizontalAlignment="Left" Margin="785,157,0,0" VerticalAlignment="Top" Width="80" Height="41" FontSize="24"/>
                                 <TextBlock x:Name="SearchRoleTextBlock" HorizontalAlignment="Left" Margin="540,92,0,0" TextWrapping="Wrap" Text="Role..." VerticalAlignment="Top" Height="40" Width="100" FontSize="24" RenderTransformOrigin="0.85,0.625"/>
                                 <TextBlock x:Name="SearchHeroTextBlock" HorizontalAlignment="Left" Margin="800,92,0,0" TextWrapping="Wrap" Text="Hero..." VerticalAlignment="Top" Height="40" Width="85" FontSize="24" RenderTransformOrigin="0.647,0.5"/>
-                                <ListView x:Name="SoloSearchListView" HorizontalAlignment="Left" Height="315" Margin="145,222,0,0" VerticalAlignment="Top" Width="960" FontSize="24" Background="#FFE5E5E5">
+                                <ListView x:Name="SoloSearchListView" HorizontalAlignment="Left" Height="315" Margin="145,222,0,0" VerticalAlignment="Top" Width="960" FontSize="24" Background="LightSlateGray">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Username" Width="480"/>
@@ -253,14 +264,16 @@
                                 <Image x:Name="OffenseIcon" Source="pack://application:,,,/Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="175,157,0,0" VerticalAlignment="Top" Width="50"/>
                                 <Image x:Name="SupportIcon" Source="pack://application:,,,/Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="415,158,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
                                 <TextBlock x:Name="RoleIconsTextBlock" HorizontalAlignment="Left" Margin="175,139,0,0" TextWrapping="Wrap" Text="Offense        Defense          Tank           Support" VerticalAlignment="Top" Height="19" FontSize="14"/>
-                                <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="335,283,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Height="92" Width="165"/>
-                                <Image x:Name="SoloPlayer1" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="135" Margin="175,264,0,0" VerticalAlignment="Top" Width="143"/>
-                                <Image x:Name="SoloPlayer1HeroSelect" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="135" Margin="908,264,0,0" VerticalAlignment="Top" Width="143"/>
+                                <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Margin="335,283,0,0" TextWrapping="Wrap" Text="Achin4SumBacon" VerticalAlignment="Top" Height="44" Width="290" FontSize="32"/>
+                                <Image x:Name="SoloPlayer1" Source="Images/OINK.png" HorizontalAlignment="Left" Height="135" Margin="175,264,0,0" VerticalAlignment="Top" Width="143"/>
+                                <Image x:Name="SoloPlayer1HeroSelect" Source="Images/OINK.png" HorizontalAlignment="Left" Height="135" Margin="908,264,0,0" VerticalAlignment="Top" Width="143"/>
                                 <Image x:Name="SoloPlayer2" Source="Images/BAGUETTE_SNIPER.png" HorizontalAlignment="Left" Height="135" Margin="175,399,0,0" VerticalAlignment="Top" Width="143"/>
-                                <TextBlock x:Name="textBlock4_Copy" HorizontalAlignment="Left" Margin="335,421,0,0" TextWrapping="Wrap" Text="How2Aim" VerticalAlignment="Top" Height="92" Width="165"/>
-                                <Image x:Name="OffenseIcon_Copy" Source="Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="80" Margin="705,283,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.244,0.63"/>
+                                <TextBlock x:Name="textBlock4_Copy" HorizontalAlignment="Left" Margin="335,421,0,0" TextWrapping="Wrap" Text="How2Aim" VerticalAlignment="Top" Height="46" Width="165" FontSize="32"/>
+                                <Image x:Name="DefenseIcon_Copy" Source="Images/DefenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="80" Margin="705,283,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.244,0.63"/>
                                 <Image x:Name="SoloPlayer2HeroSelect" Source="Images/GUN_GRANNY.png" HorizontalAlignment="Left" Height="135" Margin="908,399,0,0" VerticalAlignment="Top" Width="143"/>
                                 <Image x:Name="SupportIcon_Copy" Source="Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="80" Margin="705,433,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.75,0.083"/>
+                                <Button x:Name="SoloAddFriendButton" Content="Add Friend" HorizontalAlignment="Left" Margin="335,347,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
+                                <Button x:Name="SoloAddFriendButton_Copy" Content="Add Friend" HorizontalAlignment="Left" Margin="335,472,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
 
                             </Grid>
                         </TabItem>
@@ -268,7 +281,7 @@
                             <Grid Background="LightGray">
                                 <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="385,22,0,0" VerticalAlignment="Top" Width="240"/>
                                 <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="625,22,0,0" VerticalAlignment="Top" Width="240"/>
-                                <ListView x:Name="GroupSearchListView" HorizontalAlignment="Left" Margin="145,202,0,25" Width="960" FontSize="24" Background="#FFE5E5E5">
+                                <ListView x:Name="GroupSearchListView" HorizontalAlignment="Left" Margin="145,202,0,25" Width="960" FontSize="24" Background="LightSlateGray">
 
                                     <ListView.View>
                                         <GridView>
