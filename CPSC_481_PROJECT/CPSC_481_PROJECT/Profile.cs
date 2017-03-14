@@ -8,11 +8,16 @@ namespace CPSC_481_PROJECT
 {
     class Profile
     {
-        //instance variables
+        //sign-up instance variables
         private String email;
         private String username;
         private String password;
         private String battletag;
+
+        //profile settings variables
+        private String role;
+        private String hero;
+        private String gameMode;
         
 
         /// <summary>
