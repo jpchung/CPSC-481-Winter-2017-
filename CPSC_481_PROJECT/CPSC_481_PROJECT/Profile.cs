@@ -17,7 +17,7 @@ namespace CPSC_481_PROJECT
         //profile settings variables
         private String role;
         private String hero;
-        private String gameMode;
+        private String gameMode; 
         
 
         /// <summary>
