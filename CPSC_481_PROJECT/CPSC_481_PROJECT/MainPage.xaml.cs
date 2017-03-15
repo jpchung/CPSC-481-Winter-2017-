@@ -21,6 +21,7 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class MainPage : UserControl
     {
+        
 
        /// <summary>
        /// Initialize MainPage UserControl elements
@@ -29,19 +30,14 @@ namespace CPSC_481_PROJECT
         {
             InitializeComponent();
 
-            string[] RolesList = new string[] {"Offense","Defense","Tank","Healer"};
-            string[] HeroesList = new string[] {"Ana","Bastion","D.Va","Genji","Hanzo","Junkrat","Lucio","McCree","Mei","Mercy",
-            "Pharah","Reaper","Reinhardt","Roadhog","Soldier: 76","Sombra", "Symmetra","Torbjorn","Tracer",
-            "Widowmaker","Winston","Zarya","Zenyatta"};
-            string[] GameModesList = new string[] {"Quickplay","Ranked"};
-
+            
             //instantiate dropdown list items
-            RoleComboBox.ItemsSource = RolesList;
-            HeroComboBox.ItemsSource = HeroesList;
-            GameModeComboBox.ItemsSource = GameModesList;
+            RoleComboBox.ItemsSource = Profile.RolesList;
+            HeroComboBox.ItemsSource = Profile.HeroesList;
+            GameModeComboBox.ItemsSource = Profile.GameModesList;
 
-            SoloSearchRoleComboBox.ItemsSource = RolesList;
-            SoloSearchHeroComboBox.ItemsSource = HeroesList;
+            SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
+            SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
 
             SoloSearchQuickplayToggle.IsChecked = true;
             GroupSearchQuickplayToggle.IsChecked = true;

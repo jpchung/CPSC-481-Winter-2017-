@@ -22,6 +22,9 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        
+
         /// <summary>
         /// Initialize WPF MainWindow components on start
         /// </summary>
@@ -31,6 +34,8 @@ namespace CPSC_481_PROJECT
             //initialize MainWindow to Login page by default
             PageSwitcher.pageSwitchWindow = this;
             PageSwitcher.Switch(new LoginPage());
+
+            //User Profile List
         }
 
         /// <summary>

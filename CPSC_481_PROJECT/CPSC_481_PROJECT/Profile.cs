@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace CPSC_481_PROJECT
 {
@@ -10,15 +11,21 @@ namespace CPSC_481_PROJECT
     {
         //sign-up instance variables
         private String email;
-        private String username;
-        private String password;
+        private Dictionary<String, String> usernamePassword;
         private String battletag;
 
-        //profile settings variables
-        private String role;
-        private String hero;
-        private String gameMode; 
-        
+        //profile settings variables (with get/set methods)   
+        public String Role { get; set; }
+        public String Hero { get; set; }
+        public String GameMode { get; set; }
+
+        //roles, heroes, game mode lists
+        public static string[] RolesList = new string[] { "Offense", "Defense", "Tank", "Healer" };
+        public static string[] HeroesList = new string[] {"Ana","Bastion","D.Va","Genji","Hanzo","Junkrat","Lucio","McCree","Mei","Mercy",
+            "Pharah","Reaper","Reinhardt","Roadhog","Soldier: 76","Sombra", "Symmetra","Torbjorn","Tracer",
+            "Widowmaker","Winston","Zarya","Zenyatta"};
+        public static string[] GameModesList = new string[] { "Quickplay", "Ranked" };
+
 
         /// <summary>
         /// Profile constructor
@@ -30,9 +37,17 @@ namespace CPSC_481_PROJECT
         public Profile(String email, String username, String password, String battletag)
         {
             this.email = email;
-            this.username = username;
-            this.password = password;
+
+            usernamePassword = new Dictionary<String, String>(1);
+            usernamePassword.Add(username, password);
+
             this.battletag = battletag;
+
+
         }
+
+
+
+
     }
 }

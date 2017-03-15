@@ -37,5 +37,12 @@ namespace CPSC_481_PROJECT
         {
             PageSwitcher.Switch(new LoginPage());
         }
+
+        private void SignupToMainButton_Click(object sender, RoutedEventArgs e)
+        {
+            new SignupProfileSettingsWindow().ShowDialog();
+            PageSwitcher.Switch(new MainPage());
+
+        }
     }
 }
