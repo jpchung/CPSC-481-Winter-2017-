@@ -23,7 +23,7 @@ namespace CPSC_481_PROJECT
     public partial class MainWindow : Window
     {
 
-        
+        public static List<Profile> UserList = new List<Profile>();
 
         /// <summary>
         /// Initialize WPF MainWindow components on start
@@ -31,11 +31,16 @@ namespace CPSC_481_PROJECT
         public MainWindow()
         {
             InitializeComponent();
+
+            //User Profile List
+            UserList.Add(new Profile("cawcaw", "ItsRainingJustice", "bird", "dronestrikes#2016"));
+
+
             //initialize MainWindow to Login page by default
             PageSwitcher.pageSwitchWindow = this;
             PageSwitcher.Switch(new LoginPage());
 
-            //User Profile List
+            
         }
 
         /// <summary>

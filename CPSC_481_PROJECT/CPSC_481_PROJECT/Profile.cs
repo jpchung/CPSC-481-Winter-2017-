@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace CPSC_481_PROJECT
 {
-    class Profile
+    public class Profile
     {
         //sign-up instance variables
         private String email;
@@ -44,6 +44,11 @@ namespace CPSC_481_PROJECT
             this.battletag = battletag;
 
 
+        }
+
+        public Dictionary<String, String> getUsernamePassword()
+        {
+            return usernamePassword;
         }
 
 

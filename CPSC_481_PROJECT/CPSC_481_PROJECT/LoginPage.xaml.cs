@@ -40,7 +40,15 @@ namespace CPSC_481_PROJECT
 
         private void LoginToMainButton_Click(object sender, RoutedEventArgs e)
         {
-            PageSwitcher.Switch(new MainPage());
+            //super janky login, but it works lol
+            if(!MainWindow.UserList.ElementAt(0).getUsernamePassword().ContainsKey(UsernameInput.Text))
+            {
+
+            }
+            else
+            {
+                PageSwitcher.Switch(new MainPage());
+            }
         }
     }
 }
