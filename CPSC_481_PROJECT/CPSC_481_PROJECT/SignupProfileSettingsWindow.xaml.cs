@@ -19,6 +19,10 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class SignupProfileSettingsWindow : Window
     {
+        public String SignupRole { get; set; }
+        public String SignupHero { get; set; }
+        public String SignupGameMode { get; set; }
+
         public SignupProfileSettingsWindow()
         {
             InitializeComponent();
@@ -29,9 +33,23 @@ namespace CPSC_481_PROJECT
             SignupGameModeComboBox.ItemsSource = Profile.GameModesList;
         }
 
+        /// <summary>
+        /// Role, Hero, and Game Mode must be selected for new Profile before adding to MainWindow UserList
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SignupProfileSettingsDone_button_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            //check if any of the dropdown menus have a null entry
+            if((SignupRoleComboBox.SelectedIndex == -1) || (SignupHeroComboBox.SelectedIndex == -1) || (SignupGameModeComboBox.SelectedIndex == -1))
+            {
+
+            }
+            else
+            {
+                Close();
+
+            }
         }
     }
 }

@@ -10,7 +10,7 @@
         <Label x:Name="WatchPointLogoLabel" Content="  PROJECT: WATCHPOINT" HorizontalAlignment="Left" Height="80" Margin="304,175,0,0" VerticalAlignment="Top" Width="671" FontSize="56" Background="Yellow" FontStyle="Italic"/>
         <TextBlock x:Name="UsernameText" HorizontalAlignment="Left" Height="35" Margin="395,355,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="115" FontSize="24"/>
         <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="35" Margin="395,395,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="110" FontSize="24" BorderThickness="0"/>
-        <TextBox x:Name="UsernameInput" HorizontalAlignment="Left" Height="35" Margin="600,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+        <TextBox x:Name="SignupUsernameInput" HorizontalAlignment="Left" Height="35" Margin="600,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
         <TextBlock x:Name="SignupText" HorizontalAlignment="Left" Height="45" Margin="355,255,0,0" TextWrapping="Wrap" Text="SIGN-UP" VerticalAlignment="Top" Width="165" FontSize="36"/>
         <TextBlock x:Name="EmailText" HorizontalAlignment="Left" Height="35" Margin="395,315,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" Width="110" FontSize="24"/>
         <TextBox x:Name="EmailInput" HorizontalAlignment="Left" Height="35" Margin="600,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" BorderBrush="Black" FontSize="24"/>

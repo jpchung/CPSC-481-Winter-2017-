@@ -40,11 +40,17 @@ namespace CPSC_481_PROJECT
 
         private void LoginToMainButton_Click(object sender, RoutedEventArgs e)
         {
-            //super janky login, but it works lol
-            if(!MainWindow.UserList.ElementAt(0).getUsernamePassword().ContainsKey(UsernameInput.Text))
+            //check both login input fields non-empty
+            if (string.IsNullOrEmpty(UsernameInput.Text)|| string.IsNullOrEmpty(LoginPasswordBox.Password))
             {
 
             }
+            //super janky login check, but it works lol
+            else if(!MainWindow.UserList.ElementAt(0).getUsernamePassword().ContainsKey(UsernameInput.Text))
+            {
+
+            }
+            
             else
             {
                 PageSwitcher.Switch(new MainPage());

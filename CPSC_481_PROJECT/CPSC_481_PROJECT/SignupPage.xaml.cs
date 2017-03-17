@@ -28,6 +28,8 @@ namespace CPSC_481_PROJECT
             InitializeComponent();
         }
 
+       
+
         /// <summary>
         /// Switch from Sign-up Page to Login Page on click
         /// </summary>
@@ -38,10 +40,39 @@ namespace CPSC_481_PROJECT
             PageSwitcher.Switch(new LoginPage());
         }
 
+        /// <summary>
+        /// Add new Profile in MainWindow UserList based on signup info
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SignupToMainButton_Click(object sender, RoutedEventArgs e)
         {
-            new SignupProfileSettingsWindow().ShowDialog();
-            PageSwitcher.Switch(new MainPage());
+            bool inputFieldsEmpty = false;
+
+            // lists for signup input fields
+            var textBoxes = new TextBox[] { EmailInput, SignupUsernameInput, BattetagInput};
+            var passwordBoxes = new PasswordBox[] { SignupPasswordBox, SignupConfirmPasswordBox };
+
+            //if any input fields on signup page empty, set boolean
+            if(textBoxes.Any(tb => string.IsNullOrEmpty(tb.Text)) || passwordBoxes.Any(pb => string.IsNullOrEmpty(pb.Password)))
+            {
+                inputFieldsEmpty = true;
+            }
+
+            if (inputFieldsEmpty)
+            {
+
+            }
+            else if(!inputFieldsEmpty)
+            {
+                //Profile newUser = new Profile();
+                new SignupProfileSettingsWindow().ShowDialog();
+                PageSwitcher.Switch(new MainPage());
+            }
+
+                
+            
+
 
         }
     }
