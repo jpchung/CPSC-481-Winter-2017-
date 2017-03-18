@@ -105,6 +105,7 @@ namespace CPSC_481_PROJECT
                 String newPassword = SignupPasswordBox.Password; //password is case sensitive
                 String newBattleTag = BattetagInput.Text;
 
+                //set boolean for valid sign-up after checking for conflicts with existing users
                 foreach (Profile user in MainWindow.UserList)
                 {
                     String existingEmail = user.Email;
@@ -137,12 +138,9 @@ namespace CPSC_481_PROJECT
                     }
 
                 }
-
-               
-               
+    
                
             }
-
 
             if (ValidSignup)
             {
