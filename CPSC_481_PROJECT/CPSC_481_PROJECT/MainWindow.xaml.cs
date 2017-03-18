@@ -33,8 +33,8 @@ namespace CPSC_481_PROJECT
             InitializeComponent();
 
             //User Profile List
-            UserList.Add(new Profile("cawcaw", "ItsRainingJustice", "bird", "dronestrikes#2016"));
-
+            UserList.Add(new Profile("birdnukes@gmail.com", "itsrainingjustice", "cawcaw", "dronestrikes#2016"));
+            UserList.Add(new Profile("peglegpowderkeg@gmail.com","fireindahoe","cheekynandos","burningman#1969"));
 
             //initialize MainWindow to Login page by default
             PageSwitcher.pageSwitchWindow = this;
