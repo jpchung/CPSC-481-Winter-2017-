@@ -62,12 +62,18 @@ namespace CPSC_481_PROJECT
             PageSwitcher.Switch(new SignupPage());
         }
 
+        /// <summary>
+        /// Switch from Login Page to Main Page after checking for valid login credentials
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginToMainButton_Click(object sender, RoutedEventArgs e)
         {
             //check both login input fields non-empty
             if (string.IsNullOrEmpty(UsernameInput.Text)|| string.IsNullOrEmpty(LoginPasswordBox.Password))
             {
-
+                invalidLoginText.Visibility = Visibility.Visible;
+                invalidLoginTextTimer.Start();
             }
             else
             {
