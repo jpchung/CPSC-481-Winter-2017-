@@ -47,7 +47,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void invalidLoginTextTimer_Tick(object sender, EventArgs e)
         {
-            invalidLoginText.Visibility = Visibility.Hidden;
+            InvalidLoginText.Visibility = Visibility.Hidden;
 
             invalidLoginTextTimer.Stop();
         }
@@ -69,13 +69,15 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void LoginToMainButton_Click(object sender, RoutedEventArgs e)
         {
+            bool inputFieldsEmpty = false;
+
             //check both login input fields non-empty
             if (string.IsNullOrEmpty(UsernameInput.Text)|| string.IsNullOrEmpty(LoginPasswordBox.Password))
             {
-                invalidLoginText.Visibility = Visibility.Visible;
-                invalidLoginTextTimer.Start();
+                inputFieldsEmpty = true;
             }
-            else
+
+            if(!inputFieldsEmpty)
             {
                 //username case insensitive, password case sensitive
                 String loginUsername = UsernameInput.Text.ToLower();
@@ -99,21 +101,36 @@ namespace CPSC_481_PROJECT
 
                 }
             }
+           
 
             //switch to main page if login is valid
-            if(ValidLogin)
+            if (ValidLogin)
             {
                 PageSwitcher.Switch(new MainPage());
+            }
+            //show empty input prompt if missing username or password
+            else if(inputFieldsEmpty)
+            {
+                InvalidLoginPrompt("Please enter input for all fields!");
+
             }
             //otherwise show incorrect login text on a timer
             else
             {
-                invalidLoginText.Visibility = Visibility.Visible;
-                invalidLoginTextTimer.Start();
+                InvalidLoginPrompt("Incorrect Username or Password!");
             }
-         
-
            
+        }
+
+        /// <summary>
+        /// Display invalid login prompt with context, and start timer
+        /// </summary>
+        /// <param name="textPrompt"></param>
+        private void InvalidLoginPrompt(String textPrompt)
+        {
+            InvalidLoginText.Text = textPrompt;
+            InvalidLoginText.Visibility = Visibility.Visible;
+            invalidLoginTextTimer.Start();
         }
     }
 }

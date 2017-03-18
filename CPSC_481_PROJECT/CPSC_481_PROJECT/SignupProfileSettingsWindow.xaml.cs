@@ -23,9 +23,13 @@ namespace CPSC_481_PROJECT
         public String SignupHero { get; set; }
         public String SignupGameMode { get; set; }
 
-        public SignupProfileSettingsWindow()
+        private Profile newProfile;
+
+        public SignupProfileSettingsWindow(Profile newUser)
         {
             InitializeComponent();
+
+            newProfile = newUser;
 
             //instantiate dropdown lists
             SignupRoleComboBox.ItemsSource = Profile.RolesList;
@@ -41,15 +45,25 @@ namespace CPSC_481_PROJECT
         private void SignupProfileSettingsDone_button_Click(object sender, RoutedEventArgs e)
         {
             //check if any of the dropdown menus have a null entry
-            if((SignupRoleComboBox.SelectedIndex == -1) || (SignupHeroComboBox.SelectedIndex == -1) || (SignupGameModeComboBox.SelectedIndex == -1))
+            if((SignupRoleComboBox.SelectedIndex == -1) || 
+                (SignupHeroComboBox.SelectedIndex == -1) || 
+                (SignupGameModeComboBox.SelectedIndex == -1))
             {
 
             }
             else
             {
+                //set role, hero, game mode for new profile
+                newProfile.Role = (String) SignupRoleComboBox.SelectedItem;
+                newProfile.Hero = (String) SignupHeroComboBox.SelectedItem;
+                newProfile.GameMode = (String)SignupGameModeComboBox.SelectedItem;
+
+                //add new Profile to list of users
+                MainWindow.UserList.Add(newProfile);
                 Close();
 
             }
         }
+
     }
 }

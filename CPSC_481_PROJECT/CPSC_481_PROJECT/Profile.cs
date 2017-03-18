@@ -10,9 +10,9 @@ namespace CPSC_481_PROJECT
     public class Profile
     {
         //sign-up instance variables
-        private String email;
+        public String Email { get; set; }
         private Dictionary<String, String> usernamePassword;
-        private String battletag;
+        public String BattleTag { get; set; }
 
         //profile settings variables (with get/set methods)   
         public String Role { get; set; }
@@ -36,12 +36,12 @@ namespace CPSC_481_PROJECT
         /// <param name="battletag"></param>
         public Profile(String email, String username, String password, String battletag)
         {
-            this.email = email;
+            Email = email;
 
             usernamePassword = new Dictionary<String, String>(1);
             usernamePassword.Add(username, password);
 
-            this.battletag = battletag;
+            BattleTag = battletag;
 
 
         }

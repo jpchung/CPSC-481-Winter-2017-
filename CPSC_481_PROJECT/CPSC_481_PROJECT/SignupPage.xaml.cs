@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -20,15 +21,36 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class SignupPage : UserControl
     {
+
+        public static bool ValidSignup { get; set; }
+
+        //timer for incorrect signup text prompt
+        DispatcherTimer invalidSignupTextTimer = new DispatcherTimer();
+
         /// <summary>
         /// Initialize SignupPage UserControl elements
         /// </summary>
         public SignupPage()
         {
             InitializeComponent();
+            ValidSignup = false;
+            invalidSignupTextTimer.Tick += invalidSignupTextTimer_Tick;
+            invalidSignupTextTimer.Interval = new TimeSpan(0, 0, 3); //timer lasts for 3 second interval
+
         }
 
-       
+        /// <summary>
+        /// After interval time has ticked, hide invalid text prompt and stop timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void invalidSignupTextTimer_Tick(object sender, EventArgs e)
+        {
+            InvalidSignupText.Visibility = Visibility.Hidden;
+
+            invalidSignupTextTimer.Stop();
+        }
+
 
         /// <summary>
         /// Switch from Sign-up Page to Login Page on click
@@ -47,7 +69,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void SignupToMainButton_Click(object sender, RoutedEventArgs e)
         {
-            bool inputFieldsEmpty = false;
+            bool inputFieldsEmpty;
 
             // lists for signup input fields
             var textBoxes = new TextBox[] { EmailInput, SignupUsernameInput, BattetagInput};
@@ -58,22 +80,94 @@ namespace CPSC_481_PROJECT
             {
                 inputFieldsEmpty = true;
             }
-
-            if (inputFieldsEmpty)
+            else
             {
-
+                inputFieldsEmpty = false;
             }
-            else if(!inputFieldsEmpty)
-            {
-                //Profile newUser = new Profile();
-                new SignupProfileSettingsWindow().ShowDialog();
-                PageSwitcher.Switch(new MainPage());
-            }
-
-                
             
 
+            //check inputs before completing sign-up
+            if (inputFieldsEmpty)
+            {
+                InvalidSignupPrompt("Please enter input for all fields!");
+                ValidSignup = false;
+            }
+            else if (!String.Equals(SignupPasswordBox.Password, SignupConfirmPasswordBox.Password))
+            {
+                InvalidSignupPrompt("Password fields don't match!");
+                ValidSignup = false;
+            }
+            else
+            {
 
+                String newEmail = EmailInput.Text;
+                String newUsername = SignupUsernameInput.Text.ToLower(); //username case insensitive
+                String newPassword = SignupPasswordBox.Password; //password is case sensitive
+                String newBattleTag = BattetagInput.Text;
+
+                foreach (Profile user in MainWindow.UserList)
+                {
+                    String existingEmail = user.Email;
+                    String existingBattleTag = user.BattleTag;
+                    Dictionary<String, String> existingLogins = user.getUsernamePassword();
+
+                    //check if signup info conflicts with existing user's info
+                    if (String.Equals(newEmail, existingEmail))
+                    {
+                        InvalidSignupPrompt("This Email is already registered!");
+                        ValidSignup = false;
+                        break;
+                    }
+                    else if (String.Equals(newBattleTag, existingBattleTag))
+                    {
+                        InvalidSignupPrompt("This BattleTag is already registered!");
+                        ValidSignup = false;
+                        break;
+                    }
+                    else if (existingLogins.ContainsKey(newUsername))
+                    {
+                        InvalidSignupPrompt("This Username is already registered!");
+                        ValidSignup = false;
+                        break;
+                    }
+                    else
+                    {
+                        ValidSignup = true;
+                        
+                    }
+
+                }
+
+               
+               
+               
+            }
+
+
+            if (ValidSignup)
+            {
+                String newEmail = EmailInput.Text;
+                String newUsername = SignupUsernameInput.Text.ToLower(); //username case insensitive
+                String newPassword = SignupPasswordBox.Password; //password is case sensitive
+                String newBattleTag = BattetagInput.Text;
+
+                //instantiate new user profile, add to list of user logins
+                Profile newUser = new Profile(newEmail, newUsername, newPassword, newBattleTag);
+                new SignupProfileSettingsWindow(newUser).ShowDialog();
+                PageSwitcher.Switch(new LoginPage());
+            }
+
+        }
+
+        /// <summary>
+        /// Display invalid signup text prompt with context, and start timer
+        /// </summary>
+        /// <param name="textPrompt"></param>
+        private void InvalidSignupPrompt(String textPrompt)
+        {
+            InvalidSignupText.Text = textPrompt;
+            InvalidSignupText.Visibility = Visibility.Visible;
+            invalidSignupTextTimer.Start();
         }
     }
 }

@@ -18,9 +18,10 @@
         <TextBlock x:Name="BattetagText" HorizontalAlignment="Left" Height="35" Margin="395,470,0,0" TextWrapping="Wrap" Text="BattleTag:" VerticalAlignment="Top" Width="125" FontSize="24"/>
         <TextBox x:Name="BattetagInput" HorizontalAlignment="Left" Height="35" Margin="600,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
         <Button x:Name="SignupToLoginButton" Content="LOGIN" HorizontalAlignment="Left" Height="65" Margin="304,535,0,0" VerticalAlignment="Top" Width="220" FontSize="32" Click="SignupToLoginButton_Click"/>
-        <Button x:Name="SignupToMainButton" Content="GO" HorizontalAlignment="Left" Height="65" Margin="835,535,0,0" VerticalAlignment="Top" Width="140" FontSize="32" Click="SignupToMainButton_Click" />
+        <Button x:Name="SignupToMainButton" Content="FINISH" HorizontalAlignment="Left" Height="65" Margin="800,535,0,0" VerticalAlignment="Top" Width="175" FontSize="32" Click="SignupToMainButton_Click" />
         <PasswordBox x:Name="SignupPasswordBox" HorizontalAlignment="Left" Height="35" Margin="600,395,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
         <PasswordBox x:Name="SignupConfirmPasswordBox" HorizontalAlignment="Left" Height="30" Margin="600,435,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+        <TextBlock x:Name="InvalidSignupText" HorizontalAlignment="Left" Margin="600,280,0,0" TextWrapping="Wrap" Text="TextBlock" Foreground="Red" FontSize="20" Visibility="Hidden" VerticalAlignment="Top" Height="30" Width="375"/>
 
     </Grid>
 </UserControl>
