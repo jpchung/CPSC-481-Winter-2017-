@@ -75,7 +75,7 @@ namespace CPSC_481_PROJECT
                     userProfile.ProfileIconSource = "/Images/EDGELORD420.png";
                     break;
                 case "ProfileIcon_6":
-                    userProfile.ProfileIconSource = "/Images/ESPAND_DONG.png";
+                    userProfile.ProfileIconSource = "/Images/EXPAND_DONG.png";
                     break;
                 case "ProfileIcon_7":
                     userProfile.ProfileIconSource = "/Images/GUN_GRANNY.png";

@@ -43,12 +43,19 @@ namespace CPSC_481_PROJECT
 
             //load logged in User's profile from the UserList
             userProfile = MainWindow.UserList.ElementAt(userIndex);
+
+            //username
             ProfileUsername.Text = userProfile.getUsernamePassword().Keys.ElementAt(0);
+
+            //role/hero/mode selections
             RoleComboBox.SelectedItem = userProfile.Role;
             HeroComboBox.SelectedItem = userProfile.Hero;
             GameModeComboBox.SelectedItem = userProfile.GameMode;
+
+            //profile picture
             ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + userProfile.ProfileIconSource));
 
+            //status message
             if (!String.IsNullOrEmpty(userProfile.Status) && !String.IsNullOrWhiteSpace(userProfile.Status))
                 ProfileStatusTextBox.Text = userProfile.Status;
             else
