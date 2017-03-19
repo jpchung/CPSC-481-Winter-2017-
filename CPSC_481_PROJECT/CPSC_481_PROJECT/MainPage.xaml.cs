@@ -21,15 +21,15 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class MainPage : UserControl
     {
-        
 
+        private Profile userProfile;
+    
        /// <summary>
        /// Initialize MainPage UserControl elements
        /// </summary>
-        public MainPage()
+        public MainPage(int userIndex)
         {
             InitializeComponent();
-
             
             //instantiate dropdown list items
             RoleComboBox.ItemsSource = Profile.RolesList;
@@ -41,6 +41,13 @@ namespace CPSC_481_PROJECT
 
             SoloSearchQuickplayToggle.IsChecked = true;
             GroupSearchQuickplayToggle.IsChecked = true;
+
+            //load logged in User's profile from the UserList
+            userProfile = MainWindow.UserList.ElementAt(userIndex);
+            ProfileUsername.Text = userProfile.getUsernamePassword().Keys.ElementAt(0);
+            RoleComboBox.SelectedItem = userProfile.Role;
+            HeroComboBox.SelectedItem = userProfile.Hero;
+            GameModeComboBox.SelectedItem = userProfile.GameMode;
 
         }
 
@@ -59,5 +66,7 @@ namespace CPSC_481_PROJECT
         {
 
         }
+
+        
     }
 }

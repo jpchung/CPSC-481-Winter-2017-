@@ -68,7 +68,7 @@
 
             <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" Margin="48,0,-48,0" >
                 <Grid>
-                    <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="ItsRainingJustice" FontSize="26" Margin="57,14,1017,582"/>
+                    <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="" FontSize="26" Margin="57,14,1017,582" />
                     <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0" Initialized="ProfileImage_Initialized">
                     </Image>
                     <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="57,259,1017,337" FontSize="18"/>

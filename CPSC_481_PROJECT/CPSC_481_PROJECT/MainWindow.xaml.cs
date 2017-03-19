@@ -32,9 +32,15 @@ namespace CPSC_481_PROJECT
         {
             InitializeComponent();
 
-            //User Profile List
-            UserList.Add(new Profile("birdnukes@gmail.com", "itsrainingjustice", "cawcaw", "dronestrikes#2016"));
-            UserList.Add(new Profile("peglegpowderkeg@gmail.com","fireindahoe","cheekynandos","burningman#1969"));
+            //Default User Profile List
+           // UserList.Add(new Profile("birdnukes@gmail.com", "itsrainingjustice", "cawcaw", "dronestrikes#2016"));
+            //UserList.Add(new Profile("peglegpowderkeg@gmail.com","fireindahoe","cheekynandos","burningman#1969"));
+            Profile defaultProfile = new Profile("birdnukes@gmail.com", "itsrainingjustice", "cawcaw", "dronestrikes#2016");
+            defaultProfile.Role = "Offense";
+            defaultProfile.Hero = "Pharah";
+            defaultProfile.GameMode = "Ranked";
+            UserList.Add(defaultProfile);
+
 
             //initialize MainWindow to Login page by default
             PageSwitcher.pageSwitchWindow = this;

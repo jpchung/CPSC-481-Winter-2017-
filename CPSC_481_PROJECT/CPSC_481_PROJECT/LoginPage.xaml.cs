@@ -24,6 +24,8 @@ namespace CPSC_481_PROJECT
 
         public static bool ValidLogin { get; set; }
 
+        private int userListIndex;
+
         //timer for incorrect login text prompt
         DispatcherTimer invalidLoginTextTimer = new DispatcherTimer();
         
@@ -83,6 +85,8 @@ namespace CPSC_481_PROJECT
                 String loginUsername = UsernameInput.Text.ToLower();
                 String loginPassword = LoginPasswordBox.Password;
 
+
+                
                 //check if login info matches with any entry in existing user list
                 foreach (Profile user in MainWindow.UserList)
                 {
@@ -94,6 +98,7 @@ namespace CPSC_481_PROJECT
                         userLogins.TryGetValue(loginUsername, out actualPassword) &&
                         String.Equals(actualPassword, loginPassword))
                     {
+                        userListIndex = MainWindow.UserList.IndexOf(user);
                         ValidLogin = true;
                         break;
 
@@ -106,7 +111,7 @@ namespace CPSC_481_PROJECT
             //switch to main page if login is valid
             if (ValidLogin)
             {
-                PageSwitcher.Switch(new MainPage());
+                PageSwitcher.Switch(new MainPage(userListIndex));
             }
             //show empty input prompt if missing username or password
             else if(inputFieldsEmpty)
