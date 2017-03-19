@@ -69,9 +69,9 @@
             <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" >
                 <Grid>
                     <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="" FontSize="26" Margin="57,14,1017,582" />
-                    <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0" Initialized="ProfileImage_Initialized">
+                    <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0">
                     </Image>
-                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="57,259,1017,337" FontSize="18"/>
+                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="57,259,1017,337" FontSize="18" Click="ChangeProfilePicButton_Click"/>
                     <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,319,1017,277" FontSize="16" BorderBrush="Black" Height="40" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed"/>
 
                     <ComboBox x:Name="RoleComboBox" Margin="57,379,1017,217" BorderBrush="Black" FontSize="24" SelectionChanged="RoleComboBox_SelectionChanged">

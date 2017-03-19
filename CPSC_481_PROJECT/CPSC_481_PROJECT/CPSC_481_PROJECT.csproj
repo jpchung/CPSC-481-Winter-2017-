@@ -60,6 +60,9 @@
     </Compile>
     <Compile Include="PageSwitcher.cs" />
     <Compile Include="Profile.cs" />
+    <Compile Include="ProfilePictureSelectWindow.xaml.cs">
+      <DependentUpon>ProfilePictureSelectWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignupPage.xaml.cs">
       <DependentUpon>SignupPage.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProfilePictureSelectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SignupPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

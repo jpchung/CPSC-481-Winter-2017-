@@ -23,6 +23,7 @@ namespace CPSC_481_PROJECT
     {
 
         private Profile userProfile;
+        
     
        /// <summary>
        /// Initialize MainPage UserControl elements
@@ -32,13 +33,11 @@ namespace CPSC_481_PROJECT
             InitializeComponent();
             
             //instantiate dropdown list items
-            RoleComboBox.ItemsSource = Profile.RolesList;
-            HeroComboBox.ItemsSource = Profile.HeroesList;
+            RoleComboBox.ItemsSource = SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
+            HeroComboBox.ItemsSource = SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
             GameModeComboBox.ItemsSource = Profile.GameModesList;
 
-            SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
-            SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
-
+            
             SoloSearchQuickplayToggle.IsChecked = true;
             GroupSearchQuickplayToggle.IsChecked = true;
 
@@ -48,24 +47,19 @@ namespace CPSC_481_PROJECT
             RoleComboBox.SelectedItem = userProfile.Role;
             HeroComboBox.SelectedItem = userProfile.Hero;
             GameModeComboBox.SelectedItem = userProfile.GameMode;
+            ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + userProfile.ProfileIconSource));
+
             if (!String.IsNullOrEmpty(userProfile.Status) && !String.IsNullOrWhiteSpace(userProfile.Status))
                 ProfileStatusTextBox.Text = userProfile.Status;
             else
                 ProfileStatusTextBox.Text = "Status Message";
+        
+
 
         }
 
-        /// <summary>
-        /// Initialize default profile image
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ProfileImage_Initialized(object sender, EventArgs e)
-        {
-            //ProfileImage.Source = new BitmapImage(new Uri("http://68.media.tumblr.com/78f1e0e0197fc6f0f4f839d0214a7b47/tumblr_o7ww2x2z2A1rsd6nxo4_250.png"));
-            ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,,/Images/JUSTICE.png"));
-        }
 
+       
         private void TeamJoinRejectButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -123,6 +117,17 @@ namespace CPSC_481_PROJECT
                 !String.IsNullOrWhiteSpace(ProfileStatusTextBox.Text)
                 && !(userProfile == null))
                 userProfile.Status = ProfileStatusTextBox.Text;
+        }
+
+        /// <summary>
+        /// Opens Profile Picture Select Window, then changes image based on icon selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ChangeProfilePicButton_Click(object sender, RoutedEventArgs e)
+        {
+            new ProfilePictureSelectWindow(userProfile).ShowDialog();
+            ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + userProfile.ProfileIconSource));
         }
     }
 }

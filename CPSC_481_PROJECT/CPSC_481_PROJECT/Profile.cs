@@ -16,9 +16,14 @@ namespace CPSC_481_PROJECT
 
         //profile settings variables (with get/set methods)   
         public String Role { get; set; }
+
         public String Hero { get; set; }
+
         public String GameMode { get; set; }
+
         public String Status { get; set; }
+
+        public String ProfileIconSource { get; set; }
 
         //roles, heroes, game mode lists
         public static string[] RolesList = new string[] { "Offense", "Defense", "Tank", "Healer" };
@@ -45,6 +50,8 @@ namespace CPSC_481_PROJECT
             BattleTag = battletag;
             Status = "";
 
+            //default profile icon
+            ProfileIconSource = "/Images/PRO_GENJI.png";
 
         }
 

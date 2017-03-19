@@ -40,6 +40,7 @@ namespace CPSC_481_PROJECT
             defaultProfile.Hero = "Pharah";
             defaultProfile.GameMode = "Ranked";
             defaultProfile.Status = "FIRE ZE MISSILES!";
+            defaultProfile.ProfileIconSource = "/Images/JUSTICE.png";
             UserList.Add(defaultProfile);
 
 
