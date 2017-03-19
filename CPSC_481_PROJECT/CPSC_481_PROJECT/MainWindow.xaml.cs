@@ -39,6 +39,7 @@ namespace CPSC_481_PROJECT
             defaultProfile.Role = "Offense";
             defaultProfile.Hero = "Pharah";
             defaultProfile.GameMode = "Ranked";
+            defaultProfile.Status = "FIRE ZE MISSILES!";
             UserList.Add(defaultProfile);
 
 

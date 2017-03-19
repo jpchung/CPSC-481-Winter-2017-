@@ -18,6 +18,7 @@ namespace CPSC_481_PROJECT
         public String Role { get; set; }
         public String Hero { get; set; }
         public String GameMode { get; set; }
+        public String Status { get; set; }
 
         //roles, heroes, game mode lists
         public static string[] RolesList = new string[] { "Offense", "Defense", "Tank", "Healer" };
@@ -42,6 +43,7 @@ namespace CPSC_481_PROJECT
             usernamePassword.Add(username, password);
 
             BattleTag = battletag;
+            Status = "";
 
 
         }

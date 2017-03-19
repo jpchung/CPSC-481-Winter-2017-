@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC_481_PROJECT"
              mc:Ignorable="d" 
-             d:DesignHeight="720" d:DesignWidth="1280">
+             d:DesignHeight="680" d:DesignWidth="1270">
 
 
 
@@ -66,25 +66,25 @@
                 </Style>
             </TabControl.Resources>
 
-            <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" Margin="48,0,-48,0" >
+            <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" >
                 <Grid>
                     <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="" FontSize="26" Margin="57,14,1017,582" />
                     <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0" Initialized="ProfileImage_Initialized">
                     </Image>
                     <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="57,259,1017,337" FontSize="18"/>
-                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,319,1017,277" FontSize="16" BorderBrush="Black" VerticalAlignment="Center" Height="40"/>
+                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,319,1017,277" FontSize="16" BorderBrush="Black" Height="40" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed"/>
 
-                    <ComboBox x:Name="RoleComboBox" Margin="57,379,1017,217" BorderBrush="Black" FontSize="24">
+                    <ComboBox x:Name="RoleComboBox" Margin="57,379,1017,217" BorderBrush="Black" FontSize="24" SelectionChanged="RoleComboBox_SelectionChanged">
                     </ComboBox>
 
-                    <ComboBox x:Name="HeroComboBox" Height="35" Margin="57,444,1017,157" FontSize="24">
+                    <ComboBox x:Name="HeroComboBox" Height="35" Margin="57,444,1017,157" FontSize="24" SelectionChanged="HeroComboBox_SelectionChanged">
                     </ComboBox>
 
-                    <ComboBox x:Name="GameModeComboBox" HorizontalAlignment="Left" Margin="57,499,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="24">
+                    <ComboBox x:Name="GameModeComboBox" HorizontalAlignment="Left" Margin="57,499,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="24" SelectionChanged="GameModeComboBox_SelectionChanged">
                     </ComboBox>
 
 
-                    <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="639" Margin="317,-3,0,0" VerticalAlignment="Top" Width="957" BorderThickness="0">
+                    <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="639" Margin="317,-3,0,0" VerticalAlignment="Top" Width="947" BorderThickness="0">
                         <TabItem Header="STATS" Width="319">
                             <Grid Background="#FFE5E5E5">
                                 <Grid.ColumnDefinitions>
@@ -104,7 +104,7 @@
                                     </ListView.View>
                                     <TextBlock x:Name="textBlock3_Copy2" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
                                 </ListView>
-                                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="522" Margin="0,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"><Run Text="Wins: 9000"/><LineBreak/><Run Text="Losses: 2"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy %: 90"/><LineBreak/><Run Text=""/><LineBreak/><Run Text="Knockbacks: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 5000"/><LineBreak/><Run Text="Assists: 500"/><LineBreak/><Run Text="Deaths: 50"/></TextBlock>
+                                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="508" Margin="0,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"><Run Text="Wins: 9000"/><LineBreak/><Run Text="Losses: 2"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy %: 90"/><LineBreak/><Run Text=""/><LineBreak/><Run Text="Knockbacks: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 5000"/><LineBreak/><Run Text="Assists: 500"/><LineBreak/><Run Text="Deaths: 50"/></TextBlock>
                                 <Image x:Name="friendImage1_Copy2" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="322,38,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
                                 <Image x:Name="friendImage1_Copy3" Source="Images/ARSON.png" HorizontalAlignment="Left" Height="166" Margin="322,209,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
                                 <Image x:Name="friendImage1_Copy4" Source="Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="166" Margin="322,380,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
@@ -119,9 +119,9 @@
                                 <TextBlock x:Name="textBlock3_Copy5" HorizontalAlignment="Left" Height="166" Margin="350.629,380,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="319">
+                        <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="314">
                             <Grid Background="LightGray">
-                                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="507" Margin="10,53,0,0" VerticalAlignment="Top" Width="303">
+                                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="479" Margin="10,53,0,0" VerticalAlignment="Top" Width="303">
                                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="155">
                                         <Image x:Name="friendImage1" Source="pack://application:,,,/Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
                                     </Border>
@@ -134,7 +134,7 @@
                                 </ListBox>
                                 <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" Margin="23,0,0,0" TextWrapping="Wrap" Text="Friend List" VerticalAlignment="Top" FontSize="36" Width="270"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
-                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="507" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
+                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="479" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Overall" Width="208"/>
@@ -165,7 +165,7 @@
                                 <TextBlock x:Name="textBlock3_Copy10" HorizontalAlignment="Left" Height="100" Margin="843,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="315">
+                        <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="305" Margin="9,0,-9,0">
                             <Grid Background="LightGray">
 
                                 <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="525" Margin="10,10,0,0" VerticalAlignment="Top" Width="918" Background="LightSlateGray" BorderBrush="Black">
@@ -213,7 +213,7 @@
 
 
             </TabItem>
-            <TabItem Header="SEARCH" Width="635" Height="76" FontSize="36">
+            <TabItem Header="SEARCH" Width="625" Height="76" FontSize="36">
                 <Grid>
                     <Grid.Resources>
                         <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
@@ -327,8 +327,10 @@
 
 
         </TabControl>
+        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="1115,630,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click"/>
 
     </Grid>
+
 </UserControl>
 
     
