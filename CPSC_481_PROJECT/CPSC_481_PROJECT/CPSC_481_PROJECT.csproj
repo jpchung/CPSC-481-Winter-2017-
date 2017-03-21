@@ -60,6 +60,9 @@
     </Compile>
     <Compile Include="PageSwitcher.cs" />
     <Compile Include="Profile.cs" />
+    <Compile Include="ProfileFriendControl.xaml.cs">
+      <DependentUpon>ProfileFriendControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProfilePictureSelectWindow.xaml.cs">
       <DependentUpon>ProfilePictureSelectWindow.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ProfileFriendControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProfilePictureSelectWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

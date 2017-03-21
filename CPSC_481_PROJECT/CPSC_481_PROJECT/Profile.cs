@@ -32,6 +32,7 @@ namespace CPSC_481_PROJECT
             "Widowmaker","Winston","Zarya","Zenyatta"};
         public static string[] GameModesList = new string[] { "Quickplay", "Ranked" };
 
+        private List<Profile> friendsList;
 
         /// <summary>
         /// Profile constructor
@@ -58,6 +59,21 @@ namespace CPSC_481_PROJECT
         public Dictionary<String, String> getUsernamePassword()
         {
             return usernamePassword;
+        }
+
+        public void addFriend(Profile newFriendProfile)
+        {
+            friendsList.Add(newFriendProfile);
+        }
+
+        public void defaultFriends(List<Profile> defaultFriendsList)
+        {
+            friendsList = defaultFriendsList;
+        }
+
+        public List<Profile> getFriendsList()
+        {
+            return friendsList;
         }
 
 

@@ -35,11 +35,18 @@ namespace CPSC_481_PROJECT
             //Default User Profile List
             Profile defaultProfile = new Profile("birdnukes@gmail.com", "itsrainingjustice", "cawcaw", "dronestrikes#2016");
             String[] defaultProfileInfo = new String[] { "Offense", "Pharah", "Ranked", "FIRE ZE MISSILES!", "/Images/JUSTICE.png" };
-            setDefaultProfileInfo(defaultProfile, defaultProfileInfo);          
+            setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
+            defaultProfile.defaultFriends(UserList); //test friend list stackpanel with user list
+
             UserList.Add(defaultProfile);
 
             defaultProfile = new Profile("peglegpowderkeg@gmail.com", "fireindahoe", "cheekynandos", "burningman#1969");
             defaultProfileInfo = new String[] {"Defense", "Junkrat","Quickplay","u wot m8?", "/Images/ARSON.png" };
+            setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
+            UserList.Add(defaultProfile);
+
+            defaultProfile = new CPSC_481_PROJECT.Profile("grillsgeneration@op.gg", "xX_Gurl_Gamer_Xx", "geegee", "winkyfayce#2014");
+            defaultProfileInfo = new String[] {"Defense", "D.Va", "Ranked", "Nerf this!", "/Images/MLG_KPOP_GREMLIN.png"};
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
 
@@ -72,6 +79,8 @@ namespace CPSC_481_PROJECT
             profile.Status = profileInfo[3];
             profile.ProfileIconSource = profileInfo[4];
         }
+
+        
 
        
     }

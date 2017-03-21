@@ -60,6 +60,15 @@ namespace CPSC_481_PROJECT
                 ProfileStatusTextBox.Text = userProfile.Status;
             else
                 ProfileStatusTextBox.Text = "Status Message";
+
+            List<Profile> ProfileFriendsList = userProfile.getFriendsList();
+            if((ProfileFriendsList != null) && ProfileFriendsList.Any())
+            {
+                foreach(Profile friend in ProfileFriendsList)
+                {
+                    FriendsListPanel.Children.Add(new ProfileFriendControl(friend));
+                }
+            }
         
 
 

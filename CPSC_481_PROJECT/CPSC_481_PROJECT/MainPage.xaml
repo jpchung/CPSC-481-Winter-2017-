@@ -77,7 +77,7 @@
                     <ComboBox x:Name="RoleComboBox" Margin="57,379,1017,217" BorderBrush="Black" FontSize="24" SelectionChanged="RoleComboBox_SelectionChanged">
                     </ComboBox>
 
-                    <ComboBox x:Name="HeroComboBox" Height="35" Margin="57,444,1017,157" FontSize="24" SelectionChanged="HeroComboBox_SelectionChanged">
+                    <ComboBox x:Name="HeroComboBox" Height="35" Margin="57,444,1017,157" FontSize="22" SelectionChanged="HeroComboBox_SelectionChanged">
                     </ComboBox>
 
                     <ComboBox x:Name="GameModeComboBox" HorizontalAlignment="Left" Margin="57,499,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="24" SelectionChanged="GameModeComboBox_SelectionChanged">
@@ -121,19 +121,16 @@
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="314">
                             <Grid Background="LightGray">
-                                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="479" Margin="10,53,0,0" VerticalAlignment="Top" Width="303">
-                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="155">
-                                        <Image x:Name="friendImage1" Source="pack://application:,,,/Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
-                                    </Border>
-                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="293">
-                                        <Image x:Name="friendImage2" Source="Images/EDGELORD420.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
-                                    </Border>
-                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="293">
-                                        <Image x:Name="friendImage3" Source="Images/GUN_GRANNY.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
-                                    </Border>
-                                </ListBox>
-                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" Margin="23,0,0,0" TextWrapping="Wrap" Text="Friend List" VerticalAlignment="Top" FontSize="36" Width="270"/>
+                                <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300">
+                                   <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent"  Margin="10,53,0,0" VerticalAlignment="Top" Width="300">
+
+                                   </StackPanel>
+                                    
+                                </ScrollViewer>
+                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="273" Margin="10,0,0,0"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
+                                
+
                                 <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="479" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
                                     <ListView.View>
                                         <GridView>
@@ -143,18 +140,9 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <TextBlock x:Name="friendOneUsername" HorizontalAlignment="Left" Height="50" Margin="179,53,0,0" TextWrapping="Wrap" FontSize= "25" Text="GenjiGod" VerticalAlignment="Top" Width="134"/>
-                                <TextBlock x:Name="friendOneStatusMessage" HorizontalAlignment="Left" Height="45" Margin="179,114,0,0" TextWrapping="Wrap" FontSize= "20" Text="I need healing!" VerticalAlignment="Top" Width="134"/>
-                                <TextBlock x:Name="friendTwoUsername" HorizontalAlignment="Left" Height="50" Margin="179,213,0,0" TextWrapping="Wrap" FontSize= "25" Text="OwO" VerticalAlignment="Top" Width="134"/>
-                                <TextBlock x:Name="friendThreeUsername" HorizontalAlignment="Left" Height="50" Margin="179,385,0,0" TextWrapping="Wrap" FontSize= "25" Text="GitGud420" VerticalAlignment="Top" Width="134"/>
-                                <TextBlock x:Name="friendTwoStatusMessage" HorizontalAlignment="Left" Height="45" Margin="179,268,0,0" TextWrapping="Wrap" FontSize= "20" Text="Wots this?" VerticalAlignment="Top" Width="134"/>
-                                <TextBlock x:Name="friendThreeStatusMessage" HorizontalAlignment="Left" Height="35" Margin="179,435,0,0" TextWrapping="Wrap" FontSize= "20" Text="Die already" VerticalAlignment="Top" Width="134"/>
                                 <Image x:Name="friendImage1_Copy" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="530,90,0,0" VerticalAlignment="Top" Width="100"/>
                                 <Image x:Name="friendImage1_Copy1" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="101" Margin="738,90,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.54,0.453"/>
                                 <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="435" Margin="333,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="30"><Run Text="Wins: 1"/><LineBreak/><Run Text="Losses: "/><Run Text="998"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy:"/><LineBreak/><Run Text="20%"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 0"/><LineBreak/><Run Text="Assists:"/><Run Text=" "/><Run Text="1"/><LineBreak/><Run Text="Deaths: 99"/><Run Text="8"/></TextBlock>
-                                <Button x:Name="RemoveFriendButton" Content="UnFriend" HorizontalAlignment="Left" Margin="193,164,0,0" VerticalAlignment="Top" Width="100" Height="34" FontSize="20"/>
-                                <Button x:Name="RemoveFriendButton_Copy" Content="UnFriend" HorizontalAlignment="Left" Margin="193,318,0,0" VerticalAlignment="Top" Width="100" Height="34" FontSize="20"/>
-                                <Button x:Name="RemoveFriendButton_Copy1" Content="UnFriend" HorizontalAlignment="Left" Margin="193,475,0,0" VerticalAlignment="Top" Width="100" Height="34" FontSize="20"/>
                                 <Image x:Name="friendImage1_Copy8" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,196,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1,0.37"/>
                                 <Image x:Name="friendImage1_Copy9" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,301,0,0" VerticalAlignment="Top" Width="100"/>
                                 <Image x:Name="friendImage1_Copy10" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,409,0,0" VerticalAlignment="Top" Width="100"/>
