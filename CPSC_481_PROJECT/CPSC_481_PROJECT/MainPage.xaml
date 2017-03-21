@@ -84,7 +84,7 @@
                     </ComboBox>
 
 
-                    <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="639" Margin="317,-3,0,0" VerticalAlignment="Top" Width="947" BorderThickness="0">
+                    <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="595" Margin="317,-3,0,0" VerticalAlignment="Top" Width="947" BorderThickness="0">
                         <TabItem Header="STATS" Width="319">
                             <Grid Background="#FFE5E5E5">
                                 <Grid.ColumnDefinitions>

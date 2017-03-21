@@ -33,16 +33,15 @@ namespace CPSC_481_PROJECT
             InitializeComponent();
 
             //Default User Profile List
-           // UserList.Add(new Profile("birdnukes@gmail.com", "itsrainingjustice", "cawcaw", "dronestrikes#2016"));
-            //UserList.Add(new Profile("peglegpowderkeg@gmail.com","fireindahoe","cheekynandos","burningman#1969"));
             Profile defaultProfile = new Profile("birdnukes@gmail.com", "itsrainingjustice", "cawcaw", "dronestrikes#2016");
-            defaultProfile.Role = "Offense";
-            defaultProfile.Hero = "Pharah";
-            defaultProfile.GameMode = "Ranked";
-            defaultProfile.Status = "FIRE ZE MISSILES!";
-            defaultProfile.ProfileIconSource = "/Images/JUSTICE.png";
+            String[] defaultProfileInfo = new String[] { "Offense", "Pharah", "Ranked", "FIRE ZE MISSILES!", "/Images/JUSTICE.png" };
+            setDefaultProfileInfo(defaultProfile, defaultProfileInfo);          
             UserList.Add(defaultProfile);
 
+            defaultProfile = new Profile("peglegpowderkeg@gmail.com", "fireindahoe", "cheekynandos", "burningman#1969");
+            defaultProfileInfo = new String[] {"Defense", "Junkrat","Quickplay","u wot m8?", "/Images/ARSON.png" };
+            setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
+            UserList.Add(defaultProfile);
 
             //initialize MainWindow to Login page by default
             PageSwitcher.pageSwitchWindow = this;
@@ -59,5 +58,21 @@ namespace CPSC_481_PROJECT
         {
             this.Content = nextPage;
         }
+
+        /// <summary>
+        /// set info for default Profiles on startup
+        /// </summary>
+        /// <param name="profile"></param>
+        /// <param name="profileInfo"></param>
+        private void setDefaultProfileInfo(Profile profile, String[] profileInfo)
+        {
+            profile.Role = profileInfo[0];
+            profile.Hero = profileInfo[1];
+            profile.GameMode = profileInfo[2];
+            profile.Status = profileInfo[3];
+            profile.ProfileIconSource = profileInfo[4];
+        }
+
+       
     }
 }
