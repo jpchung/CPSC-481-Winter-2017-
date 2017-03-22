@@ -60,6 +60,7 @@ namespace CPSC_481_PROJECT
 
                 //add new Profile to list of users
                 MainWindow.UserList.Add(newProfile);
+                PageSwitcher.Switch(new LoginPage());
                 Close();
 
             }

@@ -20,21 +20,77 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class ProfileFriendControl : UserControl
     {
-        private Profile profile;
+        private Profile user, friend;
+        private StackPanel parentPanel;
 
-        public ProfileFriendControl(Profile friendProfile)
+        public ProfileFriendControl(Profile userProfile, Profile friendProfile, StackPanel friendsListPanel)
         {
             InitializeComponent();
 
+            //load current user
+            user = userProfile;
+
             //load friend profile details into user control elements 
-            profile = friendProfile;
-            FriendProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + profile.ProfileIconSource));
-            FriendUsername.Text = profile.getUsernamePassword().Keys.ElementAt(0);
-            if (!String.IsNullOrEmpty(profile.Status) && !String.IsNullOrWhiteSpace(profile.Status))
-                FriendStatusMessage.Text = profile.Status;
+            this.friend = friendProfile;
+            FriendProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + friend.ProfileIconSource));
+            FriendUsername.Text = friend.getUsernamePassword().Keys.ElementAt(0);
+            if (!String.IsNullOrEmpty(friend.Status) && !String.IsNullOrWhiteSpace(friend.Status))
+                FriendStatusMessage.Text = friend.Status;
             else
                 FriendStatusMessage.Text = "Status Message";
 
+            this.parentPanel = friendsListPanel;
+
+            
+        }
+
+        /// <summary>
+        /// Highlights the Friend UserControl background to convey selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FriendControlSelectButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            foreach(ProfileFriendControl friendControl in parentPanel.Children)
+            {
+                friendControl.FriendControlBackground.Background = Brushes.White;
+
+                if (this.Equals(friendControl))
+                    this.FriendControlBackground.Background = Brushes.Yellow;
+
+            }
+        }
+
+        /// <summary>
+        /// Removes friend from Friends List and Panel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UnfriendButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (ProfileFriendControl friendControl in parentPanel.Children)
+            {
+                //remove from friend list Panel
+                if (this.Equals(friendControl))
+                {
+                    parentPanel.Children.Remove(this);
+                    break;
+                }
+
+
+            }
+
+            List<Profile> userFriendList = user.getFriendsList();
+            //remove from Profile friend List
+            foreach(Profile friendToRemove in userFriendList)
+            {
+                if(friend.Equals(friendToRemove))
+                {
+                    userFriendList.Remove(friend);
+                    break;
+                }
+            }
         }
     }
 }

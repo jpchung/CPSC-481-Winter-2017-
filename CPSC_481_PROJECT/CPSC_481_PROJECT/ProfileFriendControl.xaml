@@ -7,16 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="140" d:DesignWidth="280">
     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="140"  VerticalAlignment="Top" Width="280">
-        <Grid Background="White">
+        <Grid x:Name="FriendControlBackground" Background="White">
+            <Button x:Name="FriendControlSelectButton" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="278" Height="138" Click="FriendControlSelectButton_Click" Opacity="0.7"/>
+
             <Image x:Name="FriendProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="20,20,0,0"/>
             <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0" VerticalAlignment="Top" Width="100"/>
 
-            <TextBlock x:Name="FriendUsername" HorizontalAlignment="Left" Margin="138,20,0,0" FontSize="20" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="125" Height="30"/>
-            <TextBlock x:Name="FriendStatusMessage" HorizontalAlignment="Left" Margin="138,55,0,0" FontSize="14" TextWrapping="Wrap" Text="Friend Status" VerticalAlignment="Top" Width="125" Height="20"/>
-            <Button x:Name="UnfriendButton" Content="UNFRIEND" FontSize="14" HorizontalAlignment="Left" Margin="138,90,0,0" VerticalAlignment="Top" Width="115" Height="30"/>
+            <TextBlock x:Name="FriendUsername" HorizontalAlignment="Left" Margin="138,20,0,0" FontSize="20" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="Auto" Height="30"/>
+            <TextBlock x:Name="FriendStatusMessage" HorizontalAlignment="Left" Margin="138,55,0,0" FontSize="14" TextWrapping="Wrap" Text="Friend Status" VerticalAlignment="Top" Width="Auto" Height="20"/>
+
+            <Button x:Name="UnfriendButton" Content="UNFRIEND" FontSize="14" HorizontalAlignment="Left" Margin="138,90,0,0" VerticalAlignment="Top" Width="115" Height="30" Click="UnfriendButton_Click"/>
 
 
         </Grid>
     </Border>
-   
+
 </UserControl>

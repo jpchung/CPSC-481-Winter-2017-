@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_PROJECT"
-        WindowStyle="None"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="SignupProfileSettingsWindow" Height="350" Width="300">
+        Title="SignupProfileSettingsWindow" Height="370" Width="300">
     <Grid>
         <Button x:Name="SignupProfileSettingsDone_button" Content="DONE" HorizontalAlignment="Left" Margin="50,285,0,0" VerticalAlignment="Top" Width="180" Height="35" Click="SignupProfileSettingsDone_button_Click"/>
         <ComboBox x:Name="SignupRoleComboBox" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="180" Height="30"/>

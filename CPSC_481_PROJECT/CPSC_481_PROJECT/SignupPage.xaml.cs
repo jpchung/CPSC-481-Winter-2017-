@@ -152,7 +152,6 @@ namespace CPSC_481_PROJECT
                 //instantiate new user profile, add to list of user logins
                 Profile newUser = new Profile(newEmail, newUsername, newPassword, newBattleTag);
                 new SignupProfileSettingsWindow(newUser).ShowDialog();
-                PageSwitcher.Switch(new LoginPage());
             }
 
         }
