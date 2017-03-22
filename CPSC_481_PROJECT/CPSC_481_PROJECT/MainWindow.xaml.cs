@@ -37,7 +37,7 @@ namespace CPSC_481_PROJECT
             String[] defaultProfileInfo = new String[] { "Offense", "Pharah", "Ranked", "FIRE ZE MISSILES!", "/Images/JUSTICE.png" };
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             defaultProfile.defaultFriends(UserList); //test friend list stackpanel with user list
-
+            defaultProfile.defaultTeam(UserList); //test team list stackpanel with user list
             UserList.Add(defaultProfile);
 
             defaultProfile = new Profile("peglegpowderkeg@gmail.com", "fireindahoe", "cheekynandos", "burningman#1969");

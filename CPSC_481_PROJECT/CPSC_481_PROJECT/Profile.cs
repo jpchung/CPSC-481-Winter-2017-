@@ -33,6 +33,7 @@ namespace CPSC_481_PROJECT
         public static string[] GameModesList = new string[] { "Quickplay", "Ranked" };
 
         private List<Profile> friendsList;
+        private List<Profile> teamList;
 
         /// <summary>
         /// Profile constructor
@@ -56,24 +57,55 @@ namespace CPSC_481_PROJECT
 
         }
 
+        /// <summary>
+        /// get method for username-password dictionary
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<String, String> getUsernamePassword()
         {
             return usernamePassword;
         }
 
+        /// <summary>
+        /// Add user profile to friends list
+        /// </summary>
+        /// <param name="newFriendProfile"></param>
         public void addFriend(Profile newFriendProfile)
         {
             friendsList.Add(newFriendProfile);
         }
 
+        /// <summary>
+        /// debugging method to set default friends list
+        /// </summary>
+        /// <param name="defaultFriendsList"></param>
         public void defaultFriends(List<Profile> defaultFriendsList)
         {
             friendsList = defaultFriendsList;
         }
 
+        /// <summary>
+        /// get friends list
+        /// </summary>
+        /// <returns></returns>
         public List<Profile> getFriendsList()
         {
             return friendsList;
+        }
+
+        public void addTeamMember(Profile newMember)
+        {
+            teamList.Add(newMember);
+        }
+
+        public void defaultTeam(List<Profile> defaultTeamList)
+        {
+            teamList = defaultTeamList;
+        }
+
+        public List<Profile> getTeamList()
+        {
+            return teamList;
         }
 
 

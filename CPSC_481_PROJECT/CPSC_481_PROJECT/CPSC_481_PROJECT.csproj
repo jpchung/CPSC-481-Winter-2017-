@@ -66,6 +66,9 @@
     <Compile Include="ProfilePictureSelectWindow.xaml.cs">
       <DependentUpon>ProfilePictureSelectWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfileTeamMemberControl.xaml.cs">
+      <DependentUpon>ProfileTeamMemberControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignupPage.xaml.cs">
       <DependentUpon>SignupPage.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProfilePictureSelectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProfileTeamMemberControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

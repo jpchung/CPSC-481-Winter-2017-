@@ -36,7 +36,6 @@ namespace CPSC_481_PROJECT
             RoleComboBox.ItemsSource = SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
             HeroComboBox.ItemsSource = SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
             GameModeComboBox.ItemsSource = Profile.GameModesList;
-
             
             SoloSearchQuickplayToggle.IsChecked = true;
             GroupSearchQuickplayToggle.IsChecked = true;
@@ -61,17 +60,21 @@ namespace CPSC_481_PROJECT
             else
                 ProfileStatusTextBox.Text = "Status Message";
 
+            //friends list
             List<Profile> ProfileFriendsList = userProfile.getFriendsList();
             if((ProfileFriendsList != null) && ProfileFriendsList.Any())
             {
-                foreach(Profile friend in ProfileFriendsList)
-                {
-                    FriendsListPanel.Children.Add(new ProfileFriendControl(friend));
-                }
+                foreach(Profile friend in ProfileFriendsList)                
+                    FriendsListPanel.Children.Add(new ProfileFriendControl(friend));                
+            }
+
+            List<Profile> ProfileTeamList = userProfile.getTeamList();
+            if((ProfileTeamList != null) && ProfileTeamList.Any())
+            {
+                foreach (Profile member in ProfileTeamList)
+                    TeamListPanel.Children.Add(new ProfileTeamMemberControl(member));
             }
         
-
-
         }
 
 

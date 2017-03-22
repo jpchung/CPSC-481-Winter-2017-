@@ -69,7 +69,7 @@
             <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" >
                 <Grid>
                     <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="" FontSize="26" Margin="57,14,1017,582" />
-                    <Image x:Name="ProfileImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0">
+                    <Image x:Name="ProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0">
                     </Image>
                     <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="57,259,1017,337" FontSize="18" Click="ChangeProfilePicButton_Click"/>
                     <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,319,1017,277" FontSize="16" BorderBrush="Black" Height="40" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed"/>
@@ -121,15 +121,15 @@
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="314">
                             <Grid Background="LightGray">
-                                <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300">
-                                   <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent"  Margin="10,53,0,0" VerticalAlignment="Top" Width="300">
+                                <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0">
+                                    <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
 
-                                   </StackPanel>
-                                    
+                                    </StackPanel>
+
                                 </ScrollViewer>
                                 <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="273" Margin="10,0,0,0"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
-                                
+
 
                                 <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="479" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
                                     <ListView.View>
@@ -156,39 +156,19 @@
                         <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="305" Margin="9,0,-9,0">
                             <Grid Background="LightGray">
 
-                                <ListView x:Name="TeamListView" HorizontalAlignment="Left" Height="525" Margin="10,10,0,0" VerticalAlignment="Top" Width="918" Background="LightSlateGray" BorderBrush="Black">
-                                    <ListView.Resources>
-                                        <Style TargetType="{x:Type GridViewColumnHeader}">
-                                            <Setter Property="HorizontalContentAlignment" Value="Left" />
-                                        </Style>
-                                    </ListView.Resources>
-                                    <ListView.View>
-                                        <GridView>
-                                            <GridViewColumn Header="Team Name: NoHeals4MyFeels" Width="933" />
-                                        </GridView>
+                                <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,50,0,0">
+                                    <StackPanel x:Name="TeamListPanel" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="908">
 
-                                    </ListView.View>
-                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="155">
-                                        <Image x:Name="TeamMemberImage1" Source="/Images/MLG_KPOP_GREMLIN.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
+                                    </StackPanel>
 
-                                    </Border>
-                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="155">
-                                        <Image x:Name="TeamMemberImage2" Source="/Images/JUSTICE.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
-                                    </Border>
-                                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="155">
-                                        <Image x:Name="TeamMemberImage3" Source="pack://application:,,,/Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="135" Margin="9,9,0,0" VerticalAlignment="Top" Width="143"/>
-                                    </Border>
-                                </ListView>
+                                </ScrollViewer>
 
-                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="743,18,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="37" FontSize="16"/>
+                                <TextBlock x:Name="TeamListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Team Name: " Background="White" VerticalAlignment="Top" FontSize="36" Width="918" Margin="15,7,0,0" Height="43"/>
+                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="763,10,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="35" FontSize="16"/>
 
 
-                                <TextBlock x:Name="TeamMemberUsername1" HorizontalAlignment="Left" Margin="203,95,0,0" TextWrapping="Wrap" Text="xX_Gurl_Gamer_Xx" VerticalAlignment="Top" FontSize="32"/>
-                                <TextBlock x:Name="TeamMemberUsername2" HorizontalAlignment="Left" Margin="203,250,0,0" TextWrapping="Wrap" Text="ItsRainingJustice" VerticalAlignment="Top" FontSize="32"/>
-                                <TextBlock x:Name="TeamMemberUsername3" HorizontalAlignment="Left" Margin="203,410,0,0" TextWrapping="Wrap" Text="DANKEY_KANG" VerticalAlignment="Top" FontSize="32"/>
-                                <TextBlock x:Name="TeamMemberBattleTag1" HorizontalAlignment="Left" Margin="203,155,0,0" TextWrapping="Wrap" Text="Battletag: winkyfayce#6969" VerticalAlignment="Top" FontSize="26"/>
-                                <TextBlock x:Name="TeamMemberBattleTag2" HorizontalAlignment="Left" Margin="203,315,0,0" TextWrapping="Wrap" Text="Battletag: DroneStrikes#2016" VerticalAlignment="Top" FontSize="26"/>
-                                <TextBlock x:Name="TeamMemberBattleTag3" HorizontalAlignment="Left" Margin="203,480,0,0" TextWrapping="Wrap" Text="Battletag: expanddong#0420" VerticalAlignment="Top" FontSize="26"/>
+
+
 
                             </Grid>
                         </TabItem>
