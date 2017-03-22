@@ -68,6 +68,7 @@ namespace CPSC_481_PROJECT
                     FriendsListPanel.Children.Add(new ProfileFriendControl(friend));                
             }
 
+            //team list
             List<Profile> ProfileTeamList = userProfile.getTeamList();
             if((ProfileTeamList != null) && ProfileTeamList.Any())
             {
