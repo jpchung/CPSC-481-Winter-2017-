@@ -93,16 +93,28 @@ namespace CPSC_481_PROJECT
             return friendsList;
         }
 
+        /// <summary>
+        /// Add new member profile to team list
+        /// </summary>
+        /// <param name="newMember"></param>
         public void addTeamMember(Profile newMember)
         {
             teamList.Add(newMember);
         }
 
+        /// <summary>
+        /// debugging method to set default team list
+        /// </summary>
+        /// <param name="defaultTeamList"></param>
         public void defaultTeam(List<Profile> defaultTeamList)
         {
             teamList = defaultTeamList;
         }
 
+        /// <summary>
+        /// get team list
+        /// </summary>
+        /// <returns></returns>
         public List<Profile> getTeamList()
         {
             return teamList;

@@ -26,7 +26,7 @@ namespace CPSC_481_PROJECT
         
     
        /// <summary>
-       /// Initialize MainPage UserControl elements
+       /// Initialize MainPage UserControl elements based on user login
        /// </summary>
         public MainPage(int userIndex)
         {
