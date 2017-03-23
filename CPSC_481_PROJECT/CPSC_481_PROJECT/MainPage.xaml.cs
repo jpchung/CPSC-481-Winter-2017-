@@ -85,7 +85,11 @@ namespace CPSC_481_PROJECT
         }
 
 
-       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TeamJoinRejectButton_Click(object sender, RoutedEventArgs e)
         {
 
