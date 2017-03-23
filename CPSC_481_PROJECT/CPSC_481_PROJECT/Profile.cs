@@ -28,7 +28,7 @@ namespace CPSC_481_PROJECT
         //roles, heroes, game mode lists
         public static string[] RolesList = new string[] { "Offense", "Defense", "Tank", "Support" };
         public static string[] HeroesList = new string[] {"Ana","Bastion","D.Va","Genji","Hanzo","Junkrat","Lucio","McCree","Mei","Mercy",
-            "Pharah","Reaper","Reinhardt","Roadhog","Soldier: 76","Sombra", "Symmetra","Torbjorn","Tracer",
+            "Orisa","Pharah","Reaper","Reinhardt","Roadhog","Soldier: 76","Sombra", "Symmetra","Torbjorn","Tracer",
             "Widowmaker","Winston","Zarya","Zenyatta"};
         public static string[] GameModesList = new string[] { "Quickplay", "Ranked" };
 
