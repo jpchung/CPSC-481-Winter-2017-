@@ -97,6 +97,11 @@ namespace CPSC_481_PROJECT
                 InvalidSignupPrompt("Password fields don't match!");
                 ValidSignup = false;
             }
+            else if (SignupUsernameInput.Text.Length > 20)
+            {
+                InvalidSignupPrompt("Maximum Username length is 20 characters");
+                ValidSignup = false;
+            }
             else
             {
 
@@ -131,6 +136,7 @@ namespace CPSC_481_PROJECT
                         ValidSignup = false;
                         break;
                     }
+                    
                     else
                     {
                         ValidSignup = true;

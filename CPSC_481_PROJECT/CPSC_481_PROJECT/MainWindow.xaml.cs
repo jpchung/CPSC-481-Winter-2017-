@@ -45,7 +45,7 @@ namespace CPSC_481_PROJECT
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
 
-            defaultProfile = new CPSC_481_PROJECT.Profile("grillsgeneration@op.gg", "xX_Gurl_Gamer_Xx", "geegee", "winkyfayce#2014");
+            defaultProfile = new CPSC_481_PROJECT.Profile("grillsgeneration@op.gg", "xX_GurlGamer_Xx", "geegee", "winkyfayce#2014");
             defaultProfileInfo = new String[] {"Defense", "D.Va", "Ranked", "Nerf this!", "/Images/MLG_KPOP_GREMLIN.png"};
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);

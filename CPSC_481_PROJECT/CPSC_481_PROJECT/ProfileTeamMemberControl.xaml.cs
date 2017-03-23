@@ -29,7 +29,7 @@ namespace CPSC_481_PROJECT
             //load team member profile detail into user control elements
             profile = memberProfile;
             TeamMemberProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + profile.ProfileIconSource));
-            TeamMemberUsername.Text = profile.getUsernamePassword().Keys.ElementAt(0);
+            TeamMemberUsername.Text = "Username: " + profile.getUsernamePassword().Keys.ElementAt(0);
             TeamMemberBattletag.Text = "BattleTag: " + profile.BattleTag;
         }
     }

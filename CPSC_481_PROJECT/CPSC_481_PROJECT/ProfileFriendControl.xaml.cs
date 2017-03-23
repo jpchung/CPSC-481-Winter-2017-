@@ -34,6 +34,27 @@ namespace CPSC_481_PROJECT
             this.friend = friendProfile;
             FriendProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + friend.ProfileIconSource));
             FriendUsername.Text = friend.getUsernamePassword().Keys.ElementAt(0);
+                        
+            switch(FriendUsername.Text.Length)
+            {
+                case 15:
+                case 16:
+                case 17:
+                    FriendUsername.FontSize = 18;
+                    break;
+                case 18:
+                    FriendUsername.FontSize = 16;
+                    break;
+                case 19:
+                    FriendUsername.FontSize = 15;
+                    break;
+                case 20:
+                    FriendUsername.FontSize = 14;
+                    break;
+                default:
+                    break;
+            }
+
             if (!String.IsNullOrEmpty(friend.Status) && !String.IsNullOrWhiteSpace(friend.Status))
                 FriendStatusMessage.Text = friend.Status;
             else
