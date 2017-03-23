@@ -75,6 +75,9 @@
     <Compile Include="SignupProfileSettingsWindow.xaml.cs">
       <DependentUpon>SignupProfileSettingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SoloSearchControl.xaml.cs">
+      <DependentUpon>SoloSearchControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SignupProfileSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SoloSearchControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -26,7 +26,7 @@ namespace CPSC_481_PROJECT
         public String ProfileIconSource { get; set; }
 
         //roles, heroes, game mode lists
-        public static string[] RolesList = new string[] { "Offense", "Defense", "Tank", "Healer" };
+        public static string[] RolesList = new string[] { "Offense", "Defense", "Tank", "Support" };
         public static string[] HeroesList = new string[] {"Ana","Bastion","D.Va","Genji","Hanzo","Junkrat","Lucio","McCree","Mei","Mercy",
             "Pharah","Reaper","Reinhardt","Roadhog","Soldier: 76","Sombra", "Symmetra","Torbjorn","Tracer",
             "Widowmaker","Winston","Zarya","Zenyatta"};
