@@ -106,7 +106,7 @@ namespace CPSC_481_PROJECT
             //remove from Profile friend List
             foreach(Profile friendToRemove in userFriendList)
             {
-                if(friend.Equals(friendToRemove))
+                if(friend.Equals(friendToRemove) && !friend.Equals(user))
                 {
                     userFriendList.Remove(friend);
                     break;

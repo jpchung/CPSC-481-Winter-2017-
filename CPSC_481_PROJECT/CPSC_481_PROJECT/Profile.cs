@@ -55,6 +55,7 @@ namespace CPSC_481_PROJECT
             //default profile icon
             ProfileIconSource = "/Images/PRO_GENJI.png";
 
+
         }
 
         /// <summary>

@@ -33,14 +33,14 @@ namespace CPSC_481_PROJECT
             InitializeComponent();
 
             //Default User Profile List
-            Profile defaultProfile = new Profile("birdnukes@gmail.com", "itsrainingjustice", "cawcaw", "dronestrikes#2016");
+            Profile defaultProfile = new Profile("birdnukes@gmail.com", "ItsRainingJustice", "cawcaw", "dronestrikes#2016");
             String[] defaultProfileInfo = new String[] { "Offense", "Pharah", "Ranked", "FIRE ZE MISSILES!", "/Images/JUSTICE.png" };
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             defaultProfile.defaultFriends(UserList); //test friend list stackpanel with user list
             defaultProfile.defaultTeam(UserList); //test team list stackpanel with user list
             UserList.Add(defaultProfile);
 
-            defaultProfile = new Profile("peglegpowderkeg@gmail.com", "fireindahoe", "cheekynandos", "burningman#1969");
+            defaultProfile = new Profile("peglegpowderkeg@gmail.com", "FireinDaHoe", "cheekynandos", "burningman#1969");
             defaultProfileInfo = new String[] {"Defense", "Junkrat","Quickplay","u wot m8?", "/Images/ARSON.png" };
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);

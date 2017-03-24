@@ -7,13 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="945">
     <Grid x:Name="SoloSearchControlBackground" Background="LightSlateGray">
-        <Image x:Name="SoloSearchProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="150" Margin="30,25,0,0" VerticalAlignment="Top" Width="150"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="30,25,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="SoloSearchProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="150" Margin="30,20,0,0" VerticalAlignment="Top" Width="150"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="30,20,0,0" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="SoloSearchUsername" FontSize="32" HorizontalAlignment="Left" Margin="206,44,0,0" TextWrapping="Wrap" Text="Solo Search Username" VerticalAlignment="Top" Height="41" Width="Auto"/>
         <Button x:Name="SoloSearchAddFriendButton" Content="Add Friend" FontSize="22" HorizontalAlignment="Left" Margin="206,115,0,0" VerticalAlignment="Top" Width="140" Height="45"/>
         <Image x:Name="SoloSearchRoleIcon" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="100" Margin="550,44,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="SoloSearchHeroImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="150" Margin="755,25,0,0" VerticalAlignment="Top" Width="150"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="755,25,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="SoloSearchHeroImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="150" Margin="755,20,0,0" VerticalAlignment="Top" Width="150"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="755,20,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="SoloSearchHeroName" FontSize="12" HorizontalAlignment="Center" Margin="799,174,85,0" TextWrapping="Wrap" Text="Hero Name" VerticalAlignment="Top"/>
 
 
     </Grid>

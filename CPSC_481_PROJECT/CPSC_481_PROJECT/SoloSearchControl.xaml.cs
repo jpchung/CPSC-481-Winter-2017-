@@ -55,16 +55,18 @@ namespace CPSC_481_PROJECT
             SoloSearchRoleIcon.Source = new BitmapImage(new Uri("pack://application:,,,/Images/" + roleIconSource));
 
             //load hero icon based on profile settings
-            String HeroIconSource;
+            String HeroIconSource;          
             switch(otherUser.Hero)
             {
                 case "Ana":
                     HeroIconSource = "ana.png";
                     break;
                 case "Bastion":
+
                     HeroIconSource = "bastion.png";
                     break;
                 case "D.Va":
+
                     HeroIconSource = "dva.png";
                     break;
                 case "Genji":
@@ -127,15 +129,13 @@ namespace CPSC_481_PROJECT
                 case "Zarya":
                     HeroIconSource = "zarya.png";
                     break;
-                case "Zenyatta":
-                    HeroIconSource = "zenyatta.png";
-                    break;
+                case "Zenyatta":                   
                 default:
                     HeroIconSource = "zenyatta.png";
                     break;
             }
             SoloSearchHeroImage.Source = new BitmapImage(new Uri("pack://application:,,,/HeroIcons/" + HeroIconSource));
-
+            SoloSearchHeroName.Text = otherUser.Hero;
 
         }
     }

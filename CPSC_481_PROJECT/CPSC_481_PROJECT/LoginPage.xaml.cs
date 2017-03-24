@@ -81,8 +81,8 @@ namespace CPSC_481_PROJECT
 
             if(!inputFieldsEmpty)
             {
-                //username case insensitive, password case sensitive
-                String loginUsername = UsernameInput.Text.ToLower();
+                //username, password case sensitive
+                String loginUsername = UsernameInput.Text;
                 String loginPassword = LoginPasswordBox.Password;
 
 

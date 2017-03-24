@@ -52,6 +52,7 @@ namespace CPSC_481_PROJECT
             GameModeComboBox.SelectedItem = userProfile.GameMode;
 
             //profile picture
+            
             ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + userProfile.ProfileIconSource));
 
             //status message

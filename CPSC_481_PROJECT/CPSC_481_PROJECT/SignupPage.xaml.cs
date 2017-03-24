@@ -106,7 +106,7 @@ namespace CPSC_481_PROJECT
             {
 
                 String newEmail = EmailInput.Text;
-                String newUsername = SignupUsernameInput.Text.ToLower(); //username case insensitive
+                String newUsername = SignupUsernameInput.Text; 
                 String newPassword = SignupPasswordBox.Password; //password is case sensitive
                 String newBattleTag = BattetagInput.Text;
 
@@ -151,7 +151,7 @@ namespace CPSC_481_PROJECT
             if (ValidSignup)
             {
                 String newEmail = EmailInput.Text;
-                String newUsername = SignupUsernameInput.Text.ToLower(); //username case insensitive
+                String newUsername = SignupUsernameInput.Text; //username case sensitive
                 String newPassword = SignupPasswordBox.Password; //password is case sensitive
                 String newBattleTag = BattetagInput.Text;
 
