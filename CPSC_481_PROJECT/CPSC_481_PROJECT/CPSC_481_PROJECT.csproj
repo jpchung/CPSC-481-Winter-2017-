@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GroupSearchControl.xaml.cs">
+      <DependentUpon>GroupSearchControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,10 @@
     <Compile Include="SoloSearchControl.xaml.cs">
       <DependentUpon>SoloSearchControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="GroupSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

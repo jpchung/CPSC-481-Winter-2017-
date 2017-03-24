@@ -79,9 +79,14 @@ namespace CPSC_481_PROJECT
 
             //list of all users for solo search tab
             foreach(Profile otherProfile in MainWindow.UserList)
-            {
                 SoloSearchStackPanel.Children.Add(new SoloSearchControl(userProfile, otherProfile));
-            }
+
+
+            //list of all teams in team search tab
+            //FIX LATER: make actual team list for app
+            foreach (Profile otherProfile in MainWindow.UserList)
+                GroupSearchStackPanel.Children.Add(new GroupSearchControl());
+
         
         }
 
