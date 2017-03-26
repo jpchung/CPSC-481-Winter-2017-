@@ -84,8 +84,8 @@ namespace CPSC_481_PROJECT
 
             //list of all teams in team search tab
             //FIX LATER: make actual team list for app
-            foreach (Profile otherProfile in MainWindow.UserList)
-                GroupSearchStackPanel.Children.Add(new GroupSearchControl());
+            //foreach (var item in MainWindow.TeamsList)
+            //   GroupSearchStackPanel.Children.Add(new GroupSearchControl());
 
         
         }
@@ -164,6 +164,17 @@ namespace CPSC_481_PROJECT
         {
             new ProfilePictureSelectWindow(userProfile).ShowDialog();
             ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + userProfile.ProfileIconSource));
+        }
+
+        private void CreateTeamButton_Click(object sender, RoutedEventArgs e)
+        {
+            new CreateTeamWindow(userProfile, this).ShowDialog();
+
+        }
+
+        public void updateTeamPanel()
+        {
+
         }
     }
 }

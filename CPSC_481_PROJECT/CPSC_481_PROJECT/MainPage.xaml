@@ -261,7 +261,7 @@
                                 <TextBox x:Name="JoinRequesTextBox" HorizontalAlignment="Left" Height="40" Margin="635,112,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Width="220" FontSize="24"/>
                                 <Button x:Name="TeamJoinRequestAcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="855,112,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.467,0.019" Height="40" FontSize="16"/>
                                 <Button x:Name="TeamJoinRejectButton" Content="Reject" HorizontalAlignment="Left" Margin="930,112,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.067,0.481" Height="40" Click="TeamJoinRejectButton_Click" FontSize="16"/>
-                                <Button x:Name="CreateTeamButton" Content="Create" HorizontalAlignment="Left" Margin="1025,112,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24"/>
+                                <Button x:Name="CreateTeamButton" Content="Create" HorizontalAlignment="Left" Margin="1025,112,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24" Click="CreateTeamButton_Click"/>
                                 <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="145,242,133,25" Width="960">
                                     <StackPanel x:Name="GroupSearchStackPanel" HorizontalAlignment="Left" Height="Auto"  VerticalAlignment="Top" Width="960"/>
 

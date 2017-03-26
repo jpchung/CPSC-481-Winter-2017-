@@ -33,6 +33,8 @@ namespace CPSC_481_PROJECT
         public static string[] GameModesList = new string[] { "Quickplay", "Ranked" };
 
         private List<Profile> friendsList;
+
+        public String teamName;
         private List<Profile> teamList;
 
         /// <summary>
@@ -54,6 +56,8 @@ namespace CPSC_481_PROJECT
 
             //default profile icon
             ProfileIconSource = "/Images/PRO_GENJI.png";
+
+            teamList = new List<Profile>();
 
 
         }
@@ -100,16 +104,28 @@ namespace CPSC_481_PROJECT
         /// <param name="newMember"></param>
         public void addTeamMember(Profile newMember)
         {
-            teamList.Add(newMember);
+            if (teamList.Count() <= 5)
+                teamList.Add(newMember);
         }
 
-        /// <summary>
-        /// debugging method to set default team list
-        /// </summary>
-        /// <param name="defaultTeamList"></param>
-        public void defaultTeam(List<Profile> defaultTeamList)
+        public void removeTeamMember(Profile memberToRemove)
         {
-            teamList = defaultTeamList;
+            foreach(Profile member in teamList)
+            {
+                if (member.Equals(memberToRemove))
+                {
+                    teamList.Remove(member);
+                    break;
+                }
+            }
+        }
+
+
+
+        public void makeNewTeam(String name)
+        {
+            teamName = name;
+            teamList.Add(this);
         }
 
         /// <summary>

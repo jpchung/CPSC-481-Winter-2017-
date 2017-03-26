@@ -20,9 +20,11 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class GroupSearchControl : UserControl
     {
-        public GroupSearchControl()
+        public GroupSearchControl(String teamName)
         {
             InitializeComponent();
+            TeamSearchName.Text = teamName;
+
         }
     }
 }
