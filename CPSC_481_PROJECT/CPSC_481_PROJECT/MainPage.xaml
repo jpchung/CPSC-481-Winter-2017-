@@ -86,37 +86,27 @@
 
                     <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="595" Margin="317,-3,0,0" VerticalAlignment="Top" Width="947" BorderThickness="0">
                         <TabItem Header="STATS" Width="319">
-                            <Grid Background="#FFE5E5E5">
+                            <Grid Background="LightSlateGray">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="455*"/>
                                     <ColumnDefinition Width="498*"/>
                                 </Grid.ColumnDefinitions>
-                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="560" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" Grid.ColumnSpan="2" >
-
-                                    <ListView.View>
-                                        <GridView>
-                                            <GridViewColumn Header="Overall" Width="318">
-
-                                            </GridViewColumn>
-                                            <GridViewColumn Header="Heroes" Width="319"/>
-                                            <GridViewColumn Header="Last Played" Width="310"/>
-                                        </GridView>
-                                    </ListView.View>
-                                    <TextBlock x:Name="textBlock3_Copy2" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
-                                </ListView>
-                                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="508" Margin="0,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"><Run Text="Wins: 9000"/><LineBreak/><Run Text="Losses: 2"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy %: 90"/><LineBreak/><Run Text=""/><LineBreak/><Run Text="Knockbacks: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 5000"/><LineBreak/><Run Text="Assists: 500"/><LineBreak/><Run Text="Deaths: 50"/></TextBlock>
-                                <Image x:Name="friendImage1_Copy2" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="322,38,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
-                                <Image x:Name="friendImage1_Copy3" Source="Images/ARSON.png" HorizontalAlignment="Left" Height="166" Margin="322,209,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
-                                <Image x:Name="friendImage1_Copy4" Source="Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="166" Margin="322,380,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
-                                <Image x:Name="friendImage1_Copy5" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="188.629,38,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1"/>
-                                <Image x:Name="friendImage1_Copy6" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="188.629,209,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1"/>
-                                <Image x:Name="friendImage1_Copy7" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Margin="188.629,380,0,39" Width="162" Grid.Column="1"/>
-                                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="166" Margin="33.629,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy" HorizontalAlignment="Left" Height="166" Margin="33.629,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="69"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy1" HorizontalAlignment="Left" Height="166" Margin="28.629,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="420"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy3" HorizontalAlignment="Left" Height="166" Margin="350.629,38,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy4" HorizontalAlignment="Left" Height="166" Margin="347.629,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy5" HorizontalAlignment="Left" Height="166" Margin="350.629,380,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
+                                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="57" Margin="60,151,0,0" TextWrapping="Wrap" Text="Rank" VerticalAlignment="Top" Width="107" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderThickness="0" RenderTransformOrigin="2.581,0.377" TextChanged="textBox_TextChanged"/>
+                                <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="57" Margin="60,239,0,0" TextWrapping="Wrap" Text="General" VerticalAlignment="Top" Width="144" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderThickness="0"/>
+                                <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="57" Margin="216,10,0,0" TextWrapping="Wrap" Text="General" VerticalAlignment="Top" Width="144" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderThickness="0" Grid.Column="1"/>
+                                <Border x:Name="GeneralStatsBorder" BorderBrush="White" BorderThickness="5,10,0,10" Grid.ColumnSpan="2" Height="61" Margin="0,235,412,0" VerticalAlignment="Top" CornerRadius="5" Opacity="0.5">
+                                    <Border.Effect>
+                                        <BlurEffect Radius="15"/>
+                                    </Border.Effect>
+                                </Border>
+                                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="92" Margin="80,301,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180" BorderThickness="0" Background="LightSlateGray" Foreground="White"/>
+                                <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Height="92" Margin="260,301,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180" BorderThickness="0" Background="LightSlateGray" Foreground="White"/>
+                                <TextBox x:Name="textBox1_Copy1" HorizontalAlignment="Left" Margin="80,414,0,35" TextWrapping="Wrap" Text="TextBox" Width="180" BorderThickness="0" Background="LightSlateGray" Foreground="White"/>
+                                <TextBox x:Name="textBox1_Copy2" HorizontalAlignment="Left" Height="92" Margin="260,414,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180" BorderThickness="0" Background="LightSlateGray" Foreground="White"/>
+                                <TextBox x:Name="textBox1_Copy3" HorizontalAlignment="Left" Height="92" Margin="0,301,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180" BorderThickness="0" Background="LightSlateGray" Foreground="White" Grid.Column="1"/>
+                                <TextBox x:Name="textBox1_Copy4" HorizontalAlignment="Left" Height="92" Margin="185,301,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180" BorderThickness="0" Background="LightSlateGray" Foreground="White" Grid.Column="1"/>
+                                <TextBox x:Name="textBox1_Copy5" HorizontalAlignment="Left" Height="92" Margin="0,414,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180" BorderThickness="0" Background="LightSlateGray" Foreground="White" Grid.Column="1"/>
+                                <TextBox x:Name="textBox1_Copy6" HorizontalAlignment="Left" Height="92" Margin="185,414,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="180" BorderThickness="0" Background="LightSlateGray" Foreground="White" Grid.Column="1"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="314">
@@ -184,7 +174,7 @@
 
 
             </TabItem>
-            <TabItem Header="SEARCH" Width="625" Height="76" FontSize="36">
+            <TabItem Header="SEARCH" Width="625" Height="76" FontSize="36" Margin="5,-20,-5,20">
                 <Grid>
                     <Grid.Resources>
                         <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
@@ -280,7 +270,7 @@
 
 
         </TabControl>
-        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="1115,630,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click"/>
+        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="10,653,0,0" VerticalAlignment="Top" Width="114" Height="27" Click="LogoutButton_Click"/>
 
     </Grid>
 

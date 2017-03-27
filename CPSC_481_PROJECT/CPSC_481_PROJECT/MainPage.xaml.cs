@@ -393,5 +393,15 @@ namespace CPSC_481_PROJECT
             if (SoloSearchInput.Text.Equals("Search by Username..."))
                 SoloSearchInput.Clear();
         }
+
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
