@@ -21,14 +21,18 @@ namespace CPSC_481_PROJECT
     public partial class ProfileFriendControl : UserControl
     {
         private Profile user, friend;
-        private StackPanel parentPanel;
+        MainPage userPage;
+        StackPanel parentPanel;
 
-        public ProfileFriendControl(Profile userProfile, Profile friendProfile, StackPanel friendsListPanel)
+        public ProfileFriendControl(Profile userProfile, Profile friendProfile, MainPage currentPage)
         {
             InitializeComponent();
 
             //load current user
             user = userProfile;
+
+            //load current instance of MainPage
+            userPage = currentPage;
 
             //load friend profile details into user control elements 
             this.friend = friendProfile;
@@ -60,7 +64,7 @@ namespace CPSC_481_PROJECT
             else
                 FriendStatusMessage.Text = "Status Message";
 
-            this.parentPanel = friendsListPanel;
+            parentPanel = userPage.FriendsListPanel;
 
             
         }
@@ -90,9 +94,9 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void UnfriendButton_Click(object sender, RoutedEventArgs e)
         {
+            //remove from friend list Panel
             foreach (ProfileFriendControl friendControl in parentPanel.Children)
             {
-                //remove from friend list Panel
                 if (this.Equals(friendControl))
                 {
                     parentPanel.Children.Remove(this);
@@ -102,16 +106,19 @@ namespace CPSC_481_PROJECT
 
             }
 
-            List<Profile> userFriendList = user.getFriendsList();
             //remove from Profile friend List
+            List<Profile> userFriendList = user.getFriendsList();
             foreach(Profile friendToRemove in userFriendList)
             {
                 if(friend.Equals(friendToRemove) && !friend.Equals(user))
                 {
                     userFriendList.Remove(friend);
+                    //user.removeFriend(friend);
                     break;
                 }
             }
+
+            userPage.remakeSoloSearchPanel();
         }
     }
 }

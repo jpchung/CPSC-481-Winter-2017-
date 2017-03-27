@@ -57,6 +57,7 @@ namespace CPSC_481_PROJECT
             //default profile icon
             ProfileIconSource = "/Images/PRO_GENJI.png";
 
+            friendsList = new List<Profile>();
             teamList = new List<Profile>();
 
 
@@ -79,6 +80,8 @@ namespace CPSC_481_PROJECT
         {
             friendsList.Add(newFriendProfile);
         }
+
+       
 
         /// <summary>
         /// debugging method to set default friends list

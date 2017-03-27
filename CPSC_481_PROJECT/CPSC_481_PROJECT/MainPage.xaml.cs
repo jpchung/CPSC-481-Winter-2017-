@@ -64,9 +64,10 @@ namespace CPSC_481_PROJECT
             if((ProfileFriendsList != null) && ProfileFriendsList.Any())
             {
                 foreach(Profile friendProfile in ProfileFriendsList)                
-                    FriendsListPanel.Children.Add(new ProfileFriendControl(userProfile, friendProfile, FriendsListPanel));                
+                    FriendsListPanel.Children.Add(new ProfileFriendControl(userProfile, friendProfile, this));                
             }
 
+            //Solo Search User list
             remakeSoloSearchPanel();
 
             //team list
@@ -88,6 +89,11 @@ namespace CPSC_481_PROJECT
             //   GroupSearchStackPanel.Children.Add(new GroupSearchControl());
 
 
+        }
+
+        public Profile getCurrentProfile()
+        {
+            return userProfile;
         }
 
 
@@ -228,6 +234,9 @@ namespace CPSC_481_PROJECT
             SoloSearchRoleComboBox.SelectedIndex = -1;
             SoloSearchHeroComboBox.SelectedIndex = -1;
 
+            //reset username search
+            SoloSearchInput.Text = "Search by Username...";
+
             foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
             {
                 Profile userProfile = user.getProfile();
@@ -253,7 +262,10 @@ namespace CPSC_481_PROJECT
             SoloSearchRoleComboBox.SelectedIndex = -1;
             SoloSearchHeroComboBox.SelectedIndex = -1;
 
-            foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
+            //reset username search
+            SoloSearchInput.Text = "Search by Username...";
+
+            foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
             {
                 Profile profile = user.getProfile();
                 if (profile.GameMode.Equals("Ranked"))
@@ -339,13 +351,47 @@ namespace CPSC_481_PROJECT
         /// can't figure out how to update existing usercontrols in a stackpanel, 
         /// so just remake the entire stackpanel
         /// </summary>
-        private void remakeSoloSearchPanel()
+        public void remakeSoloSearchPanel()
         {
             SoloSearchStackPanel.Children.Clear();
 
             //list of all users for solo search tab
             foreach (Profile user in MainWindow.UserList)
-                SoloSearchStackPanel.Children.Add(new SoloSearchControl(user));
+                SoloSearchStackPanel.Children.Add(new SoloSearchControl(user, this));
+        }
+
+        /// <summary>
+        /// update Solo Search User list based on Username input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SoloSearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            String usernameSearch = SoloSearchInput.Text;
+            if(!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && !usernameSearch.Equals("Search by Username..."))
+            {
+                foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
+                {
+                    Profile profile = user.getProfile();
+                    String username = profile.getUsernamePassword().Keys.ElementAt(0);
+                    if (username.Equals(usernameSearch))
+                        user.Visibility = Visibility.Visible;
+                    else
+                        user.Visibility = Visibility.Collapsed;
+                    
+                }
+            }
+        }
+
+        /// <summary>
+        /// clear initial username search text on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SoloSearchInput_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (SoloSearchInput.Text.Equals("Search by Username..."))
+                SoloSearchInput.Clear();
         }
     }
 }

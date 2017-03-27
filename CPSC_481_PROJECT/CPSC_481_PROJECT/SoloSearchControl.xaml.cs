@@ -20,17 +20,39 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class SoloSearchControl : UserControl
     {
-        private Profile currentUser;
+        private Profile currentUser, loginUser;
+        MainPage currentPage;
+        
 
 
-        public SoloSearchControl(Profile currentProfile)
+        /// <summary>
+        /// Constructor for Solo Search UserControl
+        /// </summary>
+        /// <param name="currentProfile"></param>
+        /// <param name="currentPage"></param>
+        public SoloSearchControl(Profile currentProfile, MainPage currentPage)
         {
             InitializeComponent();
 
-            //Profile of current logged in user
+            //Profile of current user
             currentUser = currentProfile;
-          
 
+            this.currentPage = currentPage;
+
+            //should not be able to add self as friend
+            loginUser = currentPage.getCurrentProfile();
+            if (currentUser.Equals(loginUser))
+                SoloSearchAddFriendButton.Visibility = Visibility.Hidden;
+            
+            //should not be able to add if already friends
+            foreach(Profile friend in loginUser.getFriendsList())
+            {
+                if (friend.Equals(currentUser))
+                    SoloSearchAddFriendButton.Visibility = Visibility.Hidden;
+ 
+            }
+          
+            //load profile picture and username
             SoloSearchProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + currentUser.ProfileIconSource));
             SoloSearchUsername.Text = currentUser.getUsernamePassword().Keys.ElementAt(0);
 
@@ -45,6 +67,10 @@ namespace CPSC_481_PROJECT
 
         }
 
+        /// <summary>
+        /// returns profile associated with UserControl
+        /// </summary>
+        /// <returns></returns>
         public Profile getProfile()
         {
             return currentUser;
@@ -77,6 +103,19 @@ namespace CPSC_481_PROJECT
             SoloSearchRoleIcon.Source = roleImage;
 
 
+        }
+
+        /// <summary>
+        /// Add friend to Friends List & Panel on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SoloSearchAddFriendButton_Click(object sender, RoutedEventArgs e)
+        {
+            loginUser.addFriend(currentUser);
+            currentPage.FriendsListPanel.Children.Add(new ProfileFriendControl(loginUser, currentUser, currentPage));
+            SoloSearchAddFriendButton.Visibility = Visibility.Hidden;
+  
         }
 
         /// <summary>
