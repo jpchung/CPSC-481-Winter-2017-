@@ -403,5 +403,10 @@ namespace CPSC_481_PROJECT
         {
 
         }
+
+        private void MostSummary1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
