@@ -138,5 +138,11 @@ namespace CPSC_481_PROJECT
             SoloSearchHeroName.Text = otherUser.Hero;
 
         }
+
+        public Profile getProfile()
+        {
+            return otherUser;
+        }
+
     }
 }

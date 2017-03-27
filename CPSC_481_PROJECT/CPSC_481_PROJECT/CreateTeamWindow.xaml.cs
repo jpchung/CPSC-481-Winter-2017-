@@ -25,7 +25,7 @@ namespace CPSC_481_PROJECT
         public CreateTeamWindow(Profile currentUser, MainPage currentPage)
         {
             InitializeComponent();
-            TeameGameModeComboBox.ItemsSource = Profile.GameModesList;
+            TeamGameModeComboBox.ItemsSource = Profile.GameModesList;
             user = currentUser;
 
             userPage = currentPage;
@@ -45,25 +45,30 @@ namespace CPSC_481_PROJECT
                 }
             }
 
-            if(!existingTeam)
+            if(!existingTeam && !String.IsNullOrEmpty(newTeamName) && TeamGameModeComboBox.SelectedIndex != -1)
             {
+
                 user.makeNewTeam(newTeamName); //will make new team list with current user as first member
                 List<Profile> newTeamList = user.getTeamList();
                 MainWindow.TeamsList.Add(newTeamName, newTeamList);
+                String TeamGameMode = (String) TeamGameModeComboBox.SelectedItem;
+             
                 userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeamName));
+              
+                Close();
+
             }
-            
-
-           // if (!user.hasTeam && !String.IsNullOrEmpty(teamName))
-           // {
 
 
-                //userPage.updateProfileTeamPanel();
-               // user.hasTeam =  true;
+            // if (!user.hasTeam && !String.IsNullOrEmpty(teamName))
+            // {
 
-           // }
 
-            Close();
+            //userPage.updateProfileTeamPanel();
+            // user.hasTeam =  true;
+
+            // }
+
         }
     }
 }
