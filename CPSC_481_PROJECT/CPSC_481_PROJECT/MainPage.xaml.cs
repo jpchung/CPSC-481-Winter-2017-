@@ -44,6 +44,7 @@ namespace CPSC_481_PROJECT
             //username
             ProfileUsername.Text = userProfile.getUsernamePassword().Keys.ElementAt(0);
 
+
             //role/hero/mode selections
             RoleComboBox.SelectedItem = userProfile.Role;
             HeroComboBox.SelectedItem = userProfile.Hero;
@@ -66,6 +67,8 @@ namespace CPSC_481_PROJECT
                     FriendsListPanel.Children.Add(new ProfileFriendControl(userProfile, friendProfile, FriendsListPanel));                
             }
 
+            remakeSoloSearchPanel();
+
             //team list
             List<Profile> ProfileTeamList = userProfile.getTeamList();
             if((ProfileTeamList != null) && ProfileTeamList.Any())
@@ -74,9 +77,7 @@ namespace CPSC_481_PROJECT
                     TeamListPanel.Children.Add(new ProfileTeamMemberControl(member));
             }
 
-            //list of all users for solo search tab
-            foreach(Profile otherProfile in MainWindow.UserList)
-                SoloSearchStackPanel.Children.Add(new SoloSearchControl(userProfile, otherProfile));
+           
 
             SoloSearchQuickplayToggle.IsChecked = true;
             GroupSearchQuickplayToggle.IsChecked = true;
@@ -113,6 +114,7 @@ namespace CPSC_481_PROJECT
 
         /// <summary>
         /// Changes Role preference of logged in User Profile to selected item
+        /// Also updates in Solo Search tab...  by remaking the entire thing lol
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -124,9 +126,13 @@ namespace CPSC_481_PROJECT
             {
                 if (user.Equals(userProfile))
                 {
-                    user.getProfile().Role = userProfile.Role;
+                    user.getProfile().Role = userProfile.Role;           
+                    user.changeSoloSearchRole(userProfile);
+                    break;
                 }
             }
+            remakeSoloSearchPanel();
+
         }
 
         /// <summary>
@@ -142,9 +148,15 @@ namespace CPSC_481_PROJECT
             {
                 if (user.Equals(userProfile))
                 {
+ 
                     user.getProfile().Hero = userProfile.Hero;
+                    user.changeSoloSearchHero(userProfile);
+                    break;
+                    
                 }
             }
+            remakeSoloSearchPanel();
+
         }
 
         /// <summary>
@@ -160,11 +172,12 @@ namespace CPSC_481_PROJECT
             {
                 if (user.Equals(userProfile))
                 {
-                    user.getProfile().GameMode = userProfile.GameMode;                  
-
+                    user.getProfile().GameMode = userProfile.GameMode;
+                    break;
                 }
-
             }
+            remakeSoloSearchPanel();
+
         }
 
         /// <summary>
@@ -210,6 +223,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void SoloSearchQuickplayToggle_Checked(object sender, RoutedEventArgs e)
         {
+            remakeSoloSearchPanel();
             //reset role/hero filter menus
             SoloSearchRoleComboBox.SelectedIndex = -1;
             SoloSearchHeroComboBox.SelectedIndex = -1;
@@ -234,6 +248,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void SoloSearchRankedToggle_Checked(object sender, RoutedEventArgs e)
         {
+            remakeSoloSearchPanel();
             //reset role/hero filter menus
             SoloSearchRoleComboBox.SelectedIndex = -1;
             SoloSearchHeroComboBox.SelectedIndex = -1;
@@ -318,6 +333,19 @@ namespace CPSC_481_PROJECT
                         user.Visibility = Visibility.Collapsed;
                 }
             }
+        }
+
+        /// <summary>
+        /// can't figure out how to update existing usercontrols in a stackpanel, 
+        /// so just remake the entire stackpanel
+        /// </summary>
+        private void remakeSoloSearchPanel()
+        {
+            SoloSearchStackPanel.Children.Clear();
+
+            //list of all users for solo search tab
+            foreach (Profile user in MainWindow.UserList)
+                SoloSearchStackPanel.Children.Add(new SoloSearchControl(user));
         }
     }
 }

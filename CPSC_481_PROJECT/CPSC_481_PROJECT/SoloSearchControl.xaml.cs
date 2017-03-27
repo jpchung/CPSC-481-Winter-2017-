@@ -20,43 +20,73 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class SoloSearchControl : UserControl
     {
-        private Profile currentUser, otherUser;
+        private Profile currentUser;
 
-        public SoloSearchControl(Profile currentProfile, Profile otherProfile)
+
+        public SoloSearchControl(Profile currentProfile)
         {
             InitializeComponent();
 
             //Profile of current logged in user
             currentUser = currentProfile;
+          
 
-            //load profile details of other user to UserControl elements
-            otherUser = otherProfile;
-            SoloSearchProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + otherUser.ProfileIconSource));
-            SoloSearchUsername.Text = otherUser.getUsernamePassword().Keys.ElementAt(0);
+            SoloSearchProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + currentUser.ProfileIconSource));
+            SoloSearchUsername.Text = currentUser.getUsernamePassword().Keys.ElementAt(0);
 
             //load role icon based on profile settings
-            String roleIconSource;
-            switch (otherUser.Role)
-            {
-                case "Offense":
-                    roleIconSource = "OffenseIcon.png";
-                    break;
-                case "Defense":
-                    roleIconSource = "DefenseIcon.png";
-                    break;
-                case "Tank":
-                    roleIconSource = "TankIcon.png";
-                    break;
-                case "Support":                    
-                default:
-                    roleIconSource = "SupportIcon.png";
-                    break;
-            }
-            SoloSearchRoleIcon.Source = new BitmapImage(new Uri("pack://application:,,,/Images/" + roleIconSource));
+            changeSoloSearchRole(currentUser);
+
 
             //load hero icon based on profile settings
-            String HeroIconSource;          
-            switch(otherUser.Hero)
+            changeSoloSearchHero(currentUser);
+
+
+
+        }
+
+        public Profile getProfile()
+        {
+            return currentUser;
+        }
+
+        /// <summary>
+        /// Change Role Icon on user's SoloSearchControl
+        /// </summary>
+        /// <param name="newRole"></param>
+        public void changeSoloSearchRole(Profile user)
+        {
+            String roleIconSource;
+            switch (user.Role)
+            {
+                case "Offense":
+                   roleIconSource = "/Images/OffenseIcon.png";
+                   break;
+                case "Defense":
+                    roleIconSource = "/Images/DefenseIcon.png";
+                    break;
+                case "Tank":
+                    roleIconSource = "/Images/TankIcon.png";
+                    break;
+                case "Support":
+                default:
+                    roleIconSource = "/Images/SupportIcon.png";
+                    break;
+            }
+            BitmapImage roleImage = new BitmapImage(new Uri("pack://application:,,," + roleIconSource));
+            SoloSearchRoleIcon.Source = roleImage;
+
+
+        }
+
+        /// <summary>
+        /// Change Hero Icon/Name on user's SoloSearchControl
+        /// </summary>
+        /// <param name="newHero"></param>
+        public void changeSoloSearchHero(Profile user)
+        {
+            String HeroIconSource;
+            switch (user.Hero)
             {
                 case "Ana":
                     HeroIconSource = "ana.png";
@@ -129,20 +159,17 @@ namespace CPSC_481_PROJECT
                 case "Zarya":
                     HeroIconSource = "zarya.png";
                     break;
-                case "Zenyatta":                   
+                case "Zenyatta":
                 default:
                     HeroIconSource = "zenyatta.png";
                     break;
             }
-            SoloSearchHeroImage.Source = new BitmapImage(new Uri("pack://application:,,,/HeroIcons/" + HeroIconSource));
-            SoloSearchHeroName.Text = otherUser.Hero;
-
+            BitmapImage heroImage = new BitmapImage(new Uri("pack://application:,,,/HeroIcons/" + HeroIconSource));
+            SoloSearchHeroImage.Source = heroImage;
+            SoloSearchHeroName.Text = user.Hero;
         }
 
-        public Profile getProfile()
-        {
-            return otherUser;
-        }
+
 
     }
 }
