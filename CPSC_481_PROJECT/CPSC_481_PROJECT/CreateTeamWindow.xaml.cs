@@ -60,16 +60,14 @@ namespace CPSC_481_PROJECT
             if(!existingTeam && !String.IsNullOrEmpty(newTeamName)
                 && !user.hasTeam && TeamGameModeComboBox.SelectedIndex != -1)
             {
-                //will make new team list with current user as first member
-                user.makeNewTeam(newTeamName); 
+
+                user.makeNewTeam(newTeamName); //will make new team list with current user as first member
                 List<Profile> newTeamList = user.getTeamList();
                 MainWindow.TeamsList.Add(newTeamName, newTeamList);
                 String TeamGameMode = (String) TeamGameModeComboBox.SelectedItem;
              
                 //add new team to GroupSearch list
-                userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeamName, newTeamList));
-
-                userPage.TeamListText.Text = "Team Name: " + newTeamName;
+                userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeamName));
 
                 //update team list on profile tab
                 userPage.remakeTeamListPanel();
@@ -78,6 +76,14 @@ namespace CPSC_481_PROJECT
             }
 
 
+            // if (!user.hasTeam && !String.IsNullOrEmpty(teamName))
+            // {
+
+
+            //userPage.updateProfileTeamPanel();
+            // user.hasTeam =  true;
+
+            // }
 
         }
     }
