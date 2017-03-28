@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -23,6 +24,8 @@ namespace CPSC_481_PROJECT
     {
 
         private Profile userProfile;
+
+        DispatcherTimer invalidTeamCreationTextTimer = new DispatcherTimer();
         
     
        /// <summary>
@@ -31,7 +34,9 @@ namespace CPSC_481_PROJECT
         public MainPage(int userIndex)
         {
             InitializeComponent();
-            
+            invalidTeamCreationTextTimer.Tick += invalidTeamCreationTextTimer_Tick;
+            invalidTeamCreationTextTimer.Interval = new TimeSpan(0, 0, 3); //timer lasts for 3 second intervals
+
             //instantiate dropdown list items
             RoleComboBox.ItemsSource = SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
             HeroComboBox.ItemsSource = SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
@@ -215,7 +220,7 @@ namespace CPSC_481_PROJECT
         }
 
         /// <summary>
-        /// Opens Create Team Window
+        /// Opens Create Team Window, but only if logged in user isn't already on a team
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -223,6 +228,11 @@ namespace CPSC_481_PROJECT
         {
             if(!userProfile.hasTeam)
                 new CreateTeamWindow(userProfile, this).ShowDialog();
+            else
+            {
+                InvalidTeamCreationText.Visibility = Visibility.Visible;
+                invalidTeamCreationTextTimer.Start();
+            }
 
         }
 
@@ -444,6 +454,17 @@ namespace CPSC_481_PROJECT
                         team.Visibility = Visibility.Collapsed;
                 }
             }
+        }
+
+        /// <summary>
+        /// After interval time has ticked, hide invalid text prompt and stop timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void invalidTeamCreationTextTimer_Tick(object sender, EventArgs e)
+        {
+            InvalidTeamCreationText.Visibility = Visibility.Hidden;
+            invalidTeamCreationTextTimer.Stop();
         }
     }
 }

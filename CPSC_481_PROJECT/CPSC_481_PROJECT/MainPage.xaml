@@ -255,17 +255,18 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="145,112,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="20" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus"/>
-                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="405,112,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click"/>
-                                <TextBlock x:Name="GroupRequestsTextBlock" HorizontalAlignment="Left" Margin="525,116,0,0" TextWrapping="Wrap" Text="Requests:" VerticalAlignment="Top" FontSize="24" Height="40"/>
-                                <TextBox x:Name="JoinRequesTextBox" HorizontalAlignment="Left" Height="40" Margin="635,112,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Width="220" FontSize="24"/>
-                                <Button x:Name="TeamJoinRequestAcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="855,112,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.467,0.019" Height="40" FontSize="16"/>
-                                <Button x:Name="TeamJoinRejectButton" Content="Reject" HorizontalAlignment="Left" Margin="930,112,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.067,0.481" Height="40" Click="TeamJoinRejectButton_Click" FontSize="16"/>
-                                <Button x:Name="CreateTeamButton" Content="Create" HorizontalAlignment="Left" Margin="1025,112,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24" Click="CreateTeamButton_Click"/>
+                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="145,152,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus"/>
+                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="405,152,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click"/>
+                                <TextBlock x:Name="GroupRequestsTextBlock" HorizontalAlignment="Left" Margin="505,152,0,0" TextWrapping="Wrap" Text="Requests:" VerticalAlignment="Top" FontSize="24" Height="40"/>
+                                <TextBox x:Name="JoinRequesTextBox" HorizontalAlignment="Left" Height="40" Margin="610,150,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Width="180" FontSize="24"/>
+                                <Button x:Name="TeamJoinRequestAcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="790,151,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.467,0.019" Height="40" FontSize="16"/>
+                                <Button x:Name="TeamJoinRejectButton" Content="Reject" HorizontalAlignment="Left" Margin="865,151,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.067,0.481" Height="40" Click="TeamJoinRejectButton_Click" FontSize="16"/>
+                                <Button x:Name="CreateTeamButton" Content="Create Team" HorizontalAlignment="Left" Margin="960,152,0,0" VerticalAlignment="Top" Width="145" Height="40" FontSize="24" Click="CreateTeamButton_Click"/>
                                 <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="145,242,133,25" Width="960">
                                     <StackPanel x:Name="GroupSearchStackPanel" HorizontalAlignment="Left" Height="Auto"  VerticalAlignment="Top" Width="960"/>
 
                                 </ScrollViewer>
+                                <TextBlock x:Name="InvalidTeamCreationText" HorizontalAlignment="Left" Margin="360,103,0,0" TextWrapping="Wrap" Text="Cannot create team if already member of another team!" Foreground="Red" FontSize="22" Width="Auto" VerticalAlignment="Top" Visibility="Hidden"/>
                             </Grid>
 
                         </TabItem>
