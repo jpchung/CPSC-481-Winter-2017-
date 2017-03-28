@@ -71,7 +71,11 @@ namespace CPSC_481_PROJECT
             remakeSoloSearchPanel();
 
             //team list
-            remakeTeamListPanel();
+            if(userProfile.hasTeam)
+            {
+                TeamListText.Text = "Team Name: " + userProfile.teamName;
+                remakeTeamListPanel();
+            }
 
            
 
@@ -83,7 +87,8 @@ namespace CPSC_481_PROJECT
             foreach (var item in MainWindow.TeamsList)
             {
                 String teamName =  item.Key;
-                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName));
+                List<Profile> teamMembers = item.Value;
+                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers));
 
             }
 
@@ -380,7 +385,8 @@ namespace CPSC_481_PROJECT
         private void SoloSearchButton_Click(object sender, RoutedEventArgs e)
         {
             String usernameSearch = SoloSearchInput.Text;
-            if(!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && !usernameSearch.Equals("Search by Username..."))
+            if(!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && 
+                !usernameSearch.Equals("Search by Username..."))
             {
                 foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
                 {
@@ -415,6 +421,29 @@ namespace CPSC_481_PROJECT
         {
             if (GroupSearchInput.Text.Equals("Search By Team Name..."))
                 GroupSearchInput.Clear();
+        }
+
+        /// <summary>
+        /// Update Group Search team list based on team name input
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GroupSearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            String teamSearch = GroupSearchInput.Text;
+
+            if(!String.IsNullOrEmpty(teamSearch) && !String.IsNullOrWhiteSpace(teamSearch)
+                && !teamSearch.Equals("Search by Team Name..."))
+            {
+                foreach(GroupSearchControl team in GroupSearchStackPanel.Children)
+                {
+                    String teamName = team.TeamSearchName.Text;
+                    if (teamSearch.Equals(teamName))
+                        team.Visibility = Visibility.Visible;
+                    else
+                        team.Visibility = Visibility.Collapsed;
+                }
+            }
         }
     }
 }
