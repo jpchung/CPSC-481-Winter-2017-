@@ -30,6 +30,8 @@
                                     <Trigger Property="IsSelected" Value="False">
                                         <Setter TargetName="TabItemPanel" Property="Background" Value="White" />
                                     </Trigger>
+                                    
+
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
@@ -127,7 +129,7 @@
                                     </StackPanel>
 
                                 </ScrollViewer>
-                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="273" Margin="10,0,0,0"/>
+                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="Auto" Margin="10,0,0,0"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
 
 
@@ -153,7 +155,7 @@
                                 <TextBlock x:Name="textBlock3_Copy10" HorizontalAlignment="Left" Height="100" Margin="843,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="305" Margin="9,0,-9,0">
+                        <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="305" Margin="-1,0,0,0">
                             <Grid Background="LightGray">
 
                                 <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,50,0,0">
@@ -165,9 +167,6 @@
 
                                 <TextBlock x:Name="TeamListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Team Name: " Background="White" VerticalAlignment="Top" FontSize="36" Width="918" Margin="15,7,0,0" Height="43"/>
                                 <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="763,10,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="35" FontSize="16"/>
-
-
-
 
 
                             </Grid>
@@ -256,7 +255,7 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="145,112,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="22" FontStyle="Italic"/>
+                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="145,112,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="20" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus"/>
                                 <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="405,112,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22"/>
                                 <TextBlock x:Name="GroupRequestsTextBlock" HorizontalAlignment="Left" Margin="525,116,0,0" TextWrapping="Wrap" Text="Requests:" VerticalAlignment="Top" FontSize="24" Height="40"/>
                                 <TextBox x:Name="JoinRequesTextBox" HorizontalAlignment="Left" Height="40" Margin="635,112,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Width="220" FontSize="24"/>

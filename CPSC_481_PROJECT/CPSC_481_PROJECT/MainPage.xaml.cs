@@ -85,8 +85,12 @@ namespace CPSC_481_PROJECT
 
             //list of all teams in team search tab
             //FIX LATER: make actual team list for app
-            //foreach (var item in MainWindow.TeamsList)
-            //   GroupSearchStackPanel.Children.Add(new GroupSearchControl());
+            foreach (var item in MainWindow.TeamsList)
+            {
+                
+                //GroupSearchStackPanel.Children.Add(new GroupSearchControl());
+
+            }
 
 
         }
@@ -392,6 +396,17 @@ namespace CPSC_481_PROJECT
         {
             if (SoloSearchInput.Text.Equals("Search by Username..."))
                 SoloSearchInput.Clear();
+        }
+
+        /// <summary>
+        /// clear initial team name search text on click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GroupSearchInput_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (GroupSearchInput.Text.Equals("Search By Team Name..."))
+                GroupSearchInput.Clear();
         }
     }
 }
