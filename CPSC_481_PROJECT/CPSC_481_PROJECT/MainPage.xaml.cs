@@ -23,21 +23,21 @@ namespace CPSC_481_PROJECT
     {
 
         private Profile userProfile;
-        
-    
-       /// <summary>
-       /// Initialize MainPage UserControl elements based on user login
-       /// </summary>
+
+
+        /// <summary>
+        /// Initialize MainPage UserControl elements based on user login
+        /// </summary>
         public MainPage(int userIndex)
         {
             InitializeComponent();
-            
+
             //instantiate dropdown list items
             RoleComboBox.ItemsSource = SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
             HeroComboBox.ItemsSource = SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
             GameModeComboBox.ItemsSource = Profile.GameModesList;
-           
-           
+
+
             //load logged in User's profile from the UserList
             userProfile = MainWindow.UserList.ElementAt(userIndex);
 
@@ -61,10 +61,10 @@ namespace CPSC_481_PROJECT
 
             //friends list
             List<Profile> ProfileFriendsList = userProfile.getFriendsList();
-            if((ProfileFriendsList != null) && ProfileFriendsList.Any())
+            if ((ProfileFriendsList != null) && ProfileFriendsList.Any())
             {
-                foreach(Profile friendProfile in ProfileFriendsList)                
-                    FriendsListPanel.Children.Add(new ProfileFriendControl(userProfile, friendProfile, this));                
+                foreach (Profile friendProfile in ProfileFriendsList)
+                    FriendsListPanel.Children.Add(new ProfileFriendControl(userProfile, friendProfile, this));
             }
 
             //Solo Search User list
@@ -72,13 +72,13 @@ namespace CPSC_481_PROJECT
 
             //team list
             List<Profile> ProfileTeamList = userProfile.getTeamList();
-            if((ProfileTeamList != null) && ProfileTeamList.Any())
+            if ((ProfileTeamList != null) && ProfileTeamList.Any())
             {
                 foreach (Profile member in ProfileTeamList)
                     TeamListPanel.Children.Add(new ProfileTeamMemberControl(member));
             }
 
-           
+
 
             SoloSearchQuickplayToggle.IsChecked = true;
             GroupSearchQuickplayToggle.IsChecked = true;
@@ -126,13 +126,13 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void RoleComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            userProfile.Role = (String) RoleComboBox.SelectedItem;
+            userProfile.Role = (String)RoleComboBox.SelectedItem;
 
-            foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
+            foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
             {
                 if (user.Equals(userProfile))
                 {
-                    user.getProfile().Role = userProfile.Role;           
+                    user.getProfile().Role = userProfile.Role;
                     user.changeSoloSearchRole(userProfile);
                     break;
                 }
@@ -148,17 +148,17 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void HeroComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            userProfile.Hero = (String) HeroComboBox.SelectedItem;
+            userProfile.Hero = (String)HeroComboBox.SelectedItem;
 
-            foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
+            foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
             {
                 if (user.Equals(userProfile))
                 {
- 
+
                     user.getProfile().Hero = userProfile.Hero;
                     user.changeSoloSearchHero(userProfile);
                     break;
-                    
+
                 }
             }
             remakeSoloSearchPanel();
@@ -174,7 +174,7 @@ namespace CPSC_481_PROJECT
         {
             userProfile.GameMode = (String)GameModeComboBox.SelectedItem;
 
-            foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
+            foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
             {
                 if (user.Equals(userProfile))
                 {
@@ -193,7 +193,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void ProfileStatusTextBox_Changed(object sender, TextChangedEventArgs e)
         {
-            if (!String.IsNullOrEmpty(ProfileStatusTextBox.Text) && 
+            if (!String.IsNullOrEmpty(ProfileStatusTextBox.Text) &&
                 !String.IsNullOrWhiteSpace(ProfileStatusTextBox.Text)
                 && !(userProfile == null))
                 userProfile.Status = ProfileStatusTextBox.Text;
@@ -246,7 +246,7 @@ namespace CPSC_481_PROJECT
 
                 else if (userProfile.GameMode.Equals("Ranked"))
                     user.Visibility = Visibility.Collapsed;
-                
+
             }
         }
 
@@ -283,7 +283,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void SoloSearchRoleComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(SoloSearchRoleComboBox.SelectedIndex != -1)
+            if (SoloSearchRoleComboBox.SelectedIndex != -1)
             {
                 String selectedRole = (String)SoloSearchRoleComboBox.SelectedItem;
 
@@ -318,7 +318,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void SoloSearchHeroComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(SoloSearchHeroComboBox.SelectedIndex != -1)
+            if (SoloSearchHeroComboBox.SelectedIndex != -1)
             {
                 String selectedHero = (String)SoloSearchHeroComboBox.SelectedItem;
 
@@ -339,7 +339,7 @@ namespace CPSC_481_PROJECT
                     String role = profile.Role;
                     String mode = profile.GameMode;
                     String hero = profile.Hero;
-                    if (selectedHero.Equals(hero) && gameModeToggle.Equals(mode) &&(selectedRole.Equals(role) || SoloSearchRoleComboBox.SelectedIndex == -1))
+                    if (selectedHero.Equals(hero) && gameModeToggle.Equals(mode) && (selectedRole.Equals(role) || SoloSearchRoleComboBox.SelectedIndex == -1))
                         user.Visibility = Visibility.Visible;
                     else
                         user.Visibility = Visibility.Collapsed;
@@ -368,9 +368,9 @@ namespace CPSC_481_PROJECT
         private void SoloSearchButton_Click(object sender, RoutedEventArgs e)
         {
             String usernameSearch = SoloSearchInput.Text;
-            if(!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && !usernameSearch.Equals("Search by Username..."))
+            if (!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && !usernameSearch.Equals("Search by Username..."))
             {
-                foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
+                foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
                 {
                     Profile profile = user.getProfile();
                     String username = profile.getUsernamePassword().Keys.ElementAt(0);
@@ -378,7 +378,7 @@ namespace CPSC_481_PROJECT
                         user.Visibility = Visibility.Visible;
                     else
                         user.Visibility = Visibility.Collapsed;
-                    
+
                 }
             }
         }
@@ -394,19 +394,9 @@ namespace CPSC_481_PROJECT
                 SoloSearchInput.Clear();
         }
 
-        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
 
-        private void MostSummary1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
