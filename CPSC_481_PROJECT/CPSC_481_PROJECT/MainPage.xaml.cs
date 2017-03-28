@@ -71,12 +71,7 @@ namespace CPSC_481_PROJECT
             remakeSoloSearchPanel();
 
             //team list
-            List<Profile> ProfileTeamList = userProfile.getTeamList();
-            if((ProfileTeamList != null) && ProfileTeamList.Any())
-            {
-                foreach (Profile member in ProfileTeamList)
-                    TeamListPanel.Children.Add(new ProfileTeamMemberControl(member));
-            }
+            remakeTeamListPanel();
 
            
 
@@ -85,10 +80,11 @@ namespace CPSC_481_PROJECT
 
             //list of all teams in team search tab
             //FIX LATER: make actual team list for app
+            
             foreach (var item in MainWindow.TeamsList)
             {
-                
-                //GroupSearchStackPanel.Children.Add(new GroupSearchControl());
+                String teamName =  item.Key;
+                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName));
 
             }
 
@@ -221,7 +217,8 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void CreateTeamButton_Click(object sender, RoutedEventArgs e)
         {
-            new CreateTeamWindow(userProfile, this).ShowDialog();
+            if(!userProfile.hasTeam)
+                new CreateTeamWindow(userProfile, this).ShowDialog();
 
         }
 
@@ -362,6 +359,18 @@ namespace CPSC_481_PROJECT
             //list of all users for solo search tab
             foreach (Profile user in MainWindow.UserList)
                 SoloSearchStackPanel.Children.Add(new SoloSearchControl(user, this));
+        }
+
+        public void remakeTeamListPanel()
+        {
+            TeamListPanel.Children.Clear();
+
+            List<Profile> ProfileTeamList = userProfile.getTeamList();
+            if ((ProfileTeamList != null) && ProfileTeamList.Any())
+            {
+                foreach (Profile member in ProfileTeamList)
+                    TeamListPanel.Children.Add(new ProfileTeamMemberControl(member));
+            }
         }
 
         /// <summary>

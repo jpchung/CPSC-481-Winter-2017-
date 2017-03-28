@@ -34,8 +34,10 @@ namespace CPSC_481_PROJECT
 
         private List<Profile> friendsList;
 
+        public bool hasTeam { get; set; }
         public String teamName;
         private List<Profile> teamList;
+
 
         /// <summary>
         /// Profile constructor
@@ -58,7 +60,9 @@ namespace CPSC_481_PROJECT
             ProfileIconSource = "/Images/PRO_GENJI.png";
 
             friendsList = new List<Profile>();
+            hasTeam = false;
             teamList = new List<Profile>();
+
 
 
         }
@@ -125,10 +129,16 @@ namespace CPSC_481_PROJECT
 
 
 
+        /// <summary>
+        /// instantiate new team for user (with self as first member)
+        /// Users should only have one team so set boolean
+        /// </summary>
+        /// <param name="name"></param>
         public void makeNewTeam(String name)
         {
             teamName = name;
             teamList.Add(this);
+            hasTeam = true;
         }
 
         /// <summary>
