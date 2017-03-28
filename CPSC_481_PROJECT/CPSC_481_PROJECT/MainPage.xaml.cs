@@ -36,7 +36,7 @@ namespace CPSC_481_PROJECT
             InitializeComponent();
             invalidTeamCreationTextTimer.Tick += invalidTeamCreationTextTimer_Tick;
             invalidTeamCreationTextTimer.Interval = new TimeSpan(0, 0, 3); //timer lasts for 3 second intervals
-
+            InvalidTeamCreationText.Visibility = Visibility.Hidden;
             //instantiate dropdown list items
             RoleComboBox.ItemsSource = SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
             HeroComboBox.ItemsSource = SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
