@@ -466,5 +466,17 @@ namespace CPSC_481_PROJECT
             InvalidTeamCreationText.Visibility = Visibility.Hidden;
             invalidTeamCreationTextTimer.Stop();
         }
+
+        private void ProfileTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach(TabItem item in ProfileTabControl.Items)
+            {
+                if (item.IsSelected)
+                    item.Background = Brushes.Yellow;
+                
+                else
+                    item.Background = Brushes.White;
+            }
+        }
     }
 }

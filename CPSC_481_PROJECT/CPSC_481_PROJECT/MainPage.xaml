@@ -18,20 +18,24 @@
                         <Setter.Value>
                             <ControlTemplate TargetType="TabItem">
                                 <Grid Name="TabItemPanel">
-                                    <ContentPresenter x:Name="TabItemContent"
+                                    <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Black" CornerRadius="2,2,0,0" >
+                                        <ContentPresenter x:Name="TabItemContent"
                                                       HorizontalAlignment="Center"
                                                       VerticalAlignment="Center"
                                                       ContentSource="Header"/>
+                                    </Border>
+
                                 </Grid>
                                 <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="TabItemPanel" Property="Background" Value="LightBlue"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter TargetName="TabItemPanel" Property="Background" Value="White" />
+                                    </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
                                         <Setter TargetName="TabItemPanel" Property="Background" Value="Yellow"/>
                                     </Trigger>
-                                    <Trigger Property="IsSelected" Value="False">
-                                        <Setter TargetName="TabItemPanel" Property="Background" Value="White" />
-                                    </Trigger>
-
-
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Setter.Value>
@@ -68,7 +72,7 @@
                 </Style>
             </TabControl.Resources>
 
-            <TabItem Header="PROFILE" Width="640" Height="76" FontSize="36" >
+            <TabItem Header="PROFILE" Width="635" Height="76" FontSize="36" >
                 <Grid>
                     <TextBlock x:Name="ProfileUsername" Height="40" TextWrapping="Wrap" Text="" FontSize="26" Margin="57,14,1017,582" />
                     <Image x:Name="ProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="57,54,0,0">
@@ -86,42 +90,31 @@
                     </ComboBox>
 
 
-                    <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Left" Height="595" Margin="317,-3,0,0" VerticalAlignment="Top" Width="947" BorderThickness="0">
-                        <TabItem Header="STATS" Width="319">
+                    <TabControl x:Name="ProfileTabControl" HorizontalAlignment="Center" Height="558" Margin="317,34,0,0" VerticalAlignment="Top" Width="955" BorderThickness="0" SelectionChanged="ProfileTabControl_SelectionChanged" >
+                        <TabControl.Resources>
+
+                        </TabControl.Resources>
+
+
+
+                        <TabItem  Header="STATS" HorizontalAlignment="Center" Width="315" >
                             <Grid Background="#FFE5E5E5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="455*"/>
-                                    <ColumnDefinition Width="498*"/>
-                                </Grid.ColumnDefinitions>
-                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="560" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" Grid.ColumnSpan="2" >
+                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="504" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" >
 
                                     <ListView.View>
                                         <GridView>
-                                            <GridViewColumn Header="Overall" Width="318">
+                                            <GridViewColumn Header="Overall" Width="315">
 
                                             </GridViewColumn>
-                                            <GridViewColumn Header="Heroes" Width="319"/>
-                                            <GridViewColumn Header="Last Played" Width="310"/>
+                                            <GridViewColumn Header="Heroes" Width="315"/>
+                                            <GridViewColumn Header="Last Played" Width="313"/>
                                         </GridView>
                                     </ListView.View>
-                                    <TextBlock x:Name="textBlock3_Copy2" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
                                 </ListView>
-                                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="508" Margin="0,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"><Run Text="Wins: 9000"/><LineBreak/><Run Text="Losses: 2"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy %: 90"/><LineBreak/><Run Text=""/><LineBreak/><Run Text="Knockbacks: 50"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 5000"/><LineBreak/><Run Text="Assists: 500"/><LineBreak/><Run Text="Deaths: 50"/></TextBlock>
-                                <Image x:Name="friendImage1_Copy2" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="322,38,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
-                                <Image x:Name="friendImage1_Copy3" Source="Images/ARSON.png" HorizontalAlignment="Left" Height="166" Margin="322,209,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
-                                <Image x:Name="friendImage1_Copy4" Source="Images/EXPAND_DONG.png" HorizontalAlignment="Left" Height="166" Margin="322,380,0,0" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2"/>
-                                <Image x:Name="friendImage1_Copy5" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="188.629,38,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1"/>
-                                <Image x:Name="friendImage1_Copy6" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Height="166" Margin="188.629,209,0,0" VerticalAlignment="Top" Width="162" Grid.Column="1"/>
-                                <Image x:Name="friendImage1_Copy7" Source="Images/JUSTICE.png" HorizontalAlignment="Left" Margin="188.629,380,0,39" Width="162" Grid.Column="1"/>
-                                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="166" Margin="33.629,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="800"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy" HorizontalAlignment="Left" Height="166" Margin="33.629,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="69"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy1" HorizontalAlignment="Left" Height="166" Margin="28.629,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run Text="Games Played:"/><LineBreak/><Run Text="420"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy3" HorizontalAlignment="Left" Height="166" Margin="350.629,38,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy4" HorizontalAlignment="Left" Height="166" Margin="347.629,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy5" HorizontalAlignment="Left" Height="166" Margin="350.629,380,-3,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"><Run/><LineBreak/><Run Text="  WIN"/></TextBlock>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="314">
+                        
+                        <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" >
                             <Grid Background="LightGray">
                                 <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0">
                                     <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
@@ -133,7 +126,7 @@
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
 
 
-                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="479" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
+                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="451" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
                                     <ListView.View>
                                         <GridView>
                                             <GridViewColumn Header="Overall" Width="208"/>
@@ -142,20 +135,9 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <Image x:Name="friendImage1_Copy" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="530,90,0,0" VerticalAlignment="Top" Width="100"/>
-                                <Image x:Name="friendImage1_Copy1" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="101" Margin="738,90,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.54,0.453"/>
-                                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="435" Margin="333,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="30"><Run Text="Wins: 1"/><LineBreak/><Run Text="Losses: "/><Run Text="998"/><LineBreak/><Run/><LineBreak/><Run Text="Accuracy:"/><LineBreak/><Run Text="20%"/><LineBreak/><Run/><LineBreak/><Run Text="Kills: 0"/><LineBreak/><Run Text="Assists:"/><Run Text=" "/><Run Text="1"/><LineBreak/><Run Text="Deaths: 99"/><Run Text="8"/></TextBlock>
-                                <Image x:Name="friendImage1_Copy8" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,196,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1,0.37"/>
-                                <Image x:Name="friendImage1_Copy9" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,301,0,0" VerticalAlignment="Top" Width="100"/>
-                                <Image x:Name="friendImage1_Copy10" Source="Images/PRO_GENJI.png" HorizontalAlignment="Left" Height="100" Margin="738,409,0,0" VerticalAlignment="Top" Width="100"/>
-                                <TextBlock x:Name="textBlock3_Copy6" HorizontalAlignment="Left" Height="100" Margin="635,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22"><Run Text="Games Played:"/><LineBreak/><Run Text="999"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy7" HorizontalAlignment="Left" Height="100" Margin="843,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy8" HorizontalAlignment="Left" Height="100" Margin="843,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy9" HorizontalAlignment="Left" Height="100" Margin="843,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
-                                <TextBlock x:Name="textBlock3_Copy10" HorizontalAlignment="Left" Height="100" Margin="843,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" FontSize="22" RenderTransformOrigin="1.284,-0.55"><Run/><LineBreak/><Run Text="LOSS"/></TextBlock>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="305" Margin="-1,0,0,0">
+                        <TabItem Header="TEAM"  HorizontalAlignment="Center" Width="315" >
                             <Grid Background="LightGray">
 
                                 <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,50,0,0">
@@ -280,7 +262,7 @@
 
 
         </TabControl>
-        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="1115,630,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click"/>
+        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click"/>
 
     </Grid>
 
