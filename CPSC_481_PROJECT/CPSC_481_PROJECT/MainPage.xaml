@@ -94,7 +94,7 @@
                                 <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="57" Margin="10,10,0,0" TextWrapping="Wrap" Text="Rank" VerticalAlignment="Top" Width="107" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderThickness="0" RenderTransformOrigin="2.581,0.377" TextChanged="textBox_TextChanged"/>
                                 <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="57" Margin="27,159,0,0" TextWrapping="Wrap" Text="General" VerticalAlignment="Top" Width="144" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderThickness="0"/>
                                 <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="57" Margin="132,10,0,0" TextWrapping="Wrap" Text="Most Played" VerticalAlignment="Top" Width="233" FontWeight="Bold" Background="{x:Null}" Foreground="White" BorderThickness="0" Grid.Column="1"/>
-                                <Border x:Name="GeneralStatsBorder" BorderBrush="White" BorderThickness="5,10,0,10" Grid.ColumnSpan="2" Height="61" Margin="0,155,412,0" VerticalAlignment="Top" CornerRadius="5" Opacity="0.5">
+                                <Border x:Name="GeneralStatsBorder" BorderBrush="White" BorderThickness="5,10,0,10" Grid.ColumnSpan="2" Height="62" Margin="0,159,412,0" VerticalAlignment="Top" CornerRadius="5" Opacity="0.5">
                                     <Border.Effect>
                                         <BlurEffect Radius="15"/>
                                     </Border.Effect>
