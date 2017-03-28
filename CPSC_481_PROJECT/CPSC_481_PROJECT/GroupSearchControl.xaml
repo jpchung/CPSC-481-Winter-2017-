@@ -10,15 +10,15 @@
         <TextBlock x:Name="TeamSearchName" FontSize="30" HorizontalAlignment="Left" Margin="10,54,0,0" TextWrapping="Wrap" Text="Team Search Name" VerticalAlignment="Top" Height="41" Width="260"/>
         <Button x:Name="JoinTeamButton" FontSize="28" Content="JOIN" HorizontalAlignment="Left" Margin="825,48,0,0" VerticalAlignment="Top" Width="105" Height="53"/>
         <Image x:Name="TeamMemberImage1" HorizontalAlignment="Left" Height="90" Margin="275,30,0,0" VerticalAlignment="Top" Width="90"/>
-        <Border x:Name="MemberBorder1" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="275,30,0,0" VerticalAlignment="Top" Width="90"/>
+        <Border x:Name="MemberBorder1" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="275,30,0,0" VerticalAlignment="Top" Width="90" Visibility="Hidden"/>
         <Image x:Name="TeamMemberImage2" HorizontalAlignment="Left" Height="90" Margin="385,30,0,0" VerticalAlignment="Top" Width="90"/>
-        <Border x:Name="MemberBorder2" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="385,30,0,0" VerticalAlignment="Top" Width="90"/>
+        <Border x:Name="MemberBorder2" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="385,30,0,0" VerticalAlignment="Top" Width="90" Visibility="Hidden"/>
         <Image x:Name="TeamMemberImage3" HorizontalAlignment="Left" Height="90" Margin="495,30,0,0" VerticalAlignment="Top" Width="90"/>
-        <Border x:Name="MemberBorder3" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="495,30,0,0" VerticalAlignment="Top" Width="90"/>
+        <Border x:Name="MemberBorder3" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="495,30,0,0" VerticalAlignment="Top" Width="90" Visibility="Hidden"/>
         <Image x:Name="TeamMemberImage4" HorizontalAlignment="Left" Height="90" Margin="605,30,0,0" VerticalAlignment="Top" Width="90"/>
-        <Border x:Name="MemberBorder4" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="605,30,0,0" VerticalAlignment="Top" Width="90"/>
+        <Border x:Name="MemberBorder4" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="605,30,0,0" VerticalAlignment="Top" Width="90" Visibility="Hidden"/>
         <Image x:Name="TeamMemberImage5" HorizontalAlignment="Left" Height="90" Margin="715,30,0,0" VerticalAlignment="Top" Width="90"/>
-        <Border x:Name="MemberBorder5" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="715,30,0,0" VerticalAlignment="Top" Width="90"/>
+        <Border x:Name="MemberBorder5" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="715,30,0,0" VerticalAlignment="Top" Width="90" Visibility="Hidden"/>
         <Rectangle Fill="Transparent" HorizontalAlignment="Left" Height="55" Margin="65,95,0,0" Stroke="Transparent" VerticalAlignment="Top" Width="100"/>
 
     </Grid>

@@ -83,8 +83,7 @@ namespace CPSC_481_PROJECT
             GroupSearchQuickplayToggle.IsChecked = true;
 
             //list of all teams in team search tab
-            //FIX LATER: make actual team list for app
-            
+                     
             foreach (var item in MainWindow.TeamsList)
             {
                 String teamName = item.Key;
