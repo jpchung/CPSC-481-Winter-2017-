@@ -70,14 +70,10 @@ namespace CPSC_481_PROJECT
             //Solo Search User list
             remakeSoloSearchPanel();
 
-            //Profile Team list
-            if(userProfile.hasTeam)
-            {
-                TeamListText.Text = "Team Name: " + userProfile.teamName;
-                remakeTeamListPanel();
+            //team list
+            remakeTeamListPanel();
 
-            }
-
+           
 
             SoloSearchQuickplayToggle.IsChecked = true;
             GroupSearchQuickplayToggle.IsChecked = true;
@@ -86,11 +82,11 @@ namespace CPSC_481_PROJECT
                      
             foreach (var item in MainWindow.TeamsList)
             {
-                String teamName = item.Key;
-                List<Profile> teamMembers = item.Value;
-                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers));
+                String teamName =  item.Key;
+                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName));
 
             }
+
 
         }
 
@@ -384,8 +380,7 @@ namespace CPSC_481_PROJECT
         private void SoloSearchButton_Click(object sender, RoutedEventArgs e)
         {
             String usernameSearch = SoloSearchInput.Text;
-            if(!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) 
-                && !usernameSearch.Equals("Search by Username..."))
+            if(!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && !usernameSearch.Equals("Search by Username..."))
             {
                 foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
                 {
@@ -418,29 +413,8 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void GroupSearchInput_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (GroupSearchInput.Text.Equals("Search by Team Name..."))
+            if (GroupSearchInput.Text.Equals("Search By Team Name..."))
                 GroupSearchInput.Clear();
-        }
-
-        /// <summary>
-        /// Update Group Search team list based on Team Name input
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void GroupSearchButton_Click(object sender, RoutedEventArgs e)
-        {
-            String teamNameSearch = GroupSearchInput.Text;
-            if(!String.IsNullOrEmpty(teamNameSearch) && !String.IsNullOrWhiteSpace(teamNameSearch) 
-                && !teamNameSearch.Equals("Search by Team Name..."))
-            {
-                foreach(GroupSearchControl team in GroupSearchStackPanel.Children)
-                {
-                    if (teamNameSearch.Equals(team.TeamSearchName.Text))
-                        team.Visibility = Visibility.Visible;
-                    else
-                        team.Visibility = Visibility.Collapsed;
-                }
-            }
         }
     }
 }
