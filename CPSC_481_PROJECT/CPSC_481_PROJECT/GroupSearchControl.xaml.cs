@@ -20,10 +20,16 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class GroupSearchControl : UserControl
     {
-        public GroupSearchControl(String teamName)
+        public GroupSearchControl(String teamName, List<Profile> teamMembers)
         {
             InitializeComponent();
             TeamSearchName.Text = teamName;
+
+            //WIP - instatiate only as many images/borders as there are members
+            foreach(Profile member in teamMembers)
+            {
+
+            }
 
         }
     }
