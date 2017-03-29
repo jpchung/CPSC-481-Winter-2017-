@@ -26,42 +26,43 @@ namespace CPSC_481_PROJECT
             TeamSearchName.Text = teamName;
 
             //WIP - instatiate only as many images/borders as there are members
-            int memberCount = 0;
+
             foreach(Profile member in teamMembers)
             {
-                memberCount++;
+                switch(teamMembers.IndexOf(member) + 1)
+                {
+                    case 1:
+                        MemberBorder1.Visibility = MemberName1.Visibility = Visibility.Visible;
+                        MemberName1.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        if (MemberName1.Text.Length >= 15)
+                            MemberName1.Margin = new Thickness(270, 120, 0, 0);
+
+                        break;
+                    case 2:                      
+                        MemberBorder2.Visibility = MemberName2.Visibility = Visibility.Visible;
+                        MemberName2.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        break;
+                    case 3:
+                        MemberBorder3.Visibility = MemberName3.Visibility = Visibility.Visible;
+                        MemberName3.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        break;
+                    case 4:
+                        MemberBorder4.Visibility = MemberName4.Visibility = Visibility.Visible;
+                        MemberName4.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        break;
+                    case 5:                      
+                        MemberBorder5.Visibility = MemberName5.Visibility = Visibility.Visible;
+                        MemberName5.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        break;
+                    default:
+                        break;
+                }
+                
             }
 
-            switch(memberCount)
-            {
-                case 1:
-                    MemberBorder1.Visibility = Visibility.Visible;
-                    break;
-                case 2:
-                    MemberBorder1.Visibility = Visibility.Visible;
-                    MemberBorder2.Visibility = Visibility.Visible;
-                    break;
-                case 3:
-                    MemberBorder1.Visibility = Visibility.Visible;
-                    MemberBorder2.Visibility = Visibility.Visible;
-                    MemberBorder3.Visibility = Visibility.Visible;
-                    break;
-                case 4:
-                    MemberBorder1.Visibility = Visibility.Visible;
-                    MemberBorder2.Visibility = Visibility.Visible;
-                    MemberBorder3.Visibility = Visibility.Visible;
-                    MemberBorder4.Visibility = Visibility.Visible;
-                    break;
-                case 5:
-                    MemberBorder1.Visibility = Visibility.Visible;
-                    MemberBorder2.Visibility = Visibility.Visible;
-                    MemberBorder3.Visibility = Visibility.Visible;
-                    MemberBorder4.Visibility = Visibility.Visible;
-                    MemberBorder5.Visibility = Visibility.Visible;
-                    break;
-                default:
-                    break;
-            }
+            
+
+            
         }
     }
 }

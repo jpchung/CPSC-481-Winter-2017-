@@ -13,34 +13,34 @@
     <Grid Background="White">
         <TabControl x:Name="MainPageTabControl" HorizontalAlignment="Left" Height="720" Width="1280" >
             <TabControl.Resources>
-                <Style TargetType="TabItem">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="TabItem">
-                                <Grid Name="TabItemPanel">
-                                    <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Black" CornerRadius="2,2,0,0" >
-                                        <ContentPresenter x:Name="TabItemContent"
+                            <Style TargetType="TabItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TabItem">
+                                            <Grid Name="TabItemPanel">
+                                                <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Black" CornerRadius="2,2,0,0" >
+                                                    <ContentPresenter x:Name="TabItemContent"
                                                       HorizontalAlignment="Center"
                                                       VerticalAlignment="Center"
                                                       ContentSource="Header"/>
-                                    </Border>
-
-                                </Grid>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="TabItemPanel" Property="Background" Value="LightBlue"/>
-                                    </Trigger>
-                                    <Trigger Property="IsMouseOver" Value="False">
-                                        <Setter TargetName="TabItemPanel" Property="Background" Value="White" />
-                                    </Trigger>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="TabItemPanel" Property="Background" Value="Yellow"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
+                                                </Border>
+                                                
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="TabItemPanel" Property="Background" Value="LightBlue"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter TargetName="TabItemPanel" Property="Background" Value="White" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="TabItemPanel" Property="Background" Value="Yellow"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
 
                 <Style TargetType="GridViewColumnHeader">
                     <Setter Property="Template">
@@ -226,7 +226,7 @@
                         </TabItem>
                         <TabItem Header="GROUP" Width="555">
                             <Grid Background="LightGray">
-                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240"/>
+                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" />
                                 <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240"/>
                                 <ListView x:Name="GroupSearchListView" Height="300" HorizontalAlignment="Left" Margin="72,202,0,55" Width="960" FontSize="24" Background="LightSlateGray">
 

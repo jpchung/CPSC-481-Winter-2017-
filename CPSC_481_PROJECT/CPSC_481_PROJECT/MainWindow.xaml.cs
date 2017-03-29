@@ -33,27 +33,38 @@ namespace CPSC_481_PROJECT
         {
             InitializeComponent();
 
+            List<Profile> defaultTeam = new List<Profile>();
+
             //Default User Profile List
             Profile defaultProfile = new Profile("birdnukes@gmail.com", "ItsRainingJustice", "cawcaw", "dronestrikes#2016");
             String[] defaultProfileInfo = new String[] { "Offense", "Pharah", "Ranked", "FIRE ZE MISSILES!", "/Images/JUSTICE.png" };
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
-
             UserList.Add(defaultProfile);
+
+
 
             defaultProfile = new Profile("peglegpowderkeg@gmail.com", "FireinDaHoe", "cheekynandos", "burningman#1969");
             defaultProfileInfo = new String[] {"Defense", "Junkrat","Quickplay","u wot m8?", "/Images/ARSON.png" };
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
 
-            defaultProfile = new CPSC_481_PROJECT.Profile("grillsgeneration@op.gg", "xX_GurlGamer_Xx", "geegee", "winkyfayce#2014");
+            defaultProfile = new Profile("grillsgeneration@op.gg", "xX_GurlGamer_Xx", "geegee", "winkyfayce#2014");
             defaultProfileInfo = new String[] {"Defense", "D.Va", "Ranked", "Nerf this!", "/Images/MLG_KPOP_GREMLIN.png"};
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             //defaultProfile.defaultFriends(UserList); //test friend list stackpanel with user list
            // defaultProfile.defaultTeam(UserList); //test team list stackpanel with user list
-
             UserList.Add(defaultProfile);
+            defaultTeam.Add(defaultProfile);
 
- 
+            defaultProfile = new Profile("ih8hanzo@yahoo.com", "GenjiGod", "naruto", "dattebayo#2003");
+            defaultProfileInfo = new String[] { "Offense", "Genji", "Ranked", "I Need Healing!", "/Images/PRO_GENJI.png" };
+            setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
+            UserList.Add(defaultProfile);
+            defaultTeam.Add(defaultProfile);
+
+            //default team in database
+            MainWindow.TeamsList.Add("defaultTeam", defaultTeam);
+
 
             //initialize MainWindow to Login page by default
             PageSwitcher.pageSwitchWindow = this;
@@ -84,6 +95,8 @@ namespace CPSC_481_PROJECT
             profile.Status = profileInfo[3];
             profile.ProfileIconSource = profileInfo[4];
         }
+
+
 
         
 
