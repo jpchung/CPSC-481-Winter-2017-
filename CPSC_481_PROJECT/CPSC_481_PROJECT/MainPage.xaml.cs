@@ -25,7 +25,7 @@ namespace CPSC_481_PROJECT
 
         private Profile userProfile;
 
-        DispatcherTimer invalidTeamCreationTextTimer = new DispatcherTimer();
+        DispatcherTimer invalidGroupSearchTextTimer = new DispatcherTimer();
         
     
        /// <summary>
@@ -34,9 +34,9 @@ namespace CPSC_481_PROJECT
         public MainPage(int userIndex)
         {
             InitializeComponent();
-            invalidTeamCreationTextTimer.Tick += invalidTeamCreationTextTimer_Tick;
-            invalidTeamCreationTextTimer.Interval = new TimeSpan(0, 0, 3); //timer lasts for 3 second intervals
-            InvalidTeamCreationText.Visibility = Visibility.Hidden;
+            invalidGroupSearchTextTimer.Tick += invalidGroupSearchTextTimer_Tick;
+            invalidGroupSearchTextTimer.Interval = new TimeSpan(0, 0, 3); //timer lasts for 3 second intervals
+            InvalidGroupSearchText.Visibility = Visibility.Hidden;
             //instantiate dropdown list items
             RoleComboBox.ItemsSource = SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
             HeroComboBox.ItemsSource = SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
@@ -93,13 +93,17 @@ namespace CPSC_481_PROJECT
             {
                 String teamName =  item.Key;
                 List<Profile> teamMembers = item.Value;
-                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers));
+                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
 
             }
 
 
         }
 
+        /// <summary>
+        /// return profile of currently logged in user
+        /// </summary>
+        /// <returns></returns>
         public Profile getCurrentProfile()
         {
             return userProfile;
@@ -230,8 +234,8 @@ namespace CPSC_481_PROJECT
                 new CreateTeamWindow(userProfile, this).ShowDialog();
             else
             {
-                InvalidTeamCreationText.Visibility = Visibility.Visible;
-                invalidTeamCreationTextTimer.Start();
+                InvalidGroupSearchText.Visibility = Visibility.Visible;
+                invalidGroupSearchTextTimer.Start();
             }
 
         }
@@ -461,10 +465,10 @@ namespace CPSC_481_PROJECT
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void invalidTeamCreationTextTimer_Tick(object sender, EventArgs e)
+        private void invalidGroupSearchTextTimer_Tick(object sender, EventArgs e)
         {
-            InvalidTeamCreationText.Visibility = Visibility.Hidden;
-            invalidTeamCreationTextTimer.Stop();
+            InvalidGroupSearchText.Visibility = Visibility.Hidden;
+            invalidGroupSearchTextTimer.Stop();
         }
 
         private void ProfileTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -478,5 +482,18 @@ namespace CPSC_481_PROJECT
                     item.Background = Brushes.White;
             }
         }
+
+        public void remakeGroupSearchPanel()
+        {
+            GroupSearchStackPanel.Children.Clear();
+
+            foreach(var item in MainWindow.TeamsList)
+            {
+                String teamName = item.Key;
+                List<Profile> teamMembers = item.Value;
+                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
+            }
+        }
     }
+
 }

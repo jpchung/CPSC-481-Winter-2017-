@@ -63,6 +63,11 @@ namespace CPSC_481_PROJECT
             defaultTeam.Add(defaultProfile);
 
             //default team in database
+            foreach(Profile defaultMember in defaultTeam)
+            {
+                defaultMember.setDefaultTeam("defaultTeam",defaultTeam);
+                defaultMember.hasTeam = true;
+            }
             MainWindow.TeamsList.Add("defaultTeam", defaultTeam);
 
 

@@ -20,10 +20,21 @@ namespace CPSC_481_PROJECT
     /// </summary>
     public partial class GroupSearchControl : UserControl
     {
-        public GroupSearchControl(String teamName, List<Profile> teamMembers)
+
+        MainPage userPage;
+        Profile user;
+        String teamName;
+        List<Profile> teamMembers;
+        
+
+        public GroupSearchControl(String currentTeamName, List<Profile> currentTeamMembers, MainPage currentPage)
         {
             InitializeComponent();
-            TeamSearchName.Text = teamName;
+            userPage = currentPage;
+            user = userPage.getCurrentProfile();
+            TeamSearchName.Text = teamName = currentTeamName;
+            teamMembers = currentTeamMembers;
+
 
             //WIP - instatiate only as many images/borders as there are members
 
@@ -34,25 +45,33 @@ namespace CPSC_481_PROJECT
                     case 1:
                         MemberBorder1.Visibility = MemberName1.Visibility = Visibility.Visible;
                         MemberName1.Text = member.getUsernamePassword().Keys.ElementAt(0);
-                        if (MemberName1.Text.Length >= 15)
-                            MemberName1.Margin = new Thickness(270, 120, 0, 0);
+                        TeamMemberImage1.Source = new BitmapImage(new Uri("pack://application:,,," + member.ProfileIconSource));
+                        resizeUsername(MemberName1);
 
                         break;
                     case 2:                      
                         MemberBorder2.Visibility = MemberName2.Visibility = Visibility.Visible;
                         MemberName2.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        TeamMemberImage2.Source = new BitmapImage(new Uri("pack://application:,,," + member.ProfileIconSource));
+                        resizeUsername(MemberName2);
                         break;
                     case 3:
                         MemberBorder3.Visibility = MemberName3.Visibility = Visibility.Visible;
                         MemberName3.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        TeamMemberImage3.Source = new BitmapImage(new Uri("pack://application:,,," + member.ProfileIconSource));
+                        resizeUsername(MemberName3);
                         break;
                     case 4:
                         MemberBorder4.Visibility = MemberName4.Visibility = Visibility.Visible;
                         MemberName4.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        TeamMemberImage4.Source = new BitmapImage(new Uri("pack://application:,,," + member.ProfileIconSource));
+                        resizeUsername(MemberName4);
                         break;
                     case 5:                      
                         MemberBorder5.Visibility = MemberName5.Visibility = Visibility.Visible;
                         MemberName5.Text = member.getUsernamePassword().Keys.ElementAt(0);
+                        TeamMemberImage5.Source = new BitmapImage(new Uri("pack://application:,,," + member.ProfileIconSource));
+                        resizeUsername(MemberName5);
                         break;
                     default:
                         break;
@@ -60,9 +79,81 @@ namespace CPSC_481_PROJECT
                 
             }
 
-            
+            if(user.hasTeam && user.teamName.Equals(teamName))
+                JoinTeamButton.Visibility = Visibility.Hidden;
+
 
             
+
+  
+        }
+
+        /// <summary>
+        /// Resize font of long usernames and adjust textblock margin for each member
+        /// </summary>
+        /// <param name="username"></param>
+        private void resizeUsername(TextBlock username)
+        {
+            switch(username.Name)
+            {
+                case "MemberName1":
+                    if (username.Text.Length >= 15)
+                    {
+                        username.FontSize = 11;
+                        username.Margin = new Thickness(278, 120, 0, 0);
+                    }                    
+                    break;
+                case "MemberName2":
+                    if (username.Text.Length >= 15)
+                    {
+                        username.FontSize = 11;
+                        username.Margin = new Thickness(388, 120, 0, 0);
+                    }
+                    break;
+                case "MemberName3":
+                    if (username.Text.Length >= 15)
+                    {
+                        username.FontSize = 11;
+                        username.Margin = new Thickness(498, 120, 0, 0);
+                    }
+                    break;
+                case "MemberName4":
+                    if (username.Text.Length >= 15)
+                    {
+                        username.FontSize = 11;
+                        username.Margin = new Thickness(608, 120, 0, 0);
+                    }
+                    break;
+                case "MemberName5":
+                    if (username.Text.Length >= 15)
+                    {
+                        username.FontSize = 11;
+                        username.Margin = new Thickness(723, 120, 0, 0);
+                    }
+                    break;                
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// User joins existing team from Group Search
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void JoinTeamButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO later: add timer to simulate team accepting join request
+            //for now: auto join team
+            if(!user.hasTeam)
+            {
+                teamMembers.Add(user);
+                user.setDefaultTeam(teamName,teamMembers);
+                user.hasTeam = true;
+                userPage.remakeTeamListPanel();
+                userPage.TeamListText.Text = "Team Name: " + teamName;
+                userPage.remakeGroupSearchPanel();
+            }
         }
     }
 }

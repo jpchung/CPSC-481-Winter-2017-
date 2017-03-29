@@ -67,7 +67,7 @@ namespace CPSC_481_PROJECT
                 String TeamGameMode = (String) TeamGameModeComboBox.SelectedItem;
              
                 //add new team to GroupSearch list
-                userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeamName, newTeamList));
+                userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeamName, newTeamList, userPage));
 
                 userPage.TeamListText.Text = "Team Name: " + newTeamName;
 

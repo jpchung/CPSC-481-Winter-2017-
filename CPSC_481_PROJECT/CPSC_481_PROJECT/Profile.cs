@@ -91,9 +91,19 @@ namespace CPSC_481_PROJECT
         /// debugging method to set default friends list
         /// </summary>
         /// <param name="defaultFriendsList"></param>
-        public void defaultFriends(List<Profile> defaultFriendsList)
+        public void setDefaultFriends(List<Profile> defaultFriendsList)
         {
             friendsList = defaultFriendsList;
+        }
+
+        /// <summary>
+        /// debugging method to set default team list
+        /// </summary>
+        /// <param name="defaultTeamList"></param>
+        public void setDefaultTeam(String defaultTeamName,List<Profile> defaultTeamList)
+        {
+            teamName = defaultTeamName;
+            teamList = defaultTeamList;
         }
 
         /// <summary>
