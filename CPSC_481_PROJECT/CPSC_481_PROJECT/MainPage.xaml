@@ -11,36 +11,36 @@
 
     <!--TabControl Style derived from the following source: http://www.wpf-tutorial.com/tabcontrol/styling-the-tabitems/ -->
     <Grid Background="White">
-        <TabControl x:Name="MainPageTabControl" HorizontalAlignment="Left" Height="720" Width="1280" >
+        <TabControl x:Name="MainPageTabControl" HorizontalAlignment="Left" Height="720" Width="1280" SelectionChanged="MainPageTabControl_SelectionChanged" Margin="0,0,-10,-40" >
             <TabControl.Resources>
-                            <Style TargetType="TabItem">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="TabItem">
-                                            <Grid Name="TabItemPanel">
-                                                <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Black" CornerRadius="2,2,0,0" >
-                                                    <ContentPresenter x:Name="TabItemContent"
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Grid Name="TabItemPanel">
+                                    <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Black" CornerRadius="2,2,0,0" >
+                                        <ContentPresenter x:Name="TabItemContent"
                                                       HorizontalAlignment="Center"
                                                       VerticalAlignment="Center"
                                                       ContentSource="Header"/>
-                                                </Border>
-                                                
-                                            </Grid>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter TargetName="TabItemPanel" Property="Background" Value="LightBlue"/>
-                                                </Trigger>
-                                                <Trigger Property="IsMouseOver" Value="False">
-                                                    <Setter TargetName="TabItemPanel" Property="Background" Value="White" />
-                                                </Trigger>
-                                                <Trigger Property="IsSelected" Value="True">
-                                                    <Setter TargetName="TabItemPanel" Property="Background" Value="Yellow"/>
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
+                                    </Border>
+
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="TabItemPanel" Property="Background" Value="LightBlue"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter TargetName="TabItemPanel" Property="Background" Value="White" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="TabItemPanel" Property="Background" Value="Yellow"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
 
                 <Style TargetType="GridViewColumnHeader">
                     <Setter Property="Template">
@@ -113,7 +113,7 @@
                                 </ListView>
                             </Grid>
                         </TabItem>
-                        
+
                         <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" >
                             <Grid Background="LightGray">
                                 <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0">
@@ -190,9 +190,9 @@
                             </Setter>
                         </Style>
                     </Grid.Resources>
-                    <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Height="616" Margin="85,30,0,0" VerticalAlignment="Top" Width="1110" BorderThickness="0">
+                    <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Margin="85,30,0,42" Width="1110" BorderThickness="0">
                         <TabItem Header="SOLO" Width="550">
-                            <Grid x:Name="___No_Name_" Background="LightGray" Margin="0,0,0,45">
+                            <Grid x:Name="___No_Name_" Background="LightGray" Margin="0,0,0,2">
                                 <RadioButton x:Name="SoloSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchQuickplayToggle_Checked"/>
                                 <RadioButton x:Name="SoloSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchRankedToggle_Checked"/>
                                 <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="231,157,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="24" SelectionChanged="SoloSearchRoleComboBox_SelectionChanged"/>
@@ -210,11 +210,11 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="72,240,76,15">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="72,240,76,8">
                                     <StackPanel x:Name="SoloSearchStackPanel" Background="LightSlateGray" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="960" />
 
                                 </ScrollViewer>
-                                <Grid x:Name="RoleGlossaryGrid" Margin="402,82,406,365">
+                                <Grid x:Name="RoleGlossaryGrid" Margin="402,82,406,355">
 
                                     <Image x:Name="DefenseIcon" Source="pack://application:,,,/Images/DefenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="80,18,0,0" VerticalAlignment="Top" Width="50"/>
                                     <Image x:Name="TankIcon" Source="pack://application:,,,/Images/TankIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="160,18,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
@@ -228,7 +228,7 @@
                             <Grid Background="LightGray">
                                 <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" />
                                 <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240"/>
-                                <ListView x:Name="GroupSearchListView" Height="300" HorizontalAlignment="Left" Margin="72,202,0,55" Width="960" FontSize="24" Background="LightSlateGray">
+                                <ListView x:Name="GroupSearchListView" Height="300" HorizontalAlignment="Left" Margin="72,202,0,0" Width="960" FontSize="24" Background="LightSlateGray">
 
                                     <ListView.View>
                                         <GridView>
@@ -244,7 +244,7 @@
                                 <Button x:Name="TeamJoinRequestAcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="717,156,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.467,0.019" Height="40" FontSize="16"/>
                                 <Button x:Name="TeamJoinRejectButton" Content="Reject" HorizontalAlignment="Left" Margin="792,156,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.067,0.481" Height="40" Click="TeamJoinRejectButton_Click" FontSize="16"/>
                                 <Button x:Name="CreateTeamButton" Content="Create Team" HorizontalAlignment="Left" Margin="887,157,0,0" VerticalAlignment="Top" Width="145" Height="40" FontSize="24" Click="CreateTeamButton_Click"/>
-                                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="72,240,74,58" Width="960">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="72,240,76,8" Width="960">
                                     <StackPanel x:Name="GroupSearchStackPanel" HorizontalAlignment="Left" Height="Auto"  VerticalAlignment="Top" Width="960"/>
 
                                 </ScrollViewer>

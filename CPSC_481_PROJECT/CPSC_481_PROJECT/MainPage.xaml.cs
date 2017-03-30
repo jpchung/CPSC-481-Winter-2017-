@@ -72,8 +72,7 @@ namespace CPSC_481_PROJECT
                     FriendsListPanel.Children.Add(new ProfileFriendControl(userProfile, friendProfile, this));                
             }
 
-            //Solo Search User list
-            remakeSoloSearchPanel();
+            
 
             //team list
             if(userProfile.hasTeam)
@@ -82,13 +81,15 @@ namespace CPSC_481_PROJECT
                 remakeTeamListPanel();
             }
 
-           
+            //Solo Search User list
+            remakeSoloSearchPanel();
 
             SoloSearchQuickplayToggle.IsChecked = true;
             GroupSearchQuickplayToggle.IsChecked = true;
 
+
             //list of all teams in team search tab
-                     
+
             foreach (var item in MainWindow.TeamsList)
             {
                 String teamName =  item.Key;
@@ -150,7 +151,10 @@ namespace CPSC_481_PROJECT
                     break;
                 }
             }
-            remakeSoloSearchPanel();
+            //remakeSoloSearchPanel();
+            SoloSearchQuickplayToggle.IsChecked = SoloSearchQuickplayToggle.IsChecked;
+            SoloSearchRankedToggle.IsChecked = SoloSearchRankedToggle.IsChecked;
+
 
         }
 
@@ -174,8 +178,9 @@ namespace CPSC_481_PROJECT
                     
                 }
             }
-            remakeSoloSearchPanel();
-
+            //remakeSoloSearchPanel();
+            SoloSearchQuickplayToggle.IsChecked = SoloSearchQuickplayToggle.IsChecked;
+            SoloSearchRankedToggle.IsChecked = SoloSearchRankedToggle.IsChecked;
         }
 
         /// <summary>
@@ -195,8 +200,9 @@ namespace CPSC_481_PROJECT
                     break;
                 }
             }
-            remakeSoloSearchPanel();
-
+            //remakeSoloSearchPanel();
+            SoloSearchQuickplayToggle.IsChecked = SoloSearchQuickplayToggle.IsChecked;
+            SoloSearchRankedToggle.IsChecked = SoloSearchRankedToggle.IsChecked;
         }
 
         /// <summary>
@@ -221,6 +227,9 @@ namespace CPSC_481_PROJECT
         {
             new ProfilePictureSelectWindow(userProfile).ShowDialog();
             ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + userProfile.ProfileIconSource));
+            remakeSoloSearchPanel();
+            remakeGroupSearchPanel();
+            remakeTeamListPanel();
         }
 
         /// <summary>
@@ -377,6 +386,8 @@ namespace CPSC_481_PROJECT
             //list of all users for solo search tab
             foreach (Profile user in MainWindow.UserList)
                 SoloSearchStackPanel.Children.Add(new SoloSearchControl(user, this));
+
+            
         }
 
         public void remakeTeamListPanel()
@@ -447,7 +458,7 @@ namespace CPSC_481_PROJECT
             String teamSearch = GroupSearchInput.Text;
 
             if(!String.IsNullOrEmpty(teamSearch) && !String.IsNullOrWhiteSpace(teamSearch)
-                && !teamSearch.Equals("Search by Team Name..."))
+                && !teamSearch.Equals("Search By Team Name..."))
             {
                 foreach(GroupSearchControl team in GroupSearchStackPanel.Children)
                 {
@@ -493,6 +504,11 @@ namespace CPSC_481_PROJECT
                 List<Profile> teamMembers = item.Value;
                 GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
             }
+        }
+
+        private void MainPageTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 
