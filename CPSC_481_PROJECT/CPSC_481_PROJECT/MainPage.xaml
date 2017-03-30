@@ -103,23 +103,28 @@
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="314">
                             <Grid Background="LightGray">
-                                <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="174*"/>
+                                    <ColumnDefinition Width="769*"/>
+                                </Grid.ColumnDefinitions>
+                                <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0" Grid.ColumnSpan="2">
                                     <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
 
                                     </StackPanel>
 
                                 </ScrollViewer>
-                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="273" Margin="10,0,0,0"/>
-                                <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="273" Margin="10,0,0,0" Grid.ColumnSpan="2"/>
+                                <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="159.073,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top" Grid.Column="1"/>
 
 
-                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="479" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray" >
+                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="479" Margin="144.073,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray" Grid.Column="1" >
                                     <ListView.View>
                                         <GridView>
 
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
+                                <Image x:Name="FriendsStatsBackground" Source ="Images/FriendsListStatsBackgroundV1.jpg" Grid.Column="1" HorizontalAlignment="Left" Height="478" Margin="144,53,0,0" VerticalAlignment="Top" Width="625"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="305" Margin="9,0,-9,0">
