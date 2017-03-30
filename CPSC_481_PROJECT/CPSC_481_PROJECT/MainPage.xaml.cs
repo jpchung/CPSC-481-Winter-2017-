@@ -151,11 +151,9 @@ namespace CPSC_481_PROJECT
                     break;
                 }
             }
-            //remakeSoloSearchPanel();
-            SoloSearchQuickplayToggle.IsChecked = SoloSearchQuickplayToggle.IsChecked;
-            SoloSearchRankedToggle.IsChecked = SoloSearchRankedToggle.IsChecked;
+            remakeSoloSearchPanel();
 
-
+      
         }
 
         /// <summary>
@@ -178,10 +176,9 @@ namespace CPSC_481_PROJECT
                     
                 }
             }
-            //remakeSoloSearchPanel();
-            SoloSearchQuickplayToggle.IsChecked = SoloSearchQuickplayToggle.IsChecked;
-            SoloSearchRankedToggle.IsChecked = SoloSearchRankedToggle.IsChecked;
+            remakeSoloSearchPanel();
         }
+           
 
         /// <summary>
         /// Changes Game Mode preference of logged in User Profile to selected item (requires toggle/filter to refresh)
@@ -200,9 +197,9 @@ namespace CPSC_481_PROJECT
                     break;
                 }
             }
-            //remakeSoloSearchPanel();
-            SoloSearchQuickplayToggle.IsChecked = SoloSearchQuickplayToggle.IsChecked;
-            SoloSearchRankedToggle.IsChecked = SoloSearchRankedToggle.IsChecked;
+
+            remakeSoloSearchPanel();
+            
         }
 
         /// <summary>
@@ -265,17 +262,7 @@ namespace CPSC_481_PROJECT
             //reset username search
             SoloSearchInput.Text = "Search by Username...";
 
-            foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
-            {
-                Profile userProfile = user.getProfile();
-
-                if (userProfile.GameMode.Equals("Quickplay"))
-                    user.Visibility = Visibility.Visible;
-
-                else if (userProfile.GameMode.Equals("Ranked"))
-                    user.Visibility = Visibility.Collapsed;
-                
-            }
+          
         }
 
         /// <summary>
@@ -293,15 +280,7 @@ namespace CPSC_481_PROJECT
             //reset username search
             SoloSearchInput.Text = "Search by Username...";
 
-            foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
-            {
-                Profile profile = user.getProfile();
-                if (profile.GameMode.Equals("Ranked"))
-                    user.Visibility = Visibility.Visible;
-
-                else if (profile.GameMode.Equals("Quickplay"))
-                    user.Visibility = Visibility.Collapsed;
-            }
+            
         }
 
         /// <summary>
@@ -311,32 +290,50 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void SoloSearchRoleComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(SoloSearchRoleComboBox.SelectedIndex != -1)
+            
+            if (SoloSearchRoleComboBox.SelectedIndex != -1)
             {
-                String selectedRole = (String)SoloSearchRoleComboBox.SelectedItem;
+                
+                String selectedRole = (String) SoloSearchRoleComboBox.SelectedItem;
 
-                String gameModeToggle = "";
+                String selectedToggle = "";
                 if (SoloSearchQuickplayToggle.IsChecked == true)
-                    gameModeToggle = "Quickplay";
+                {
+                    selectedToggle = "Quickplay";
+                }
+                    
                 else if (SoloSearchRankedToggle.IsChecked == true)
-                    gameModeToggle = "Ranked";
+                {
+                    selectedToggle = "Ranked";
+                }
 
                 String selectedHero = "";
-                if (SoloSearchHeroComboBox.SelectedIndex != -1)
+                if(SoloSearchHeroComboBox.SelectedIndex != -1)
+                {
                     selectedHero = (String)SoloSearchHeroComboBox.SelectedItem;
+                }
 
                 foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
                 {
                     Profile profile = user.getProfile();
                     String role = profile.Role;
-                    String mode = profile.GameMode;
                     String hero = profile.Hero;
-                    if (selectedRole.Equals(role) && gameModeToggle.Equals(mode) && (selectedHero.Equals(hero) || SoloSearchHeroComboBox.SelectedIndex == -1))
+                    String mode = profile.GameMode;
+
+                    if(selectedRole.Equals(role) && selectedToggle.Equals(mode) &&(selectedHero.Equals(hero)||(SoloSearchHeroComboBox.SelectedIndex == -1)))
+                    {
                         user.Visibility = Visibility.Visible;
+                    }
                     else
+                    {
                         user.Visibility = Visibility.Collapsed;
+                    }
+                    
                 }
+
             }
+            
+
         }
 
         /// <summary>
@@ -346,32 +343,44 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void SoloSearchHeroComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(SoloSearchHeroComboBox.SelectedIndex != -1)
+            
+            if (SoloSearchHeroComboBox.SelectedIndex != -1)
             {
                 String selectedHero = (String)SoloSearchHeroComboBox.SelectedItem;
 
-                String gameModeToggle = "";
-                if (SoloSearchQuickplayToggle.IsChecked == true)
-                    gameModeToggle = "Quickplay";
+                String selectedToggle = "";
+                if(SoloSearchQuickplayToggle.IsChecked == true)
+                {
+                    selectedToggle = "Quickplay";
+                }
                 else if (SoloSearchRankedToggle.IsChecked == true)
-                    gameModeToggle = "Ranked";
+                {
+                    selectedToggle = "Ranked";
+                }
 
                 String selectedRole = "";
-                if (SoloSearchRoleComboBox.SelectedIndex != -1)
-                    selectedRole = (String)SoloSearchRoleComboBox.SelectedItem;
-
-
+                if(SoloSearchRoleComboBox.SelectedIndex != -1)
+                {
+                    selectedRole = (String) SoloSearchRoleComboBox.SelectedItem;
+                }
+                
                 foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
                 {
                     Profile profile = user.getProfile();
-                    String role = profile.Role;
-                    String mode = profile.GameMode;
                     String hero = profile.Hero;
-                    if (selectedHero.Equals(hero) && gameModeToggle.Equals(mode) &&(selectedRole.Equals(role) || SoloSearchRoleComboBox.SelectedIndex == -1))
+                    String mode = profile.GameMode;
+                    String role = profile.Role;
+
+                    if(selectedHero.Equals(hero) && selectedToggle.Equals(mode) && (selectedRole.Equals(role)||(SoloSearchRoleComboBox.SelectedIndex == -1)))
+                    {
                         user.Visibility = Visibility.Visible;
+                    }
                     else
+                    {
                         user.Visibility = Visibility.Collapsed;
+                    }
                 }
+
             }
         }
 
@@ -387,7 +396,33 @@ namespace CPSC_481_PROJECT
             foreach (Profile user in MainWindow.UserList)
                 SoloSearchStackPanel.Children.Add(new SoloSearchControl(user, this));
 
-            
+
+            if(SoloSearchQuickplayToggle.IsChecked == true)
+            {
+                foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
+                {
+                    Profile userProfile = user.getProfile();
+
+                    if (userProfile.GameMode.Equals("Quickplay"))
+                        user.Visibility = Visibility.Visible;
+
+                    else if (userProfile.GameMode.Equals("Ranked"))
+                        user.Visibility = Visibility.Collapsed;
+
+                }
+            }
+            else if(SoloSearchRankedToggle.IsChecked == true)
+            {
+                foreach (SoloSearchControl user in SoloSearchStackPanel.Children)
+                {
+                    Profile profile = user.getProfile();
+                    if (profile.GameMode.Equals("Ranked"))
+                        user.Visibility = Visibility.Visible;
+
+                    else if (profile.GameMode.Equals("Quickplay"))
+                        user.Visibility = Visibility.Collapsed;
+                }
+            }
         }
 
         public void remakeTeamListPanel()
@@ -508,6 +543,8 @@ namespace CPSC_481_PROJECT
 
         private void MainPageTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            //remakeSoloSearchPanel();
 
         }
     }
