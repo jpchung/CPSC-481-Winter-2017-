@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CPSC_481_PROJECT
 {
-    class Team
+    public class Team
     {
         public String TeamName { get; set; }
         private List<Profile> TeamMembers;
         public String TeamGameMode { get; set; }
 
         /// <summary>
-        /// Team class constructor
+        /// Team class constructor, adds creator as first member
         /// </summary>
         /// <param name="newName"></param>
         /// <param name="newProfile"></param>

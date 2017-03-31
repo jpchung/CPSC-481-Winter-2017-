@@ -45,12 +45,18 @@ namespace CPSC_481_PROJECT
         private void CreateTeamConfirmButton_Click(object sender, RoutedEventArgs e)
         {
             String newTeamName = TeamNameInput.Text;
+            String newTeamGameMode = "";
+            if (TeamGameModeComboBox.SelectedIndex != -1)
+            {
+                 newTeamGameMode = (String)TeamGameModeComboBox.SelectedItem;
+
+            }
 
             //check if team already exists (team names unique)
             bool existingTeam = false;
             foreach (var team in MainWindow.TeamsList)
             {
-                if (team.Key.Equals(newTeamName))
+                if (team.TeamName.Equals(newTeamName))
                 {
                     existingTeam = true;
                     break;
@@ -61,13 +67,18 @@ namespace CPSC_481_PROJECT
                 && !user.hasTeam && TeamGameModeComboBox.SelectedIndex != -1)
             {
 
-                user.makeNewTeam(newTeamName); //will make new team list with current user as first member
-                List<Profile> newTeamList = user.getTeamList();
-                MainWindow.TeamsList.Add(newTeamName, newTeamList);
+                //user.makeNewTeam(newTeamName); 
+                //List<Profile> newTeamList = user.getTeamList();
+
+                //will make new team list with current user as first member
+                user.makeNewTeam(newTeamName, newTeamGameMode);
+                Team newTeam = user.getTeam();
+                MainWindow.TeamsList.Add(newTeam);
                 String TeamGameMode = (String) TeamGameModeComboBox.SelectedItem;
-             
+
                 //add new team to GroupSearch list
-                userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeamName, newTeamList, userPage));
+                //userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeamName, newTeamList, userPage));
+                userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeam, userPage));
 
                 userPage.TeamListText.Text = "Team Name: " + newTeamName;
 

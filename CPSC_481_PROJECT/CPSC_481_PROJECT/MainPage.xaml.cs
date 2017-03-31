@@ -77,7 +77,7 @@ namespace CPSC_481_PROJECT
             //team list
             if(userProfile.hasTeam)
             {
-                TeamListText.Text = "Team Name: " + userProfile.teamName;
+                TeamListText.Text = "Team Name: " + userProfile.getTeam().TeamName;
                 remakeTeamListPanel();
             }
 
@@ -92,10 +92,11 @@ namespace CPSC_481_PROJECT
 
             foreach (var item in MainWindow.TeamsList)
             {
-                String teamName =  item.Key;
-                List<Profile> teamMembers = item.Value;
-                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
+                //String teamName =  item.Key;
+                //List<Profile> teamMembers = item.Value;
+                //GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
 
+                GroupSearchStackPanel.Children.Add(new GroupSearchControl(item, this));
             }
 
 
@@ -224,6 +225,8 @@ namespace CPSC_481_PROJECT
         {
             new ProfilePictureSelectWindow(userProfile).ShowDialog();
             ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + userProfile.ProfileIconSource));
+
+            //update all related MainPage elements involving Profile picture
             remakeSoloSearchPanel();
             remakeGroupSearchPanel();
             remakeTeamListPanel();
@@ -385,8 +388,8 @@ namespace CPSC_481_PROJECT
         }
 
         /// <summary>
-        /// can't figure out how to update existing usercontrols in a stackpanel, 
-        /// so just remake the entire stackpanel
+        /// Remake Solo Search StackPanel to update userControls 
+        /// (Also auto-filters by game mode)
         /// </summary>
         public void remakeSoloSearchPanel()
         {
@@ -425,11 +428,14 @@ namespace CPSC_481_PROJECT
             }
         }
 
+        /// <summary>
+        /// remakes list of Team members on Profile Team tab for any changes
+        /// </summary>
         public void remakeTeamListPanel()
         {
             TeamListPanel.Children.Clear();
 
-            List<Profile> ProfileTeamList = userProfile.getTeamList();
+            List<Profile> ProfileTeamList = userProfile.getTeam().getMembersList();
             if ((ProfileTeamList != null) && ProfileTeamList.Any())
             {
                 foreach (Profile member in ProfileTeamList)
@@ -522,7 +528,7 @@ namespace CPSC_481_PROJECT
             foreach(TabItem item in ProfileTabControl.Items)
             {
                 if (item.IsSelected)
-                    item.Background = Brushes.Yellow;
+                    item.Background = Brushes.Gold;
                 
                 else
                     item.Background = Brushes.White;
@@ -531,6 +537,7 @@ namespace CPSC_481_PROJECT
 
         /// <summary>
         /// remake Group search panel for any changes to usercontrol
+        /// WIP -  sort by game mode like with solo search
         /// </summary>
         public void remakeGroupSearchPanel()
         {
@@ -538,9 +545,10 @@ namespace CPSC_481_PROJECT
 
             foreach(var item in MainWindow.TeamsList)
             {
-                String teamName = item.Key;
-                List<Profile> teamMembers = item.Value;
-                GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
+                //String teamName = item.Key;
+                //List<Profile> teamMembers = item.Value;
+                //GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
+                GroupSearchStackPanel.Children.Add(new GroupSearchControl(item, this));
             }
 
             //if(GroupSearchQuickplayToggle.IsChecked == true)
@@ -557,6 +565,30 @@ namespace CPSC_481_PROJECT
 
             //remakeSoloSearchPanel();
 
+        }
+
+        /// <summary>
+        /// clears status message text box on click if default message
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void StatusMessage_GotFocus(object sender, RoutedEventArgs e)
+        {
+            String statusMessage = ProfileStatusTextBox.Text;
+            if (statusMessage.Equals("Status Message"))
+            {
+                ProfileStatusTextBox.Clear();
+            }
+            
+        }
+
+        private void StatusMessage_LostFocus(object sender, RoutedEventArgs e)
+        {
+            String statusMessage = ProfileStatusTextBox.Text;
+            if (String.IsNullOrEmpty(statusMessage) || String.IsNullOrWhiteSpace(statusMessage))
+            {
+                ProfileStatusTextBox.Text = "Status Message";
+            }
         }
     }
 

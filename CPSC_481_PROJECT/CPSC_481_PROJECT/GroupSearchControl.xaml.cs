@@ -25,18 +25,24 @@ namespace CPSC_481_PROJECT
         Profile user;
         String teamName;
         List<Profile> teamMembers;
+        Team team;
         
 
-        public GroupSearchControl(String currentTeamName, List<Profile> currentTeamMembers, MainPage currentPage)
+        //public GroupSearchControl(String currentTeamName, List<Profile> currentTeamMembers, MainPage currentPage)
+        public GroupSearchControl (Team currentTeam, MainPage currentPage)
         {
             InitializeComponent();
             userPage = currentPage;
             user = userPage.getCurrentProfile();
-            TeamSearchName.Text = teamName = currentTeamName;
-            teamMembers = currentTeamMembers;
+            
+            team = currentTeam;
+            TeamSearchName.Text = teamName = team.TeamName;
+            teamMembers = team.getMembersList();
 
 
-            //WIP - instatiate only as many images/borders as there are members
+
+
+            //instatiate only as many images/borders as there are members
 
             foreach(Profile member in teamMembers)
             {
@@ -79,7 +85,7 @@ namespace CPSC_481_PROJECT
                 
             }
 
-            if(user.hasTeam && user.teamName.Equals(teamName))
+            if(user.hasTeam && user.getTeam().TeamName.Equals(teamName))
                 JoinTeamButton.Visibility = Visibility.Hidden;
 
 
@@ -148,7 +154,8 @@ namespace CPSC_481_PROJECT
             if(!user.hasTeam)
             {
                 teamMembers.Add(user);
-                user.setDefaultTeam(teamName,teamMembers);
+                //user.setDefaultTeam(teamName,teamMembers);
+                user.setDefaultTeam(team);
                 user.hasTeam = true;
                 userPage.remakeTeamListPanel();
                 userPage.TeamListText.Text = "Team Name: " + teamName;

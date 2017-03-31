@@ -24,7 +24,9 @@ namespace CPSC_481_PROJECT
     {
 
         public static List<Profile> UserList = new List<Profile>();
-        public static Dictionary<String, List<Profile>> TeamsList = new Dictionary<String, List<Profile>>();
+        //public static Dictionary<String, List<Profile>> TeamsList = new Dictionary<String, List<Profile>>();
+        public static List<Team> TeamsList = new List<Team>();
+
 
         /// <summary>
         /// Initialize WPF MainWindow components on start
@@ -33,7 +35,9 @@ namespace CPSC_481_PROJECT
         {
             InitializeComponent();
 
-            List<Profile> defaultTeam = new List<Profile>();
+            //List<Profile> defaultTeam = new List<Profile>();
+            
+
 
             //Default User Profile List
             Profile defaultProfile = new Profile("birdnukes@gmail.com", "ItsRainingJustice", "cawcaw", "dronestrikes#2016");
@@ -49,26 +53,40 @@ namespace CPSC_481_PROJECT
             UserList.Add(defaultProfile);
 
             defaultProfile = new Profile("grillsgeneration@op.gg", "xX_GurlGamer_Xx", "geegee", "winkyfayce#2014");
-            defaultProfileInfo = new String[] {"Defense", "D.Va", "Ranked", "Nerf this!", "/Images/MLG_KPOP_GREMLIN.png"};
+            defaultProfileInfo = new String[] {"Defense", "D.Va", "Quickplay", "Nerf this!", "/Images/MLG_KPOP_GREMLIN.png"};
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             //defaultProfile.defaultFriends(UserList); //test friend list stackpanel with user list
            // defaultProfile.defaultTeam(UserList); //test team list stackpanel with user list
             UserList.Add(defaultProfile);
-            defaultTeam.Add(defaultProfile);
+            //defaultTeam.Add(defaultProfile);
+
+            Team defaultTeam = new Team("Default Team", defaultProfile, "Ranked");
+
 
             defaultProfile = new Profile("ih8hanzo@yahoo.com", "GenjiGod", "naruto", "dattebayo#2003");
             defaultProfileInfo = new String[] { "Offense", "Genji", "Ranked", "I Need Healing!", "/Images/PRO_GENJI.png" };
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
-            defaultTeam.Add(defaultProfile);
+            //defaultTeam.Add(defaultProfile);
+            defaultTeam.getMembersList().Add(defaultProfile);
 
-            //default team in database
-            foreach(Profile defaultMember in defaultTeam)
+            //foreach(Profile defaultMember in defaultTeam)
+            //{
+            //    defaultMember.setDefaultTeam("defaultTeam",defaultTeam);
+            //    defaultMember.hasTeam = true;
+            //}
+            //MainWindow.TeamsList.Add("defaultTeam", defaultTeam);
+
+
+            //default team in app's "database"
+            List<Profile> defaultMembers = defaultTeam.getMembersList();
+            foreach(Profile member in defaultMembers)
             {
-                defaultMember.setDefaultTeam("defaultTeam",defaultTeam);
-                defaultMember.hasTeam = true;
+                member.setDefaultTeam(defaultTeam);
+                member.hasTeam = true;
             }
-            MainWindow.TeamsList.Add("defaultTeam", defaultTeam);
+            MainWindow.TeamsList.Add(defaultTeam);
+
 
 
             //initialize MainWindow to Login page by default
