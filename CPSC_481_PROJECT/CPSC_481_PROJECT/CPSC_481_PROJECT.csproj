@@ -227,6 +227,27 @@
   <ItemGroup>
     <Resource Include="Images\StatsBackgroundCentered.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\StatsBackgroundV3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\OWRankIcons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FriendsListStatsBackgroundV1.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\RankIcons\OWRankIcons.png" />
+    <Resource Include="Images\RankIcons\Rank1.jpg" />
+    <Resource Include="Images\RankIcons\Rank2.jpg" />
+    <Resource Include="Images\RankIcons\Rank3.jpg" />
+    <Resource Include="Images\RankIcons\Rank4.jpg" />
+    <Resource Include="Images\RankIcons\Rank5.jpg" />
+    <Resource Include="Images\RankIcons\Rank6.jpg" />
+    <Resource Include="Images\RankIcons\Rank7.jpg" />
+    <Resource Include="Images\RankIcons\Rank8.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

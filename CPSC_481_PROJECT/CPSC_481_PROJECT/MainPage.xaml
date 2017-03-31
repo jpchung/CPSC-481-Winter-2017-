@@ -92,34 +92,59 @@
                                     <ColumnDefinition Width="411*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image x:Name="StatsBackground" Source="Images/StatsBackgroundCentered.jpg" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="933" Margin="0,10,0,0" Grid.ColumnSpan="2"/>
-
-                                <Rectangle x:Name="MostPlayedRec1" HorizontalAlignment="Left" Height="140" Margin="169.392,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="140" Grid.Column="1"/>
-                                <Rectangle x:Name="MostPlayedRec2" HorizontalAlignment="Left" Height="140" Margin="341,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="140"/>
-                                <Rectangle x:Name="MostPlayedRec3" HorizontalAlignment="Left" Height="140" Margin="521,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.927,0.497" Grid.ColumnSpan="2"/>
-                                <Rectangle x:Name="RankIconRectangle" HorizontalAlignment="Left" Height="140" Margin="57,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="163"/>
+                                <Image x:Name="StatsBackground" Source="Images/StatsBackgroundV3.jpg" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="933" Margin="10,10,0,0" Grid.ColumnSpan="2"/>
+                                <Rectangle x:Name="MostPlayedRec2_Copy" Height="132" Margin="401,65,56,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top"/>
+                                <Rectangle x:Name="MostPlayedRec2_Copy1" HorizontalAlignment="Left" Height="132" Margin="481,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2"/>
+                                <Rectangle x:Name="MostPlayedRec2_Copy2" HorizontalAlignment="Left" Height="132" Margin="321,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="75"/>
+                                <Rectangle x:Name="LastGamePlayedRectangle" HorizontalAlignment="Left" Height="104" Margin="89,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="240" Grid.Column="1"/>
+                                <Image x:Name="RankIcon" Source="Images/RankIcons/Rank1.jpg" HorizontalAlignment="Left" Height="104" Margin="60,65,0,0" VerticalAlignment="Top" Width="105"/>
+                                <Image x:Name="LGP1" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="289,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="249,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy1" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="209,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.7,2.061"/>
+                                <Image x:Name="LGP1_Copy2" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="169,65,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy3" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="129,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-2.85,0.633"/>
+                                <Image x:Name="LGP1_Copy5" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="89,65,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy6" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="89,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy7" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="129,65,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy8" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="209,65,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy9" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="249,65,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy10" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="289,65,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="LGP1_Copy11" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="169,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
 
                             </Grid>
                         </TabItem>
                         <TabItem Header="FRIENDS" HorizontalAlignment="Right" Width="314">
                             <Grid Background="LightGray">
-                                <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="174*"/>
+                                    <ColumnDefinition Width="769*"/>
+                                </Grid.ColumnDefinitions>
+                                <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0" Grid.ColumnSpan="2">
                                     <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
 
                                     </StackPanel>
 
                                 </ScrollViewer>
-                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="273" Margin="10,0,0,0"/>
-                                <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="273" Margin="10,0,0,0" Grid.ColumnSpan="2"/>
+                                <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="159.073,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top" Grid.Column="1"/>
 
 
-                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="479" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray" >
+                                <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="479" Margin="144.073,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray" Grid.Column="1" >
                                     <ListView.View>
                                         <GridView>
 
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
+                                <Image x:Name="FriendsStatsBackground" Source ="Images/FriendsListStatsBackgroundV1.jpg" Grid.Column="1" HorizontalAlignment="Left" Height="478" Margin="144,53,0,0" VerticalAlignment="Top" Width="625"/>
+                                <Image x:Name="FriendRankIcon" Source="Images/RankIcons/Rank1.jpg" HorizontalAlignment="Left" Height="69" Margin="173,111,0,0" VerticalAlignment="Top" Width="68" Grid.Column="1" RenderTransformOrigin="0.472,0.503"/>
+                                <Image x:Name="MostPlayedIcon1" Source="HeroIcons/hanzo.png" HorizontalAlignment="Left" Height="100" Margin="370,111,0,0" VerticalAlignment="Top" Width="100" Grid.Column="1" RenderTransformOrigin="0.472,0.503"/>
+                                <Image x:Name="MostPlayedIcon2" Source="HeroIcons/lucio.png" HorizontalAlignment="Left" Height="100" Margin="580,111,0,0" VerticalAlignment="Top" Width="100" Grid.Column="1" RenderTransformOrigin="0.472,0.503"/>
+                                <Image x:Name="MostPlayedIcon3" Source="HeroIcons/roadhog.png" HorizontalAlignment="Left" Height="100" Margin="475,111,0,0" VerticalAlignment="Top" Width="100" Grid.Column="1" RenderTransformOrigin="0.472,0.503"/>
+                                <Border x:Name="FriendMPB2" BorderBrush="Black" BorderThickness="2" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="475,111,0,0" VerticalAlignment="Top" Width="100"/>
+                                <Border x:Name="FriendMPB3" BorderBrush="Black" BorderThickness="2" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="580,111,0,0" VerticalAlignment="Top" Width="100"/>
+                                <Border x:Name="FriendMPB1" BorderBrush="Black" BorderThickness="2" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="370,111,0,0" VerticalAlignment="Top" Width="100"/>
+                                <Border x:Name="FriendsRankIconBorder" BorderBrush="Black" BorderThickness="2" Grid.Column="1" HorizontalAlignment="Left" Height="69" Margin="173,111,0,0" VerticalAlignment="Top" Width="68"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Left" Width="305" Margin="9,0,-9,0">
