@@ -34,8 +34,7 @@ namespace CPSC_481_PROJECT
             InitializeComponent();
             userPage = currentPage;
             user = userPage.getCurrentProfile();
-            //TeamSearchName.Text = teamName = currentTeamName;
-            //teamMembers = currentTeamMembers;
+            
             team = currentTeam;
             TeamSearchName.Text = teamName = team.TeamName;
             teamMembers = team.getMembersList();
@@ -43,7 +42,7 @@ namespace CPSC_481_PROJECT
 
 
 
-            //WIP - instatiate only as many images/borders as there are members
+            //instatiate only as many images/borders as there are members
 
             foreach(Profile member in teamMembers)
             {

@@ -70,7 +70,6 @@ namespace CPSC_481_PROJECT
             //defaultTeam.Add(defaultProfile);
             defaultTeam.getMembersList().Add(defaultProfile);
 
-            //default team in database
             //foreach(Profile defaultMember in defaultTeam)
             //{
             //    defaultMember.setDefaultTeam("defaultTeam",defaultTeam);
@@ -78,6 +77,8 @@ namespace CPSC_481_PROJECT
             //}
             //MainWindow.TeamsList.Add("defaultTeam", defaultTeam);
 
+
+            //default team in app's "database"
             List<Profile> defaultMembers = defaultTeam.getMembersList();
             foreach(Profile member in defaultMembers)
             {

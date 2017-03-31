@@ -225,6 +225,8 @@ namespace CPSC_481_PROJECT
         {
             new ProfilePictureSelectWindow(userProfile).ShowDialog();
             ProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + userProfile.ProfileIconSource));
+
+            //update all related MainPage elements involving Profile picture
             remakeSoloSearchPanel();
             remakeGroupSearchPanel();
             remakeTeamListPanel();
@@ -386,8 +388,8 @@ namespace CPSC_481_PROJECT
         }
 
         /// <summary>
-        /// can't figure out how to update existing usercontrols in a stackpanel, 
-        /// so just remake the entire stackpanel
+        /// Remake Solo Search StackPanel to update userControls 
+        /// (Also auto-filters by game mode)
         /// </summary>
         public void remakeSoloSearchPanel()
         {
@@ -426,6 +428,9 @@ namespace CPSC_481_PROJECT
             }
         }
 
+        /// <summary>
+        /// remakes list of Team members on Profile Team tab for any changes
+        /// </summary>
         public void remakeTeamListPanel()
         {
             TeamListPanel.Children.Clear();
@@ -523,7 +528,7 @@ namespace CPSC_481_PROJECT
             foreach(TabItem item in ProfileTabControl.Items)
             {
                 if (item.IsSelected)
-                    item.Background = Brushes.Yellow;
+                    item.Background = Brushes.Gold;
                 
                 else
                     item.Background = Brushes.White;
@@ -532,6 +537,7 @@ namespace CPSC_481_PROJECT
 
         /// <summary>
         /// remake Group search panel for any changes to usercontrol
+        /// WIP -  sort by game mode like with solo search
         /// </summary>
         public void remakeGroupSearchPanel()
         {

@@ -13,7 +13,7 @@ namespace CPSC_481_PROJECT
         public String TeamGameMode { get; set; }
 
         /// <summary>
-        /// Team class constructor
+        /// Team class constructor, adds creator as first member
         /// </summary>
         /// <param name="newName"></param>
         /// <param name="newProfile"></param>

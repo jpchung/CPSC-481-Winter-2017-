@@ -67,9 +67,11 @@ namespace CPSC_481_PROJECT
                 && !user.hasTeam && TeamGameModeComboBox.SelectedIndex != -1)
             {
 
-                //user.makeNewTeam(newTeamName); //will make new team list with current user as first member
-                user.makeNewTeam(newTeamName, newTeamGameMode);
+                //user.makeNewTeam(newTeamName); 
                 //List<Profile> newTeamList = user.getTeamList();
+
+                //will make new team list with current user as first member
+                user.makeNewTeam(newTeamName, newTeamGameMode);
                 Team newTeam = user.getTeam();
                 MainWindow.TeamsList.Add(newTeam);
                 String TeamGameMode = (String) TeamGameModeComboBox.SelectedItem;

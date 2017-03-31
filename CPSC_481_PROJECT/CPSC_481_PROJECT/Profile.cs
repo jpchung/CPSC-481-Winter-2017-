@@ -37,6 +37,8 @@ namespace CPSC_481_PROJECT
         public bool hasTeam { get; set; }
         //public String teamName;
         //private List<Profile> teamList;
+
+        //won't be instantiated unless create/join team
         private Team userTeam;
 
 
@@ -98,19 +100,20 @@ namespace CPSC_481_PROJECT
         }
 
         /// <summary>
-        /// debugging method to set default team list
+        /// debugging method to set default team
         /// </summary>
-        /// <param name="defaultTeamList"></param>
-        //public void setDefaultTeam(String defaultTeamName,List<Profile> defaultTeamList)
-        //{
-            //teamName = defaultTeamName;
-            //teamList = defaultTeamList;
-        //}
-
+        /// <param name="defaultTeam"></param>
         public void setDefaultTeam(Team defaultTeam)
         {
             userTeam = defaultTeam;
         }
+
+        //public void setDefaultTeam(String defaultTeamName,List<Profile> defaultTeamList)
+        //{
+        //teamName = defaultTeamName;
+        //teamList = defaultTeamList;
+        //}
+
 
         /// <summary>
         /// get friends list
@@ -161,16 +164,11 @@ namespace CPSC_481_PROJECT
 
         }
 
+  
         /// <summary>
-        /// get team list
+        /// return user Team (assuming they have one)
         /// </summary>
         /// <returns></returns>
-        public Team getTeamList()
-        {
-            //return teamList;
-            return userTeam;
-        }
-
         public Team getTeam()
         {
             return userTeam;
