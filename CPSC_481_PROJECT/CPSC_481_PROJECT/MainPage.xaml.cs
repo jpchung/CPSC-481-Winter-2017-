@@ -529,6 +529,9 @@ namespace CPSC_481_PROJECT
             }
         }
 
+        /// <summary>
+        /// remake Group search panel for any changes to usercontrol
+        /// </summary>
         public void remakeGroupSearchPanel()
         {
             GroupSearchStackPanel.Children.Clear();
@@ -539,6 +542,14 @@ namespace CPSC_481_PROJECT
                 List<Profile> teamMembers = item.Value;
                 GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
             }
+
+            //if(GroupSearchQuickplayToggle.IsChecked == true)
+            //{
+            //    foreach(GroupSearchControl team in GroupSearchStackPanel.Children)
+            //    {
+
+            //    }
+            //}
         }
 
         private void MainPageTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
