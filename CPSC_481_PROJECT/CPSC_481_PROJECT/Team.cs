@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CPSC_481_PROJECT
 {
-    class Team
+    public class Team
     {
         public String TeamName { get; set; }
         private List<Profile> TeamMembers;

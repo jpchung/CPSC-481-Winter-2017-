@@ -78,7 +78,7 @@
                     <Image x:Name="ProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="55,34,0,0">
                     </Image>
                     <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="56,239,1018.4,357" FontSize="18" Click="ChangeProfilePicButton_Click"/>
-                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,0,1016.4,312" FontSize="16" BorderBrush="Black" Height="40" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed"/>
+                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,0,1016.4,312" FontSize="16" BorderBrush="Black" Height="40" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed" GotFocus="StatusMessage_GotFocus" LostFocus="StatusMessage_LostFocus"/>
 
                     <ComboBox x:Name="RoleComboBox" Margin="56,359,1018.4,237" BorderBrush="Black" FontSize="24" SelectionChanged="RoleComboBox_SelectionChanged">
                     </ComboBox>

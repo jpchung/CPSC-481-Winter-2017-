@@ -35,8 +35,9 @@ namespace CPSC_481_PROJECT
         private List<Profile> friendsList;
 
         public bool hasTeam { get; set; }
-        public String teamName;
-        private List<Profile> teamList;
+        //public String teamName;
+        //private List<Profile> teamList;
+        private Team userTeam;
 
 
         /// <summary>
@@ -61,7 +62,7 @@ namespace CPSC_481_PROJECT
 
             friendsList = new List<Profile>();
             hasTeam = false;
-            teamList = new List<Profile>();
+            //teamList = new List<Profile>();
 
 
 
@@ -100,10 +101,15 @@ namespace CPSC_481_PROJECT
         /// debugging method to set default team list
         /// </summary>
         /// <param name="defaultTeamList"></param>
-        public void setDefaultTeam(String defaultTeamName,List<Profile> defaultTeamList)
+        //public void setDefaultTeam(String defaultTeamName,List<Profile> defaultTeamList)
+        //{
+            //teamName = defaultTeamName;
+            //teamList = defaultTeamList;
+        //}
+
+        public void setDefaultTeam(Team defaultTeam)
         {
-            teamName = defaultTeamName;
-            teamList = defaultTeamList;
+            userTeam = defaultTeam;
         }
 
         /// <summary>
@@ -119,23 +125,23 @@ namespace CPSC_481_PROJECT
         /// Add new member profile to team list
         /// </summary>
         /// <param name="newMember"></param>
-        public void addTeamMember(Profile newMember)
-        {
-            if (teamList.Count() <= 5)
-                teamList.Add(newMember);
-        }
+        //public void addTeamMember(Profile newMember)
+        //{
+        //    if (teamList.Count() <= 5)
+        //        teamList.Add(newMember);
+        //}
 
-        public void removeTeamMember(Profile memberToRemove)
-        {
-            foreach(Profile member in teamList)
-            {
-                if (member.Equals(memberToRemove))
-                {
-                    teamList.Remove(member);
-                    break;
-                }
-            }
-        }
+        //public void removeTeamMember(Profile memberToRemove)
+        //{
+        //    foreach(Profile member in teamList)
+        //    {
+        //        if (member.Equals(memberToRemove))
+        //        {
+        //            teamList.Remove(member);
+        //            break;
+        //        }
+        //    }
+        //}
 
 
 
@@ -144,20 +150,30 @@ namespace CPSC_481_PROJECT
         /// Users should only have one team so set boolean
         /// </summary>
         /// <param name="name"></param>
-        public void makeNewTeam(String name)
+        public void makeNewTeam(String name, String mode)
         {
-            teamName = name;
-            teamList.Add(this);
+            //teamName = name;
+            //teamList.Add(this);
+            //hasTeam = true;
+
+            userTeam = new Team(name, this, mode);
             hasTeam = true;
+
         }
 
         /// <summary>
         /// get team list
         /// </summary>
         /// <returns></returns>
-        public List<Profile> getTeamList()
+        public Team getTeamList()
         {
-            return teamList;
+            //return teamList;
+            return userTeam;
+        }
+
+        public Team getTeam()
+        {
+            return userTeam;
         }
 
 
