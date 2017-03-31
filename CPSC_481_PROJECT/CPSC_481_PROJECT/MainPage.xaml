@@ -179,7 +179,7 @@
                                         </Grid>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsChecked" Value="True">
-                                                <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="Yellow"/>
+                                                <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="Gold"/>
                                             </Trigger>
                                             <Trigger Property="IsChecked" Value="False">
                                                 <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="White" />
