@@ -72,7 +72,7 @@
                 </Style>
             </TabControl.Resources>
 
-            <TabItem Header="PROFILE" Width="635" Height="76" FontSize="36" >
+            <TabItem Header="PROFILE" Width="635" Height="76" FontSize="36" BorderThickness="0" >
                 <Grid>
                     <TextBlock x:Name="ProfileUsername" TextWrapping="Wrap" Text="" FontSize="24" Margin="54,0,1019.4,602"  />
                     <Image x:Name="ProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="55,34,0,0">
@@ -99,7 +99,7 @@
 
                         <TabItem  Header="STATS" HorizontalAlignment="Center" Width="315" >
                             <Grid Background="#FFE5E5E5">
-                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="504" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" >
+                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="504" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" Margin="0,0,0,-0.8" >
 
                                     <ListView.View>
                                         <GridView>
@@ -115,7 +115,7 @@
                         </TabItem>
 
                         <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" >
-                            <Grid Background="LightGray">
+                            <Grid Background="LightGray" Margin="0,-6,0.2,0.2">
                                 <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0">
                                     <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
 
@@ -138,7 +138,7 @@
                             </Grid>
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Center" Width="315" >
-                            <Grid Background="LightGray">
+                            <Grid Background="LightGray" Margin="0,-5,0.2,0.2">
 
                                 <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,50,0,0">
                                     <StackPanel x:Name="TeamListPanel" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="908">
@@ -147,8 +147,8 @@
 
                                 </ScrollViewer>
 
-                                <TextBlock x:Name="TeamListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Team Name: " Background="White" VerticalAlignment="Top" FontSize="36" Width="918" Margin="15,7,0,0" Height="43"/>
-                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="763,10,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="35" FontSize="16"/>
+                                <TextBlock x:Name="TeamListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Team Name: " Background="White" VerticalAlignment="Top" FontSize="36" Width="918" Margin="15,7,0,0" Height="65"/>
+                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="778.5,7,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="27" FontSize="16" Background="#FFEB5D0E" BorderBrush="#FF0C0C0C" FontFamily="Yu Gothic UI" FontWeight="Bold" BorderThickness="3,1,1,3"/>
 
 
                             </Grid>
@@ -165,7 +165,7 @@
 
 
             </TabItem>
-            <TabItem Header="SEARCH" Width="625" Height="76" FontSize="36">
+            <TabItem Header="SEARCH" Width="631" Height="76" FontSize="36">
                 <Grid>
                     <Grid.Resources>
                         <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
@@ -192,13 +192,20 @@
                     </Grid.Resources>
                     <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Margin="85,30,0,42" Width="1110" BorderThickness="0">
                         <TabItem Header="SOLO" Width="550">
-                            <Grid x:Name="___No_Name_" Background="LightGray" Margin="0,0,0,2">
-                                <RadioButton x:Name="SoloSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchQuickplayToggle_Checked"/>
-                                <RadioButton x:Name="SoloSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchRankedToggle_Checked"/>
+                            <Grid x:Name="___No_Name_" Background="LightGray" Margin="0,-9,0.4,1.8">
+                                <RadioButton x:Name="SoloSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,18,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchQuickplayToggle_Checked">
+                                    <RadioButton.Effect>
+                                        <DropShadowEffect/>
+                                    </RadioButton.Effect>
+                                </RadioButton>
+                                <RadioButton x:Name="SoloSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,18,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchRankedToggle_Checked">
+                                    <RadioButton.Effect>
+                                        <DropShadowEffect/>
+                                    </RadioButton.Effect>
+                                </RadioButton>
                                 <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="231,157,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="24" SelectionChanged="SoloSearchRoleComboBox_SelectionChanged"/>
                                 <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="500,157,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="24" RenderTransformOrigin="0.475,-0.125" SelectionChanged="SoloSearchHeroComboBox_SelectionChanged"/>
-                                <TextBox x:Name="SoloSearchInput" HorizontalAlignment="Left" Height="40" Margin="715,157,0,0" TextWrapping="Wrap" Text="Search by Username..." VerticalAlignment="Top" Width="235" RenderTransformOrigin="0.371,0.375" FontSize="22" FontStyle="Italic" GotFocus="SoloSearchInput_GotFocus" />
-                                <Button x:Name="SoloSearchButton" Content="Search" HorizontalAlignment="Left" Margin="950,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24" Click="SoloSearchButton_Click"/>
+                                <TextBox x:Name="SoloSearchInput" HorizontalAlignment="Left" Height="40" Margin="720,157,0,0" TextWrapping="Wrap" Text="Search by Username..." VerticalAlignment="Top" Width="235" RenderTransformOrigin="0.371,0.375" FontSize="22" FontStyle="Italic" GotFocus="SoloSearchInput_GotFocus" />
                                 <TextBlock x:Name="SearchRoleTextBlock" HorizontalAlignment="Left" Margin="72,157,0,0" TextWrapping="Wrap" Text="Filter by  Role: " VerticalAlignment="Top" Height="40" Width="Auto" FontSize="24" RenderTransformOrigin="0.85,0.625"/>
                                 <TextBlock x:Name="SearchHeroTextBlock" HorizontalAlignment="Left" Margin="436,157,0,0" TextWrapping="Wrap" Text="Hero: " VerticalAlignment="Top" Height="40" Width="Auto" FontSize="24" RenderTransformOrigin="0.647,0.5"/>
                                 <ListView x:Name="SoloSearchListView" HorizontalAlignment="Left" Height="300" Margin="72,202,0,0" VerticalAlignment="Top" Width="960" FontSize="24" Background="LightSlateGray">
@@ -214,6 +221,11 @@
                                     <StackPanel x:Name="SoloSearchStackPanel" Background="LightSlateGray" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="960" />
 
                                 </ScrollViewer>
+                                <Button x:Name="SoloSearchButton" Content="Search" HorizontalAlignment="Left" Margin="955,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24" Click="SoloSearchButton_Click">
+                                    <Button.Effect>
+                                        <DropShadowEffect/>
+                                    </Button.Effect>
+                                </Button>
                                 <Grid x:Name="RoleGlossaryGrid" Margin="402,82,406,355">
 
                                     <Image x:Name="DefenseIcon" Source="pack://application:,,,/Images/DefenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="80,18,0,0" VerticalAlignment="Top" Width="50"/>
@@ -222,12 +234,21 @@
                                     <Image x:Name="SupportIcon" Source="pack://application:,,,/Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="240,19,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
                                     <TextBlock x:Name="RoleIconsTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Offense        Defense          Tank           Support" VerticalAlignment="Top" Height="19" FontSize="14"/>
                                 </Grid>
+                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="386,82,0,0" VerticalAlignment="Top" Width="328" CornerRadius="6"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="GROUP" Width="555">
-                            <Grid Background="LightGray">
-                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" />
-                                <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240"/>
+                        <TabItem Header="GROUP" Width="555" Height="50">
+                            <Grid Background="LightGray" Margin="0,-9,0.4,8.8">
+                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" >
+                                    <RadioButton.Effect>
+                                        <DropShadowEffect/>
+                                    </RadioButton.Effect>
+                                </RadioButton>
+                                <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240">
+                                    <RadioButton.Effect>
+                                        <DropShadowEffect/>
+                                    </RadioButton.Effect>
+                                </RadioButton>
                                 <ListView x:Name="GroupSearchListView" Height="300" HorizontalAlignment="Left" Margin="72,202,0,0" Width="960" FontSize="24" Background="LightSlateGray">
 
                                     <ListView.View>
@@ -237,18 +258,34 @@
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
-                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="72,157,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus"/>
-                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="332,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click"/>
-                                <TextBlock x:Name="GroupRequestsTextBlock" HorizontalAlignment="Left" Margin="432,157,0,0" TextWrapping="Wrap" Text="Requests:" VerticalAlignment="Top" FontSize="24" Height="40"/>
-                                <TextBox x:Name="JoinRequesTextBox" HorizontalAlignment="Left" Height="40" Margin="537,155,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Width="180" FontSize="24"/>
-                                <Button x:Name="TeamJoinRequestAcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="717,156,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.467,0.019" Height="40" FontSize="16"/>
-                                <Button x:Name="TeamJoinRejectButton" Content="Reject" HorizontalAlignment="Left" Margin="792,156,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.067,0.481" Height="40" Click="TeamJoinRejectButton_Click" FontSize="16"/>
-                                <Button x:Name="CreateTeamButton" Content="Create Team" HorizontalAlignment="Left" Margin="887,157,0,0" VerticalAlignment="Top" Width="145" Height="40" FontSize="24" Click="CreateTeamButton_Click"/>
+                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="702,157,0,0" TextWrapping="Wrap" Text="Search By Team Name..." VerticalAlignment="Top" Width="260" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus" BorderBrush="#FF090909"/>
+                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="952,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click" BorderBrush="Black" BorderThickness="1" Opacity="0.995">
+                                    <Button.Effect>
+                                        <DropShadowEffect/>
+                                    </Button.Effect>
+                                </Button>
+                                <TextBlock x:Name="GroupRequestsTextBlock" HorizontalAlignment="Left" Margin="34,10,0,0" TextWrapping="Wrap" Text="Requests" VerticalAlignment="Top" FontSize="24" Height="40" TextDecorations="Underline"/>
+                                <TextBox x:Name="JoinRequesTextBox" HorizontalAlignment="Left" Height="40" Margin="34,50,0,0" TextWrapping="Wrap" Text="GenjiGod" VerticalAlignment="Top" Width="180" FontSize="24"/>
+                                <Button x:Name="TeamJoinRequestAcceptButton" Content="Accept" HorizontalAlignment="Left" Margin="34,95,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.467,0.019" Height="40" FontSize="16" BorderBrush="#FF090909" Background="#FF5EAE1B">
+                                    <Button.Effect>
+                                        <DropShadowEffect/>
+                                    </Button.Effect>
+                                </Button>
+                                <Button x:Name="TeamJoinRejectButton" Content="Reject" HorizontalAlignment="Left" Margin="134,95,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.067,0.481" Height="40" Click="TeamJoinRejectButton_Click" FontSize="16" BorderBrush="#FF090909" Background="#FFDA3030">
+                                    <Button.Effect>
+                                        <DropShadowEffect/>
+                                    </Button.Effect>
+                                </Button>
+                                <Button x:Name="CreateTeamButton" Content="Create Team" HorizontalAlignment="Left" Margin="75,152,0,0" VerticalAlignment="Top" Width="260" Height="40" FontSize="24" Click="CreateTeamButton_Click" BorderThickness="0" Background="#FFF4F6F3" BorderBrush="#FF383535">
+                                    <Button.Effect>
+                                        <DropShadowEffect/>
+                                    </Button.Effect>
+                                </Button>
                                 <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="72,240,76,8" Width="960">
                                     <StackPanel x:Name="GroupSearchStackPanel" HorizontalAlignment="Left" Height="Auto"  VerticalAlignment="Top" Width="960"/>
 
                                 </ScrollViewer>
-                                <TextBlock x:Name="InvalidGroupSearchText" HorizontalAlignment="Left" Margin="285,98,0,0" TextWrapping="Wrap" Text="Cannot create team if already member of another team!" Foreground="Red" FontSize="22" Width="Auto" VerticalAlignment="Top" />
+                                <TextBlock x:Name="InvalidGroupSearchText" HorizontalAlignment="Left" Margin="285,98,0,0" TextWrapping="Wrap" Text="Cannot create team if already member of another team!" Foreground="Red" FontSize="22" Width="Auto" VerticalAlignment="Top" FontFamily="Segoe UI Black" />
                             </Grid>
 
                         </TabItem>
@@ -262,7 +299,11 @@
 
 
         </TabControl>
-        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click"/>
+        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 
