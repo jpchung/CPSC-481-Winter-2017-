@@ -82,7 +82,7 @@ namespace CPSC_481_PROJECT
                 friendControl.FriendControlBackground.Background = Brushes.White;
 
                 if (this.Equals(friendControl))
-                    this.FriendControlBackground.Background = Brushes.Yellow;
+                    this.FriendControlBackground.Background = Brushes.Gold;
 
             }
         }
