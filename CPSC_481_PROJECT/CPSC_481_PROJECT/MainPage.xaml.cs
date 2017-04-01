@@ -439,7 +439,11 @@ namespace CPSC_481_PROJECT
             if ((ProfileTeamList != null) && ProfileTeamList.Any())
             {
                 foreach (Profile member in ProfileTeamList)
-                    TeamListPanel.Children.Add(new ProfileTeamMemberControl(member));
+                {
+                    int count = ProfileTeamList.IndexOf(member);
+                    TeamListPanel.Children.Add(new ProfileTeamMemberControl(member, count));
+                    
+                }
             }
         }
 
@@ -485,7 +489,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void GroupSearchInput_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (GroupSearchInput.Text.Equals("Search By Team Name..."))
+            if (GroupSearchInput.Text.Equals("Search by Team Name..."))
                 GroupSearchInput.Clear();
         }
 
@@ -499,7 +503,7 @@ namespace CPSC_481_PROJECT
             String teamSearch = GroupSearchInput.Text;
 
             if(!String.IsNullOrEmpty(teamSearch) && !String.IsNullOrWhiteSpace(teamSearch)
-                && !teamSearch.Equals("Search By Team Name..."))
+                && !teamSearch.Equals("Search by Team Name..."))
             {
                 foreach(GroupSearchControl team in GroupSearchStackPanel.Children)
                 {
@@ -582,12 +586,91 @@ namespace CPSC_481_PROJECT
             
         }
 
+        /// <summary>
+        /// Reset on loss of focus to default status message if nothing typed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StatusMessage_LostFocus(object sender, RoutedEventArgs e)
         {
             String statusMessage = ProfileStatusTextBox.Text;
             if (String.IsNullOrEmpty(statusMessage) || String.IsNullOrWhiteSpace(statusMessage))
             {
                 ProfileStatusTextBox.Text = "Status Message";
+            }
+        }
+
+        /// <summary>
+        /// Reset on loss of focus to default Group Search message if nothing typed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GroupSearchInput_LostFocus(object sender, RoutedEventArgs e)
+        {
+            String teamSearch = GroupSearchInput.Text;
+            if(String.IsNullOrEmpty(teamSearch) || String.IsNullOrWhiteSpace(teamSearch))
+            {
+                GroupSearchInput.Text = "Search by Team Name...";
+            }
+        }
+
+        /// <summary>
+        /// Reset on loss of focus to default Solo Search message if nothing typed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SoloSearchInput_LostFocus(object sender, RoutedEventArgs e)
+        {
+            String soloSearch = SoloSearchInput.Text;
+            if (String.IsNullOrEmpty(soloSearch) || String.IsNullOrEmpty(soloSearch))
+            {
+                SoloSearchInput.Text = "Search by Username...";
+            }
+        }
+
+        /// <summary>
+        /// Removes user from team if they're a member of one, and deletes team from global list if they're a team captain
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteTeamButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(userProfile.hasTeam)
+            {
+                Team teamToDelete = userProfile.getTeam();
+                List<Profile> members = teamToDelete.getMembersList();
+
+
+                //remove team from profile
+                userProfile.setDefaultTeam(null);
+                userProfile.hasTeam = false;
+                TeamListPanel.Children.Clear();
+                TeamListText.Text = "Team Name: ";
+
+                //if user is first member (i.e. team captain), delete team from global list
+                if (members.IndexOf(userProfile) == 0)
+                {
+                    
+                    //remove from global list and update group search
+                    MainWindow.TeamsList.Remove(teamToDelete);
+                    remakeGroupSearchPanel();
+                }
+                //otherwise, just remove user from that team
+                else
+                {
+                    foreach(Team team in MainWindow.TeamsList)
+                    {
+                        if(team.Equals(teamToDelete))
+                        {
+                            team.getMembersList().Remove(userProfile);
+                            break;
+                        }
+                    }
+                    
+                    //update group search
+                    remakeGroupSearchPanel();
+                }
+
             }
         }
     }

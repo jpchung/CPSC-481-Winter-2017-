@@ -22,7 +22,7 @@ namespace CPSC_481_PROJECT
     {
         private Profile profile;
 
-        public ProfileTeamMemberControl(Profile memberProfile)
+        public ProfileTeamMemberControl(Profile memberProfile, int memberCount)
         {
             InitializeComponent();
 
@@ -31,6 +31,14 @@ namespace CPSC_481_PROJECT
             TeamMemberProfileImage.Source = new BitmapImage(new Uri("pack://application:,,," + profile.ProfileIconSource));
             TeamMemberUsername.Text = "Username: " + profile.getUsernamePassword().Keys.ElementAt(0);
             TeamMemberBattletag.Text = "BattleTag: " + profile.BattleTag;
+
+            //show captain star icon if first member in team list
+            if(memberCount == 0)
+            {
+                TeamCaptainImage.Visibility = Visibility.Visible;
+            }
         }
+
+        
     }
 }
