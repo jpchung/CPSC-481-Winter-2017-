@@ -37,6 +37,10 @@ namespace CPSC_481_PROJECT
             invalidSignupTextTimer.Tick += invalidSignupTextTimer_Tick;
             invalidSignupTextTimer.Interval = new TimeSpan(0, 0, 3); //timer lasts for 3 second interval
 
+            SignupRoleComboBox.ItemsSource = Profile.RolesList;
+            SignupHeroComboBox.ItemsSource = Profile.HeroesList;
+            SignupGameModeComboBox.ItemsSource = Profile.GameModesList;
+
         }
 
         /// <summary>
@@ -155,8 +159,25 @@ namespace CPSC_481_PROJECT
                 String newPassword = SignupPasswordBox.Password; //password is case sensitive
                 String newBattleTag = BattetagInput.Text;
 
+                //hide previous signup elements
+                EmailText.Visibility = UsernameText.Visibility = Visibility.Hidden;
+                PasswordText.Visibility = ConfirmPasswordText.Visibility = BattetagText.Visibility = Visibility.Hidden;
+
+                EmailInput.Visibility = SignupUsernameInput.Visibility = Visibility.Hidden;
+                SignupPasswordBox.Visibility = SignupConfirmPasswordBox.Visibility = BattetagInput.Visibility = Visibility.Hidden;
+
+                //show next signup elements
+                SignupRoleText.Visibility = SignupHeroText.Visibility = SignupGameModeText.Visibility = Visibility.Visible;
+                SignupRoleComboBox.Visibility = SignupHeroComboBox.Visibility = SignupGameModeComboBox.Visibility = Visibility.Visible;
+                SignupBackButton.Visibility = Visibility.Visible;
+
                 //instantiate new user profile, add to list of user logins
                 Profile newUser = new Profile(newEmail, newUsername, newPassword, newBattleTag);
+                
+                //set role, hero, game mode for new profile
+                //newUser.Role = (String)SignupRoleComboBox.SelectedItem;
+                //newUser.Hero = (String)SignupHeroComboBox.SelectedItem;
+                //newUser.GameMode = (String)SignupGameModeComboBox.SelectedItem;
                 new SignupProfileSettingsWindow(newUser).ShowDialog();
             }
 
@@ -171,6 +192,11 @@ namespace CPSC_481_PROJECT
             InvalidSignupText.Text = textPrompt;
             InvalidSignupText.Visibility = Visibility.Visible;
             invalidSignupTextTimer.Start();
+        }
+
+        private void SignupBackButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
