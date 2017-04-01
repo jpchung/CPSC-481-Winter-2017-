@@ -97,7 +97,7 @@
 
 
 
-                        <TabItem  Header="STATS" HorizontalAlignment="Center" Width="315" >
+                        <TabItem  Header="STATS" HorizontalAlignment="Center" Width="315" Margin="0,0,0.2,-2.2" >
                             <Grid Background="#FFE5E5E5">
                                 <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="504" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" Margin="0,0,0,-0.8" >
 
@@ -114,7 +114,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" >
+                        <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" Margin="-0.2,0,0.4,-2.2" >
                             <Grid Background="LightGray" Margin="0,-6,0.2,0.2">
                                 <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0">
                                     <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
@@ -122,8 +122,8 @@
                                     </StackPanel>
 
                                 </ScrollViewer>
-                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="Auto" Margin="10,0,0,0"/>
-                                <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="333,0,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="Auto" Margin="10,5,0,0"/>
+                                <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="318,5,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
 
 
                                 <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="451" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
@@ -137,8 +137,8 @@
                                 </ListView>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="TEAM"  HorizontalAlignment="Center" Width="315" >
-                            <Grid Background="LightGray" Margin="0,-5,0.2,0.2">
+                        <TabItem Header="TEAM"  HorizontalAlignment="Center" Width="316" Margin="-0.4,0,-0.4,-2.2" >
+                            <Grid Background="LightGray" Margin="0,-5,5.2,0">
 
                                 <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,50,0,0">
                                     <StackPanel x:Name="TeamListPanel" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="908">
@@ -227,14 +227,17 @@
                                     </Button.Effect>
                                 </Button>
                                 <Grid x:Name="RoleGlossaryGrid" Margin="402,82,406,355">
-
+                                    <DataGrid x:Name="HighlightIcon" Opacity="0.4" Background="#FF688CAF" Margin="-15,1.2,-14.4,10"/>
                                     <Image x:Name="DefenseIcon" Source="pack://application:,,,/Images/DefenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="80,18,0,0" VerticalAlignment="Top" Width="50"/>
                                     <Image x:Name="TankIcon" Source="pack://application:,,,/Images/TankIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="160,18,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
                                     <Image x:Name="OffenseIcon" Source="pack://application:,,,/Images/OffenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="0,18,0,0" VerticalAlignment="Top" Width="50"/>
                                     <Image x:Name="SupportIcon" Source="pack://application:,,,/Images/SupportIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="240,19,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
                                     <TextBlock x:Name="RoleIconsTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Offense        Defense          Tank           Support" VerticalAlignment="Top" Height="19" FontSize="14"/>
                                 </Grid>
-                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="386,82,0,0" VerticalAlignment="Top" Width="328" CornerRadius="6"/>
+                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="70" Margin="386,83,0,0" VerticalAlignment="Top" Width="328" CornerRadius="6">
+
+                                </Border>
+                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="516" VerticalAlignment="Top" Width="1106"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="GROUP" Width="555" Height="50">
@@ -286,10 +289,12 @@
 
                                 </ScrollViewer>
                                 <TextBlock x:Name="InvalidGroupSearchText" HorizontalAlignment="Left" Margin="285,98,0,0" TextWrapping="Wrap" Text="Cannot create team if already member of another team!" Foreground="Red" FontSize="22" Width="Auto" VerticalAlignment="Top" FontFamily="Segoe UI Black" />
+                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="509" VerticalAlignment="Top" Width="1106"/>
                             </Grid>
 
                         </TabItem>
                     </TabControl>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="960" Margin="158,277,0,0"/>
 
                 </Grid>
 
