@@ -229,7 +229,10 @@ namespace CPSC_481_PROJECT
             //update all related MainPage elements involving Profile picture
             remakeSoloSearchPanel();
             remakeGroupSearchPanel();
-            remakeTeamListPanel();
+            if (userProfile.hasTeam)
+            {
+                remakeTeamListPanel();
+            }
         }
 
         /// <summary>

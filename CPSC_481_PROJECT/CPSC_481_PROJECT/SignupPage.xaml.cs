@@ -23,6 +23,8 @@ namespace CPSC_481_PROJECT
     {
 
         public static bool ValidSignup { get; set; }
+        bool secondClick;
+       
 
         //timer for incorrect signup text prompt
         DispatcherTimer invalidSignupTextTimer = new DispatcherTimer();
@@ -36,6 +38,12 @@ namespace CPSC_481_PROJECT
             ValidSignup = false;
             invalidSignupTextTimer.Tick += invalidSignupTextTimer_Tick;
             invalidSignupTextTimer.Interval = new TimeSpan(0, 0, 3); //timer lasts for 3 second interval
+
+            SignupRoleComboBox.ItemsSource = Profile.RolesList;
+            SignupHeroComboBox.ItemsSource = Profile.HeroesList;
+            SignupGameModeComboBox.ItemsSource = Profile.GameModesList;
+
+            secondClick = false;
 
         }
 
@@ -150,14 +158,62 @@ namespace CPSC_481_PROJECT
 
             if (ValidSignup)
             {
+                
                 String newEmail = EmailInput.Text;
                 String newUsername = SignupUsernameInput.Text; //username case sensitive
                 String newPassword = SignupPasswordBox.Password; //password is case sensitive
                 String newBattleTag = BattetagInput.Text;
 
-                //instantiate new user profile, add to list of user logins
-                Profile newUser = new Profile(newEmail, newUsername, newPassword, newBattleTag);
-                new SignupProfileSettingsWindow(newUser).ShowDialog();
+                //hide previous signup elements
+                EmailText.Visibility = UsernameText.Visibility = Visibility.Hidden;
+                PasswordText.Visibility = ConfirmPasswordText.Visibility = BattetagText.Visibility = Visibility.Hidden;
+
+                EmailInput.Visibility = SignupUsernameInput.Visibility = Visibility.Hidden;
+                SignupPasswordBox.Visibility = SignupConfirmPasswordBox.Visibility = BattetagInput.Visibility = Visibility.Hidden;
+
+                //show next signup elements
+                SignupRoleText.Visibility = SignupHeroText.Visibility = SignupGameModeText.Visibility = Visibility.Visible;
+                SignupRoleComboBox.Visibility = SignupHeroComboBox.Visibility = SignupGameModeComboBox.Visibility = Visibility.Visible;
+                SignupBackButton.Visibility = Visibility.Visible;
+
+                SignupToMainButton.Content = "FINISH";
+
+                //check if any of the dropdown menus have a null entry
+                if(!secondClick)
+                {
+                    secondClick = true;
+                }
+                else if((SignupRoleComboBox.SelectedIndex == -1) && secondClick)
+                {
+                    InvalidSignupPrompt("Please make a selection for your preferred Role!");
+                }
+                else if((SignupHeroComboBox.SelectedIndex == -1) && secondClick)
+                {
+                    InvalidSignupPrompt("Please make a selection for your preferred Hero!");
+                }
+                else if ((SignupGameModeComboBox.SelectedIndex == -1) && secondClick)
+                {
+                    InvalidSignupPrompt("Please make a selection for your preferred Game Mode!");
+                }
+                else
+                {
+                    //instantiate new user profile
+                    Profile newUser = new Profile(newEmail, newUsername, newPassword, newBattleTag);
+
+                    //set role, hero, game mode for new profile
+                    newUser.Role = (String) SignupRoleComboBox.SelectedItem;
+                    newUser.Hero = (String) SignupHeroComboBox.SelectedItem;
+                    newUser.GameMode = (String) SignupGameModeComboBox.SelectedItem;
+
+                    //add new profile to list of users
+                    MainWindow.UserList.Add(newUser);
+                    PageSwitcher.Switch(new LoginPage());
+                }
+
+
+
+
+                //new SignupProfileSettingsWindow(newUser).ShowDialog();
             }
 
         }
@@ -171,6 +227,36 @@ namespace CPSC_481_PROJECT
             InvalidSignupText.Text = textPrompt;
             InvalidSignupText.Visibility = Visibility.Visible;
             invalidSignupTextTimer.Start();
+        }
+
+        private void SignupBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            // go back to first set of inputs
+            if(SignupToMainButton.Content.Equals("FINISH"))
+            {
+                //hide new signup elements
+                SignupRoleText.Visibility = SignupHeroText.Visibility = SignupGameModeText.Visibility = Visibility.Hidden;
+                SignupRoleComboBox.Visibility = SignupHeroComboBox.Visibility = SignupGameModeComboBox.Visibility = Visibility.Hidden;
+                SignupBackButton.Visibility = Visibility.Hidden;
+
+                //show previous signup elements
+                EmailText.Visibility = UsernameText.Visibility = Visibility.Visible;
+                PasswordText.Visibility = ConfirmPasswordText.Visibility = BattetagText.Visibility = Visibility.Visible;
+
+                EmailInput.Visibility = SignupUsernameInput.Visibility = Visibility.Visible;
+                SignupPasswordBox.Visibility = SignupConfirmPasswordBox.Visibility = BattetagInput.Visibility = Visibility.Visible;
+
+                SignupToMainButton.Content = "NEXT";
+                
+            }
+            //go back to second set of inputs
+            else if(SignupToMainButton.Content.Equals("CONFIRM"))
+            {
+                //hide new signup elements
+
+
+                //show previous signup elements
+            }
         }
     }
 }

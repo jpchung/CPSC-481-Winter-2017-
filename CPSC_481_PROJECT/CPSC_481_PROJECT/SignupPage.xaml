@@ -8,28 +8,46 @@
              d:DesignHeight="720" d:DesignWidth="1280">
     <Grid Background="White">
         <Label x:Name="WatchPointLogoLabel" Content="  PROJECT: WATCHPOINT" HorizontalAlignment="Left" Height="80" Margin="304,175,0,0" VerticalAlignment="Top" Width="671" FontSize="56" Background="Yellow" FontStyle="Italic"/>
-        <TextBlock x:Name="UsernameText" HorizontalAlignment="Left" Height="35" Margin="395,355,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="115" FontSize="24"/>
-        <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="35" Margin="395,395,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="110" FontSize="24" BorderThickness="0"/>
-        <TextBox x:Name="SignupUsernameInput" HorizontalAlignment="Left" Height="35" Margin="600,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+
         <TextBlock x:Name="SignupText" HorizontalAlignment="Left" Height="45" Margin="355,255,0,0" TextWrapping="Wrap" Text="SIGN-UP" VerticalAlignment="Top" Width="165" FontSize="36"/>
-        <TextBlock x:Name="EmailText" HorizontalAlignment="Left" Height="35" Margin="395,315,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" Width="110" FontSize="24"/>
-        <TextBox x:Name="EmailInput" HorizontalAlignment="Left" Height="35" Margin="600,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" BorderBrush="Black" FontSize="24"/>
-        <TextBlock x:Name="ConfirmPasswordText" HorizontalAlignment="Left" Height="30" Margin="395,435,0,0" TextWrapping="Wrap" Text="Confirm Password:" VerticalAlignment="Top" Width="200" FontSize="24"/>
-        <TextBlock x:Name="BattetagText" HorizontalAlignment="Left" Height="35" Margin="395,470,0,0" TextWrapping="Wrap" Text="BattleTag:" VerticalAlignment="Top" Width="125" FontSize="24"/>
-        <TextBox x:Name="BattetagInput" HorizontalAlignment="Left" Height="35" Margin="600,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
-        <Button x:Name="SignupToLoginButton" Content="LOGIN" HorizontalAlignment="Left" Height="65" Margin="304,535,0,0" VerticalAlignment="Top" Width="220" FontSize="32" Click="SignupToLoginButton_Click">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="SignupToMainButton" Content="FINISH" HorizontalAlignment="Left" Height="65" Margin="800,535,0,0" VerticalAlignment="Top" Width="175" FontSize="32" Click="SignupToMainButton_Click" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <PasswordBox x:Name="SignupPasswordBox" HorizontalAlignment="Left" Height="35" Margin="600,395,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+
+        <TextBlock x:Name="EmailText"  HorizontalAlignment="Left" Height="35" Margin="395,315,0,0" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Top" Width="110" FontSize="24"/>
+        <TextBlock x:Name="UsernameText"  HorizontalAlignment="Left" Height="35" Margin="395,355,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="115" FontSize="24"/>
+        <TextBlock x:Name="PasswordText"  HorizontalAlignment="Left" Height="35" Margin="395,395,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="110" FontSize="24" />
+        <TextBlock x:Name="ConfirmPasswordText"  HorizontalAlignment="Left" Height="30" Margin="395,435,0,0" TextWrapping="Wrap" Text="Confirm Password:" VerticalAlignment="Top" Width="200" FontSize="24"/>
+        <TextBlock x:Name="BattetagText"  HorizontalAlignment="Left" Height="35" Margin="395,470,0,0" TextWrapping="Wrap" Text="BattleTag:" VerticalAlignment="Top" Width="125" FontSize="24"/>
+
+        <TextBox x:Name="EmailInput"  HorizontalAlignment="Left" Height="35" Margin="600,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" BorderBrush="Black" FontSize="24"/>
+        <TextBox x:Name="SignupUsernameInput"  HorizontalAlignment="Left" Height="35" Margin="600,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+        <PasswordBox x:Name="SignupPasswordBox"  HorizontalAlignment="Left" Height="35" Margin="600,395,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
         <PasswordBox x:Name="SignupConfirmPasswordBox" HorizontalAlignment="Left" Height="30" Margin="600,435,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
-        <TextBlock x:Name="InvalidSignupText" HorizontalAlignment="Left" Margin="600,280,0,0" TextWrapping="Wrap" Text="TextBlock" Foreground="Red" FontSize="20" Visibility="Hidden" VerticalAlignment="Top" Height="30" Width="Auto"/>
+        <TextBox x:Name="BattetagInput"  HorizontalAlignment="Left" Height="35" Margin="600,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+
+        <Button x:Name="SignupToLoginButton" Content="LOGIN" HorizontalAlignment="Left" Height="65" Margin="304,554,0,0" VerticalAlignment="Top" Width="220" FontSize="32" Click="SignupToLoginButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="SignupToMainButton" Content="NEXT" HorizontalAlignment="Left" Height="65" Margin="800,554,0,0" VerticalAlignment="Top" Width="175" FontSize="32" Click="SignupToMainButton_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+        <TextBlock x:Name="InvalidSignupText" HorizontalAlignment="Left" Visibility="Hidden" Margin="600,270,0,0" TextWrapping="Wrap" Text="TextBlock" Foreground="Red" FontSize="20"  VerticalAlignment="Top" Height="30" Width="Auto"/>
+        
+        <TextBlock x:Name="SignupRoleText" Visibility="Hidden" HorizontalAlignment="Left" Margin="355,315,0,0" TextWrapping="Wrap" Text="Select Your Preferred Role: " VerticalAlignment="Top" Height="35" Width="287" FontSize="24"/>
+        <TextBlock x:Name="SignupHeroText"  Visibility="Hidden" HorizontalAlignment="Left" Margin="355,390,0,0" TextWrapping="Wrap" Text="Select Your Preferred Hero: " VerticalAlignment="Top" Height="35" Width="287" FontSize="24"/>
+        <TextBlock x:Name="SignupGameModeText"  Visibility="Hidden" HorizontalAlignment="Left" Margin="355,470,0,0" TextWrapping="Wrap" Text="Select Your Preferred Game Mode: " VerticalAlignment="Top" Height="35" Width="355" FontSize="23"/>
+
+        <ComboBox x:Name="SignupRoleComboBox"  Visibility="Hidden" HorizontalAlignment="Left" Margin="727,315,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
+        <ComboBox x:Name="SignupHeroComboBox"  Visibility="Hidden" HorizontalAlignment="Left" Margin="727,390,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
+        <ComboBox x:Name="SignupGameModeComboBox" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,465,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
+        <Button x:Name="SignupBackButton" Visibility="Hidden" Content="BACK" Height="65" Width="175" FontSize="32"  HorizontalAlignment="Left" Margin="565,554,0,0" VerticalAlignment="Top" Click="SignupBackButton_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </UserControl>
