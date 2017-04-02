@@ -89,15 +89,8 @@ namespace CPSC_481_PROJECT
 
 
             //list of all teams in team search tab
-
-            foreach (var item in MainWindow.TeamsList)
-            {
-                //String teamName =  item.Key;
-                //List<Profile> teamMembers = item.Value;
-                //GroupSearchStackPanel.Children.Add(new GroupSearchControl(teamName, teamMembers, this));
-
-                GroupSearchStackPanel.Children.Add(new GroupSearchControl(item, this));
-            }
+            remakeGroupSearchPanel();
+            
 
 
         }
@@ -558,13 +551,35 @@ namespace CPSC_481_PROJECT
                 GroupSearchStackPanel.Children.Add(new GroupSearchControl(item, this));
             }
 
-            //if(GroupSearchQuickplayToggle.IsChecked == true)
-            //{
-            //    foreach(GroupSearchControl team in GroupSearchStackPanel.Children)
-            //    {
+            if (GroupSearchQuickplayToggle.IsChecked == true)
+            {
+                foreach (GroupSearchControl control in GroupSearchStackPanel.Children)
+                {
+                    Team team = control.getTeam();
 
-            //    }
-            //}
+                    if(team.TeamGameMode.Equals("Quickplay"))
+                        control.Visibility = Visibility.Visible;
+                    else if(team.TeamGameMode.Equals("Ranked"))
+                        control.Visibility = Visibility.Collapsed;
+
+                }
+            }
+            else if (GroupSearchRankedToggle.IsChecked == true)
+            {
+                foreach(GroupSearchControl control in GroupSearchStackPanel.Children)
+                {
+                    Team team = control.getTeam();
+
+                    if (team.TeamGameMode.Equals("Ranked"))
+                        control.Visibility = Visibility.Visible;
+                    else if (team.TeamGameMode.Equals("Quickplay"))
+                        control.Visibility = Visibility.Collapsed;
+                    
+                }
+            }
+            {
+
+            }
         }
 
         private void MainPageTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -676,7 +691,18 @@ namespace CPSC_481_PROJECT
 
             }
         }
-  
+
+        private void GroupSearchQuickplayToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            remakeGroupSearchPanel();
+            GroupSearchInput.Text = "Search by Team Name...";
+        }
+
+        private void GroupSearchRankedToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            remakeGroupSearchPanel();
+            GroupSearchInput.Text = "Search by Team Name...";
+        }
     }
 
 }

@@ -254,12 +254,12 @@
                         </TabItem>
                         <TabItem Header="GROUP" Width="555" Height="50">
                             <Grid Background="LightGray" Margin="0,-9,0.4,1.8">
-                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" >
+                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" Checked="GroupSearchQuickplayToggle_Checked" >
                                     <RadioButton.Effect>
                                         <DropShadowEffect/>
                                     </RadioButton.Effect>
                                 </RadioButton>
-                                <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240">
+                                <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240" Checked="GroupSearchRankedToggle_Checked">
                                     <RadioButton.Effect>
                                         <DropShadowEffect/>
                                     </RadioButton.Effect>
@@ -298,7 +298,7 @@
                                         <DropShadowEffect/>
                                     </Button.Effect>
                                 </Button>
-                                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="74,240,76,8" Width="960">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="74,244,76,8" >
                                     <StackPanel x:Name="GroupSearchStackPanel" HorizontalAlignment="Left" Height="Auto"  VerticalAlignment="Top" Width="960"/>
 
                                 </ScrollViewer>

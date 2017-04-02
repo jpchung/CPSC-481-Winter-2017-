@@ -88,10 +88,6 @@ namespace CPSC_481_PROJECT
             if(user.hasTeam && user.getTeam().TeamName.Equals(teamName))
                 JoinTeamButton.Visibility = Visibility.Hidden;
 
-
-            
-
-  
         }
 
         /// <summary>
@@ -161,6 +157,15 @@ namespace CPSC_481_PROJECT
                 userPage.TeamListText.Text = "Team Name: " + teamName;
                 userPage.remakeGroupSearchPanel();
             }
+        }
+
+        /// <summary>
+        /// return team associated with Group Search Control
+        /// </summary>
+        /// <returns></returns>
+        public Team getTeam()
+        {
+            return team;
         }
     }
 }

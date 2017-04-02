@@ -84,6 +84,7 @@ namespace CPSC_481_PROJECT
 
                 //update team list on profile tab
                 userPage.remakeTeamListPanel();
+                userPage.remakeGroupSearchPanel();
                 Close();
 
             }
