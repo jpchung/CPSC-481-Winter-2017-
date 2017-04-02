@@ -20,10 +20,10 @@
         <TextBox x:Name="EmailInput"  HorizontalAlignment="Left" Height="35" Margin="600,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" BorderBrush="Black" FontSize="24"/>
         <TextBox x:Name="SignupUsernameInput"  HorizontalAlignment="Left" Height="35" Margin="600,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
         <PasswordBox x:Name="SignupPasswordBox"  HorizontalAlignment="Left" Height="35" Margin="600,395,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
-        <PasswordBox x:Name="SignupConfirmPasswordBox" HorizontalAlignment="Left" Height="30" Margin="600,435,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
+        <PasswordBox x:Name="SignupConfirmPasswordBox"  HorizontalAlignment="Left" Height="30" Margin="600,435,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
         <TextBox x:Name="BattetagInput"  HorizontalAlignment="Left" Height="35" Margin="600,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black"/>
 
-        <Button x:Name="SignupToLoginButton" Content="LOGIN" HorizontalAlignment="Left" Height="65" Margin="304,554,0,0" VerticalAlignment="Top" Width="220" FontSize="32" Click="SignupToLoginButton_Click">
+        <Button x:Name="SignupToLoginButton" Content="LOGIN" HorizontalAlignment="Left" Height="65" Margin="304,554,0,0" VerticalAlignment="Top" Width="171" FontSize="32" Click="SignupToLoginButton_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -35,7 +35,7 @@
         </Button>
 
         <TextBlock x:Name="InvalidSignupText" HorizontalAlignment="Left" Visibility="Hidden" Margin="600,270,0,0" TextWrapping="Wrap" Text="TextBlock" Foreground="Red" FontSize="20"  VerticalAlignment="Top" Height="30" Width="Auto"/>
-        
+
         <TextBlock x:Name="SignupRoleText" Visibility="Hidden" HorizontalAlignment="Left" Margin="355,315,0,0" TextWrapping="Wrap" Text="Select Your Preferred Role: " VerticalAlignment="Top" Height="35" Width="287" FontSize="24"/>
         <TextBlock x:Name="SignupHeroText"  Visibility="Hidden" HorizontalAlignment="Left" Margin="355,390,0,0" TextWrapping="Wrap" Text="Select Your Preferred Hero: " VerticalAlignment="Top" Height="35" Width="287" FontSize="24"/>
         <TextBlock x:Name="SignupGameModeText"  Visibility="Hidden" HorizontalAlignment="Left" Margin="355,470,0,0" TextWrapping="Wrap" Text="Select Your Preferred Game Mode: " VerticalAlignment="Top" Height="35" Width="355" FontSize="23"/>
@@ -48,6 +48,13 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
+        <TextBlock x:Name="ReviewEmailText" Visibility="Hidden" FontSize="22" HorizontalAlignment="Left" Margin="450,311,0,0" TextWrapping="Wrap" Text="Email: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="ReviewUsernameText" Visibility="Hidden" FontSize="22" HorizontalAlignment="Left" Margin="450,340,0,0" TextWrapping="Wrap" Text="Username: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="ReviewPasswordText" Visibility="Hidden" FontSize="22" HorizontalAlignment="Left" Margin="450,369,0,0" TextWrapping="Wrap" Text="Password: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="ReviewBattletagText" Visibility="Hidden" FontSize="22" HorizontalAlignment="Left" Margin="450,398,0,0" TextWrapping="Wrap" Text="BattleTag: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="ReviewRoleText" Visibility="Hidden" FontSize="22" HorizontalAlignment="Left" Margin="450,431,0,0" TextWrapping="Wrap" Text="Role: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="ReviewHeroText" Visibility="Hidden" FontSize="22" HorizontalAlignment="Left" Margin="450,461,0,0" TextWrapping="Wrap" Text="Hero: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="ReviewGameModeText" Visibility="Hidden" FontSize="22" HorizontalAlignment="Left" Margin="450,490,0,0" TextWrapping="Wrap" Text="Game Mode: " VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

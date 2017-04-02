@@ -24,6 +24,7 @@ namespace CPSC_481_PROJECT
 
         public static bool ValidSignup { get; set; }
         bool secondClick;
+        bool thirdClick;
        
 
         //timer for incorrect signup text prompt
@@ -44,6 +45,8 @@ namespace CPSC_481_PROJECT
             SignupGameModeComboBox.ItemsSource = Profile.GameModesList;
 
             secondClick = false;
+            bool thirdClick = false;
+            
 
         }
 
@@ -152,7 +155,6 @@ namespace CPSC_481_PROJECT
                     }
 
                 }
-    
                
             }
 
@@ -197,24 +199,59 @@ namespace CPSC_481_PROJECT
                 }
                 else
                 {
-                    //instantiate new user profile
-                    Profile newUser = new Profile(newEmail, newUsername, newPassword, newBattleTag);
+                    //hide next signup elements
+                    SignupRoleText.Visibility = SignupHeroText.Visibility = SignupGameModeText.Visibility = Visibility.Hidden;
+                    SignupRoleComboBox.Visibility = SignupHeroComboBox.Visibility = SignupGameModeComboBox.Visibility = Visibility.Hidden;
+                    SignupBackButton.Visibility = Visibility.Hidden;
 
-                    //set role, hero, game mode for new profile
-                    newUser.Role = (String) SignupRoleComboBox.SelectedItem;
-                    newUser.Hero = (String) SignupHeroComboBox.SelectedItem;
-                    newUser.GameMode = (String) SignupGameModeComboBox.SelectedItem;
+                    //show user input for them to review before confirmation
+                    ReviewEmailText.Visibility = ReviewUsernameText.Visibility = ReviewPasswordText.Visibility = ReviewBattletagText.Visibility = Visibility.Visible;
+                    ReviewRoleText.Visibility = ReviewHeroText.Visibility = ReviewGameModeText.Visibility = Visibility.Visible;
 
-                    //add new profile to list of users
-                    MainWindow.UserList.Add(newUser);
-                    PageSwitcher.Switch(new LoginPage());
+                    ReviewEmailText.Text = "Email: " + newEmail;
+                    ReviewUsernameText.Text = "Username: " + newUsername;
+                    ReviewPasswordText.Text = "Password: " + newPassword;
+                    ReviewBattletagText.Text = "BattleTag: " + newBattleTag;
+                    ReviewRoleText.Text = "Role: " + (String)SignupRoleComboBox.SelectedItem;
+                    ReviewHeroText.Text = "Hero: " + (String)SignupHeroComboBox.SelectedItem;
+                    ReviewGameModeText.Text = "Game Mode: " + (String)SignupGameModeComboBox.SelectedItem;
+
+                    SignupBackButton.Visibility = Visibility.Visible;
+ 
+                    SignupToMainButton.Content = "CONFIRM";
+
+                    if (SignupToMainButton.Content.Equals("CONFIRM") && thirdClick)
+                    {
+
+                        //instantiate new user profile
+                        Profile newUser = new Profile(newEmail, newUsername, newPassword, newBattleTag);
+
+                        //set role, hero, game mode for new profile
+                        newUser.Role = (String)SignupRoleComboBox.SelectedItem;
+                        newUser.Hero = (String)SignupHeroComboBox.SelectedItem;
+                        newUser.GameMode = (String)SignupGameModeComboBox.SelectedItem;
+
+                        //add new profile to list of users
+                        MainWindow.UserList.Add(newUser);
+                        PageSwitcher.Switch(new LoginPage());
+                    }
+                    else
+                    {
+                        thirdClick = true;
+                    }
+
+
+
                 }
+                
 
+                
 
-
-
-                //new SignupProfileSettingsWindow(newUser).ShowDialog();
             }
+
+            
+            
+
 
         }
 
@@ -247,15 +284,23 @@ namespace CPSC_481_PROJECT
                 SignupPasswordBox.Visibility = SignupConfirmPasswordBox.Visibility = BattetagInput.Visibility = Visibility.Visible;
 
                 SignupToMainButton.Content = "NEXT";
+                secondClick = false;
                 
             }
             //go back to second set of inputs
             else if(SignupToMainButton.Content.Equals("CONFIRM"))
             {
-                //hide new signup elements
-
+                //hide review of input
+                ReviewEmailText.Visibility = ReviewUsernameText.Visibility = ReviewPasswordText.Visibility = ReviewBattletagText.Visibility = Visibility.Hidden;
+                ReviewRoleText.Visibility = ReviewHeroText.Visibility = ReviewGameModeText.Visibility = Visibility.Hidden;
 
                 //show previous signup elements
+                SignupRoleText.Visibility = SignupHeroText.Visibility = SignupGameModeText.Visibility = Visibility.Visible;
+                SignupRoleComboBox.Visibility = SignupHeroComboBox.Visibility = SignupGameModeComboBox.Visibility = Visibility.Visible;
+                SignupBackButton.Visibility = Visibility.Visible;
+
+                SignupToMainButton.Content = "FINISH";
+                thirdClick = false;
             }
         }
     }
