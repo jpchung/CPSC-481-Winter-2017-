@@ -73,6 +73,7 @@ namespace CPSC_481_PROJECT
         {
             bool inputFieldsEmpty = false;
 
+
             //check both login input fields non-empty
             if (string.IsNullOrEmpty(UsernameInput.Text)|| string.IsNullOrEmpty(LoginPasswordBox.Password))
             {
@@ -103,7 +104,7 @@ namespace CPSC_481_PROJECT
                         break;
 
                     }
-
+                   
                 }
             }
            
@@ -122,8 +123,9 @@ namespace CPSC_481_PROJECT
             //otherwise show incorrect login text on a timer
             else
             {
-                InvalidLoginPrompt("Incorrect Username or Password!");
+                InvalidLoginPrompt("Incorrect Username/Password combination!");
             }
+            
            
         }
 
@@ -135,7 +137,7 @@ namespace CPSC_481_PROJECT
         {
             InvalidLoginText.Text = textPrompt;
             InvalidLoginText.Visibility = Visibility.Visible;
-            invalidLoginTextTimer.Start();
+            //invalidLoginTextTimer.Start();
         }
     }
 }

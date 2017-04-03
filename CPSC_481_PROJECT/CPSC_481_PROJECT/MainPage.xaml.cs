@@ -240,7 +240,7 @@ namespace CPSC_481_PROJECT
             else
             {
                 InvalidGroupSearchText.Visibility = Visibility.Visible;
-                invalidGroupSearchTextTimer.Start();
+                //invalidGroupSearchTextTimer.Start();
             }
 
         }

@@ -57,19 +57,7 @@
                 </Style>
 
 
-                <Style TargetType="ComboBoxItem">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="ComboBoxItem">
-                                <Grid>
-                                    <Border BorderBrush="Black" BorderThickness="1">
-                                        <ContentPresenter x:Name="ComboBoxItemContent" Content="{TemplateBinding Content}" />
-                                    </Border>
-                                </Grid>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
+                
             </TabControl.Resources>
 
             <TabItem Header="PROFILE" Width="635" Height="76" FontSize="36" BorderThickness="0" >
@@ -80,13 +68,13 @@
                     <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="56,239,1018.4,357" FontSize="18" Click="ChangeProfilePicButton_Click"/>
                     <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,0,1016.4,312" FontSize="16" BorderBrush="Black" Height="40" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed" GotFocus="StatusMessage_GotFocus" LostFocus="StatusMessage_LostFocus"/>
 
-                    <ComboBox x:Name="RoleComboBox" Margin="56,359,1018.4,237" BorderBrush="Black" FontSize="24" SelectionChanged="RoleComboBox_SelectionChanged">
+                    <ComboBox x:Name="RoleComboBox" Margin="56,359,1018.4,237" BorderBrush="Black" FontSize="22" SelectionChanged="RoleComboBox_SelectionChanged">
                     </ComboBox>
 
                     <ComboBox x:Name="HeroComboBox" Height="35" Margin="55,434,1019.4,167" FontSize="22" SelectionChanged="HeroComboBox_SelectionChanged">
                     </ComboBox>
 
-                    <ComboBox x:Name="GameModeComboBox" HorizontalAlignment="Left" Margin="55,504,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="24" SelectionChanged="GameModeComboBox_SelectionChanged">
+                    <ComboBox x:Name="GameModeComboBox" HorizontalAlignment="Left" Margin="55,504,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="22" SelectionChanged="GameModeComboBox_SelectionChanged">
                     </ComboBox>
 
 
@@ -188,12 +176,17 @@
                                             </Border>
                                         </Grid>
                                         <ControlTemplate.Triggers>
+
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="LightBlue"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="White"/>
+                                            </Trigger>
                                             <Trigger Property="IsChecked" Value="True">
                                                 <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="Gold"/>
                                             </Trigger>
-                                            <Trigger Property="IsChecked" Value="False">
-                                                <Setter TargetName="RadioToggleButtonGrid" Property="Background" Value="White" />
-                                            </Trigger>
+
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
                                 </Setter.Value>
@@ -213,8 +206,8 @@
                                         <DropShadowEffect/>
                                     </RadioButton.Effect>
                                 </RadioButton>
-                                <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="231,157,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="24" SelectionChanged="SoloSearchRoleComboBox_SelectionChanged"/>
-                                <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="500,157,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="24" RenderTransformOrigin="0.475,-0.125" SelectionChanged="SoloSearchHeroComboBox_SelectionChanged"/>
+                                <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="231,157,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="22" SelectionChanged="SoloSearchRoleComboBox_SelectionChanged"/>
+                                <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="500,157,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="22" RenderTransformOrigin="0.475,-0.125" SelectionChanged="SoloSearchHeroComboBox_SelectionChanged"/>
                                 <TextBox x:Name="SoloSearchInput" HorizontalAlignment="Left" Height="40" Margin="720,157,0,0" TextWrapping="Wrap" Text="Search by Username..." VerticalAlignment="Top" Width="235" RenderTransformOrigin="0.371,0.375" FontSize="22" FontStyle="Italic" GotFocus="SoloSearchInput_GotFocus" LostFocus="SoloSearchInput_LostFocus" />
                                 <TextBlock x:Name="SearchRoleTextBlock" HorizontalAlignment="Left" Margin="72,157,0,0" TextWrapping="Wrap" Text="Filter by  Role: " VerticalAlignment="Top" Height="40" Width="Auto" FontSize="24" RenderTransformOrigin="0.85,0.625"/>
                                 <TextBlock x:Name="SearchHeroTextBlock" HorizontalAlignment="Left" Margin="436,157,0,0" TextWrapping="Wrap" Text="Hero: " VerticalAlignment="Top" Height="40" Width="Auto" FontSize="24" RenderTransformOrigin="0.647,0.5"/>

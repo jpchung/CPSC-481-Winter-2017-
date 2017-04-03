@@ -150,8 +150,9 @@ namespace CPSC_481_PROJECT
                     
                     else
                     {
+                        InvalidSignupText.Visibility = Visibility.Hidden;
                         ValidSignup = true;
-                        
+                                      
                     }
 
                 }
@@ -245,13 +246,8 @@ namespace CPSC_481_PROJECT
                 }
                 
 
-                
-
             }
-
-            
-            
-
+                        
 
         }
 
@@ -263,7 +259,7 @@ namespace CPSC_481_PROJECT
         {
             InvalidSignupText.Text = textPrompt;
             InvalidSignupText.Visibility = Visibility.Visible;
-            invalidSignupTextTimer.Start();
+            //invalidSignupTextTimer.Start();
         }
 
         private void SignupBackButton_Click(object sender, RoutedEventArgs e)
@@ -271,6 +267,8 @@ namespace CPSC_481_PROJECT
             // go back to first set of inputs
             if(SignupToMainButton.Content.Equals("FINISH"))
             {
+                InvalidSignupText.Visibility = Visibility.Hidden;
+
                 //hide new signup elements
                 SignupRoleText.Visibility = SignupHeroText.Visibility = SignupGameModeText.Visibility = Visibility.Hidden;
                 SignupRoleComboBox.Visibility = SignupHeroComboBox.Visibility = SignupGameModeComboBox.Visibility = Visibility.Hidden;
@@ -290,6 +288,8 @@ namespace CPSC_481_PROJECT
             //go back to second set of inputs
             else if(SignupToMainButton.Content.Equals("CONFIRM"))
             {
+                InvalidSignupText.Visibility = Visibility.Hidden;
+
                 //hide review of input
                 ReviewEmailText.Visibility = ReviewUsernameText.Visibility = ReviewPasswordText.Visibility = ReviewBattletagText.Visibility = Visibility.Hidden;
                 ReviewRoleText.Visibility = ReviewHeroText.Visibility = ReviewGameModeText.Visibility = Visibility.Hidden;

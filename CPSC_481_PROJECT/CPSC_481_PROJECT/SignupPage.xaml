@@ -40,9 +40,9 @@
         <TextBlock x:Name="SignupHeroText"  Visibility="Hidden" HorizontalAlignment="Left" Margin="355,390,0,0" TextWrapping="Wrap" Text="Select Your Preferred Hero: " VerticalAlignment="Top" Height="35" Width="287" FontSize="24"/>
         <TextBlock x:Name="SignupGameModeText"  Visibility="Hidden" HorizontalAlignment="Left" Margin="355,470,0,0" TextWrapping="Wrap" Text="Select Your Preferred Game Mode: " VerticalAlignment="Top" Height="35" Width="355" FontSize="23"/>
 
-        <ComboBox x:Name="SignupRoleComboBox"  Visibility="Hidden" HorizontalAlignment="Left" Margin="727,315,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
-        <ComboBox x:Name="SignupHeroComboBox"  Visibility="Hidden" HorizontalAlignment="Left" Margin="727,390,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
-        <ComboBox x:Name="SignupGameModeComboBox" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,465,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
+        <ComboBox x:Name="SignupRoleComboBox" FontSize="22" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,315,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
+        <ComboBox x:Name="SignupHeroComboBox" FontSize="22" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,390,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
+        <ComboBox x:Name="SignupGameModeComboBox" FontSize="22" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,465,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
         <Button x:Name="SignupBackButton" Visibility="Hidden" Content="BACK" Height="65" Width="175" FontSize="32"  HorizontalAlignment="Left" Margin="565,554,0,0" VerticalAlignment="Top" Click="SignupBackButton_Click" >
             <Button.Effect>
                 <DropShadowEffect/>
