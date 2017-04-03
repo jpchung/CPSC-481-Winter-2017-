@@ -45,7 +45,7 @@ namespace CPSC_481_PROJECT
             SignupGameModeComboBox.ItemsSource = Profile.GameModesList;
 
             secondClick = false;
-            bool thirdClick = false;
+            thirdClick = false;
             
 
         }

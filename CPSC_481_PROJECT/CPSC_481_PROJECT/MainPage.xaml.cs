@@ -692,12 +692,22 @@ namespace CPSC_481_PROJECT
             }
         }
 
+        /// <summary>
+        /// Filters teams in Group Search based on game mode toggle (Quickplay)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GroupSearchQuickplayToggle_Checked(object sender, RoutedEventArgs e)
         {
             remakeGroupSearchPanel();
             GroupSearchInput.Text = "Search by Team Name...";
         }
 
+        /// <summary>
+        /// Filters teams in Group Search based on game mode toggle (Ranked)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GroupSearchRankedToggle_Checked(object sender, RoutedEventArgs e)
         {
             remakeGroupSearchPanel();
