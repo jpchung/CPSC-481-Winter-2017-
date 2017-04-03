@@ -62,10 +62,10 @@
 
             <TabItem Header="PROFILE" Width="635" Height="76" FontSize="36" BorderThickness="0" >
                 <Grid>
-                    <TextBlock x:Name="ProfileUsername" TextWrapping="Wrap" Text="" FontSize="24" Margin="54,0,1019.4,602"  />
-                    <Image x:Name="ProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="55,34,0,0">
+                    <TextBlock x:Name="ProfileUsername" TextWrapping="Wrap" Text="" FontSize="24" Margin="55,10,1018,592"  />
+                    <Image x:Name="ProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="55,50,0,0">
                     </Image>
-                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="56,239,1018.4,357" FontSize="18" Click="ChangeProfilePicButton_Click"/>
+                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="57,194,1019,402" FontSize="18" Click="ChangeProfilePicButton_Click" Opacity="0"  MouseEnter="ChangeProfilePicButton_MouseEnter" MouseLeave="ChangeProfilePicButton_MouseLeave"/>
                     <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,0,1016.4,312" FontSize="16" BorderBrush="Black" Height="40" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed" GotFocus="StatusMessage_GotFocus" LostFocus="StatusMessage_LostFocus"/>
 
                     <ComboBox x:Name="RoleComboBox" Margin="56,359,1018.4,237" BorderBrush="Black" FontSize="22" SelectionChanged="RoleComboBox_SelectionChanged">
@@ -153,7 +153,7 @@
 
                     </TabControl>
 
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="200" Margin="56,34,0,0" VerticalAlignment="Top" Width="200"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="200" Margin="56,50,0,0" VerticalAlignment="Top" Width="200"/>
                     <TextBlock x:Name="RoleTextBlock" FontSize ="20" HorizontalAlignment="Left" Margin="55,329,0,0" TextWrapping="Wrap" Text="Role:" VerticalAlignment="Top" Height="25" Width="Auto"/>
                     <TextBlock x:Name="HeroTextBlock" FontSize ="20" HorizontalAlignment="Left" Margin="55,404,0,0" TextWrapping="Wrap" Text="Hero:" VerticalAlignment="Top" Height="25" Width="Auto"/>
                     <TextBlock x:Name="GameModeTextBlock" FontSize ="20" HorizontalAlignment="Left" Margin="57,474,0,0" TextWrapping="Wrap" Text="Game Mode:" VerticalAlignment="Top" Height="25" Width="Auto"/>

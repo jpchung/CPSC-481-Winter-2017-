@@ -724,6 +724,16 @@ namespace CPSC_481_PROJECT
             InvalidGroupSearchText.Text = textPrompt;
             InvalidGroupSearchText.Visibility = Visibility.Visible;
         }
+
+        private void ChangeProfilePicButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ChangeProfilePicButton.Opacity = 0.75;
+        }
+
+        private void ChangeProfilePicButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ChangeProfilePicButton.Opacity = 0;
+        }
     }
 
 }
