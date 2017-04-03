@@ -37,6 +37,7 @@ namespace CPSC_481_PROJECT
             invalidGroupSearchTextTimer.Tick += invalidGroupSearchTextTimer_Tick;
             invalidGroupSearchTextTimer.Interval = new TimeSpan(0, 0, 3); //timer lasts for 3 second intervals
             InvalidGroupSearchText.Visibility = Visibility.Hidden;
+            
             //instantiate dropdown list items
             RoleComboBox.ItemsSource = SoloSearchRoleComboBox.ItemsSource = Profile.RolesList;
             HeroComboBox.ItemsSource = SoloSearchHeroComboBox.ItemsSource = Profile.HeroesList;
@@ -235,11 +236,15 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void CreateTeamButton_Click(object sender, RoutedEventArgs e)
         {
-            if(!userProfile.hasTeam)
+            if (!userProfile.hasTeam)
+            {
+                InvalidGroupSearchText.Visibility = Visibility.Hidden;
                 new CreateTeamWindow(userProfile, this).ShowDialog();
+            }
+                
             else
             {
-                InvalidGroupSearchText.Visibility = Visibility.Visible;
+                InvalidGroupSearchPrompt("Cannot create team if already member of another team!");
                 //invalidGroupSearchTextTimer.Start();
             }
 
@@ -712,6 +717,12 @@ namespace CPSC_481_PROJECT
         {
             remakeGroupSearchPanel();
             GroupSearchInput.Text = "Search by Team Name...";
+        }
+
+        public void InvalidGroupSearchPrompt(String textPrompt)
+        {
+            InvalidGroupSearchText.Text = textPrompt;
+            InvalidGroupSearchText.Visibility = Visibility.Visible;
         }
     }
 

@@ -149,6 +149,8 @@ namespace CPSC_481_PROJECT
             //for now: auto join team
             if(!user.hasTeam)
             {
+                userPage.InvalidGroupSearchText.Visibility = Visibility.Hidden;
+
                 teamMembers.Add(user);
                 //user.setDefaultTeam(teamName,teamMembers);
                 user.setDefaultTeam(team);
@@ -156,6 +158,10 @@ namespace CPSC_481_PROJECT
                 userPage.remakeTeamListPanel();
                 userPage.TeamListText.Text = "Team Name: " + teamName;
                 userPage.remakeGroupSearchPanel();
+            }
+            else
+            {
+                userPage.InvalidGroupSearchPrompt("Cannot join team if already member of another team!");
             }
         }
 

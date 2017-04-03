@@ -295,7 +295,7 @@
                                     <StackPanel x:Name="GroupSearchStackPanel" HorizontalAlignment="Left" Height="Auto"  VerticalAlignment="Top" Width="960"/>
 
                                 </ScrollViewer>
-                                <TextBlock x:Name="InvalidGroupSearchText" HorizontalAlignment="Left" Margin="285,98,0,0" TextWrapping="Wrap" Text="Cannot create team if already member of another team!" Foreground="Red" FontSize="22" Width="Auto" VerticalAlignment="Top" FontFamily="Segoe UI Black" />
+                                <TextBlock x:Name="InvalidGroupSearchText" HorizontalAlignment="Left" Margin="285,98,0,0" TextWrapping="Wrap" Text="Cannot create team if already member of another team!" Foreground="Red" FontSize="22" Width="Auto" VerticalAlignment="Top" />
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="513" VerticalAlignment="Top" Width="1105"/>
                             </Grid>
 
