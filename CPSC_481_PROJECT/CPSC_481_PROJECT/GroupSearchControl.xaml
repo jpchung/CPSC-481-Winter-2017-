@@ -8,7 +8,11 @@
              d:DesignHeight="150" d:DesignWidth="945">
     <Grid x:Name="GroupSearchnControlBackground" Background="LightSlateGray">
         <TextBlock x:Name="TeamSearchName" FontSize="30" HorizontalAlignment="Left" Margin="10,54,0,0" TextWrapping="Wrap" Text="Team Search Name" VerticalAlignment="Top" Height="41" Width="260"/>
-        <Button x:Name="JoinTeamButton" FontSize="28" Content="JOIN" HorizontalAlignment="Left" Margin="825,48,0,0" VerticalAlignment="Top" Width="105" Height="53" Click="JoinTeamButton_Click"/>
+        <Button x:Name="JoinTeamButton" FontSize="28" Content="JOIN" HorizontalAlignment="Left" Margin="825,48,0,0" VerticalAlignment="Top" Width="105" Height="53" Click="JoinTeamButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
         <Image x:Name="TeamMemberImage1" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="90" Margin="275,30,0,0" VerticalAlignment="Top" Width="90"/>
         <Border x:Name="MemberBorder1" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="90" Margin="275,30,0,0" VerticalAlignment="Top" Width="90" Visibility="Hidden"/>
         <Image x:Name="TeamMemberImage2" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="90" Margin="385,30,0,0" VerticalAlignment="Top" Width="90"/>

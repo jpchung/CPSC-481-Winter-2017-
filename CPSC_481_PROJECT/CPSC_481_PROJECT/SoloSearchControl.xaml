@@ -10,7 +10,11 @@
         <Image x:Name="SoloSearchProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="150" Margin="30,20,0,0" VerticalAlignment="Top" Width="150"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="30,20,0,0" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="SoloSearchUsername" FontSize="32" HorizontalAlignment="Left" Margin="206,44,0,0" TextWrapping="Wrap" Text="Solo Search Username" VerticalAlignment="Top" Height="41" Width="Auto"/>
-        <Button x:Name="SoloSearchAddFriendButton" Content="Add Friend" FontSize="22" HorizontalAlignment="Left" Margin="206,115,0,0" VerticalAlignment="Top" Width="140" Height="45" Click="SoloSearchAddFriendButton_Click"/>
+        <Button x:Name="SoloSearchAddFriendButton" Content="Add Friend" FontSize="22" HorizontalAlignment="Left" Margin="206,115,0,0" VerticalAlignment="Top" Width="140" Height="45" Click="SoloSearchAddFriendButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
         <Image x:Name="SoloSearchRoleIcon" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="100" Margin="550,44,0,0" VerticalAlignment="Top" Width="100"/>
         <Image x:Name="SoloSearchHeroImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="150" Margin="755,20,0,0" VerticalAlignment="Top" Width="150"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="755,20,0,0" VerticalAlignment="Top" Width="150"/>

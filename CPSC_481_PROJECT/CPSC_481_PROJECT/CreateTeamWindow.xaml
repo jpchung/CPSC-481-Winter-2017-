@@ -8,7 +8,11 @@
         ResizeMode="NoResize"
         Title="CreateTeamWindow" Height="300" Width="300">
     <Grid>
-        <Button x:Name="CreateTeamConfirmButton" Content="CONFIRM" HorizontalAlignment="Left" Margin="55,200,0,31" Width="185" Click="CreateTeamConfirmButton_Click"/>
+        <Button x:Name="CreateTeamConfirmButton" Content="CONFIRM" HorizontalAlignment="Left" Margin="55,200,0,31" Width="185" Click="CreateTeamConfirmButton_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
         <TextBox x:Name="TeamNameInput" HorizontalAlignment="Left" Height="32" Margin="55,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185"/>
         <ComboBox x:Name="TeamGameModeComboBox" HorizontalAlignment="Left" Margin="55,140,0,0" VerticalAlignment="Top" Width="185" Height="32"/>
         <TextBlock x:Name="TeamNameText" HorizontalAlignment="Left" Margin="58,40,0,0" TextWrapping="Wrap" Text="Team Name:" VerticalAlignment="Top" Height="17" Width="Auto"/>
