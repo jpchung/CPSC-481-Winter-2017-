@@ -45,12 +45,14 @@ namespace CPSC_481_PROJECT
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
 
-
+            Team defaultTeam = new Team("Default Team", defaultProfile, "Quickplay");
 
             defaultProfile = new Profile("peglegpowderkeg@gmail.com", "FireinDaHoe", "cheekynandos", "burningman#1969");
             defaultProfileInfo = new String[] {"Defense", "Junkrat","Quickplay","u wot m8?", "/Images/ARSON.png" };
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
+
+            defaultTeam.getMembersList().Add(defaultProfile);
 
             defaultProfile = new Profile("grillsgeneration@op.gg", "xX_GurlGamer_Xx", "geegee", "winkyfayce#2014");
             defaultProfileInfo = new String[] {"Defense", "D.Va", "Quickplay", "Nerf this!", "/Images/MLG_KPOP_GREMLIN.png"};
@@ -60,7 +62,7 @@ namespace CPSC_481_PROJECT
             UserList.Add(defaultProfile);
             //defaultTeam.Add(defaultProfile);
 
-            Team defaultTeam = new Team("Default Team", defaultProfile, "Ranked");
+            Team defaultTeam2 = new Team("TotallyNotSmurfs", defaultProfile, "Ranked");
 
 
             defaultProfile = new Profile("ih8hanzo@yahoo.com", "GenjiGod", "naruto", "dattebayo#2003");
@@ -68,24 +70,28 @@ namespace CPSC_481_PROJECT
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
             //defaultTeam.Add(defaultProfile);
-            defaultTeam.getMembersList().Add(defaultProfile);
-
-            //foreach(Profile defaultMember in defaultTeam)
-            //{
-            //    defaultMember.setDefaultTeam("defaultTeam",defaultTeam);
-            //    defaultMember.hasTeam = true;
-            //}
-            //MainWindow.TeamsList.Add("defaultTeam", defaultTeam);
+            defaultTeam2.getMembersList().Add(defaultProfile);
 
 
-            //default team in app's "database"
+
+
+            //default teams in app's "database"
             List<Profile> defaultMembers = defaultTeam.getMembersList();
             foreach(Profile member in defaultMembers)
             {
-                member.setDefaultTeam(defaultTeam);
+                member.setDefaultTeam(defaultTeam2);
                 member.hasTeam = true;
             }
             MainWindow.TeamsList.Add(defaultTeam);
+
+
+            defaultMembers = defaultTeam2.getMembersList();
+            foreach(Profile member in defaultMembers)
+            {
+                member.setDefaultTeam(defaultTeam2);
+                member.hasTeam = true;
+            }
+            MainWindow.TeamsList.Add(defaultTeam2);
 
 
 

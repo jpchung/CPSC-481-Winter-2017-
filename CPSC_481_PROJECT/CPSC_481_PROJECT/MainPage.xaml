@@ -87,7 +87,7 @@
 
                         <TabItem  Header="STATS" HorizontalAlignment="Center" Width="315" Margin="0,0,0.2,-2.2" ToolTip="View your personal statistics" >
                             <Grid Background="LightSlateGray">
-                               
+
                                 <Image x:Name="ProfileStatsBackground" Source="StatsBackground/ProfileStats.jpg" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Margin="10,0,0,5"/>
 
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="945" Margin="0,0,0,0"/>
@@ -109,15 +109,10 @@
 
 
                                 <ListView x:Name="FriendStatsListView" HorizontalAlignment="Left" Height="451" Margin="318,53,0,0" VerticalAlignment="Top" Width="625" FontSize="24" Background="LightSlateGray">
-                                    <ListView.View>
-                                        <GridView>
-                                            <GridViewColumn Header="Overall" Width="208"/>
-                                            <GridViewColumn Header="Heroes" Width="207" />
-                                            <GridViewColumn Header="Last Played" Width="207"/>
-                                        </GridView>
-                                    </ListView.View>
+
                                 </ListView>
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="509" VerticalAlignment="Top" Width="945" Margin="0,0,0,0"/>
+                                <Image x:Name="FriendStatsBackground" Source="StatsBackground/FriendStats.jpg" HorizontalAlignment="Left" Height="446" Margin="318,53,0,0" VerticalAlignment="Top" Width="593"/>
 
 
                             </Grid>
@@ -187,19 +182,19 @@
                     <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Margin="85,30,0,42" Width="1110" BorderThickness="0">
                         <TabItem Header="SOLO" Width="550" ToolTip="Search for other Solo Players">
                             <Grid x:Name="___No_Name_" Background="LightGray" Margin="0,-9,0.4,1.8">
-                                <RadioButton x:Name="SoloSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,18,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchQuickplayToggle_Checked">
+                                <RadioButton x:Name="SoloSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,18,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchQuickplayToggle_Checked" ToolTip="Show only Solo Players the prefer Quickplay game mode">
                                     <RadioButton.Effect>
                                         <DropShadowEffect/>
                                     </RadioButton.Effect>
                                 </RadioButton>
-                                <RadioButton x:Name="SoloSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,18,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchRankedToggle_Checked">
+                                <RadioButton x:Name="SoloSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,18,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchRankedToggle_Checked" ToolTip="Show only Solo Players who prefer Ranked game mode">
                                     <RadioButton.Effect>
                                         <DropShadowEffect/>
                                     </RadioButton.Effect>
                                 </RadioButton>
-                                <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="231,157,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="22" SelectionChanged="SoloSearchRoleComboBox_SelectionChanged"/>
-                                <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="500,157,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="22" RenderTransformOrigin="0.475,-0.125" SelectionChanged="SoloSearchHeroComboBox_SelectionChanged"/>
-                                <TextBox x:Name="SoloSearchInput" HorizontalAlignment="Left" Height="40" Margin="720,157,0,0" TextWrapping="Wrap" Text="Search by Username..." VerticalAlignment="Top" Width="235" RenderTransformOrigin="0.371,0.375" FontSize="22" FontStyle="Italic" GotFocus="SoloSearchInput_GotFocus" LostFocus="SoloSearchInput_LostFocus" />
+                                <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="231,157,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="22" SelectionChanged="SoloSearchRoleComboBox_SelectionChanged" ToolTip="Filter Solo Players by Role"/>
+                                <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="500,157,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="22" RenderTransformOrigin="0.475,-0.125" SelectionChanged="SoloSearchHeroComboBox_SelectionChanged" ToolTip="Filter Solo Players by Hero"/>
+                                <TextBox x:Name="SoloSearchInput" HorizontalAlignment="Left" Height="40" Margin="720,157,0,0" TextWrapping="Wrap" Text="Search by Username..." VerticalAlignment="Top" Width="235" RenderTransformOrigin="0.371,0.375" FontSize="22" FontStyle="Italic" GotFocus="SoloSearchInput_GotFocus" LostFocus="SoloSearchInput_LostFocus" ToolTip="Type the name of Solo Player you want to search for" />
                                 <TextBlock x:Name="SearchRoleTextBlock" HorizontalAlignment="Left" Margin="72,157,0,0" TextWrapping="Wrap" Text="Filter by  Role: " VerticalAlignment="Top" Height="40" Width="Auto" FontSize="24" RenderTransformOrigin="0.85,0.625"/>
                                 <TextBlock x:Name="SearchHeroTextBlock" HorizontalAlignment="Left" Margin="436,157,0,0" TextWrapping="Wrap" Text="Hero: " VerticalAlignment="Top" Height="40" Width="Auto" FontSize="24" RenderTransformOrigin="0.647,0.5"/>
                                 <ListView x:Name="SoloSearchListView" HorizontalAlignment="Left" Height="301" Margin="72,207,0,0" VerticalAlignment="Top" Width="960" FontSize="24" Background="LightSlateGray">
@@ -217,12 +212,12 @@
                                     <StackPanel x:Name="SoloSearchStackPanel" Background="LightSlateGray" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="960" />
 
                                 </ScrollViewer>
-                                <Button x:Name="SoloSearchButton" Content="Search" HorizontalAlignment="Left" Margin="955,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24" Click="SoloSearchButton_Click">
+                                <Button x:Name="SoloSearchButton" Content="Search" HorizontalAlignment="Left" Margin="955,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24" Click="SoloSearchButton_Click" ToolTip="Search for Solo Players by name (or best match)">
                                     <Button.Effect>
                                         <DropShadowEffect/>
                                     </Button.Effect>
                                 </Button>
-                                <Grid x:Name="RoleGlossaryGrid" Margin="402,82,406,355">
+                                <Grid x:Name="RoleGlossaryGrid" Margin="402,82,406,355" ToolTip="Role Icon Glossary">
                                     <DataGrid x:Name="HighlightIcon" Opacity="0.4" Background="#FF688CAF" Margin="-15,1.2,-14.4,10"/>
                                     <Image x:Name="DefenseIcon" Source="pack://application:,,,/Images/DefenseIcon.png" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="50" Margin="80,18,0,0" VerticalAlignment="Top" Width="50"/>
                                     <Image x:Name="TankIcon" Source="pack://application:,,,/Images/TankIcon.png" RenderOptions.BitmapScalingMode="Fant"  HorizontalAlignment="Left" Height="50" Margin="160,18,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.75,0.083"/>
@@ -238,12 +233,12 @@
                         </TabItem>
                         <TabItem Header="GROUP" Width="555" Height="50" ToolTip="Search for other Teams">
                             <Grid Background="LightGray" Margin="0,-9,0.4,1.8">
-                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" Checked="GroupSearchQuickplayToggle_Checked" >
+                                <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" Checked="GroupSearchQuickplayToggle_Checked" ToolTip="Search only for Teams that prefer Quickplay game mode" >
                                     <RadioButton.Effect>
                                         <DropShadowEffect/>
                                     </RadioButton.Effect>
                                 </RadioButton>
-                                <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240" Checked="GroupSearchRankedToggle_Checked">
+                                <RadioButton x:Name="GroupSearchRankedToggle" Content="     RANKED" HorizontalAlignment="Left" Margin="550,27,0,0" VerticalAlignment="Top" Width="240" Checked="GroupSearchRankedToggle_Checked" ToolTip="Search only for Teams that prefer Ranked game mode">
                                     <RadioButton.Effect>
                                         <DropShadowEffect/>
                                     </RadioButton.Effect>
@@ -260,7 +255,7 @@
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="960" Margin="73,208,0,0"/>
 
                                 <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="702,157,0,0" TextWrapping="Wrap" Text="Search by Team Name..." VerticalAlignment="Top" Width="250" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus" BorderBrush="#FF090909" LostFocus="GroupSearchInput_LostFocus" ToolTip="Type name of the team you want to search for"/>
-                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="952,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click" BorderBrush="Black" BorderThickness="1" Opacity="0.995" ToolTip="Search for other teams by name (or part of name)">
+                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="952,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click" BorderBrush="Black" BorderThickness="1" Opacity="0.995" ToolTip="Search for other Teams by name (or best mtach)">
                                     <Button.Effect>
                                         <DropShadowEffect/>
                                     </Button.Effect>

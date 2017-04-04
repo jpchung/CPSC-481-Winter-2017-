@@ -178,7 +178,7 @@ namespace CPSC_481_PROJECT
                 SignupRoleText.Visibility = SignupHeroText.Visibility = SignupGameModeText.Visibility = Visibility.Visible;
                 SignupRoleComboBox.Visibility = SignupHeroComboBox.Visibility = SignupGameModeComboBox.Visibility = Visibility.Visible;
                 SignupBackButton.Visibility = Visibility.Visible;
-                SignupToMainButton.ToolTip = "Finish Sign-up";
+                SignupToMainButton.ToolTip = "Finish Sign-up input and proceed to confirmation";
                 SignupToMainButton.Content = "FINISH";
 
                 //check if any of the dropdown menus have a null entry
