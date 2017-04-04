@@ -83,7 +83,7 @@ namespace CPSC_481_PROJECT
             if(!inputFieldsEmpty)
             {
                 //username, password case sensitive
-                String loginUsername = UsernameInput.Text;
+                String loginUsername = UsernameInput.Text.ToLower();
                 String loginPassword = LoginPasswordBox.Password;
 
 
@@ -92,11 +92,12 @@ namespace CPSC_481_PROJECT
                 foreach (Profile user in MainWindow.UserList)
                 {
                     Dictionary<String, String> userLogins = user.getUsernamePassword();
+                    String actualUsername = userLogins.Keys.ElementAt(0);
                     String actualPassword = "";
 
                     //check if username and password is valid login pair
-                    if (userLogins.ContainsKey(loginUsername) && 
-                        userLogins.TryGetValue(loginUsername, out actualPassword) &&
+                    if (actualUsername.ToLower().Equals(loginUsername) && 
+                        userLogins.TryGetValue(actualUsername, out actualPassword) &&
                         String.Equals(actualPassword, loginPassword))
                     {
                         userListIndex = MainWindow.UserList.IndexOf(user);

@@ -60,21 +60,21 @@
 
             </TabControl.Resources>
 
-            <TabItem Header="PROFILE" Width="635" Height="76" FontSize="36" BorderThickness="0" >
+            <TabItem Header="PROFILE" Width="635" Height="76" FontSize="36" BorderThickness="0" ToolTip="View your profile, including stats, friends, and team" >
                 <Grid>
-                    <TextBlock x:Name="ProfileUsername" TextWrapping="Wrap" Text="" FontSize="24" Margin="54,0,1019,602"  />
+                    <TextBlock x:Name="ProfileUsername" TextWrapping="Wrap" Text="" FontSize="24" Margin="54,0,1019,602" ToolTip="Username"  />
                     <Image x:Name="ProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="55,34,0,0">
                     </Image>
-                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="56,234,1018,362" FontSize="18" Click="ChangeProfilePicButton_Click"  />
-                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,0,1016,312" FontSize="20" BorderBrush="Black" Height="35" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed" GotFocus="StatusMessage_GotFocus" LostFocus="StatusMessage_LostFocus"/>
+                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="56,234,1018,362" FontSize="18" Click="ChangeProfilePicButton_Click" ToolTip="Change your profile picture"  />
+                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,0,1016,312" FontSize="20" BorderBrush="Black" Height="35" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed" GotFocus="StatusMessage_GotFocus" LostFocus="StatusMessage_LostFocus" ToolTip="Change your Status Message"/>
 
-                    <ComboBox x:Name="RoleComboBox" Margin="56,359,1018.4,237" BorderBrush="Black" FontSize="22" SelectionChanged="RoleComboBox_SelectionChanged">
+                    <ComboBox x:Name="RoleComboBox" Margin="56,359,1018.4,237" BorderBrush="Black" FontSize="22" SelectionChanged="RoleComboBox_SelectionChanged" ToolTip="Change your preferred Role" Cursor="Arrow">
                     </ComboBox>
 
-                    <ComboBox x:Name="HeroComboBox" Height="35" Margin="55,434,1019.4,167" FontSize="22" SelectionChanged="HeroComboBox_SelectionChanged">
+                    <ComboBox x:Name="HeroComboBox" Height="35" Margin="55,434,1019.4,167" FontSize="22" SelectionChanged="HeroComboBox_SelectionChanged" ToolTip="Change your preferred Hero" Cursor="Arrow">
                     </ComboBox>
 
-                    <ComboBox x:Name="GameModeComboBox" HorizontalAlignment="Left" Margin="55,504,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="22" SelectionChanged="GameModeComboBox_SelectionChanged">
+                    <ComboBox x:Name="GameModeComboBox" HorizontalAlignment="Left" Margin="55,504,0,0" VerticalAlignment="Top" Width="200" Height="40" FontSize="22" SelectionChanged="GameModeComboBox_SelectionChanged" ToolTip="Change your preferred Game Mode" Cursor="Arrow">
                     </ComboBox>
 
 
@@ -85,7 +85,7 @@
 
 
 
-                        <TabItem  Header="STATS" HorizontalAlignment="Center" Width="315" Margin="0,0,0.2,-2.2" >
+                        <TabItem  Header="STATS" HorizontalAlignment="Center" Width="315" Margin="0,0,0.2,-2.2" ToolTip="View your personal statistics" >
                             <Grid Background="#FFE5E5E5">
                                 <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="504" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" Margin="0,0,0,-0.8" >
 
@@ -105,7 +105,7 @@
                             </Grid>
                         </TabItem>
 
-                        <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" Margin="-0.2,0,0.4,-2.2" >
+                        <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" Margin="-0.2,0,0.4,-2.2" ToolTip="View your list of friends and their stats" >
                             <Grid Background="LightGray" Margin="0,-6,0,0.2">
                                 <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,0">
                                     <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
@@ -131,7 +131,7 @@
 
                             </Grid>
                         </TabItem>
-                        <TabItem Header="TEAM"  HorizontalAlignment="Center" Width="315" Margin="0,0,0,-2" >
+                        <TabItem Header="TEAM"  HorizontalAlignment="Center" Width="315" Margin="0,0,0,-2" ToolTip="View your Team and the list of members" >
                             <Grid Background="LightGray" Margin="0,-5,5.0,0">
 
                                 <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,52,0,5">
@@ -143,7 +143,7 @@
 
 
                                 <TextBlock x:Name="TeamListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Team Name: " Background="White" VerticalAlignment="Top" FontSize="36" Width="918" Margin="15,7,0,0" Height="43"/>
-                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="767,18,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="27" FontSize="16" Background="#FFEB5D0E" BorderBrush="#FF0C0C0C" FontFamily="Yu Gothic UI" FontWeight="Bold" BorderThickness="3,1,1,3" Click="DeleteTeamButton_Click"/>
+                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="767,18,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="27" FontSize="16" Background="#FFEB5D0E" BorderBrush="#FF0C0C0C" FontFamily="Yu Gothic UI" FontWeight="Bold" BorderThickness="3,1,1,3" Click="DeleteTeamButton_Click" ToolTip="Leave team if user is a member, or deletes team if user is Team Captain"/>
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="495" Margin="13,8,0,0" VerticalAlignment="Top" Width="919"/>
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="509" VerticalAlignment="Top" Width="945" Margin="0,0,0,0"/>
 
@@ -153,7 +153,7 @@
 
                     </TabControl>
 
-                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="200" Margin="56,34,0,0" VerticalAlignment="Top" Width="200"/>
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="200" Margin="56,34,0,0" VerticalAlignment="Top" Width="200" ToolTip="Profile Picture"/>
                     <TextBlock x:Name="RoleTextBlock" FontSize ="20" HorizontalAlignment="Left" Margin="55,329,0,0" TextWrapping="Wrap" Text="Role:" VerticalAlignment="Top" Height="25" Width="Auto"/>
                     <TextBlock x:Name="HeroTextBlock" FontSize ="20" HorizontalAlignment="Left" Margin="55,404,0,0" TextWrapping="Wrap" Text="Hero:" VerticalAlignment="Top" Height="25" Width="Auto"/>
                     <TextBlock x:Name="GameModeTextBlock" FontSize ="20" HorizontalAlignment="Left" Margin="57,474,0,0" TextWrapping="Wrap" Text="Game Mode:" VerticalAlignment="Top" Height="25" Width="Auto"/>
@@ -163,7 +163,7 @@
 
 
             </TabItem>
-            <TabItem Header="SEARCH" Width="631" Height="76" FontSize="36">
+            <TabItem Header="SEARCH" Width="631" Height="76" FontSize="36" ToolTip="Search for other players and teams">
                 <Grid>
                     <Grid.Resources>
                         <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
@@ -194,7 +194,7 @@
                         </Style>
                     </Grid.Resources>
                     <TabControl x:Name="SearchTabControl" HorizontalAlignment="Left" Margin="85,30,0,42" Width="1110" BorderThickness="0">
-                        <TabItem Header="SOLO" Width="550">
+                        <TabItem Header="SOLO" Width="550" ToolTip="Search for other Solo Players">
                             <Grid x:Name="___No_Name_" Background="LightGray" Margin="0,-9,0.4,1.8">
                                 <RadioButton x:Name="SoloSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,18,0,0" VerticalAlignment="Top" Width="240" Checked="SoloSearchQuickplayToggle_Checked">
                                     <RadioButton.Effect>
@@ -245,7 +245,7 @@
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="515" VerticalAlignment="Top" Width="1105"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="GROUP" Width="555" Height="50">
+                        <TabItem Header="GROUP" Width="555" Height="50" ToolTip="Search for other Teams">
                             <Grid Background="LightGray" Margin="0,-9,0.4,1.8">
                                 <RadioButton x:Name="GroupSearchQuickplayToggle" Content="   QUICKPLAY" HorizontalAlignment="Left" Margin="310,27,0,0" VerticalAlignment="Top" Width="240" Checked="GroupSearchQuickplayToggle_Checked" >
                                     <RadioButton.Effect>
@@ -268,8 +268,8 @@
                                 </ListView>
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="960" Margin="73,208,0,0"/>
 
-                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="702,157,0,0" TextWrapping="Wrap" Text="Search by Team Name..." VerticalAlignment="Top" Width="250" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus" BorderBrush="#FF090909" LostFocus="GroupSearchInput_LostFocus"/>
-                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="952,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click" BorderBrush="Black" BorderThickness="1" Opacity="0.995">
+                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="702,157,0,0" TextWrapping="Wrap" Text="Search by Team Name..." VerticalAlignment="Top" Width="250" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus" BorderBrush="#FF090909" LostFocus="GroupSearchInput_LostFocus" ToolTip="Type name of the team you want to search for"/>
+                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="952,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click" BorderBrush="Black" BorderThickness="1" Opacity="0.995" ToolTip="Search for other teams by name (or part of name)">
                                     <Button.Effect>
                                         <DropShadowEffect/>
                                     </Button.Effect>
@@ -286,7 +286,7 @@
                                         <DropShadowEffect/>
                                     </Button.Effect>
                                 </Button>
-                                <Button x:Name="CreateTeamButton" Content="Create Team" HorizontalAlignment="Left" Margin="75,152,0,0" VerticalAlignment="Top" Width="260" Height="40" FontSize="24" Click="CreateTeamButton_Click" BorderThickness="0" Background="#FFF4F6F3" BorderBrush="#FF383535">
+                                <Button x:Name="CreateTeamButton" Content="Create Team" HorizontalAlignment="Left" Margin="75,152,0,0" VerticalAlignment="Top" Width="260" Height="40" FontSize="24" Click="CreateTeamButton_Click" BorderThickness="0" Background="#FFF4F6F3" BorderBrush="#FF383535" ToolTip="Create a new team (and become team captain)">
                                     <Button.Effect>
                                         <DropShadowEffect/>
                                     </Button.Effect>
@@ -310,7 +310,7 @@
 
 
         </TabControl>
-        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click">
+        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click" ToolTip="Log out your profile">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

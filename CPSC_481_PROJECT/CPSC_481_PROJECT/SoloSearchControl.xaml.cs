@@ -86,13 +86,13 @@ namespace CPSC_481_PROJECT
             switch (user.Role)
             {
                 case "Offense":
-                   roleIconSource = "/Images/OffenseIcon.png";
+                   roleIconSource = "/Images/OffenseIcon.png";                   
                    break;
                 case "Defense":
-                    roleIconSource = "/Images/DefenseIcon.png";
+                    roleIconSource = "/Images/DefenseIcon.png";                   
                     break;
                 case "Tank":
-                    roleIconSource = "/Images/TankIcon.png";
+                    roleIconSource = "/Images/TankIcon.png";                    
                     break;
                 case "Support":
                 default:
@@ -101,6 +101,7 @@ namespace CPSC_481_PROJECT
             }
             BitmapImage roleImage = new BitmapImage(new Uri("pack://application:,,," + roleIconSource));
             SoloSearchRoleIcon.Source = roleImage;
+            SoloSearchRoleIconText.Text = user.Role;
 
 
         }

@@ -455,15 +455,15 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void SoloSearchButton_Click(object sender, RoutedEventArgs e)
         {
-            String usernameSearch = SoloSearchInput.Text;
+            String usernameSearch = SoloSearchInput.Text.ToLower();
             if(!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && 
                 !usernameSearch.Equals("Search by Username..."))
             {
                 foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
                 {
                     Profile profile = user.getProfile();
-                    String username = profile.getUsernamePassword().Keys.ElementAt(0);
-                    if (username.Equals(usernameSearch))
+                    String username = profile.getUsernamePassword().Keys.ElementAt(0).ToLower();
+                    if (username.Equals(usernameSearch) || username.Contains(usernameSearch))
                         user.Visibility = Visibility.Visible;
                     else
                         user.Visibility = Visibility.Collapsed;
@@ -501,15 +501,15 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void GroupSearchButton_Click(object sender, RoutedEventArgs e)
         {
-            String teamSearch = GroupSearchInput.Text;
+            String teamSearch = GroupSearchInput.Text.ToLower();
 
             if(!String.IsNullOrEmpty(teamSearch) && !String.IsNullOrWhiteSpace(teamSearch)
                 && !teamSearch.Equals("Search by Team Name..."))
             {
                 foreach(GroupSearchControl team in GroupSearchStackPanel.Children)
                 {
-                    String teamName = team.TeamSearchName.Text;
-                    if (teamSearch.Equals(teamName))
+                    String teamName = team.TeamSearchName.Text.ToLower();
+                    if (teamName.Equals(teamSearch) || teamName.Contains(teamSearch))
                         team.Visibility = Visibility.Visible;
                     else
                         team.Visibility = Visibility.Collapsed;
