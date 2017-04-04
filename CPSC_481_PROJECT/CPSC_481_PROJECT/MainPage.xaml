@@ -86,20 +86,11 @@
 
 
                         <TabItem  Header="STATS" HorizontalAlignment="Center" Width="315" Margin="0,0,0.2,-2.2" ToolTip="View your personal statistics" >
-                            <Grid Background="#FFE5E5E5">
-                                <ListView x:Name="ProfileStatsListView" HorizontalAlignment="Left" Height="504" VerticalAlignment="Top" Width="943" FontSize="24" Background="LightSlateGray" Margin="0,0,0,-0.8" >
+                            <Grid Background="LightSlateGray">
+                               
+                                <Image x:Name="ProfileStatsBackground" Source="StatsBackground/ProfileStats.jpg" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Margin="10,0,0,5"/>
 
-                                    <ListView.View>
-                                        <GridView>
-                                            <GridViewColumn Header="Overall" Width="315">
-
-                                            </GridViewColumn>
-                                            <GridViewColumn Header="Heroes" Width="315"/>
-                                            <GridViewColumn Header="Last Played" Width="313"/>
-                                        </GridView>
-                                    </ListView.View>
-                                </ListView>
-                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="509" VerticalAlignment="Top" Width="945" Margin="0,0,0,0"/>
+                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="945" Margin="0,0,0,0"/>
 
 
                             </Grid>
