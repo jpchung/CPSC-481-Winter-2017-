@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
     <Grid Background="White">
-        <Label x:Name="WatchPointLogoLabel" Content="  PROJECT: WATCHPOINT" HorizontalAlignment="Left" Height="80" Margin="304,175,0,0" VerticalAlignment="Top" Width="671" FontSize="56" Background="Yellow" FontStyle="Italic"/>
+        <Label x:Name="WatchPointLogoLabel" Content="  PROJECT: WATCHPOINT" HorizontalAlignment="Left" Height="80" Margin="304,175,0,0" VerticalAlignment="Top" Width="671" FontSize="56" Background="Gold" FontStyle="Italic"/>
         <TextBlock x:Name="LoginText" HorizontalAlignment="Left" Height="64" Margin="332,260,0,0" TextWrapping="Wrap" Text="LOGIN" VerticalAlignment="Top" Width="154" FontSize="36" RenderTransformOrigin="0.607,0.364"/>
         <TextBlock x:Name="UsernameText" HorizontalAlignment="Left" Height="40" Margin="360,324,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top" Width="126" FontSize="24"/>
         <TextBox x:Name="PasswordText" HorizontalAlignment="Left" Height="40" Margin="360,370,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Width="120" FontSize="24" BorderThickness="0"/>

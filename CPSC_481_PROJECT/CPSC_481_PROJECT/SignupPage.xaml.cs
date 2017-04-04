@@ -178,7 +178,7 @@ namespace CPSC_481_PROJECT
                 SignupRoleText.Visibility = SignupHeroText.Visibility = SignupGameModeText.Visibility = Visibility.Visible;
                 SignupRoleComboBox.Visibility = SignupHeroComboBox.Visibility = SignupGameModeComboBox.Visibility = Visibility.Visible;
                 SignupBackButton.Visibility = Visibility.Visible;
-
+                SignupToMainButton.ToolTip = "Finish Sign-up";
                 SignupToMainButton.Content = "FINISH";
 
                 //check if any of the dropdown menus have a null entry
@@ -218,7 +218,7 @@ namespace CPSC_481_PROJECT
                     ReviewGameModeText.Text = "Game Mode: " + (String)SignupGameModeComboBox.SelectedItem;
 
                     SignupBackButton.Visibility = Visibility.Visible;
- 
+                    SignupToMainButton.ToolTip = "Confirm Sign-up and return to Login";
                     SignupToMainButton.Content = "CONFIRM";
 
                     if (SignupToMainButton.Content.Equals("CONFIRM") && thirdClick)
