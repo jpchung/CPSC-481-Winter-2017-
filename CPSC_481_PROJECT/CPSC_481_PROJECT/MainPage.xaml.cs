@@ -75,9 +75,17 @@ namespace CPSC_481_PROJECT
             else
             {
                 FriendStatsWins.Text = "";
+                FriendTotalGamesText.Text = "";
                 FriendMostPlayedText_1.Text = "";
                 FriendMostPlayedText_2.Text = "";
                 FriendMostPlayedText_3.Text = "";
+
+                FriendStatsTotal_1.Text = "";
+                FriendStatsTotal_2.Text = "";
+                FriendStatsTotal_3.Text = "";
+                FriendStatsTotal_4.Text = "";
+                FriendStatsTotal_5.Text = "";
+                FriendStatsTotal_6.Text = "";
 
             }
 
@@ -98,6 +106,7 @@ namespace CPSC_481_PROJECT
             //wins/losses (randomly generated)
             StatsWins.Text = userProfile.WinsLosses[0].ToString();
             StatsLosses.Text = userProfile.WinsLosses[1].ToString();
+            totalGamesText.Text = (userProfile.WinsLosses[0] + userProfile.WinsLosses[1]).ToString();
 
             //general stats (randomly generated)
             int[] AvgTotals = userProfile.AvgTotals;
@@ -131,7 +140,7 @@ namespace CPSC_481_PROJECT
             MostPlayedHero_3.ToolTip = mostPlayedInfo[0];
             MostPlayedHero_3.Source = new BitmapImage(new Uri("pack://application:,,," + mostPlayedInfo[1]));
 
-            int percent_1 = userProfile.RNGesus2(20, 35);
+            int percent_1 = userProfile.RNGesus2(21, 35);
             MostPlayedText_1.Text = (String) MostPlayedHero_1.ToolTip + " : " + percent_1 + "%";
             int percent_2 = percent_1 - 10;
             MostPlayedText_2.Text = (String) MostPlayedHero_2.ToolTip + " : " + percent_2 + "%";
@@ -960,7 +969,8 @@ namespace CPSC_481_PROJECT
             FriendRankImage.ToolTip = friendRankImageToolTipSource[0];
             FriendRankImage.Source = new BitmapImage(new Uri("pack://application:,,," + friendRankImageToolTipSource[1]));
 
-            FriendStatsWins.Text = "" + friend.WinsLosses[0];
+            FriendStatsWins.Text = friend.WinsLosses[0].ToString();
+            FriendTotalGamesText.Text = (friend.WinsLosses[0] + friend.WinsLosses[1]).ToString();
 
             int mostPlayed_1 = friend.RNGesus2(1, 10);
             int mostPlayed_2 = friend.RNGesus2(11, 19);
@@ -985,6 +995,14 @@ namespace CPSC_481_PROJECT
             int percent_3 = percent_2 - 5;
             FriendMostPlayedText_3.Text = (String)FriendMostPlayedHero_3.ToolTip + " : " + percent_3 + "%";
 
+
+            int[] AvgTotals = friend.AvgTotals;
+            FriendStatsTotal_1.Text = AvgTotals[6] + ".0";
+            FriendStatsTotal_2.Text = AvgTotals[7] + ".0";
+            FriendStatsTotal_3.Text = AvgTotals[8] + ".0";
+            FriendStatsTotal_4.Text = AvgTotals[9] + ".0";
+            FriendStatsTotal_5.Text = AvgTotals[10] + ".0";
+            FriendStatsTotal_6.Text = AvgTotals[11] + ".0";
         }
 
         /// <summary>
@@ -1004,6 +1022,14 @@ namespace CPSC_481_PROJECT
             FriendMostPlayedText_1.Text = "";
             FriendMostPlayedText_2.Text = "";
             FriendMostPlayedText_3.Text = "";
+
+            FriendStatsTotal_1.Text = "";
+            FriendStatsTotal_2.Text = "";
+            FriendStatsTotal_3.Text = "";
+            FriendStatsTotal_4.Text = "";
+            FriendStatsTotal_5.Text = "";
+            FriendStatsTotal_6.Text = "";
+
         }
 
         //private void ChangeProfilePicButton_MouseEnter(object sender, MouseEventArgs e)

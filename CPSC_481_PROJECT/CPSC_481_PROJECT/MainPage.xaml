@@ -101,8 +101,8 @@
                                 <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="52,42,824,386"/>
 
                                 <Grid x:Name="StatsWinsLosses" Margin="207,39,725,425">
-                                    <TextBlock x:Name="StatsWins"  FontSize="14" Foreground="White" HorizontalAlignment="Left" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" FontFamily="Agency FB"/>
-                                    <TextBlock x:Name="StatsLosses"  FontSize="14" Foreground="White" HorizontalAlignment="Left" Margin="0,22,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" FontFamily="Agency FB"/>
+                                    <TextBlock x:Name="StatsWins"  FontSize="16" Foreground="White" HorizontalAlignment="Left" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" FontFamily="Agency FB" Margin="0,-1,-21,0" Width="40"/>
+                                    <TextBlock x:Name="StatsLosses"  FontSize="16" Foreground="White" HorizontalAlignment="Left" Margin="0,21,-21,-21" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" FontFamily="Agency FB" Width="40"/>
                                 </Grid>
                                 <Grid x:Name="ProfileStatsAvgTotals" Margin="142,327,145,59">
 
@@ -129,9 +129,11 @@
                                 <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="407,42,469,386"/>
                                 <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="487,42,389,386"/>
 
-                                <TextBlock x:Name="MostPlayedText_1" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="337,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                                <TextBlock x:Name="MostPlayedText_2" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="416,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                                <TextBlock x:Name="MostPlayedText_3" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="496,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="MostPlayedText_1" Foreground="White" FontFamily="Agency FB" FontSize="12" Width="Auto" HorizontalAlignment="Left" Margin="327,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="MostPlayedText_2" Foreground="White" FontFamily="Agency FB" FontSize="12" Width="Auto" HorizontalAlignment="Left" Margin="407,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="MostPlayedText_3" Foreground="White" FontFamily="Agency FB" FontSize="12" Width="Auto" HorizontalAlignment="Left" Margin="487,122,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+                                <TextBlock x:Name="totalGamesText" Foreground="White" FontFamily="Agency FB" FontSize="18" Width="Auto" Margin="832,224,64,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top"/>
 
                             </Grid>
                         </TabItem>
@@ -139,14 +141,15 @@
                         <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" Margin="-0.2,0,0.4,-2.2" ToolTip="View your list of friends and their stats" >
                             <Grid Background="LightGray" Margin="0,-6,0,0.2">
                                 <TextBlock x:Name="NoFriendsText" Text="You can add friends on the SEARCH page" FontSize="14
-                                           " Margin="27,68,668,415.8"/>
+                                           " Margin="21,68,674,414.8"/>
                                 <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,5">
                                     <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
                                     </StackPanel>
                                 </ScrollViewer>
+                                <Border x:Name="FriendListInnerBorder" BorderBrush="Black" Width="280" Margin="10,50,661,4.8" BorderThickness="1"/>
                                 <Border BorderBrush="Black" Width="300" Margin="10,50,641,5" BorderThickness="1"/>
-                                
-                                
+
+
                                 <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="Auto" Margin="10,5,0,0" Height="45"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="318,5,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
 
@@ -160,29 +163,36 @@
 
                                 <Image x:Name="FriendRankImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="337,103,0,0" VerticalAlignment="Top" Width="75"/>
                                 <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="337,103,539,330.8"/>
-                                
-                                <TextBlock x:Name="FriendStatsWins" Foreground="White" FontFamily="Agency FB" FontSize="14" HorizontalAlignment="Left" Margin="386,189,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top"/>
+
+                                <TextBlock x:Name="FriendStatsWins" Foreground="White" FontFamily="Agency FB" FontSize="16" HorizontalAlignment="Left" Margin="386,187,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendTotalGamesText" Foreground="White" FontFamily="Agency FB" FontSize="18" HorizontalAlignment="Left" Margin="877,231,0,0" TextWrapping="Wrap" Text="0000" VerticalAlignment="Top" Width="45"/>
 
                                 <Image x:Name="FriendMostPlayedHero_1"  RenderOptions.BitmapScalingMode="Fant" Height="75" Width="75" Margin="532,103,344,330.8" />
                                 <Image x:Name="FriendMostPlayedHero_2" RenderOptions.BitmapScalingMode="Fant" Height="75" Width="75" Margin="612,103,264,330.8" />
                                 <Image x:Name="FriendMostPlayedHero_3"  RenderOptions.BitmapScalingMode="Fant" Height="75" Width="75" Margin="692,103,184,330.8" />
-                                <Grid Margin="532,103,184,313.8">
-                                    <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="0,0,160,17.2"/>
-                                    <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="80,0,80,17.2"/>
-                                    <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="160,0,0,17.2"/>
 
-                                    <TextBlock x:Name="FriendMostPlayedText_1" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="10,77,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                                    <TextBlock x:Name="FriendMostPlayedText_2" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="89,77,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                                    <TextBlock x:Name="FriendMostPlayedText_3" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="169,77,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="532,103,344,330.8"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="612,103,264,330.8"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="692,103,184,330.8"/>
 
-                                </Grid>
+                                <TextBlock x:Name="FriendMostPlayedText_1" Foreground="White" FontFamily="Agency FB" FontSize="12" Width="Auto" HorizontalAlignment="Left" Margin="532,183,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendMostPlayedText_2" Foreground="White" FontFamily="Agency FB" FontSize="12" Width="Auto" HorizontalAlignment="Left" Margin="612,183,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendMostPlayedText_3" Foreground="White" FontFamily="Agency FB" FontSize="12" Width="Auto" HorizontalAlignment="Left" Margin="692,183,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+
+                                <TextBlock x:Name="FriendStatsTotal_1" FontFamily="Agency FB" FontSize="24" Foreground="White" HorizontalAlignment="Left" Margin="561,255,0,0" TextWrapping="Wrap" Text="000.0" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendStatsTotal_2" FontFamily="Agency FB" FontSize="24" Foreground="White" HorizontalAlignment="Left" Margin="867,255,0,0" TextWrapping="Wrap" Text="000.0" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendStatsTotal_3" FontFamily="Agency FB" FontSize="24" Foreground="White" HorizontalAlignment="Left" Margin="561,333,0,0" TextWrapping="Wrap" Text="000.0" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendStatsTotal_4" FontFamily="Agency FB" FontSize="24" Foreground="White" HorizontalAlignment="Left" Margin="867,333,0,0" TextWrapping="Wrap" Text="000.0" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendStatsTotal_5" FontFamily="Agency FB" FontSize="24" Foreground="White" HorizontalAlignment="Left" Margin="561,418,0,0" TextWrapping="Wrap" Text="000.0" VerticalAlignment="Top"/>
+                                <TextBlock x:Name="FriendStatsTotal_6" FontFamily="Agency FB" FontSize="24" Foreground="White" HorizontalAlignment="Left" Margin="867,418,0,0" TextWrapping="Wrap" Text="000.0" VerticalAlignment="Top"/>
 
                             </Grid>
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Center" Width="315" Margin="0,0,0,-2" ToolTip="View your Team and the list of members" >
                             <Grid Background="LightSlateGray" Margin="0,-5,5.0,0">
 
-                                <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,52,0,5">
+                                <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,52,0,8">
                                     <StackPanel x:Name="TeamListPanel" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="908">
 
                                     </StackPanel>
@@ -197,7 +207,10 @@
                                     </Button.Effect>
                                 </Button>
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="495" Margin="13,7,0,0" VerticalAlignment="Top" Width="920"/>
-                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="509" VerticalAlignment="Top" Width="945" Margin="0,0,0,0"/>
+                                <Border BorderBrush="Black" Width="900" BorderThickness="1" Margin="13,50,33,7"/>
+
+                                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="509" VerticalAlignment="Top" Width="945" Margin="0,0,0,0">
+                                </Border>
 
 
                             </Grid>
