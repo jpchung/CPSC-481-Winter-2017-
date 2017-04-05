@@ -141,7 +141,7 @@
 
                         <TabItem Header="FRIENDS" HorizontalAlignment="Center" Width="315" Margin="-0.2,0,0.4,-2.2" ToolTip="View your list of friends and their stats" >
                             <Grid Background="LightGray" Margin="0,-6,0,0.2">
-                                <TextBlock x:Name="NoFriendsText" Text="You can add friends on the SEARCH page" FontSize="14
+                                <TextBlock x:Name="NoFriendsText" Text="You can add friends on the SEARCH tab" FontSize="14
                                            " Margin="21,68,674,414.8"/>
                                 <ScrollViewer x:Name="FriendListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="300" Margin="10,50,0,5">
                                     <StackPanel x:Name="FriendsListPanel" Height="Auto" HorizontalAlignment="Left" Background="Transparent" VerticalAlignment="Top" Width="300">
