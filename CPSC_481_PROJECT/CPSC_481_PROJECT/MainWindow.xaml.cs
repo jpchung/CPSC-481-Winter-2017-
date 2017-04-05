@@ -45,7 +45,12 @@ namespace CPSC_481_PROJECT
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
 
-            Team defaultTeam = new Team("Default Team", defaultProfile, "Quickplay");
+            defaultProfile.makeNewTeam("DefaultTeam", "Quickplay");
+
+            Team defaultTeam = defaultProfile.getTeam();
+
+            //Team defaultTeam = new Team("Default Team", defaultProfile, "Quickplay");
+            
 
             defaultProfile = new Profile("peglegpowderkeg@gmail.com", "FireinDaHoe", "cheekynandos", "burningman#1969");
             defaultProfileInfo = new String[] {"Defense", "Junkrat","Quickplay","u wot m8?", "/Images/ARSON.png" };
@@ -53,16 +58,21 @@ namespace CPSC_481_PROJECT
             UserList.Add(defaultProfile);
 
             defaultTeam.getMembersList().Add(defaultProfile);
+            
+            //defaultTeam.getMembersList().Add(defaultProfile);
 
             defaultProfile = new Profile("grillsgeneration@op.gg", "xX_GurlGamer_Xx", "geegee", "winkyfayce#2014");
             defaultProfileInfo = new String[] {"Defense", "D.Va", "Quickplay", "Nerf this!", "/Images/MLG_KPOP_GREMLIN.png"};
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
-            //defaultProfile.defaultFriends(UserList); //test friend list stackpanel with user list
-           // defaultProfile.defaultTeam(UserList); //test team list stackpanel with user list
+           
             UserList.Add(defaultProfile);
-            //defaultTeam.Add(defaultProfile);
 
-            Team defaultTeam2 = new Team("TotallyNotSmurfs", defaultProfile, "Ranked");
+            defaultProfile.makeNewTeam("TotallyNotSmurfs", "Ranked");
+
+            Team defaultTeam2 = defaultProfile.getTeam();
+
+
+            //Team defaultTeam2 = new Team("TotallyNotSmurfs", defaultProfile, "Ranked");
 
 
             defaultProfile = new Profile("ih8hanzo@yahoo.com", "GenjiGod", "naruto", "dattebayo#2003");
@@ -79,7 +89,7 @@ namespace CPSC_481_PROJECT
             List<Profile> defaultMembers = defaultTeam.getMembersList();
             foreach(Profile member in defaultMembers)
             {
-                member.setDefaultTeam(defaultTeam2);
+                member.setDefaultTeam(defaultTeam);
                 member.hasTeam = true;
             }
             MainWindow.TeamsList.Add(defaultTeam);

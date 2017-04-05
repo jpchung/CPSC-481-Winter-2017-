@@ -23,10 +23,14 @@ namespace CPSC_481_PROJECT
             TeamName = newName;
 
             //add user profile that created team as first member
+            
             TeamMembers = new List<Profile>();
             TeamMembers.Add(newProfile);
+            //newProfile.hasTeam = true;
 
             TeamGameMode = newGameMode;
+
+
         }
 
         /// <summary>

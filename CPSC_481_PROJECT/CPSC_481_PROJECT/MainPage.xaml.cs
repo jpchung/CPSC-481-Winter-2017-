@@ -1014,6 +1014,7 @@ namespace CPSC_481_PROJECT
             FriendRankImage.Source = null;
 
             FriendStatsWins.Text = "";
+            FriendTotalGamesText.Text = "";
 
             FriendMostPlayedHero_1.Source = null;
             FriendMostPlayedHero_2.Source = null;
