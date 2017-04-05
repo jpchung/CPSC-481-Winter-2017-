@@ -192,6 +192,7 @@
                         </TabItem>
                         <TabItem Header="TEAM"  HorizontalAlignment="Center" Width="315" Margin="0,0,0,-2" ToolTip="View your Team and the list of members" >
                             <Grid Background="LightSlateGray" Margin="0,-5,5.0,0">
+                                <TextBlock x:Name="NoTeamText" FontSize="30" TextWrapping="Wrap" Text="You can join/create a team on the SEARCH tab, under GROUP" Margin="36,66,57,379"/>
 
                                 <ScrollViewer x:Name="TeamListScrollViewer" Background="Transparent" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="918" Margin="15,52,0,8">
                                     <StackPanel x:Name="TeamListPanel" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="908">
