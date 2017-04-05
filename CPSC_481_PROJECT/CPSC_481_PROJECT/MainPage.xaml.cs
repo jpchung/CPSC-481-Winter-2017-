@@ -979,11 +979,11 @@ namespace CPSC_481_PROJECT
             FriendMostPlayedHero_3.Source = new BitmapImage(new Uri("pack://application:,,," + mostPlayedFriendInfo[1]));
 
             int percent_1 = userProfile.RNGesus2(15, 38);
-            FriendMostPlayedText_1.Text = (String)MostPlayedHero_1.ToolTip + " : " + percent_1 + "%";
+            FriendMostPlayedText_1.Text = (String)FriendMostPlayedHero_1.ToolTip + " : " + percent_1 + "%";
             int percent_2 = percent_1 - 10;
-            FriendMostPlayedText_2.Text = (String)MostPlayedHero_2.ToolTip + " : " + percent_2 + "%";
+            FriendMostPlayedText_2.Text = (String)FriendMostPlayedHero_2.ToolTip + " : " + percent_2 + "%";
             int percent_3 = percent_2 - 5;
-            FriendMostPlayedText_3.Text = (String)MostPlayedHero_3.ToolTip + " : " + percent_3 + "%";
+            FriendMostPlayedText_3.Text = (String)FriendMostPlayedHero_3.ToolTip + " : " + percent_3 + "%";
 
         }
 
