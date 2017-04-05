@@ -92,12 +92,9 @@
                                     <ColumnDefinition Width="411*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image x:Name="StatsBackground" Source="Images/StatsBackgroundV3.jpg" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="933" Margin="10,10,0,0" Grid.ColumnSpan="2"/>
-                                <Rectangle x:Name="MostPlayedRec2_Copy" Height="132" Margin="401,65,56,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top"/>
-                                <Rectangle x:Name="MostPlayedRec2_Copy1" HorizontalAlignment="Left" Height="132" Margin="481,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="2"/>
-                                <Rectangle x:Name="MostPlayedRec2_Copy2" HorizontalAlignment="Left" Height="132" Margin="321,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="75"/>
-                                <Rectangle x:Name="LastGamePlayedRectangle" HorizontalAlignment="Left" Height="104" Margin="89,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="240" Grid.Column="1"/>
-                                <Image x:Name="RankIcon" Source="Images/RankIcons/Rank1.jpg" HorizontalAlignment="Left" Height="104" Margin="60,65,0,0" VerticalAlignment="Top" Width="105"/>
+                                <Image x:Name="StatsBackground" Source="Images/StatsBackgroundV4.jpg" HorizontalAlignment="Left" Height="531" VerticalAlignment="Top" Width="933" Grid.ColumnSpan="2" Margin="0,10,0,0"/>
+                                <Rectangle x:Name="LastGamePlayedRectangle" HorizontalAlignment="Left" Height="104" Margin="112,65,0,0" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Width="240" Grid.Column="1"/>
+                                <Image x:Name="RankIcon" Source="Images/RankIcons/Rank1.jpg" HorizontalAlignment="Left" Height="86" Margin="48,65,0,0" VerticalAlignment="Top" Width="77"/>
                                 <Image x:Name="LGP1" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="289,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
                                 <Image x:Name="LGP1_Copy" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="249,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
                                 <Image x:Name="LGP1_Copy1" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="209,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.7,2.061"/>
@@ -110,6 +107,12 @@
                                 <Image x:Name="LGP1_Copy9" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="249,65,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
                                 <Image x:Name="LGP1_Copy10" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="289,65,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
                                 <Image x:Name="LGP1_Copy11" Source="HeroIcons/ana.png" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="169,130,0,0" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.499,0.51"/>
+                                <Image x:Name="MostPlayed1" Source ="Images/MostPlayedIcons/HanzoMostPlayed.jpg" HorizontalAlignment="Left" Height="168" Margin="280,65,0,0" VerticalAlignment="Top" Width="102"/>
+                                <Image x:Name="MostPlayed2" Source ="Images/MostPlayedIcons/MercyMostPlayed.jpg" HorizontalAlignment="Left" Height="168" Margin="387,65,0,0" VerticalAlignment="Top" Width="102"/>
+                                <Image x:Name="MostPlayed3" Source ="Images/MostPlayedIcons/PharaMostPlayed.jpg" HorizontalAlignment="Left" Height="168" Margin="494,65,0,0" VerticalAlignment="Top" Width="102" Grid.ColumnSpan="2"/>
+                                <Border x:Name="MostPlayedBorder1" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="168" Margin="280,65,0,0" VerticalAlignment="Top" Width="102"/>
+                                <Border x:Name="MostPlayedBorder2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="168" Margin="387,65,0,0" VerticalAlignment="Top" Width="102"/>
+                                <Border x:Name="MostPlayedBorder3" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="168" Margin="494,65,0,0" VerticalAlignment="Top" Width="102" Grid.ColumnSpan="2"/>
 
                             </Grid>
                         </TabItem>

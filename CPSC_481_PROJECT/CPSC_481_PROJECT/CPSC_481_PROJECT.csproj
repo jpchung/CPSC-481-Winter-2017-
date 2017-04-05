@@ -236,7 +236,9 @@
   <ItemGroup>
     <Resource Include="Images\FriendsListStatsBackgroundV1.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\HanzoMostPlayed.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\RankIcons\OWRankIcons.png" />
     <Resource Include="Images\RankIcons\Rank1.jpg" />
@@ -247,6 +249,33 @@
     <Resource Include="Images\RankIcons\Rank6.jpg" />
     <Resource Include="Images\RankIcons\Rank7.jpg" />
     <Resource Include="Images\RankIcons\Rank8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\MercyMostPlayed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\PharaMostPlayed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\ReaperMostPlayed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\ReinMostPlayed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\SymmetraMostPlayed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\TracerMostPlayed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\WidowMostPlayed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MostPlayedIcons\ZenMostPlayed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\StatsBackgroundV4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
