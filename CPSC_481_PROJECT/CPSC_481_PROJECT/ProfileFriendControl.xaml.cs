@@ -24,8 +24,6 @@ namespace CPSC_481_PROJECT
         MainPage userPage;
         StackPanel parentPanel;
 
-        bool isControlSelected;
-
         public ProfileFriendControl(Profile userProfile, Profile friendProfile, MainPage currentPage)
         {
             InitializeComponent();
@@ -66,7 +64,7 @@ namespace CPSC_481_PROJECT
             else
                 FriendStatusMessage.Text = "Status Message";
 
-            isControlSelected = false;
+            
 
             parentPanel = userPage.FriendsListPanel;
 
@@ -90,10 +88,9 @@ namespace CPSC_481_PROJECT
                 {
                     this.FriendControlBackground.Background = Brushes.Gold;
                     userPage.loadFriendStats(friend);
-                    isControlSelected = true;
-                }
                     
-                
+                }                
+                                   
 
             }
         }
@@ -105,17 +102,19 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void UnfriendButton_Click(object sender, RoutedEventArgs e)
         {
-            if(isControlSelected)
-            {
-                userPage.clearFriendStats();
-            }
+            
+            userPage.clearFriendStats();
+            
 
 
             //remove from friend list Panel
             foreach (ProfileFriendControl friendControl in parentPanel.Children)
             {
+                friendControl.FriendControlBackground.Background = Brushes.White;
+
                 if (this.Equals(friendControl))
                 {
+
                     parentPanel.Children.Remove(this);
                     break;
                 }

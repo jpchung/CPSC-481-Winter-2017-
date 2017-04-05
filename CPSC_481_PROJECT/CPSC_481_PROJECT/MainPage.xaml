@@ -160,6 +160,22 @@
 
                                 <Image x:Name="FriendRankImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="337,103,0,0" VerticalAlignment="Top" Width="75"/>
                                 <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="337,103,539,330.8"/>
+                                
+                                <TextBlock x:Name="FriendStatsWins" Foreground="White" FontFamily="Agency FB" FontSize="14" HorizontalAlignment="Left" Margin="386,189,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top"/>
+
+                                <Image x:Name="FriendMostPlayedHero_1"  RenderOptions.BitmapScalingMode="Fant" Height="75" Width="75" Margin="532,103,344,330.8" />
+                                <Image x:Name="FriendMostPlayedHero_2" RenderOptions.BitmapScalingMode="Fant" Height="75" Width="75" Margin="612,103,264,330.8" />
+                                <Image x:Name="FriendMostPlayedHero_3"  RenderOptions.BitmapScalingMode="Fant" Height="75" Width="75" Margin="692,103,184,330.8" />
+                                <Grid Margin="532,103,184,313.8">
+                                    <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="0,0,160,17.2"/>
+                                    <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="80,0,80,17.2"/>
+                                    <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="160,0,0,17.2"/>
+
+                                    <TextBlock x:Name="FriendMostPlayedText_1" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="10,77,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                    <TextBlock x:Name="FriendMostPlayedText_2" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="89,77,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                                    <TextBlock x:Name="FriendMostPlayedText_3" Foreground="White" FontFamily="Agency FB" FontSize="12" HorizontalAlignment="Left" Margin="169,77,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+                                </Grid>
 
                             </Grid>
                         </TabItem>

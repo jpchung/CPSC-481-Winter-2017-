@@ -72,6 +72,14 @@ namespace CPSC_481_PROJECT
                 foreach(Profile friendProfile in ProfileFriendsList)                
                     FriendsListPanel.Children.Add(new ProfileFriendControl(userProfile, friendProfile, this));                
             }
+            else
+            {
+                FriendStatsWins.Text = "";
+                FriendMostPlayedText_1.Text = "";
+                FriendMostPlayedText_2.Text = "";
+                FriendMostPlayedText_3.Text = "";
+
+            }
 
             
 
@@ -942,18 +950,62 @@ namespace CPSC_481_PROJECT
         }
 
 
+        /// <summary>
+        /// Loads friend profile stats upon selection from friend list
+        /// </summary>
+        /// <param name="friend"></param>
         public void loadFriendStats(Profile friend)
         {
             String[] friendRankImageToolTipSource = RNGmyRank(friend.Rank);
             FriendRankImage.ToolTip = friendRankImageToolTipSource[0];
             FriendRankImage.Source = new BitmapImage(new Uri("pack://application:,,," + friendRankImageToolTipSource[1]));
+
+            FriendStatsWins.Text = "" + friend.WinsLosses[0];
+
+            int mostPlayed_1 = friend.RNGesus2(1, 10);
+            int mostPlayed_2 = friend.RNGesus2(11, 19);
+            int mostPlayed_3 = friend.RNGesus2(20, 24);
+
+            String[] mostPlayedFriendInfo = RNGmyMostPlayed(mostPlayed_1);
+            FriendMostPlayedHero_1.ToolTip = mostPlayedFriendInfo[0];
+            FriendMostPlayedHero_1.Source = new BitmapImage(new Uri("pack://application:,,," + mostPlayedFriendInfo[1]));
+
+            mostPlayedFriendInfo = RNGmyMostPlayed(mostPlayed_2);
+            FriendMostPlayedHero_2.ToolTip = mostPlayedFriendInfo[0];
+            FriendMostPlayedHero_2.Source = new BitmapImage(new Uri("pack://application:,,," + mostPlayedFriendInfo[1]));
+
+            mostPlayedFriendInfo = RNGmyMostPlayed(mostPlayed_3);
+            FriendMostPlayedHero_3.ToolTip = mostPlayedFriendInfo[0];
+            FriendMostPlayedHero_3.Source = new BitmapImage(new Uri("pack://application:,,," + mostPlayedFriendInfo[1]));
+
+            int percent_1 = userProfile.RNGesus2(15, 38);
+            FriendMostPlayedText_1.Text = (String)MostPlayedHero_1.ToolTip + " : " + percent_1 + "%";
+            int percent_2 = percent_1 - 10;
+            FriendMostPlayedText_2.Text = (String)MostPlayedHero_2.ToolTip + " : " + percent_2 + "%";
+            int percent_3 = percent_2 - 5;
+            FriendMostPlayedText_3.Text = (String)MostPlayedHero_3.ToolTip + " : " + percent_3 + "%";
+
         }
 
+        /// <summary>
+        /// clears friends stats upon removal from friends list and deselects any selected friends
+        /// </summary>
         public void clearFriendStats()
         {
             FriendRankImage.ToolTip = "";
-            FriendRankImage.Source = null; 
+            FriendRankImage.Source = null;
+
+            FriendStatsWins.Text = "";
+
+            FriendMostPlayedHero_1.Source = null;
+            FriendMostPlayedHero_2.Source = null;
+            FriendMostPlayedHero_3.Source = null;
+
+            FriendMostPlayedText_1.Text = "";
+            FriendMostPlayedText_2.Text = "";
+            FriendMostPlayedText_3.Text = "";
         }
+
         //private void ChangeProfilePicButton_MouseEnter(object sender, MouseEventArgs e)
         //{
         //    ChangeProfilePicButton.Opacity = 0.75;
