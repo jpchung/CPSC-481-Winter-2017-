@@ -140,5 +140,7 @@ namespace CPSC_481_PROJECT
             InvalidLoginText.Visibility = Visibility.Visible;
             //invalidLoginTextTimer.Start();
         }
+
+       
     }
 }

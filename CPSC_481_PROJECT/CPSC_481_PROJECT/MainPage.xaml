@@ -145,7 +145,8 @@
                                     </StackPanel>
                                 </ScrollViewer>
                                 <Border BorderBrush="Black" Width="300" Margin="10,50,641,5" BorderThickness="1"/>
-
+                                
+                                
                                 <TextBlock x:Name="FriendListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Friend List" Background="LightGray" VerticalAlignment="Top" FontSize="36" Width="Auto" Margin="10,5,0,0" Height="45"/>
                                 <TextBlock x:Name="FriendStatsText" HorizontalAlignment="Left" Margin="318,5,0,0" TextWrapping="Wrap" Text="Friend Stats" VerticalAlignment="Top"/>
 
@@ -157,6 +158,8 @@
                                 </Border>
                                 <Image x:Name="FriendStatsBackground" Source="StatsBackground/FriendStats.jpg" HorizontalAlignment="Left" Height="446" Margin="320,53,0,0" VerticalAlignment="Top" Width="593"/>
 
+                                <Image x:Name="FriendRankImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="337,103,0,0" VerticalAlignment="Top" Width="75"/>
+                                <Border BorderBrush="Black" BorderThickness="1" Height="75" Width="75" Margin="337,103,539,330.8"/>
 
                             </Grid>
                         </TabItem>

@@ -82,11 +82,16 @@ namespace CPSC_481_PROJECT
                 remakeTeamListPanel();
             }
 
-            //rnadomly generated profile stats
-            RNGmyRank();
+            //user rank (randomly generated)
+            String[] rankImageToolTipSource = RNGmyRank(userProfile.Rank);
+            ProfileRankImage.ToolTip = rankImageToolTipSource[0];
+            ProfileRankImage.Source = new BitmapImage(new Uri("pack://application:,,," + rankImageToolTipSource[1]));
+
+            //wins/losses (randomly generated)
             StatsWins.Text = userProfile.WinsLosses[0].ToString();
             StatsLosses.Text = userProfile.WinsLosses[1].ToString();
 
+            //general stats (randomly generated)
             int[] AvgTotals = userProfile.AvgTotals;
             StatsAvg_1.Text = AvgTotals[0] + ".0";
             StatsAvg_2.Text = AvgTotals[1] + ".0";
@@ -101,6 +106,7 @@ namespace CPSC_481_PROJECT
             StatsTotal_5.Text = AvgTotals[10] + ".0";
             StatsTotal_6.Text = AvgTotals[11] + ".0";
 
+            //most played heroes (randomly generated)
             int mostPlayed_1 = userProfile.RNGesus2(1,8);
             int mostPlayed_2 = userProfile.RNGesus2(9, 16);
             int mostPlayed_3 = userProfile.RNGesus2(17, 24);
@@ -774,49 +780,51 @@ namespace CPSC_481_PROJECT
         /// <summary>
         /// change rank image source based on profile's randomly generated rank
         /// </summary>
-        private void RNGmyRank()
+        private String[] RNGmyRank(int rank)
         {
-            
+            String rankImageToolTip = "";
             String rankImageSource = "";
-            switch(userProfile.Rank)
+            switch(rank)
             {
                 case 1:
-                    ProfileRankImage.ToolTip = "BRONZE";
+                    rankImageToolTip = "BRONZE";
                     rankImageSource = "/RankIcons/Rank1.jpg";
                     break;
                 case 2:
-                    ProfileRankImage.ToolTip = "SILVER";
+                    rankImageToolTip = "SILVER";
                     rankImageSource = "/RankIcons/Rank2.jpg";
                     break;
                 case 3:
-                    ProfileRankImage.ToolTip = "GOLD";
+                    rankImageToolTip = "GOLD";
                     rankImageSource = "/RankIcons/Rank3.jpg";
                     break;
                 case 4:
-                    ProfileRankImage.ToolTip = "PLATINUM";
+                    rankImageToolTip = "PLATINUM";
                     rankImageSource = "/RankIcons/Rank4.jpg";
                     break;
                 case 5:
-                    ProfileRankImage.ToolTip = "DIAMOND";
+                    rankImageToolTip = "DIAMOND";
                     rankImageSource = "/RankIcons/Rank5.jpg";
                     break;
                 case 6:
-                    ProfileRankImage.ToolTip = "MASTER";
+                    rankImageToolTip = "MASTER";
                     rankImageSource = "/RankIcons/Rank6.jpg";
                     break;
                 case 7:
-                    ProfileRankImage.ToolTip = "GRANDMASTER";
+                    rankImageToolTip = "GRANDMASTER";
                     rankImageSource = "/RankIcons/Rank7.jpg";
                     break;
                 case 8:
-                    ProfileRankImage.ToolTip = "TOP 500";
+                    rankImageToolTip = "TOP 500";
                     rankImageSource = "/RankIcons/Rank8.jpg";
                     break;
                 default:
                     break;
             }
 
-            ProfileRankImage.Source = new BitmapImage(new Uri("pack://application:,,," + rankImageSource));
+            String[] rankImageToolTipSource = new String[] { rankImageToolTip, rankImageSource };
+            return rankImageToolTipSource;
+
 
         }
 
@@ -934,6 +942,18 @@ namespace CPSC_481_PROJECT
         }
 
 
+        public void loadFriendStats(Profile friend)
+        {
+            String[] friendRankImageToolTipSource = RNGmyRank(friend.Rank);
+            FriendRankImage.ToolTip = friendRankImageToolTipSource[0];
+            FriendRankImage.Source = new BitmapImage(new Uri("pack://application:,,," + friendRankImageToolTipSource[1]));
+        }
+
+        public void clearFriendStats()
+        {
+            FriendRankImage.ToolTip = "";
+            FriendRankImage.Source = null; 
+        }
         //private void ChangeProfilePicButton_MouseEnter(object sender, MouseEventArgs e)
         //{
         //    ChangeProfilePicButton.Opacity = 0.75;
@@ -944,5 +964,6 @@ namespace CPSC_481_PROJECT
         //    ChangeProfilePicButton.Opacity = 0;
         //}
     }
-
+    
+  
 }
