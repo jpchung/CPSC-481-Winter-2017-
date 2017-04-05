@@ -23,12 +23,12 @@
         <PasswordBox x:Name="SignupConfirmPasswordBox"  HorizontalAlignment="Left" Height="30" Margin="600,435,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black" ToolTip="Re-enter your password (case sensitive)"/>
         <TextBox x:Name="BattetagInput"  HorizontalAlignment="Left" Height="35" Margin="600,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black" ToolTip="Enter your battletag"/>
 
-        <Button x:Name="SignupToLoginButton" Content="LOGIN" HorizontalAlignment="Left" Height="65" Margin="304,554,0,0" VerticalAlignment="Top" Width="171" FontSize="32" Click="SignupToLoginButton_Click" ToolTip="Switch to Login page">
+        <Button x:Name="SignupToLoginButton" Content="LOGIN"  Background="DodgerBlue" HorizontalAlignment="Left" Height="65" Margin="304,554,0,0" VerticalAlignment="Top" Width="171" FontSize="32" Click="SignupToLoginButton_Click" ToolTip="Switch to Login page">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="SignupToMainButton" Content="NEXT" HorizontalAlignment="Left" Height="65" Margin="800,554,0,0" VerticalAlignment="Top" Width="175" FontSize="32" Click="SignupToMainButton_Click" ToolTip="continue to next Sign-up section" >
+        <Button x:Name="SignupToMainButton" Content="NEXT"  Background="Green" HorizontalAlignment="Left" Height="65" Margin="800,554,0,0" VerticalAlignment="Top" Width="175" FontSize="32" Click="SignupToMainButton_Click" ToolTip="continue to next Sign-up section" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -43,7 +43,7 @@
         <ComboBox x:Name="SignupRoleComboBox" FontSize="22" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,315,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
         <ComboBox x:Name="SignupHeroComboBox" FontSize="22" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,390,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
         <ComboBox x:Name="SignupGameModeComboBox" FontSize="22" Visibility="Hidden" HorizontalAlignment="Left" Margin="727,465,0,0" VerticalAlignment="Top" Width="248" Height="35"/>
-        <Button x:Name="SignupBackButton" Visibility="Hidden" Content="BACK" Height="65" Width="175" FontSize="32"  HorizontalAlignment="Left" Margin="565,554,0,0" VerticalAlignment="Top" Click="SignupBackButton_Click" ToolTip="Return to previous Sign-up section" >
+        <Button x:Name="SignupBackButton" Visibility="Hidden" Content="BACK" Background="Red" Height="65" Width="175" FontSize="32"  HorizontalAlignment="Left" Margin="565,554,0,0" VerticalAlignment="Top" Click="SignupBackButton_Click" ToolTip="Return to previous Sign-up section" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

@@ -65,7 +65,7 @@
                     <TextBlock x:Name="ProfileUsername" TextWrapping="Wrap" Text="" FontSize="24" Margin="54,0,1019,602" ToolTip="Username"  />
                     <Image x:Name="ProfileImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="55,34,0,0">
                     </Image>
-                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" RenderTransformOrigin="-4.114,0.2" Margin="56,234,1018,362" FontSize="18" Click="ChangeProfilePicButton_Click" ToolTip="Change your profile picture"  >
+                    <Button x:Name="ChangeProfilePicButton" Content="Change Profile Picture" Background="DodgerBlue" RenderTransformOrigin="-4.114,0.2" Margin="56,234,1018,362" FontSize="18" Click="ChangeProfilePicButton_Click" ToolTip="Change your profile picture"  >
                         <Button.Effect>
                             <DropShadowEffect/>
                         </Button.Effect>
@@ -95,6 +95,7 @@
                                 <Image x:Name="ProfileStatsBackground" Source="StatsBackground/ProfileStats.jpg" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Margin="10,0,0,5"/>
 
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="945" Margin="0,0,0,0">
+                                    <TextBlock x:Name="IGiveUp" TextWrapping="Wrap" Foreground="White" FontFamily="Agency FB" FontSize="26" Text="Under Development..." Margin="593,46,122,405"/>
                                 </Border>
 
                                 <Image x:Name="ProfileRankImage" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="75" Margin="52,42,0,0" VerticalAlignment="Top" Width="75"/>
@@ -201,7 +202,7 @@
 
 
                                 <TextBlock x:Name="TeamListText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Team Name: " Background="White" VerticalAlignment="Top" FontSize="36" Width="918" Margin="15,7,0,0" Height="43"/>
-                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="767,18,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="27" FontSize="16" Background="#FFEB5D0E" BorderBrush="#FF0C0C0C" FontFamily="Yu Gothic UI" FontWeight="Bold" BorderThickness="0" Click="DeleteTeamButton_Click" ToolTip="Leave team if user is a member, or deletes team if user is Team Captain">
+                                <Button x:Name="DeleteTeamButton" Content="Delete/Leave Team" HorizontalAlignment="Left" Margin="767,18,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="1.333,0.385" Height="27" FontSize="16"  Background="Red" BorderBrush="#FF0C0C0C" FontFamily="Yu Gothic UI" FontWeight="Bold" BorderThickness="0" Click="DeleteTeamButton_Click" ToolTip="Leave team if user is a member, or deletes team if user is Team Captain">
                                     <Button.Effect>
                                         <DropShadowEffect/>
                                     </Button.Effect>
@@ -291,7 +292,7 @@
                                     <StackPanel x:Name="SoloSearchStackPanel" Background="LightSlateGray" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="960" />
 
                                 </ScrollViewer>
-                                <Button x:Name="SoloSearchButton" Content="Search" HorizontalAlignment="Left" Margin="955,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24" Click="SoloSearchButton_Click" ToolTip="Search for Solo Players by name (or best match)">
+                                <Button x:Name="SoloSearchButton" Content="Search"  Background="DodgerBlue" HorizontalAlignment="Left" Margin="955,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="24" Click="SoloSearchButton_Click" ToolTip="Search for Solo Players by name (or best match)">
                                     <Button.Effect>
                                         <DropShadowEffect/>
                                     </Button.Effect>
@@ -334,12 +335,12 @@
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="960" Margin="73,208,0,0"/>
 
                                 <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="702,157,0,0" TextWrapping="Wrap" Text="Search by Team Name..." VerticalAlignment="Top" Width="250" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus" BorderBrush="#FF090909" LostFocus="GroupSearchInput_LostFocus" ToolTip="Type name of the team you want to search for"/>
-                                <Button x:Name="GroupSearchButton" Content="Search" HorizontalAlignment="Left" Margin="952,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click" BorderBrush="Black" BorderThickness="1" Opacity="0.995" ToolTip="Search for other Teams by name (or best match)">
+                                <Button x:Name="GroupSearchButton" Content="Search"  Background="DodgerBlue" HorizontalAlignment="Left" Margin="952,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click" BorderBrush="Black" BorderThickness="1" Opacity="0.995" ToolTip="Search for other Teams by name (or best match)">
                                     <Button.Effect>
                                         <DropShadowEffect/>
                                     </Button.Effect>
                                 </Button>
-                                <Button x:Name="CreateTeamButton" Content="Create Team" HorizontalAlignment="Left" Margin="75,152,0,0" VerticalAlignment="Top" Width="260" Height="40" FontSize="24" Click="CreateTeamButton_Click" BorderThickness="0" Background="#FFF4F6F3" BorderBrush="#FF383535" ToolTip="Create a new team (and become team captain)">
+                                <Button x:Name="CreateTeamButton" Content="Create Team" Background="Green"  HorizontalAlignment="Left" Margin="75,152,0,0" VerticalAlignment="Top" Width="260" Height="40" FontSize="24" Click="CreateTeamButton_Click" BorderThickness="0"  BorderBrush="#FF383535" ToolTip="Create a new team (and become team captain)">
                                     <Button.Effect>
                                         <DropShadowEffect/>
                                     </Button.Effect>
@@ -363,7 +364,7 @@
 
 
         </TabControl>
-        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Tomato" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click" ToolTip="Log out your profile">
+        <Button x:Name="LogoutButton" Content="LOGOUT" FontSize="20" Background="Red" HorizontalAlignment="Left" Margin="0,640,0,0" VerticalAlignment="Top" Width="145" Height="40" Click="LogoutButton_Click" ToolTip="Log out your profile">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

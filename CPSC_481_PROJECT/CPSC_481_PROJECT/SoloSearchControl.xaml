@@ -12,7 +12,7 @@
         <TextBlock x:Name="SoloSearchUsername" FontSize="32" HorizontalAlignment="Left" Margin="206,44,0,0" TextWrapping="Wrap" Text="Solo Search Username" VerticalAlignment="Top" Height="41" Width="Auto"/>
         <TextBlock x:Name="FriendAddedText" Foreground="Green" Visibility="Hidden" FontSize="20" HorizontalAlignment="Left" Margin="206,125,0,0" TextWrapping="Wrap" Text="Friend Added!" VerticalAlignment="Top" Height="35" Width="140"/>
 
-        <Button x:Name="SoloSearchAddFriendButton"  Content="Add Friend" FontSize="22" HorizontalAlignment="Left" Margin="206,115,0,0" VerticalAlignment="Top" Width="140" Height="45" Click="SoloSearchAddFriendButton_Click">
+        <Button x:Name="SoloSearchAddFriendButton"  Content="Add Friend" Background="Green" FontSize="22" HorizontalAlignment="Left" Margin="206,115,0,0" VerticalAlignment="Top" Width="140" Height="45" Click="SoloSearchAddFriendButton_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
