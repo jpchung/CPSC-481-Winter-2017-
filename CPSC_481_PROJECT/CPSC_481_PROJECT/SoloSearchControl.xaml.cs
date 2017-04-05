@@ -42,13 +42,21 @@ namespace CPSC_481_PROJECT
             //should not be able to add self as friend
             loginUser = currentPage.getCurrentProfile();
             if (currentUser.Equals(loginUser))
+            {
                 SoloSearchAddFriendButton.Visibility = Visibility.Hidden;
-            
+                FriendAddedText.Visibility = Visibility.Hidden;
+            }
+
             //should not be able to add if already friends
-            foreach(Profile friend in loginUser.getFriendsList())
+            foreach (Profile friend in loginUser.getFriendsList())
             {
                 if (friend.Equals(currentUser))
+                {
                     SoloSearchAddFriendButton.Visibility = Visibility.Hidden;
+                    FriendAddedText.Visibility = Visibility.Visible;
+                }
+                    
+
  
             }
           
@@ -116,6 +124,7 @@ namespace CPSC_481_PROJECT
             loginUser.addFriend(currentUser);
             currentPage.FriendsListPanel.Children.Add(new ProfileFriendControl(loginUser, currentUser, currentPage));
             SoloSearchAddFriendButton.Visibility = Visibility.Hidden;
+            FriendAddedText.Visibility = Visibility.Visible;
   
         }
 

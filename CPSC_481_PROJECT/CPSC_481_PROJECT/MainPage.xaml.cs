@@ -78,7 +78,7 @@ namespace CPSC_481_PROJECT
             //team list
             if(userProfile.hasTeam)
             {
-                TeamListText.Text = "Team Name: " + userProfile.getTeam().TeamName;
+                TeamListText.Text = " Team Name: " + userProfile.getTeam().TeamName;
                 remakeTeamListPanel();
             }
 
@@ -498,8 +498,10 @@ namespace CPSC_481_PROJECT
         private void SoloSearchButton_Click(object sender, RoutedEventArgs e)
         {
             String usernameSearch = SoloSearchInput.Text.ToLower();
-            if(!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && 
-                !usernameSearch.Equals("Search by Username..."))
+            String defaultSearch = "Search by Username...";
+            defaultSearch = defaultSearch.ToLower();
+            if (!String.IsNullOrEmpty(usernameSearch) && !String.IsNullOrEmpty(usernameSearch) && 
+                !usernameSearch.Equals(defaultSearch))
             {
                 foreach(SoloSearchControl user in SoloSearchStackPanel.Children)
                 {
@@ -544,9 +546,11 @@ namespace CPSC_481_PROJECT
         private void GroupSearchButton_Click(object sender, RoutedEventArgs e)
         {
             String teamSearch = GroupSearchInput.Text.ToLower();
+            String defaultSearch = "Search by Team Name...";
+            defaultSearch = defaultSearch.ToLower();
 
-            if(!String.IsNullOrEmpty(teamSearch) && !String.IsNullOrWhiteSpace(teamSearch)
-                && !teamSearch.Equals("Search by Team Name..."))
+            if (!String.IsNullOrEmpty(teamSearch) && !String.IsNullOrWhiteSpace(teamSearch)
+                && !teamSearch.Equals(defaultSearch))
             {
                 foreach(GroupSearchControl team in GroupSearchStackPanel.Children)
                 {
@@ -710,7 +714,7 @@ namespace CPSC_481_PROJECT
                 userProfile.setDefaultTeam(null);
                 userProfile.hasTeam = false;
                 TeamListPanel.Children.Clear();
-                TeamListText.Text = "Team Name: ";
+                TeamListText.Text = " Team Name: ";
 
                 //if user is first member (i.e. team captain), delete team from global list
                 if (members.IndexOf(userProfile) == 0)
@@ -892,7 +896,7 @@ namespace CPSC_481_PROJECT
                     HeroName = "Sombra";
                     break;
                 case 18:
-                    HeroIconSource = "/HeroIcons/tracer.jpg";
+                    HeroIconSource = "/HeroIcons/tracer.png";
                     HeroName = "Tracer";
                     break;
                 case 19:

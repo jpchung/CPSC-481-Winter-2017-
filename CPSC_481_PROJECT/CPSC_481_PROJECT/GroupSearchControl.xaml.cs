@@ -156,7 +156,7 @@ namespace CPSC_481_PROJECT
                 user.setDefaultTeam(team);
                 user.hasTeam = true;
                 userPage.remakeTeamListPanel();
-                userPage.TeamListText.Text = "Team Name: " + teamName;
+                userPage.TeamListText.Text = " Team Name: " + teamName;
                 userPage.remakeGroupSearchPanel();
             }
             else

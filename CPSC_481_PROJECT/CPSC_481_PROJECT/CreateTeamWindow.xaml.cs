@@ -80,7 +80,7 @@ namespace CPSC_481_PROJECT
                 //userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeamName, newTeamList, userPage));
                 userPage.GroupSearchStackPanel.Children.Add(new GroupSearchControl(newTeam, userPage));
 
-                userPage.TeamListText.Text = "Team Name: " + newTeamName;
+                userPage.TeamListText.Text = " Team Name: " + newTeamName;
 
                 //update team list on profile tab
                 userPage.remakeTeamListPanel();

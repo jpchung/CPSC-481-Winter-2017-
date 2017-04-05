@@ -72,17 +72,17 @@ namespace CPSC_481_PROJECT
             WinsLosses = new int[] {wins, losses};
 
             int total_1 = RNGesus(900);
-            int avg_1 = RNGesus(total_1);
+            int avg_1 = RNGesus(total_1/2);
             int total_2 = RNGesus(200);
-            int avg_2 = RNGesus(total_2);
+            int avg_2 = RNGesus(total_2/2);
             int total_3 = RNGesus(500);
-            int avg_3 = RNGesus(total_3);
+            int avg_3 = RNGesus(total_3/2);
             int total_4 = RNGesus(800);
-            int avg_4 = RNGesus(total_4);
+            int avg_4 = RNGesus(total_4/2);
             int total_5 = RNGesus(400);
-            int avg_5 = RNGesus(total_5);
+            int avg_5 = RNGesus(total_5/2);
             int total_6 = RNGesus(300);
-            int avg_6 = RNGesus(total_6);
+            int avg_6 = RNGesus(total_6/2);
 
             AvgTotals = new int[] {avg_1, avg_2, avg_3, avg_4, avg_5, avg_6,
                 total_1, total_2, total_3, total_4, total_5, total_6};
