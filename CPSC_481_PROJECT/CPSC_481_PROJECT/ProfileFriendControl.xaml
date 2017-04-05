@@ -16,7 +16,7 @@
             <TextBlock x:Name="FriendUsername" HorizontalAlignment="Left" Margin="138,20,0,0" FontSize="20" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="Auto" Height="30"/>
             <TextBlock x:Name="FriendStatusMessage" HorizontalAlignment="Left" Margin="138,55,0,0" FontSize="14" TextWrapping="Wrap" Text="Friend Status" VerticalAlignment="Top" Width="Auto" Height="20"/>
 
-            <Button x:Name="UnfriendButton" Content="UNFRIEND" FontSize="14" Foreground="White" Background="Red" HorizontalAlignment="Left" Margin="138,90,0,0" VerticalAlignment="Top" Width="115" Height="30" Click="UnfriendButton_Click">
+            <Button x:Name="UnfriendButton" Content="UNFRIEND" FontSize="14"  Background="Red" HorizontalAlignment="Left" Margin="138,90,0,0" VerticalAlignment="Top" Width="115" Height="30" Click="UnfriendButton_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
