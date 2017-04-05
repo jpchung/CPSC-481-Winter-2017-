@@ -82,6 +82,48 @@ namespace CPSC_481_PROJECT
                 remakeTeamListPanel();
             }
 
+            //rnadomly generated profile stats
+            RNGmyRank();
+            StatsWins.Text = userProfile.WinsLosses[0].ToString();
+            StatsLosses.Text = userProfile.WinsLosses[1].ToString();
+
+            int[] AvgTotals = userProfile.AvgTotals;
+            StatsAvg_1.Text = AvgTotals[0] + ".0";
+            StatsAvg_2.Text = AvgTotals[1] + ".0";
+            StatsAvg_3.Text = AvgTotals[2] + ".0";
+            StatsAvg_4.Text = AvgTotals[3] + ".0";
+            StatsAvg_5.Text = AvgTotals[4] + ".0";
+            StatsAvg_6.Text = AvgTotals[5] + ".0";
+            StatsTotal_1.Text = AvgTotals[6] + ".0";
+            StatsTotal_2.Text = AvgTotals[7] + ".0";
+            StatsTotal_3.Text = AvgTotals[8] + ".0";
+            StatsTotal_4.Text = AvgTotals[9] + ".0";
+            StatsTotal_5.Text = AvgTotals[10] + ".0";
+            StatsTotal_6.Text = AvgTotals[11] + ".0";
+
+            int mostPlayed_1 = userProfile.RNGesus2(1,8);
+            int mostPlayed_2 = userProfile.RNGesus2(9, 16);
+            int mostPlayed_3 = userProfile.RNGesus2(17, 24);
+
+            String[] mostPlayedInfo = RNGmyMostPlayed(mostPlayed_1);
+            MostPlayedHero_1.ToolTip = mostPlayedInfo[0];
+            MostPlayedHero_1.Source = new BitmapImage(new Uri("pack://application:,,," + mostPlayedInfo[1]));
+
+            mostPlayedInfo = RNGmyMostPlayed(mostPlayed_2);
+            MostPlayedHero_2.ToolTip = mostPlayedInfo[0];
+            MostPlayedHero_2.Source = new BitmapImage(new Uri("pack://application:,,," + mostPlayedInfo[1]));
+
+            mostPlayedInfo = RNGmyMostPlayed(mostPlayed_3);
+            MostPlayedHero_3.ToolTip = mostPlayedInfo[0];
+            MostPlayedHero_3.Source = new BitmapImage(new Uri("pack://application:,,," + mostPlayedInfo[1]));
+
+            int percent_1 = userProfile.RNGesus2(20, 35);
+            MostPlayedText_1.Text = (String) MostPlayedHero_1.ToolTip + " : " + percent_1 + "%";
+            int percent_2 = percent_1 - 10;
+            MostPlayedText_2.Text = (String) MostPlayedHero_2.ToolTip + " : " + percent_2 + "%";
+            int percent_3 = percent_2 - 10;
+            MostPlayedText_3.Text = (String) MostPlayedHero_3.ToolTip + " : " + percent_3 + "%";
+
             //Solo Search User list
             remakeSoloSearchPanel();
 
@@ -724,6 +766,169 @@ namespace CPSC_481_PROJECT
             InvalidGroupSearchText.Text = textPrompt;
             InvalidGroupSearchText.Visibility = Visibility.Visible;
         }
+
+        /// <summary>
+        /// change rank image source based on profile's randomly generated rank
+        /// </summary>
+        private void RNGmyRank()
+        {
+            
+            String rankImageSource = "";
+            switch(userProfile.Rank)
+            {
+                case 1:
+                    ProfileRankImage.ToolTip = "BRONZE";
+                    rankImageSource = "/RankIcons/Rank1.jpg";
+                    break;
+                case 2:
+                    ProfileRankImage.ToolTip = "SILVER";
+                    rankImageSource = "/RankIcons/Rank2.jpg";
+                    break;
+                case 3:
+                    ProfileRankImage.ToolTip = "GOLD";
+                    rankImageSource = "/RankIcons/Rank3.jpg";
+                    break;
+                case 4:
+                    ProfileRankImage.ToolTip = "PLATINUM";
+                    rankImageSource = "/RankIcons/Rank4.jpg";
+                    break;
+                case 5:
+                    ProfileRankImage.ToolTip = "DIAMOND";
+                    rankImageSource = "/RankIcons/Rank5.jpg";
+                    break;
+                case 6:
+                    ProfileRankImage.ToolTip = "MASTER";
+                    rankImageSource = "/RankIcons/Rank6.jpg";
+                    break;
+                case 7:
+                    ProfileRankImage.ToolTip = "GRANDMASTER";
+                    rankImageSource = "/RankIcons/Rank7.jpg";
+                    break;
+                case 8:
+                    ProfileRankImage.ToolTip = "TOP 500";
+                    rankImageSource = "/RankIcons/Rank8.jpg";
+                    break;
+                default:
+                    break;
+            }
+
+            ProfileRankImage.Source = new BitmapImage(new Uri("pack://application:,,," + rankImageSource));
+
+        }
+
+        private String[] RNGmyMostPlayed(int heroNum)
+        {
+            
+            String HeroIconSource = "";
+            String HeroName = "";
+            switch(heroNum)
+            {
+                case 1:
+                    HeroIconSource = "/HeroIcons/ana.png";
+                    HeroName = "Ana";
+                    break;
+                case 2:
+                    HeroIconSource = "/HeroIcons/bastion.png";
+                    HeroName = "Bastion";
+                    break;
+                case 3:
+                    HeroIconSource = "/HeroIcons/dva.png";
+                    HeroName = "D.Va";
+                    break;
+                case 4:
+                    HeroIconSource = "/HeroIcons/genji.png";
+                    HeroName = "Genji";
+                    break;
+                case 5:
+                    HeroIconSource = "/HeroIcons/hanzo.png";
+                    HeroName = "Hanzo";
+                    break;
+                case 6:
+                    HeroIconSource = "/HeroIcons/junkrat.png";
+                    HeroName = "Junkrat";
+                    break;
+                case 7:
+                    HeroIconSource = "/HeroIcons/lucio.png";
+                    HeroName = "Lucio";
+                    break;
+                case 8:
+                    HeroIconSource = "/HeroIcons/mccree.png";
+                    HeroName = "McCree";
+                    break;
+                case 9:
+                    HeroIconSource = "/HeroIcons/mei.png";
+                    HeroName = "Mei";
+                    break;
+                case 10:
+                    HeroIconSource = "/HeroIcons/mercy.png";
+                    HeroName = "Mercy";
+                    break;
+                case 11:
+                    HeroIconSource = "/HeroIcons/orisa.png";
+                    HeroName = "Orisa";
+                    break;
+                case 12:
+                    HeroIconSource = "/HeroIcons/pharah.png";
+                    HeroName = "Pharah";
+                    break;
+                case 13:
+                    HeroIconSource = "/HeroIcons/reaper.png";
+                    HeroName = "Reaper";
+                    break;
+                case 14:
+                    HeroIconSource = "/HeroIcons/reinhardt.png";
+                    HeroName = "Reinhardt";
+                    break;
+                case 15:
+                    HeroIconSource = "/HeroIcons/roadhog.png";
+                    HeroName = "Roadhog";
+                    break;
+                case 16:
+                    HeroIconSource = "/HeroIcons/soldier76.png";
+                    HeroName = "Soldier: 76";
+                    break;
+                case 17:
+                    HeroIconSource = "/HeroIcons/sombra.png";
+                    HeroName = "Sombra";
+                    break;
+                case 18:
+                    HeroIconSource = "/HeroIcons/tracer.jpg";
+                    HeroName = "Tracer";
+                    break;
+                case 19:
+                    HeroIconSource = "/HeroIcons/symmetra.png";
+                    HeroName = "Symmetra";
+                    break;
+                case 20:
+                    HeroIconSource = "/HeroIcons/torbjorn.png";
+                    HeroName = "Torbjorn";
+                    break;
+                case 21:
+                    HeroIconSource = "/HeroIcons/widowmaker.png";
+                    HeroName = "Widowmaker";
+                    break;
+                case 22:
+                    HeroIconSource = "/HeroIcons/winston.png";
+                    HeroName = "Winston";
+                    break;
+                case 23:
+                    HeroIconSource = "/HeroIcons/zarya.png";
+                    HeroName = "Zarya";
+                    break;
+                case 24:
+                    HeroIconSource = "/HeroIcons/zenyatta.png";
+                    HeroName = "Zenyatta";
+                    break;
+                default:
+                    HeroIconSource = "zenyatta.png";
+                    HeroName = "Zenyatta";
+                    break;
+            }
+
+            String[] mostPlayedNameSource = new String[] { HeroName, HeroIconSource };
+            return mostPlayedNameSource;
+        }
+
 
         //private void ChangeProfilePicButton_MouseEnter(object sender, MouseEventArgs e)
         //{

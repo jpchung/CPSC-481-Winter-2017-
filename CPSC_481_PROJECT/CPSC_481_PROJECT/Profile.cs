@@ -25,6 +25,13 @@ namespace CPSC_481_PROJECT
 
         public String ProfileIconSource { get; set; }
 
+        public int Rank { get; }
+
+        public int[] WinsLosses { get; }
+
+        public int[] AvgTotals { get; }
+
+
         //roles, heroes, game mode lists
         public static string[] RolesList = new string[] { "Offense", "Defense", "Tank", "Support" };
         public static string[] HeroesList = new string[] {"Ana","Bastion","D.Va","Genji","Hanzo","Junkrat","Lucio","McCree","Mei","Mercy",
@@ -59,13 +66,34 @@ namespace CPSC_481_PROJECT
             BattleTag = battletag;
             Status = "";
 
+            Rank = RNGesus(8);
+            int wins = RNGesus(999);
+            int losses = RNGesus(wins);
+            WinsLosses = new int[] {wins, losses};
+
+            int total_1 = RNGesus(900);
+            int avg_1 = RNGesus(total_1);
+            int total_2 = RNGesus(200);
+            int avg_2 = RNGesus(total_2);
+            int total_3 = RNGesus(500);
+            int avg_3 = RNGesus(total_3);
+            int total_4 = RNGesus(800);
+            int avg_4 = RNGesus(total_4);
+            int total_5 = RNGesus(400);
+            int avg_5 = RNGesus(total_5);
+            int total_6 = RNGesus(300);
+            int avg_6 = RNGesus(total_6);
+
+            AvgTotals = new int[] {avg_1, avg_2, avg_3, avg_4, avg_5, avg_6,
+                total_1, total_2, total_3, total_4, total_5, total_6};
+
+           
+
             //default profile icon
             ProfileIconSource = "/Images/PRO_GENJI.png";
 
             friendsList = new List<Profile>();
             hasTeam = false;
-            //teamList = new List<Profile>();
-
 
 
         }
@@ -174,7 +202,20 @@ namespace CPSC_481_PROJECT
             return userTeam;
         }
 
+        //generate a random number given a max range
+        public int RNGesus(int maxRange)
+        {
+            Random rand = new Random();
+            int randInt = rand.Next(1, maxRange + 1);
+            return randInt;
+        }
 
+        public int RNGesus2(int minRange, int maxRange)
+        {
+            Random rand = new Random();
+            int randInt = rand.Next(minRange, maxRange + 1);
+            return randInt;
+        }
 
 
     }
