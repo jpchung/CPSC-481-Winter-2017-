@@ -78,6 +78,7 @@ namespace CPSC_481_PROJECT
         /// <param name="e"></param>
         private void FriendControlSelectButton_Click(object sender, RoutedEventArgs e)
         {
+            userPage.NoFriendStatsText.Visibility = Visibility.Hidden;
 
             foreach(ProfileFriendControl friendControl in parentPanel.Children)
             {
@@ -104,6 +105,7 @@ namespace CPSC_481_PROJECT
         {
             
             userPage.clearFriendStats();
+            userPage.NoFriendStatsText.Visibility = Visibility.Visible;
             
 
 
