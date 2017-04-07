@@ -147,7 +147,7 @@ namespace CPSC_481_PROJECT
         {
             //TODO later: add timer to simulate team accepting join request
             //for now: auto join team
-            if(!user.hasTeam)
+            if(!user.hasTeam && teamMembers.Count < 5)
             {
                 userPage.InvalidGroupSearchText.Visibility = Visibility.Hidden;
 
@@ -159,9 +159,13 @@ namespace CPSC_481_PROJECT
                 userPage.TeamListText.Text = " Team Name: " + teamName;
                 userPage.remakeGroupSearchPanel();
             }
-            else
+            else if(user.hasTeam)
             {
                 userPage.InvalidGroupSearchPrompt("Cannot join team if already member of another team!");
+            }
+            else if(teamMembers.Count == 5)
+            {
+                userPage.InvalidGroupSearchPrompt("Team already has maximum of 5 members!");
             }
         }
 

@@ -742,7 +742,18 @@ namespace CPSC_481_PROJECT
                 //if user is first member (i.e. team captain), delete team from global list
                 if (members.IndexOf(userProfile) == 0)
                 {
-                    
+                    //delete team for every non-captain member
+                    foreach (Profile member in members)
+                    {
+                        if(!member.Equals(userProfile))
+                        {
+                            member.setDefaultTeam(null);
+                            member.hasTeam = false;
+
+                        }
+                    }
+
+
                     //remove from global list and update group search
                     MainWindow.TeamsList.Remove(teamToDelete);
                     remakeGroupSearchPanel();
