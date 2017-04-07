@@ -13,7 +13,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBox x:Name="TeamNameInput" HorizontalAlignment="Left" Height="32" Margin="55,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185"/>
+        <TextBox x:Name="TeamNameInput" HorizontalAlignment="Left" Height="32" Margin="55,57,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="185"/>
         <ComboBox x:Name="TeamGameModeComboBox" HorizontalAlignment="Left" Margin="55,140,0,0" VerticalAlignment="Top" Width="185" Height="32"/>
         <TextBlock x:Name="TeamNameText" HorizontalAlignment="Left" Margin="58,40,0,0" TextWrapping="Wrap" Text="Team Name:" VerticalAlignment="Top" Height="17" Width="Auto"/>
         <TextBlock x:Name="TeamGameModeText" HorizontalAlignment="Left" Margin="55,118,0,0" TextWrapping="Wrap" Text="Game Mode:" VerticalAlignment="Top" Height="17" Width="Auto"/>

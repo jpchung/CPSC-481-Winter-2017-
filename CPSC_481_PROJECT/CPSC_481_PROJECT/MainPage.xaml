@@ -70,7 +70,7 @@
                             <DropShadowEffect/>
                         </Button.Effect>
                     </Button>
-                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="Wrap" Text="Status Message" Margin="57,0,1016,312" FontSize="20" BorderBrush="Black" Height="35" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed" GotFocus="StatusMessage_GotFocus" LostFocus="StatusMessage_LostFocus" ToolTip="Change your Status Message"/>
+                    <TextBox x:Name="ProfileStatusTextBox" TextWrapping="NoWrap" Text="Status Message" Margin="57,0,1016,312" FontSize="20" BorderBrush="Black" Height="35" VerticalAlignment="Bottom" TextChanged="ProfileStatusTextBox_Changed" GotFocus="StatusMessage_GotFocus" LostFocus="StatusMessage_LostFocus" ToolTip="Change your Status Message"/>
 
                     <ComboBox x:Name="RoleComboBox" Margin="56,359,1018.4,237" BorderBrush="Black" FontSize="22" SelectionChanged="RoleComboBox_SelectionChanged" ToolTip="Change your preferred Role" Cursor="Arrow">
                     </ComboBox>
@@ -275,7 +275,7 @@
                                 </RadioButton>
                                 <ComboBox x:Name="SoloSearchRoleComboBox" HorizontalAlignment="Left" Margin="231,157,0,0" VerticalAlignment="Top" Width="200" Height="40" RenderTransformOrigin="0.458,-0.111" BorderBrush="Black" FontSize="22" SelectionChanged="SoloSearchRoleComboBox_SelectionChanged" ToolTip="Filter Solo Players by Role"/>
                                 <ComboBox x:Name="SoloSearchHeroComboBox" HorizontalAlignment="Left" Margin="500,157,0,0" VerticalAlignment="Top" Width="200" Height="40" BorderBrush="Black" FontSize="22" RenderTransformOrigin="0.475,-0.125" SelectionChanged="SoloSearchHeroComboBox_SelectionChanged" ToolTip="Filter Solo Players by Hero"/>
-                                <TextBox x:Name="SoloSearchInput" HorizontalAlignment="Left" Height="40" Margin="720,157,0,0" TextWrapping="Wrap" Text="Search by Username..." VerticalAlignment="Top" Width="235" RenderTransformOrigin="0.371,0.375" FontSize="22" FontStyle="Italic" GotFocus="SoloSearchInput_GotFocus" LostFocus="SoloSearchInput_LostFocus" ToolTip="Type the name of Solo Player you want to search for" />
+                                <TextBox x:Name="SoloSearchInput" HorizontalAlignment="Left" Height="40" Margin="720,157,0,0" TextWrapping="NoWrap" Text="Search by Username..." VerticalAlignment="Top" Width="235" RenderTransformOrigin="0.371,0.375" FontSize="22" FontStyle="Italic" GotFocus="SoloSearchInput_GotFocus" LostFocus="SoloSearchInput_LostFocus" ToolTip="Type the name of Solo Player you want to search for" />
                                 <TextBlock x:Name="SearchRoleTextBlock" HorizontalAlignment="Left" Margin="72,157,0,0" TextWrapping="Wrap" Text="Filter by  Role: " VerticalAlignment="Top" Height="40" Width="Auto" FontSize="24" RenderTransformOrigin="0.85,0.625"/>
                                 <TextBlock x:Name="SearchHeroTextBlock" HorizontalAlignment="Left" Margin="436,157,0,0" TextWrapping="Wrap" Text="Hero: " VerticalAlignment="Top" Height="40" Width="Auto" FontSize="24" RenderTransformOrigin="0.647,0.5"/>
                                 <ListView x:Name="SoloSearchListView" HorizontalAlignment="Left" Height="301" Margin="72,207,0,0" VerticalAlignment="Top" Width="960" FontSize="24" Background="LightSlateGray">
@@ -335,7 +335,7 @@
                                 </ListView>
                                 <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="960" Margin="73,208,0,0"/>
 
-                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="702,157,0,0" TextWrapping="Wrap" Text="Search by Team Name..." VerticalAlignment="Top" Width="250" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus" BorderBrush="#FF090909" LostFocus="GroupSearchInput_LostFocus" ToolTip="Type name of the team you want to search for"/>
+                                <TextBox x:Name="GroupSearchInput" HorizontalAlignment="Left" Height="40" Margin="702,157,0,0" TextWrapping="NoWrap" Text="Search by Team Name..." VerticalAlignment="Top" Width="250" FontSize="22" FontStyle="Italic" GotFocus="GroupSearchInput_GotFocus" BorderBrush="#FF090909" LostFocus="GroupSearchInput_LostFocus" ToolTip="Type name of the team you want to search for"/>
                                 <Button x:Name="GroupSearchButton" Content="Search"  Background="DodgerBlue" HorizontalAlignment="Left" Margin="952,157,0,0" VerticalAlignment="Top" Width="80" Height="40" FontSize="22" Click="GroupSearchButton_Click" BorderBrush="Black" BorderThickness="1" Opacity="0.995" ToolTip="Search for other Teams by name (or best match)">
                                     <Button.Effect>
                                         <DropShadowEffect/>

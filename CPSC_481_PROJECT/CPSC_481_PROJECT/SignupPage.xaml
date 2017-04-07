@@ -17,11 +17,11 @@
         <TextBlock x:Name="ConfirmPasswordText"  HorizontalAlignment="Left" Height="30" Margin="395,435,0,0" TextWrapping="Wrap" Text="Confirm Password:" VerticalAlignment="Top" Width="200" FontSize="24"/>
         <TextBlock x:Name="BattetagText"  HorizontalAlignment="Left" Height="35" Margin="395,470,0,0" TextWrapping="Wrap" Text="BattleTag:" VerticalAlignment="Top" Width="125" FontSize="24"/>
 
-        <TextBox x:Name="EmailInput"  HorizontalAlignment="Left" Height="35" Margin="600,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" BorderBrush="Black" FontSize="24" ToolTip="Enter your email"/>
-        <TextBox x:Name="SignupUsernameInput"  HorizontalAlignment="Left" Height="35" Margin="600,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black" ToolTip="Enter your Username"/>
+        <TextBox x:Name="EmailInput"  HorizontalAlignment="Left" Height="35" Margin="600,315,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290" BorderBrush="Black" FontSize="24" ToolTip="Enter your email"/>
+        <TextBox x:Name="SignupUsernameInput"  HorizontalAlignment="Left" Height="35" Margin="600,355,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black" ToolTip="Enter your Username"/>
         <PasswordBox x:Name="SignupPasswordBox"  HorizontalAlignment="Left" Height="35" Margin="600,395,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black" ToolTip="Enter your password (case sensitive)"/>
         <PasswordBox x:Name="SignupConfirmPasswordBox"  HorizontalAlignment="Left" Height="30" Margin="600,435,0,0" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black" ToolTip="Re-enter your password (case sensitive)"/>
-        <TextBox x:Name="BattetagInput"  HorizontalAlignment="Left" Height="35" Margin="600,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black" ToolTip="Enter your battletag"/>
+        <TextBox x:Name="BattetagInput"  HorizontalAlignment="Left" Height="35" Margin="600,470,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290" FontSize="24" BorderBrush="Black" ToolTip="Enter your battletag"/>
 
         <Button x:Name="SignupToLoginButton" Content="LOGIN"  Background="DodgerBlue" HorizontalAlignment="Left" Height="65" Margin="304,554,0,0" VerticalAlignment="Top" Width="171" FontSize="32" Click="SignupToLoginButton_Click" ToolTip="Switch to Login page">
             <Button.Effect>
