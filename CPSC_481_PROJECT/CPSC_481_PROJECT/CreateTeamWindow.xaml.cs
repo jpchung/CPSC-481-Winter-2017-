@@ -63,8 +63,8 @@ namespace CPSC_481_PROJECT
                 }
             }
 
-            if(!existingTeam && !String.IsNullOrEmpty(newTeamName)
-                && !user.hasTeam && TeamGameModeComboBox.SelectedIndex != -1)
+            if(!existingTeam && !String.IsNullOrEmpty(newTeamName) && !String.IsNullOrWhiteSpace(newTeamName)
+                && newTeamName.Length <= 15 &&!user.hasTeam && TeamGameModeComboBox.SelectedIndex != -1)
             {
 
                 //user.makeNewTeam(newTeamName); 
@@ -88,10 +88,34 @@ namespace CPSC_481_PROJECT
                 Close();
 
             }
+            else if(existingTeam)
+            {
+                InvalidCreateTeamPrompt("Team already exists with that name!");
+            }
+            else if(String.IsNullOrEmpty(newTeamName) || String.IsNullOrWhiteSpace(newTeamName))
+            {
+                InvalidCreateTeamPrompt("Please enter a name for your new team!");
+            }
+            else if(newTeamName.Length > 15)
+            {
+                InvalidCreateTeamPrompt("Maximum length for team name is 15 characters");
+            }
+            else if(TeamGameModeComboBox.SelectedIndex == -1)
+            {
+                InvalidCreateTeamPrompt("Please select the preferred Game Mode for your team!");
+            }
 
 
- 
+        }
 
+        /// <summary>
+        /// displays text prompt for invalid action during team creation
+        /// </summary>
+        /// <param name="textPrompt"></param>
+        private void InvalidCreateTeamPrompt(String textPrompt)
+        {
+            InvalidCreateTeamText.Text = textPrompt;
+            InvalidCreateTeamText.Visibility = Visibility.Visible;
         }
     }
 }

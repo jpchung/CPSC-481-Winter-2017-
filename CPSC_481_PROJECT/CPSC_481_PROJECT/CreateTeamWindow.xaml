@@ -17,6 +17,7 @@
         <ComboBox x:Name="TeamGameModeComboBox" HorizontalAlignment="Left" Margin="55,140,0,0" VerticalAlignment="Top" Width="185" Height="32"/>
         <TextBlock x:Name="TeamNameText" HorizontalAlignment="Left" Margin="58,40,0,0" TextWrapping="Wrap" Text="Team Name:" VerticalAlignment="Top" Height="17" Width="Auto"/>
         <TextBlock x:Name="TeamGameModeText" HorizontalAlignment="Left" Margin="55,118,0,0" TextWrapping="Wrap" Text="Game Mode:" VerticalAlignment="Top" Height="17" Width="Auto"/>
+        <TextBlock x:Name="InvalidCreateTeamText" Foreground="Red" Visibility="Hidden"  HorizontalAlignment="Left" Margin="40,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="220"/>
 
     </Grid>
 </Window>
