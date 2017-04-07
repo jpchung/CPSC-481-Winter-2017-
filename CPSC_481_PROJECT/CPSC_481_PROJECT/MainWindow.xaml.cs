@@ -52,7 +52,7 @@ namespace CPSC_481_PROJECT
             //Team defaultTeam = new Team("Default Team", defaultProfile, "Quickplay");
             
 
-            defaultProfile = new Profile("peglegpowderkeg@gmail.com", "FireinDaHoe", "cheekynandos", "burningman#1969");
+            defaultProfile = new Profile("peglegpowderkeg@gmail.com", "FireinDaHome", "cheekynandos", "burningman#1969");
             defaultProfileInfo = new String[] {"Defense", "Junkrat","Quickplay","u wot m8?", "/Images/ARSON.png" };
             setDefaultProfileInfo(defaultProfile, defaultProfileInfo);
             UserList.Add(defaultProfile);
