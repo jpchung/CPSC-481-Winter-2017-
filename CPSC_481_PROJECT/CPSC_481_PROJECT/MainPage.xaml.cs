@@ -856,6 +856,11 @@ namespace CPSC_481_PROJECT
 
         }
 
+        /// <summary>
+        /// change image source for most played heroes
+        /// </summary>
+        /// <param name="heroNum"></param>
+        /// <returns></returns>
         private String[] RNGmyMostPlayed(int heroNum)
         {
             
