@@ -9,8 +9,9 @@ James Raleigh 10150801
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 System Requirements:
-1. Desktop Computer with Microsoft Windows 7/10 Operating System
-2. Installation of Microsoft Visual Studio 2014 or higher
+1. Desktop Computer with Microsoft Windows 7/10 System
+2. Keyboard, mouse, and monitor
+3. Installation of Microsoft Visual Studio 2014 or higher
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Instructions for Using the System:
