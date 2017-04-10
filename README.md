@@ -7,11 +7,12 @@ Johnny Chung 10036448
 Marcus Tang 10086730
 James Raleigh 10150801
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+System Requirements:
 1. Desktop Computer with Microsoft Windows 7/10 Operating System
 2. Installation of Microsoft Visual Studio 2014 or higher
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Instructions for Using the System:
 1. Navigate to folder containing Microsoft Visual Studio Solution file for system (CPSC_481_PROJECT.sln)
 2. Open Solution using Microsoft Visual Studio and press "Start" to build and run Solution for system
